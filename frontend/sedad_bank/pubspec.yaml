@@ -1,0 +1,60 @@
+name: sedad_bank
+description: Plateforme FinTech Mobile - SEDAD BANK
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # HTTP & API
+  http: ^1.1.0
+  dio: ^5.3.0
+  
+  # State Management
+  provider: ^6.0.0
+  
+  # Local Storage
+  shared_preferences: ^2.2.0
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  
+  # Navigation
+  go_router: ^10.0.0
+  
+  # UI Components
+  flutter_svg: ^2.0.0
+  lottie: ^2.3.0
+
+  # QR Code
+  qr_flutter: ^4.1.0
+  mobile_scanner: ^4.0.1
+
+  # Share & Files
+  share_plus: ^7.2.2
+  path_provider: ^2.1.2
+  screenshot: ^2.1.0
+
+  # Form Validation
+  form_validator: ^2.1.1
+
+  # Date & Time
+  intl: ^0.19.0
+
+  # Utils
+  uuid: ^4.0.0
+  connectivity_plus: ^5.0.0
+
+dev_dependencies:
+  flutter_lints: ^2.0.3
+  flutter_test:
+    sdk: flutter
+  lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
