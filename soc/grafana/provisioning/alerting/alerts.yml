@@ -1,0 +1,203 @@
+apiVersion: 1
+
+groups:
+  - orgId: 1
+    name: SEDAD BANK Security Alerts
+    folder: SOC
+    interval: 1m
+    rules:
+
+      - uid: alert-brute-force
+        title: "Brute Force Detecte"
+        condition: threshold
+        data:
+          - refId: query
+            relativeTimeRange: { from: 300, to: 0 }
+            datasourceUid: loki-main
+            model:
+              expr: 'count_over_time({job="django-security"} |= "BRUTE_FORCE" [5m])'
+              queryType: range
+              refId: query
+          - refId: threshold
+            relativeTimeRange: { from: 300, to: 0 }
+            datasourceUid: __expr__
+            model:
+              type: reduce
+              refId: threshold
+              reducer: last
+              expression: query
+          - refId: condition
+            relativeTimeRange: { from: 300, to: 0 }
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              refId: condition
+              conditions:
+                - evaluator: { params: [1], type: gt }
+                  operator: { type: and }
+                  query: { params: [threshold] }
+        noDataState: OK
+        execErrState: Error
+        for: 0s
+        annotations:
+          summary: "Attaque brute force sur SEDAD BANK"
+          description: "Plus de 5 tentatives de connexion echouees en 5 minutes."
+        labels:
+          severity: critical
+          team: soc
+
+      - uid: alert-sql-injection
+        title: "Injection SQL Detectee"
+        condition: condition
+        data:
+          - refId: query
+            relativeTimeRange: { from: 300, to: 0 }
+            datasourceUid: loki-main
+            model:
+              expr: 'count_over_time({job="django-security"} |= "SQL_INJECTION" [5m])'
+              queryType: range
+              refId: query
+          - refId: threshold
+            relativeTimeRange: { from: 300, to: 0 }
+            datasourceUid: __expr__
+            model:
+              type: reduce
+              refId: threshold
+              reducer: last
+              expression: query
+          - refId: condition
+            relativeTimeRange: { from: 300, to: 0 }
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              refId: condition
+              conditions:
+                - evaluator: { params: [0], type: gt }
+                  operator: { type: and }
+                  query: { params: [threshold] }
+        noDataState: OK
+        execErrState: Error
+        for: 0s
+        annotations:
+          summary: "Tentative injection SQL sur SEDAD BANK"
+          description: "Une tentative SQL injection a ete detectee."
+        labels:
+          severity: critical
+          team: soc
+
+      - uid: alert-xss
+        title: "Attaque XSS Detectee"
+        condition: condition
+        data:
+          - refId: query
+            relativeTimeRange: { from: 300, to: 0 }
+            datasourceUid: loki-main
+            model:
+              expr: 'count_over_time({job="django-security"} |= "XSS" [5m])'
+              queryType: range
+              refId: query
+          - refId: threshold
+            relativeTimeRange: { from: 300, to: 0 }
+            datasourceUid: __expr__
+            model:
+              type: reduce
+              refId: threshold
+              reducer: last
+              expression: query
+          - refId: condition
+            relativeTimeRange: { from: 300, to: 0 }
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              refId: condition
+              conditions:
+                - evaluator: { params: [0], type: gt }
+                  operator: { type: and }
+                  query: { params: [threshold] }
+        noDataState: OK
+        execErrState: Error
+        for: 0s
+        annotations:
+          summary: "Tentative XSS sur SEDAD BANK"
+          description: "Attaque XSS detectee dans les requetes."
+        labels:
+          severity: high
+          team: soc
+
+      - uid: alert-unauthorized-spike
+        title: "Pic erreurs 401"
+        condition: condition
+        data:
+          - refId: query
+            relativeTimeRange: { from: 300, to: 0 }
+            datasourceUid: loki-main
+            model:
+              expr: 'count_over_time({job="django-security"} |= "UNAUTHORIZED" [5m])'
+              queryType: range
+              refId: query
+          - refId: threshold
+            relativeTimeRange: { from: 300, to: 0 }
+            datasourceUid: __expr__
+            model:
+              type: reduce
+              refId: threshold
+              reducer: last
+              expression: query
+          - refId: condition
+            relativeTimeRange: { from: 300, to: 0 }
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              refId: condition
+              conditions:
+                - evaluator: { params: [5], type: gt }
+                  operator: { type: and }
+                  query: { params: [threshold] }
+        noDataState: OK
+        execErrState: Error
+        for: 0s
+        annotations:
+          summary: "Pic acces non autorises sur SEDAD BANK"
+          description: "Plus de 5 requetes 401 en 5 minutes."
+        labels:
+          severity: high
+          team: soc
+
+      - uid: alert-server-errors
+        title: "Erreurs Serveur 500"
+        condition: condition
+        data:
+          - refId: query
+            relativeTimeRange: { from: 300, to: 0 }
+            datasourceUid: loki-main
+            model:
+              expr: 'count_over_time({job="django-access"} |= "500" [5m])'
+              queryType: range
+              refId: query
+          - refId: threshold
+            relativeTimeRange: { from: 300, to: 0 }
+            datasourceUid: __expr__
+            model:
+              type: reduce
+              refId: threshold
+              reducer: last
+              expression: query
+          - refId: condition
+            relativeTimeRange: { from: 300, to: 0 }
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              refId: condition
+              conditions:
+                - evaluator: { params: [3], type: gt }
+                  operator: { type: and }
+                  query: { params: [threshold] }
+        noDataState: OK
+        execErrState: Error
+        for: 0s
+        annotations:
+          summary: "Pic erreurs 500 sur SEDAD BANK"
+          description: "Plus de 3 erreurs serveur en 5 minutes."
+        labels:
+          severity: high
+          team: soc

@@ -1,0 +1,12 @@
+apiVersion: 1
+
+contactPoints:
+  - orgId: 1
+    name: Email SOC SEDAD
+    receivers:
+      - uid: email-soc-sedad
+        type: email
+        settings:
+          addresses: belkhairtaleb@gmail.com
+          singleEmail: true
+        disableResolveMessage: false

@@ -1,0 +1,482 @@
+INFO 2026-02-24 18:30:26,411 autoreload Watching for file changes with StatReloader
+INFO 2026-02-24 23:46:27,694 autoreload Watching for file changes with StatReloader
+INFO 2026-02-25 00:01:48,841 autoreload Watching for file changes with StatReloader
+WARNING 2026-02-25 00:03:54,862 log Not Found: /
+WARNING 2026-02-25 00:03:54,863 basehttp "GET / HTTP/1.1" 404 2530
+WARNING 2026-02-25 00:03:54,901 log Not Found: /favicon.ico
+WARNING 2026-02-25 00:03:54,901 basehttp "GET /favicon.ico HTTP/1.1" 404 2581
+INFO 2026-02-25 00:04:08,288 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-02-25 00:04:08,310 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4256
+INFO 2026-02-25 00:04:08,337 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 958
+INFO 2026-02-25 01:39:13,158 autoreload Watching for file changes with StatReloader
+WARNING 2026-02-25 01:41:51,037 log Unauthorized: /api/
+WARNING 2026-02-25 01:41:51,037 basehttp "GET /api/ HTTP/1.1" 401 58
+WARNING 2026-02-25 01:42:06,155 log Not Found: /
+WARNING 2026-02-25 01:42:06,155 basehttp "GET / HTTP/1.1" 404 2530
+WARNING 2026-02-25 01:43:07,209 log Not Found: /
+WARNING 2026-02-25 01:43:07,210 basehttp "GET / HTTP/1.1" 404 2530
+WARNING 2026-02-25 01:43:28,509 log Not Found: /docs
+WARNING 2026-02-25 01:43:28,509 basehttp "GET /docs HTTP/1.1" 404 2560
+WARNING 2026-02-25 01:43:32,189 log Not Found: /docs/
+WARNING 2026-02-25 01:43:32,189 basehttp "GET /docs/ HTTP/1.1" 404 2563
+INFO 2026-02-25 01:43:41,485 basehttp "GET /api/docs/ HTTP/1.1" 200 4449
+INFO 2026-02-25 01:43:42,645 basehttp "GET /api/schema/ HTTP/1.1" 200 124303
+INFO 2026-02-25 02:31:33,380 autoreload Watching for file changes with StatReloader
+INFO 2026-02-25 02:33:57,822 basehttp "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+WARNING 2026-02-25 02:33:57,833 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 02:33:57,834 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 02:34:12,371 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 02:34:12,371 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+INFO 2026-02-25 02:34:50,015 basehttp "OPTIONS /api/auth/register/ HTTP/1.1" 200 0
+INFO 2026-02-25 02:34:50,151 basehttp "POST /api/auth/register/ HTTP/1.1" 201 458
+INFO 2026-02-25 02:35:03,663 basehttp "POST /api/auth/login/ HTTP/1.1" 200 976
+INFO 2026-02-25 02:35:03,707 basehttp "OPTIONS /api/accounts/ HTTP/1.1" 200 0
+INFO 2026-02-25 02:35:03,720 basehttp "GET /api/accounts/ HTTP/1.1" 200 52
+INFO 2026-02-25 02:35:11,404 basehttp "GET /api/accounts/ HTTP/1.1" 200 52
+INFO 2026-02-25 02:35:23,023 basehttp "POST /api/accounts/ HTTP/1.1" 201 735
+INFO 2026-02-25 02:35:24,317 basehttp "GET /api/accounts/ HTTP/1.1" 200 787
+INFO 2026-02-25 02:35:27,020 basehttp "GET /api/accounts/ HTTP/1.1" 200 787
+INFO 2026-02-25 02:35:37,832 basehttp "OPTIONS /api/accounts/343e0e36-abcd-4a78-aea6-abf193aa1411/deposit/ HTTP/1.1" 200 0
+INFO 2026-02-25 02:35:37,844 basehttp "POST /api/accounts/343e0e36-abcd-4a78-aea6-abf193aa1411/deposit/ HTTP/1.1" 200 747
+INFO 2026-02-25 02:35:42,891 basehttp "GET /api/accounts/ HTTP/1.1" 200 799
+INFO 2026-02-25 02:36:01,054 basehttp "OPTIONS /api/transactions/ HTTP/1.1" 200 0
+INFO 2026-02-25 02:36:01,074 basehttp "POST /api/transactions/ HTTP/1.1" 201 512
+INFO 2026-02-25 02:39:57,945 basehttp "GET /api/transactions/ HTTP/1.1" 200 564
+INFO 2026-02-25 02:39:57,968 basehttp "OPTIONS /api/transactions/received/ HTTP/1.1" 200 0
+INFO 2026-02-25 02:39:58,031 basehttp "GET /api/transactions/received/ HTTP/1.1" 200 2
+WARNING 2026-02-25 02:43:38,369 log Not Found: /
+WARNING 2026-02-25 02:43:38,369 basehttp "GET / HTTP/1.1" 404 2530
+WARNING 2026-02-25 02:43:38,394 log Not Found: /favicon.ico
+WARNING 2026-02-25 02:43:38,394 basehttp "GET /favicon.ico HTTP/1.1" 404 2581
+WARNING 2026-02-25 03:44:23,439 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:44:23,442 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:44:23,445 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:44:23,448 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:44:23,450 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:44:23,450 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:44:23,453 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:44:23,454 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:44:23,456 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:44:23,458 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:44:23,461 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:44:23,462 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:44:23,462 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:44:23,463 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:44:23,464 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:44:23,465 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:44:23,465 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:44:23,466 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:44:23,466 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:44:23,466 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:44:23,467 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:44:23,471 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:44:23,467 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:44:23,472 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:44:23,468 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:44:23,470 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:44:23,470 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:44:23,471 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:44:23,471 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:44:23,467 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:44:23,468 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:44:23,473 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:44:23,473 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:44:23,473 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:44:23,474 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:44:23,475 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:44:24,505 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:44:24,506 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:44:24,506 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:44:24,506 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:44:24,513 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:44:24,513 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:46:57,895 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:46:57,895 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:46:57,898 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:46:57,904 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:46:57,910 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:46:57,912 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:46:57,914 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:46:57,915 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:46:57,916 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:46:57,921 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:46:57,922 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:46:57,922 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:46:57,923 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:46:57,923 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:46:57,924 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:46:57,926 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:46:57,926 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:46:57,927 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:46:57,928 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:46:57,929 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:46:57,931 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:46:57,931 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:46:57,931 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:46:57,932 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:46:57,932 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:46:57,932 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:46:57,933 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:46:57,933 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:46:57,934 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:46:57,935 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:46:57,935 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:46:57,935 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:46:57,936 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:46:57,936 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:46:57,937 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:46:57,937 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:46:57,938 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:46:57,938 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:46:58,932 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:46:58,932 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 03:46:58,939 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 03:46:58,939 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+INFO 2026-02-25 09:48:34,535 autoreload Watching for file changes with StatReloader
+INFO 2026-02-25 10:27:46,466 autoreload Watching for file changes with StatReloader
+WARNING 2026-02-25 10:30:22,459 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:30:22,468 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:30:22,471 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:30:22,471 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:30:22,480 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:30:22,484 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:30:22,494 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:30:22,495 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:30:22,498 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:30:22,500 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:30:22,500 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:30:22,501 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:30:22,502 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:30:22,503 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:30:22,503 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:30:22,504 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:30:22,504 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:30:22,505 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:30:22,505 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:30:22,506 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:30:22,506 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:30:22,507 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:30:22,507 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:30:22,508 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:30:22,508 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:30:22,509 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:30:22,510 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:30:22,510 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:30:22,511 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:30:22,511 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:30:22,512 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:30:22,512 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:30:22,513 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:30:22,513 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:30:22,514 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:30:22,515 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:30:22,515 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:30:22,516 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:30:22,517 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:30:22,517 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:30:22,525 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:30:22,526 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:44:46,458 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:44:46,459 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:44:46,467 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:44:46,467 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:44:46,477 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:44:46,481 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:44:46,488 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:44:46,492 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:44:46,495 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:44:46,501 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:44:46,505 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:44:46,511 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:44:46,517 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:44:46,525 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:44:46,527 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:44:46,528 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:44:46,529 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:44:46,530 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:44:46,531 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:44:46,532 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:44:46,533 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:44:46,534 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:44:46,534 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:44:46,537 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:44:46,537 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:44:46,537 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:44:46,538 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:44:46,539 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:44:46,540 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:44:46,539 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:44:46,540 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:44:46,540 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:44:46,539 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:44:46,540 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:44:46,540 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:44:46,541 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:44:46,542 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:44:46,542 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:44:47,548 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:44:47,548 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:44:47,558 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:44:47,558 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:45:06,231 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:45:06,232 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:45:06,243 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:45:06,259 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:45:06,263 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:45:06,277 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:45:06,277 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:45:06,280 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:45:06,281 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:45:06,283 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:45:06,283 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:45:06,286 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:45:06,288 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:45:06,289 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:45:06,290 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:45:06,292 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:45:06,292 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:45:06,292 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:45:06,294 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:45:06,294 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:45:06,294 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:45:06,295 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:45:06,296 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:45:06,297 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:45:06,298 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:45:06,298 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:45:06,299 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:45:06,299 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:45:06,300 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:45:06,300 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:45:06,300 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:45:06,300 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:45:06,301 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:45:06,301 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:45:06,302 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:45:06,302 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:45:07,324 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:45:07,327 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:45:07,328 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:45:07,329 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 10:45:07,344 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 10:45:07,345 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 11:52:58,554 log Not Found: /
+WARNING 2026-02-25 11:52:58,555 basehttp "GET / HTTP/1.1" 404 2530
+WARNING 2026-02-25 11:53:18,808 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:18,808 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:18,841 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:18,841 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:18,876 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:18,877 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:18,910 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:18,911 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:18,944 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:18,944 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:18,976 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:18,977 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:19,010 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:19,010 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:19,042 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:19,043 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:19,075 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:19,076 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:19,108 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:19,109 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:19,141 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:19,142 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:19,174 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:19,175 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:19,208 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:19,208 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:19,241 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:19,241 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:19,274 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:19,275 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:19,311 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:19,312 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:19,344 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:19,344 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:19,377 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:19,377 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:19,410 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:19,411 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:19,442 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:19,443 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:19,475 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:19,476 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:19,508 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:19,508 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:19,541 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:19,542 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:19,574 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:19,575 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:19,608 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:19,608 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:19,641 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:19,641 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:19,674 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:19,675 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:19,708 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:19,708 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:19,741 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:19,741 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:53:19,772 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:53:19,773 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:54:56,349 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:54:56,357 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:54:56,360 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 11:54:56,368 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 11:54:56,376 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:54:56,378 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:54:56,380 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 11:54:56,380 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 11:54:56,381 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:54:56,382 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:54:56,382 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 11:54:56,383 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:54:56,384 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 11:54:56,385 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:54:56,386 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 11:54:56,387 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:54:56,387 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 11:54:56,388 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 11:54:56,389 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:54:56,390 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:54:56,391 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:54:56,391 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 11:54:56,391 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:54:56,392 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 11:54:56,393 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:54:56,393 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 11:54:56,394 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:54:56,394 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:54:56,395 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:54:56,395 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 11:54:56,396 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:54:56,396 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 11:54:56,397 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 11:54:56,397 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 11:54:56,397 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 11:54:56,398 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 11:54:57,361 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:54:57,362 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:54:57,362 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 11:54:57,363 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 11:54:57,375 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:54:57,376 basehttp "POST /api/auth/login/ HTTP/1.1" 400 39
+WARNING 2026-02-25 11:55:28,169 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:28,170 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:28,203 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:28,203 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:28,235 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:28,236 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:28,269 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:28,269 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:28,302 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:28,302 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:28,337 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:28,338 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:28,372 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:28,373 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:28,405 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:28,405 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:28,437 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:28,438 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:28,469 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:28,470 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:28,502 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:28,502 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:28,535 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:28,536 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:28,567 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:28,568 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:28,600 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:28,600 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:28,632 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:28,633 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:28,665 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:28,665 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:28,697 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:28,697 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:28,733 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:28,734 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:28,766 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:28,767 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:28,799 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:28,800 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:28,832 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:28,832 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:28,864 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:28,865 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:28,897 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:28,897 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:28,930 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:28,930 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:28,965 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:28,965 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:28,999 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:28,999 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:29,034 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:29,034 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:29,067 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:29,067 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:29,100 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:29,101 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:55:29,132 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:55:29,133 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-02-25 11:56:17,437 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:56:17,437 basehttp "POST /api/auth/login/ HTTP/1.1" 400 50
+WARNING 2026-02-25 11:56:17,453 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:56:17,454 basehttp "POST /api/auth/login/ HTTP/1.1" 400 50
+WARNING 2026-02-25 11:56:17,470 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:56:17,471 basehttp "POST /api/auth/login/ HTTP/1.1" 400 50
+WARNING 2026-02-25 11:56:17,487 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:56:17,487 basehttp "POST /api/auth/login/ HTTP/1.1" 400 50
+WARNING 2026-02-25 11:56:17,503 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:56:17,503 basehttp "POST /api/auth/login/ HTTP/1.1" 400 50
+WARNING 2026-02-25 11:56:17,519 log Bad Request: /api/auth/login/
+WARNING 2026-02-25 11:56:17,519 basehttp "POST /api/auth/login/ HTTP/1.1" 400 50
+WARNING 2026-02-25 11:56:17,537 log Bad Request: /api/auth/register/
+WARNING 2026-02-25 11:56:17,538 basehttp "POST /api/auth/register/ HTTP/1.1" 400 174
+WARNING 2026-02-25 11:56:17,555 log Bad Request: /api/auth/register/
+WARNING 2026-02-25 11:56:17,555 basehttp "POST /api/auth/register/ HTTP/1.1" 400 174
+WARNING 2026-02-25 11:56:17,572 log Bad Request: /api/auth/register/
+WARNING 2026-02-25 11:56:17,572 basehttp "POST /api/auth/register/ HTTP/1.1" 400 174
+WARNING 2026-02-25 11:56:17,589 log Bad Request: /api/auth/register/
+WARNING 2026-02-25 11:56:17,590 basehttp "POST /api/auth/register/ HTTP/1.1" 400 174
+WARNING 2026-02-25 11:56:17,606 log Bad Request: /api/auth/register/
+WARNING 2026-02-25 11:56:17,607 basehttp "POST /api/auth/register/ HTTP/1.1" 400 174
+WARNING 2026-02-25 11:56:17,623 log Bad Request: /api/auth/register/
+WARNING 2026-02-25 11:56:17,623 basehttp "POST /api/auth/register/ HTTP/1.1" 400 174
+WARNING 2026-02-25 11:56:17,666 log Method Not Allowed: /api/auth/login/
+WARNING 2026-02-25 11:56:17,667 basehttp "GET /api/auth/login/?search= HTTP/1.1" 405 49
+WARNING 2026-02-25 11:56:17,707 log Method Not Allowed: /api/auth/login/
+WARNING 2026-02-25 11:56:17,708 basehttp "GET /api/auth/login/?search= HTTP/1.1" 405 49
+WARNING 2026-02-25 11:56:17,743 log Method Not Allowed: /api/auth/register/
+WARNING 2026-02-25 11:56:17,743 basehttp "GET /api/auth/register/?search= HTTP/1.1" 405 49
+WARNING 2026-02-25 11:56:17,785 log Method Not Allowed: /api/auth/register/
+WARNING 2026-02-25 11:56:17,786 basehttp "GET /api/auth/register/?search= HTTP/1.1" 405 49
+WARNING 2026-02-25 11:56:17,823 log Method Not Allowed: /api/auth/token/refresh/
+WARNING 2026-02-25 11:56:17,824 basehttp "GET /api/auth/token/refresh/?search= HTTP/1.1" 405 49
+WARNING 2026-02-25 11:56:17,856 log Method Not Allowed: /api/auth/token/refresh/
+WARNING 2026-02-25 11:56:17,856 basehttp "GET /api/auth/token/refresh/?search= HTTP/1.1" 405 49
+WARNING 2026-02-25 11:56:17,894 log Unauthorized: /api/users/
+WARNING 2026-02-25 11:56:17,895 basehttp "GET /api/users/?search= HTTP/1.1" 401 58
+WARNING 2026-02-25 11:56:17,937 log Unauthorized: /api/users/
+WARNING 2026-02-25 11:56:17,938 basehttp "GET /api/users/?search= HTTP/1.1" 401 58
+WARNING 2026-02-25 11:56:17,977 log Unauthorized: /api/accounts/
+WARNING 2026-02-25 11:56:17,977 basehttp "GET /api/accounts/?search= HTTP/1.1" 401 58
+WARNING 2026-02-25 11:56:18,005 log Unauthorized: /api/accounts/
+WARNING 2026-02-25 11:56:18,005 basehttp "GET /api/accounts/?search= HTTP/1.1" 401 58
+WARNING 2026-02-25 11:56:18,034 log Unauthorized: /api/cards/
+WARNING 2026-02-25 11:56:18,035 basehttp "GET /api/cards/?search= HTTP/1.1" 401 58
+WARNING 2026-02-25 11:56:18,061 log Unauthorized: /api/cards/
+WARNING 2026-02-25 11:56:18,062 basehttp "GET /api/cards/?search= HTTP/1.1" 401 58
+WARNING 2026-02-25 11:56:18,102 log Unauthorized: /api/beneficiaries/
+WARNING 2026-02-25 11:56:18,103 basehttp "GET /api/beneficiaries/?search= HTTP/1.1" 401 58
+WARNING 2026-02-25 11:56:18,144 log Unauthorized: /api/beneficiaries/
+WARNING 2026-02-25 11:56:18,144 basehttp "GET /api/beneficiaries/?search= HTTP/1.1" 401 58
+WARNING 2026-02-25 11:56:18,186 log Unauthorized: /api/transactions/
+WARNING 2026-02-25 11:56:18,187 basehttp "GET /api/transactions/?search= HTTP/1.1" 401 58
+WARNING 2026-02-25 11:56:18,217 log Unauthorized: /api/transactions/
+WARNING 2026-02-25 11:56:18,218 basehttp "GET /api/transactions/?search= HTTP/1.1" 401 58

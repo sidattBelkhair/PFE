@@ -40,6 +40,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # SOC — doit être en dernier pour avoir accès à request.user
+    'apps.core.security_middleware.SecurityMiddleware',
 ]
 
 ROOT_URLCONF = 'fintech_bank.urls'
@@ -155,25 +157,84 @@ LOGGING = {
     'disable_existing_loggers': False,
     'formatters': {
         'verbose': {
-            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'format': '{levelname} {asctime} {module} {message}',
             'style': '{',
+        },
+        # Format brut pour les logs JSON (security + access) — pas de préfixe
+        'raw': {
+            'format': '%(message)s',
         },
     },
     'handlers': {
-        'file': {
-            'level': 'INFO',
-            'class': 'logging.FileHandler',
-            'filename': BASE_DIR / 'logs' / 'debug.log',
-            'formatter': 'verbose',
-        },
         'console': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
             'formatter': 'verbose',
         },
+        # django.log — log général de l'application
+        'django_file': {
+            'level': 'INFO',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': BASE_DIR / 'logs' / 'django.log',
+            'maxBytes': 10 * 1024 * 1024,  # 10 MB
+            'backupCount': 5,
+            'formatter': 'verbose',
+        },
+        # security.log — événements de sécurité (JSON pur pour Promtail)
+        'security_file': {
+            'level': 'WARNING',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': BASE_DIR / 'logs' / 'security.log',
+            'maxBytes': 10 * 1024 * 1024,
+            'backupCount': 10,
+            'formatter': 'raw',
+        },
+        # access.log — toutes les requêtes HTTP (JSON pur pour Promtail)
+        'access_file': {
+            'level': 'INFO',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': BASE_DIR / 'logs' / 'access.log',
+            'maxBytes': 20 * 1024 * 1024,
+            'backupCount': 5,
+            'formatter': 'raw',
+        },
+    },
+    'loggers': {
+        # Logger général Django
+        'django': {
+            'handlers': ['console', 'django_file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        # Requêtes HTTP de Django
+        'django.request': {
+            'handlers': ['console', 'django_file'],
+            'level': 'WARNING',
+            'propagate': False,
+        },
+        # Événements de sécurité SOC
+        'security': {
+            'handlers': ['security_file', 'console'],
+            'level': 'WARNING',
+            'propagate': False,
+        },
+        # Access log SOC
+        'access': {
+            'handlers': ['access_file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
     },
     'root': {
-        'handlers': ['console', 'file'],
+        'handlers': ['console', 'django_file'],
         'level': 'INFO',
     },
+}
+
+# Cache pour le comptage brute-force (en mémoire)
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'sedad-security-cache',
+    }
 }

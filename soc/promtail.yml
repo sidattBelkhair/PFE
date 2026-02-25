@@ -1,0 +1,79 @@
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml
+
+clients:
+  - url: http://loki:3100/loki/api/v1/push
+
+scrape_configs:
+  # ── Logs de sécurité Django (événements SOC) ──────────────────
+  - job_name: django-security
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: django-security
+          app: sedad-bank
+          env: production
+          __path__: /var/log/django/security.log
+    pipeline_stages:
+      - json:
+          expressions:
+            ts: ts
+            event: event
+            ip: ip
+            user: user
+            method: method
+            path: path
+      - labels:
+          event:
+          ip:
+      - timestamp:
+          source: ts
+          format: "2006-01-02T15:04:05Z"
+
+  # ── Access log Django (toutes les requêtes HTTP) ──────────────
+  - job_name: django-access
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: django-access
+          app: sedad-bank
+          env: production
+          __path__: /var/log/django/access.log
+    pipeline_stages:
+      - json:
+          expressions:
+            ts: ts
+            method: method
+            path: path
+            status: status
+            ip: ip
+            user: user
+            duration_ms: duration_ms
+      - labels:
+          method:
+          status:
+          ip:
+      - timestamp:
+          source: ts
+          format: "2006-01-02T15:04:05Z"
+
+  # ── Log général Django ────────────────────────────────────────
+  - job_name: django-app
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: django-app
+          app: sedad-bank
+          __path__: /var/log/django/django.log
+    pipeline_stages:
+      - regex:
+          expression: '(?P<level>\w+)\s+(?P<ts>\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2})'
+      - labels:
+          level:

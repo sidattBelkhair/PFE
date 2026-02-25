@@ -2,6 +2,7 @@ import random
 import string
 from decimal import Decimal
 
+from django.core.cache import cache
 from django.db import transaction as db_transaction
 from rest_framework import viewsets, status
 from rest_framework.decorators import action
@@ -10,6 +11,8 @@ from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
+
+from .security_middleware import log_security_event, get_client_ip
 
 from .models import User, UserProfile, Account, Card, Beneficiary, Transaction, TransactionHistory
 from .serializers import (
@@ -49,8 +52,34 @@ class LoginView(APIView):
     permission_classes = [AllowAny]
 
     def post(self, request):
+        ip = get_client_ip(request)
+        email = request.data.get('email', '')
+
         serializer = LoginSerializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
+        if not serializer.is_valid():
+            # Compter les tentatives échouées pour cet IP
+            cache_key = f'login_fail_{ip}'
+            attempts = cache.get(cache_key, 0) + 1
+            cache.set(cache_key, attempts, timeout=300)  # fenêtre 5 min
+
+            log_security_event('LOGIN_FAILED', ip, request, {
+                'user': email,
+                'attempts': attempts,
+            })
+
+            # Alerte brute-force si seuil dépassé
+            if attempts >= 5:
+                log_security_event('BRUTE_FORCE', ip, request, {
+                    'user': email,
+                    'attempts': attempts,
+                })
+
+            raise ValidationError(serializer.errors)
+
+        # Succès — réinitialiser le compteur
+        cache.delete(f'login_fail_{ip}')
+        log_security_event('LOGIN_SUCCESS', ip, request, {'user': email})
+
         user = serializer.validated_data['user']
         refresh = RefreshToken.for_user(user)
         return Response({
