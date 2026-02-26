@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => UserProvider()),
       ],
       child: MaterialApp.router(
-        title: 'SEDAD BANK',
+        title: 'RSS BANK',
         theme: AppTheme.lightTheme,
         routerConfig: AppRoutes.router,
         debugShowCheckedModeBanner: false,

@@ -1,5 +1,5 @@
 """
-Security Middleware — SEDAD BANK SOC
+Security Middleware — RSS BANK SOC
 Logs all requests and detects suspicious patterns.
 """
 import json

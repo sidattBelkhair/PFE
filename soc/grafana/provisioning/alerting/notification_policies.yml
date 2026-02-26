@@ -2,19 +2,19 @@ apiVersion: 1
 
 policies:
   - orgId: 1
-    receiver: Email SOC SEDAD
+    receiver: Email SOC RSS
     group_by: ["alertname", "severity"]
-    group_wait: 30s
-    group_interval: 5m
-    repeat_interval: 1h
+    group_wait: 30s          # attendre 30s avant d'envoyer le 1er email du groupe
+    group_interval: 5m       # regrouper les nouvelles alertes toutes les 5 min
+    repeat_interval: 12h     # NE PAS renvoyer le meme email avant 12h
     routes:
-      - receiver: Email SOC SEDAD
+      - receiver: Email SOC RSS
         matchers:
           - severity = "critical"
-        group_wait: 10s
-        repeat_interval: 30m
-      - receiver: Email SOC SEDAD
+        group_wait: 30s
+        repeat_interval: 12h
+      - receiver: Email SOC RSS
         matchers:
           - severity = "high"
         group_wait: 30s
-        repeat_interval: 1h
+        repeat_interval: 12h

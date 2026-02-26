@@ -6,11 +6,11 @@ class PlusServicesScreen extends StatelessWidget {
   const PlusServicesScreen({Key? key}) : super(key: key);
 
   static const _services = [
-    {'title': 'Transferts international',  'icon': Icons.public_outlined,           'color': Color(0xFFC49B2A)},
-    {'title': 'Elkiss',                    'icon': Icons.local_activity_outlined,    'color': Color(0xFFC49B2A)},
-    {'title': 'Paiement de masse',         'icon': Icons.groups_outlined,            'color': Color(0xFFC49B2A)},
-    {'title': 'Airtime international',     'icon': Icons.add_ic_call_outlined,       'color': Color(0xFFC49B2A)},
-    {'title': 'Cartes cadeaux',            'icon': Icons.card_giftcard_outlined,     'color': Color(0xFFC49B2A)},
+    {'title': 'Transferts international',  'icon': Icons.public_outlined,           'color': AppTheme.primaryGreen},
+    {'title': 'Elkiss',                    'icon': Icons.local_activity_outlined,    'color': AppTheme.primaryGreen},
+    {'title': 'Paiement de masse',         'icon': Icons.groups_outlined,            'color': AppTheme.primaryGreen},
+    {'title': 'Airtime international',     'icon': Icons.add_ic_call_outlined,       'color': AppTheme.primaryGreen},
+    {'title': 'Cartes cadeaux',            'icon': Icons.card_giftcard_outlined,     'color': AppTheme.primaryGreen},
   ];
 
   @override

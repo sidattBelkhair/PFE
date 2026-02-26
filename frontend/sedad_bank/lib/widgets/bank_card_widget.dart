@@ -64,11 +64,11 @@ class _BankCardWidgetState extends State<BankCardWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
                         Text(
-                          'بنك السداد',
+                          'بنك RSS',
                           style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          'SEDAD BANK',
+                          'RSS BANK',
                           style: TextStyle(color: Colors.white70, fontSize: 10, letterSpacing: 2),
                         ),
                       ],

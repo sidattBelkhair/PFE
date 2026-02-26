@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  // ── Palette or / doré SEDAD BANK ──────────────────────────────────────────
-  static const Color primaryGold   = Color(0xFFC49B2A);
-  static const Color darkGold      = Color(0xFF8B6B0B);
-  static const Color lightGold     = Color(0xFFF5E9C0);
-  static const Color cardGoldStart = Color(0xFFCDA951);
-  static const Color cardGoldEnd   = Color(0xFF8B6B14);
+  // ── Palette verte RSS BANK ────────────────────────────────────────────────
+  static const Color primaryGreen   = Color(0xFF1B7F4E);   // Vert principal
+  static const Color darkGreen      = Color(0xFF0D5235);   // Vert foncé
+  static const Color lightGreen     = Color(0xFFDFF2EB);   // Vert clair (fond chips)
+  static const Color cardGreenStart = Color(0xFF239A61);   // Dégradé carte début
+  static const Color cardGreenEnd   = Color(0xFF0D5235);   // Dégradé carte fin
 
   // ── Compatibilité (anciens noms gardés pour les widgets existants) ─────────
-  static const Color primaryColor   = primaryGold;
+  static const Color primaryColor   = primaryGreen;
+  // Gardé pour éviter de casser les références existantes
+  static const Color primaryGold    = primaryGreen;
+  static const Color darkGold       = darkGreen;
+  static const Color lightGold      = lightGreen;
+  static const Color cardGoldStart  = cardGreenStart;
+  static const Color cardGoldEnd    = cardGreenEnd;
+
   static const Color secondaryColor = Color(0xFF2E7D32);
   static const Color accentColor    = Color(0xFFFF7675);
 
@@ -28,13 +35,13 @@ class AppTheme {
     return ThemeData(
       useMaterial3: true,
       colorScheme: ColorScheme.fromSeed(
-        seedColor: primaryGold,
-        primary: primaryGold,
-        secondary: darkGold,
+        seedColor: primaryGreen,
+        primary: primaryGreen,
+        secondary: darkGreen,
         surface: surfaceColor,
         error: errorColor,
       ),
-      primaryColor: primaryGold,
+      primaryColor: primaryGreen,
       scaffoldBackgroundColor: backgroundColor,
       appBarTheme: const AppBarTheme(
         backgroundColor: Colors.white,
@@ -70,7 +77,7 @@ class AppTheme {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: primaryGold, width: 2),
+          borderSide: const BorderSide(color: primaryGreen, width: 2),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
@@ -80,7 +87,7 @@ class AppTheme {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: primaryGold,
+          backgroundColor: primaryGreen,
           foregroundColor: Colors.white,
           elevation: 0,
           padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
@@ -95,14 +102,14 @@ class AppTheme {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       ),
       chipTheme: ChipThemeData(
-        backgroundColor: lightGold,
-        selectedColor: primaryGold,
+        backgroundColor: lightGreen,
+        selectedColor: primaryGreen,
         labelStyle: const TextStyle(color: textPrimary, fontWeight: FontWeight.w500),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: Colors.white,
-        selectedItemColor: primaryGold,
+        selectedItemColor: primaryGreen,
         unselectedItemColor: textSecondary,
         type: BottomNavigationBarType.fixed,
         elevation: 8,

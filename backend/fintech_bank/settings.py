@@ -235,6 +235,6 @@ LOGGING = {
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-        'LOCATION': 'sedad-security-cache',
+        'LOCATION': 'rss-security-cache',
     }
 }

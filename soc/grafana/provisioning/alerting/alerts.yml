@@ -2,14 +2,14 @@ apiVersion: 1
 
 groups:
   - orgId: 1
-    name: SEDAD BANK Security Alerts
+    name: RSS BANK Security Alerts
     folder: SOC
-    interval: 1m
+    interval: 10s
     rules:
 
       - uid: alert-brute-force
         title: "Brute Force Detecte"
-        condition: threshold
+        condition: condition
         data:
           - refId: query
             relativeTimeRange: { from: 300, to: 0 }
@@ -38,9 +38,9 @@ groups:
                   query: { params: [threshold] }
         noDataState: OK
         execErrState: Error
-        for: 0s
+        for: 30s
         annotations:
-          summary: "Attaque brute force sur SEDAD BANK"
+          summary: "Attaque brute force sur RSS BANK"
           description: "Plus de 5 tentatives de connexion echouees en 5 minutes."
         labels:
           severity: critical
@@ -77,9 +77,9 @@ groups:
                   query: { params: [threshold] }
         noDataState: OK
         execErrState: Error
-        for: 0s
+        for: 30s
         annotations:
-          summary: "Tentative injection SQL sur SEDAD BANK"
+          summary: "Tentative injection SQL sur RSS BANK"
           description: "Une tentative SQL injection a ete detectee."
         labels:
           severity: critical
@@ -116,9 +116,9 @@ groups:
                   query: { params: [threshold] }
         noDataState: OK
         execErrState: Error
-        for: 0s
+        for: 30s
         annotations:
-          summary: "Tentative XSS sur SEDAD BANK"
+          summary: "Tentative XSS sur RSS BANK"
           description: "Attaque XSS detectee dans les requetes."
         labels:
           severity: high
@@ -155,9 +155,9 @@ groups:
                   query: { params: [threshold] }
         noDataState: OK
         execErrState: Error
-        for: 0s
+        for: 30s
         annotations:
-          summary: "Pic acces non autorises sur SEDAD BANK"
+          summary: "Pic acces non autorises sur RSS BANK"
           description: "Plus de 5 requetes 401 en 5 minutes."
         labels:
           severity: high
@@ -194,9 +194,9 @@ groups:
                   query: { params: [threshold] }
         noDataState: OK
         execErrState: Error
-        for: 0s
+        for: 30s
         annotations:
-          summary: "Pic erreurs 500 sur SEDAD BANK"
+          summary: "Pic erreurs 500 sur RSS BANK"
           description: "Plus de 3 erreurs serveur en 5 minutes."
         labels:
           severity: high

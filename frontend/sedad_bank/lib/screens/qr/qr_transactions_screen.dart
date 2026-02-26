@@ -227,11 +227,11 @@ class _QrTransactionsScreenState extends State<QrTransactionsScreen>
     final bytes = await _captureQr();
     if (bytes == null) return;
     final dir = await getTemporaryDirectory();
-    final file = File('${dir.path}/sedad_qr.png');
+    final file = File('${dir.path}/rss_qr.png');
     await file.writeAsBytes(bytes);
     await Share.shareXFiles(
       [XFile(file.path, mimeType: 'image/png')],
-      text: 'Mon QR code SEDAD BANK – Scannez pour me payer',
+      text: 'Mon QR code RSS BANK – Scannez pour me payer',
     );
   }
 
@@ -247,7 +247,7 @@ class _QrTransactionsScreenState extends State<QrTransactionsScreen>
     }
     try {
       final dir = await getApplicationDocumentsDirectory();
-      final fileName = 'sedad_qr_${DateTime.now().millisecondsSinceEpoch}.png';
+      final fileName = 'rss_qr_${DateTime.now().millisecondsSinceEpoch}.png';
       final file = File('${dir.path}/$fileName');
       await file.writeAsBytes(bytes);
       if (ctx.mounted) {
@@ -433,7 +433,7 @@ class _ScannerTabState extends State<_ScannerTab> {
             ),
             const SizedBox(height: 12),
             const Text(
-              'Scannez le QR code d\'un compte SEDAD BANK pour effectuer un virement instantané.',
+              'Scannez le QR code d\'un compte RSS BANK pour effectuer un virement instantané.',
               textAlign: TextAlign.center,
               style: TextStyle(color: AppTheme.textSecondary, fontSize: 14, height: 1.5),
             ),

@@ -173,7 +173,7 @@ class AccountViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         import uuid as _uuid
-        account_number = f"SEDAD{_uuid.uuid4().hex[:12].upper()}"
+        account_number = f"RSS{_uuid.uuid4().hex[:12].upper()}"
         serializer.save(user=self.request.user, account_number=account_number)
 
     @action(detail=True, methods=['post'])

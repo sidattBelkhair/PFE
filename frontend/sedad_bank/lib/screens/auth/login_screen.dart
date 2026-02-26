@@ -66,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         const SizedBox(height: 16),
                         const Text(
-                          'SEDAD BANK',
+                          'RSS BANK',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 26,

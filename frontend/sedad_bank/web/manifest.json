@@ -1,6 +1,6 @@
 {
-    "name": "sedad_bank",
-    "short_name": "sedad_bank",
+    "name": "RSS Bank",
+    "short_name": "RSS",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

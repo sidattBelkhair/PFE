@@ -1,398 +1,445 @@
-{"ts": "2026-02-25T01:41:51Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/"}
-{"ts": "2026-02-25T02:33:57Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "oumar@gmail.com", "attempts": 1}
-{"ts": "2026-02-25T02:34:12Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "oumar@gmail.com", "attempts": 2}
-{"ts": "2026-02-25T02:35:03Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "ou@gmail.com"}
-{"ts": "2026-02-25T03:44:23Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 1}
-{"ts": "2026-02-25T03:44:23Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 2}
-{"ts": "2026-02-25T03:44:23Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 3}
-{"ts": "2026-02-25T03:44:23Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 4}
-{"ts": "2026-02-25T03:44:23Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 5}
-{"ts": "2026-02-25T03:44:23Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 6}
-{"ts": "2026-02-25T03:44:23Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 7}
-{"ts": "2026-02-25T03:44:23Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 7}
-{"ts": "2026-02-25T03:44:23Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 5}
-{"ts": "2026-02-25T03:44:23Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 9}
-{"ts": "2026-02-25T03:44:23Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 10}
-{"ts": "2026-02-25T03:44:23Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 6}
-{"ts": "2026-02-25T03:44:23Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 11}
-{"ts": "2026-02-25T03:44:23Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 12}
-{"ts": "2026-02-25T03:44:23Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 8}
-{"ts": "2026-02-25T03:44:23Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 13}
-{"ts": "2026-02-25T03:44:23Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 14}
-{"ts": "2026-02-25T03:44:23Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 15}
-{"ts": "2026-02-25T03:44:23Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 16}
-{"ts": "2026-02-25T03:44:23Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 16}
-{"ts": "2026-02-25T03:44:23Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 9}
-{"ts": "2026-02-25T03:44:23Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 10}
-{"ts": "2026-02-25T03:44:23Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 18}
-{"ts": "2026-02-25T03:44:23Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 11}
-{"ts": "2026-02-25T03:44:23Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 12}
-{"ts": "2026-02-25T03:44:23Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 8}
-{"ts": "2026-02-25T03:44:23Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 13}
-{"ts": "2026-02-25T03:44:23Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 14}
-{"ts": "2026-02-25T03:44:23Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 15}
-{"ts": "2026-02-25T03:44:23Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 17}
-{"ts": "2026-02-25T03:44:23Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 18}
-{"ts": "2026-02-25T03:44:23Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 17}
-{"ts": "2026-02-25T03:44:24Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 19}
-{"ts": "2026-02-25T03:44:24Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 20}
-{"ts": "2026-02-25T03:44:24Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 19}
-{"ts": "2026-02-25T03:44:24Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 20}
-{"ts": "2026-02-25T03:44:24Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
-{"ts": "2026-02-25T03:44:24Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 21}
-{"ts": "2026-02-25T03:44:24Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 21}
-{"ts": "2026-02-25T03:46:57Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 22}
-{"ts": "2026-02-25T03:46:57Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 22}
-{"ts": "2026-02-25T03:46:57Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 23}
-{"ts": "2026-02-25T03:46:57Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 23}
-{"ts": "2026-02-25T03:46:57Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 24}
-{"ts": "2026-02-25T03:46:57Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 25}
-{"ts": "2026-02-25T03:46:57Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 26}
-{"ts": "2026-02-25T03:46:57Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 27}
-{"ts": "2026-02-25T03:46:57Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 28}
-{"ts": "2026-02-25T03:46:57Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 24}
-{"ts": "2026-02-25T03:46:57Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 25}
-{"ts": "2026-02-25T03:46:57Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 29}
-{"ts": "2026-02-25T03:46:57Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 30}
-{"ts": "2026-02-25T03:46:57Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 26}
-{"ts": "2026-02-25T03:46:57Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 31}
-{"ts": "2026-02-25T03:46:57Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 27}
-{"ts": "2026-02-25T03:46:57Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 28}
-{"ts": "2026-02-25T03:46:57Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 39}
-{"ts": "2026-02-25T03:46:57Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 29}
-{"ts": "2026-02-25T03:46:57Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 30}
-{"ts": "2026-02-25T03:46:57Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 33}
-{"ts": "2026-02-25T03:46:57Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 34}
-{"ts": "2026-02-25T03:46:57Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 35}
-{"ts": "2026-02-25T03:46:57Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 36}
-{"ts": "2026-02-25T03:46:57Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 36}
-{"ts": "2026-02-25T03:46:57Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 37}
-{"ts": "2026-02-25T03:46:57Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 38}
-{"ts": "2026-02-25T03:46:57Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 40}
-{"ts": "2026-02-25T03:46:57Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 32}
-{"ts": "2026-02-25T03:46:57Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 39}
-{"ts": "2026-02-25T03:46:57Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 33}
-{"ts": "2026-02-25T03:46:57Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 34}
-{"ts": "2026-02-25T03:46:57Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 35}
-{"ts": "2026-02-25T03:46:57Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 31}
-{"ts": "2026-02-25T03:46:57Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 37}
-{"ts": "2026-02-25T03:46:57Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 38}
-{"ts": "2026-02-25T03:46:57Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 40}
-{"ts": "2026-02-25T03:46:57Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 32}
-{"ts": "2026-02-25T03:46:58Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 41}
-{"ts": "2026-02-25T03:46:58Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 41}
-{"ts": "2026-02-25T03:46:58Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
-{"ts": "2026-02-25T03:46:58Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 42}
-{"ts": "2026-02-25T03:46:58Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 42}
-{"ts": "2026-02-25T10:30:22Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 1}
-{"ts": "2026-02-25T10:30:22Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 2}
-{"ts": "2026-02-25T10:30:22Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 3}
-{"ts": "2026-02-25T10:30:22Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 4}
-{"ts": "2026-02-25T10:30:22Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 5}
-{"ts": "2026-02-25T10:30:22Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 6}
-{"ts": "2026-02-25T10:30:22Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 7}
-{"ts": "2026-02-25T10:30:22Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 8}
-{"ts": "2026-02-25T10:30:22Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 9}
-{"ts": "2026-02-25T10:30:22Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 10}
-{"ts": "2026-02-25T10:30:22Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 11}
-{"ts": "2026-02-25T10:30:22Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 5}
-{"ts": "2026-02-25T10:30:22Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 12}
-{"ts": "2026-02-25T10:30:22Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 13}
-{"ts": "2026-02-25T10:30:22Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 6}
-{"ts": "2026-02-25T10:30:22Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 14}
-{"ts": "2026-02-25T10:30:22Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 15}
-{"ts": "2026-02-25T10:30:22Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 16}
-{"ts": "2026-02-25T10:30:22Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 17}
-{"ts": "2026-02-25T10:30:22Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 18}
-{"ts": "2026-02-25T10:30:22Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 7}
-{"ts": "2026-02-25T10:30:22Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 19}
-{"ts": "2026-02-25T10:30:22Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 20}
-{"ts": "2026-02-25T10:30:22Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 8}
-{"ts": "2026-02-25T10:30:22Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 9}
-{"ts": "2026-02-25T10:30:22Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 10}
-{"ts": "2026-02-25T10:30:22Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 11}
-{"ts": "2026-02-25T10:30:22Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 12}
-{"ts": "2026-02-25T10:30:22Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 13}
-{"ts": "2026-02-25T10:30:22Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 14}
-{"ts": "2026-02-25T10:30:22Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 15}
-{"ts": "2026-02-25T10:30:22Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 16}
-{"ts": "2026-02-25T10:30:22Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 17}
-{"ts": "2026-02-25T10:30:22Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 18}
-{"ts": "2026-02-25T10:30:22Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 19}
-{"ts": "2026-02-25T10:30:22Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 20}
-{"ts": "2026-02-25T10:30:22Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
-{"ts": "2026-02-25T10:30:22Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 21}
-{"ts": "2026-02-25T10:30:22Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 21}
-{"ts": "2026-02-25T10:44:46Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 1}
-{"ts": "2026-02-25T10:44:46Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 2}
-{"ts": "2026-02-25T10:44:46Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 3}
-{"ts": "2026-02-25T10:44:46Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 4}
-{"ts": "2026-02-25T10:44:46Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 5}
-{"ts": "2026-02-25T10:44:46Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 6}
-{"ts": "2026-02-25T10:44:46Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 5}
-{"ts": "2026-02-25T10:44:46Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 7}
-{"ts": "2026-02-25T10:44:46Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 6}
-{"ts": "2026-02-25T10:44:46Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 8}
-{"ts": "2026-02-25T10:44:46Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 9}
-{"ts": "2026-02-25T10:44:46Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 7}
-{"ts": "2026-02-25T10:44:46Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 10}
-{"ts": "2026-02-25T10:44:46Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 11}
-{"ts": "2026-02-25T10:44:46Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 12}
-{"ts": "2026-02-25T10:44:46Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 8}
-{"ts": "2026-02-25T10:44:46Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 9}
-{"ts": "2026-02-25T10:44:46Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 13}
-{"ts": "2026-02-25T10:44:46Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 14}
-{"ts": "2026-02-25T10:44:46Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 15}
-{"ts": "2026-02-25T10:44:46Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 16}
-{"ts": "2026-02-25T10:44:46Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 10}
-{"ts": "2026-02-25T10:44:46Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 17}
-{"ts": "2026-02-25T10:44:46Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 11}
-{"ts": "2026-02-25T10:44:46Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 18}
-{"ts": "2026-02-25T10:44:46Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 19}
-{"ts": "2026-02-25T10:44:46Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 12}
-{"ts": "2026-02-25T10:44:46Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 13}
-{"ts": "2026-02-25T10:44:46Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 14}
-{"ts": "2026-02-25T10:44:46Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 15}
-{"ts": "2026-02-25T10:44:46Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 16}
-{"ts": "2026-02-25T10:44:46Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 17}
-{"ts": "2026-02-25T10:44:46Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 18}
-{"ts": "2026-02-25T10:44:46Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 19}
-{"ts": "2026-02-25T10:44:47Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 20}
-{"ts": "2026-02-25T10:44:47Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 20}
-{"ts": "2026-02-25T10:44:47Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
-{"ts": "2026-02-25T10:44:47Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 21}
-{"ts": "2026-02-25T10:44:47Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 21}
-{"ts": "2026-02-25T10:45:06Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 22}
-{"ts": "2026-02-25T10:45:06Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 22}
-{"ts": "2026-02-25T10:45:06Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 23}
-{"ts": "2026-02-25T10:45:06Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 23}
-{"ts": "2026-02-25T10:45:06Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 24}
-{"ts": "2026-02-25T10:45:06Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 25}
-{"ts": "2026-02-25T10:45:06Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 24}
-{"ts": "2026-02-25T10:45:06Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 26}
-{"ts": "2026-02-25T10:45:06Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 27}
-{"ts": "2026-02-25T10:45:06Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 28}
-{"ts": "2026-02-25T10:45:06Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 25}
-{"ts": "2026-02-25T10:45:06Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 29}
-{"ts": "2026-02-25T10:45:06Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 26}
-{"ts": "2026-02-25T10:45:06Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 27}
-{"ts": "2026-02-25T10:45:06Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 30}
-{"ts": "2026-02-25T10:45:06Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 28}
-{"ts": "2026-02-25T10:45:06Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 31}
-{"ts": "2026-02-25T10:45:06Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 32}
-{"ts": "2026-02-25T10:45:06Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 33}
-{"ts": "2026-02-25T10:45:06Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 34}
-{"ts": "2026-02-25T10:45:06Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 29}
-{"ts": "2026-02-25T10:45:06Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 35}
-{"ts": "2026-02-25T10:45:06Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 35}
-{"ts": "2026-02-25T10:45:06Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 30}
-{"ts": "2026-02-25T10:45:06Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 37}
-{"ts": "2026-02-25T10:45:06Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 38}
-{"ts": "2026-02-25T10:45:06Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 39}
-{"ts": "2026-02-25T10:45:06Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 31}
-{"ts": "2026-02-25T10:45:06Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 32}
-{"ts": "2026-02-25T10:45:06Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 33}
-{"ts": "2026-02-25T10:45:06Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 34}
-{"ts": "2026-02-25T10:45:06Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 36}
-{"ts": "2026-02-25T10:45:06Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 37}
-{"ts": "2026-02-25T10:45:06Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 38}
-{"ts": "2026-02-25T10:45:06Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 39}
-{"ts": "2026-02-25T10:45:06Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 36}
-{"ts": "2026-02-25T10:45:07Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 40}
-{"ts": "2026-02-25T10:45:07Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 40}
-{"ts": "2026-02-25T10:45:07Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 41}
-{"ts": "2026-02-25T10:45:07Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 41}
-{"ts": "2026-02-25T10:45:07Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
-{"ts": "2026-02-25T10:45:07Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 42}
-{"ts": "2026-02-25T10:45:07Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 42}
-{"ts": "2026-02-25T11:53:18Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 1}
-{"ts": "2026-02-25T11:53:18Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 2}
-{"ts": "2026-02-25T11:53:18Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 3}
-{"ts": "2026-02-25T11:53:18Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 4}
-{"ts": "2026-02-25T11:53:18Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 5}
-{"ts": "2026-02-25T11:53:18Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 5}
-{"ts": "2026-02-25T11:53:18Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 6}
-{"ts": "2026-02-25T11:53:18Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 6}
-{"ts": "2026-02-25T11:53:19Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 7}
-{"ts": "2026-02-25T11:53:19Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 7}
-{"ts": "2026-02-25T11:53:19Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 8}
-{"ts": "2026-02-25T11:53:19Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 8}
-{"ts": "2026-02-25T11:53:19Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 9}
-{"ts": "2026-02-25T11:53:19Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 9}
-{"ts": "2026-02-25T11:53:19Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 10}
-{"ts": "2026-02-25T11:53:19Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 10}
-{"ts": "2026-02-25T11:53:19Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 11}
-{"ts": "2026-02-25T11:53:19Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 11}
-{"ts": "2026-02-25T11:53:19Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 12}
-{"ts": "2026-02-25T11:53:19Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 12}
-{"ts": "2026-02-25T11:53:19Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 13}
-{"ts": "2026-02-25T11:53:19Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 13}
-{"ts": "2026-02-25T11:53:19Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 14}
-{"ts": "2026-02-25T11:53:19Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 14}
-{"ts": "2026-02-25T11:53:19Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 15}
-{"ts": "2026-02-25T11:53:19Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 15}
-{"ts": "2026-02-25T11:53:19Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 16}
-{"ts": "2026-02-25T11:53:19Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 16}
-{"ts": "2026-02-25T11:53:19Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 17}
-{"ts": "2026-02-25T11:53:19Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 17}
-{"ts": "2026-02-25T11:53:19Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 18}
-{"ts": "2026-02-25T11:53:19Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 18}
-{"ts": "2026-02-25T11:53:19Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 19}
-{"ts": "2026-02-25T11:53:19Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 19}
-{"ts": "2026-02-25T11:53:19Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 20}
-{"ts": "2026-02-25T11:53:19Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 20}
-{"ts": "2026-02-25T11:53:19Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 21}
-{"ts": "2026-02-25T11:53:19Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 21}
-{"ts": "2026-02-25T11:53:19Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 22}
-{"ts": "2026-02-25T11:53:19Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 22}
-{"ts": "2026-02-25T11:53:19Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 23}
-{"ts": "2026-02-25T11:53:19Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 23}
-{"ts": "2026-02-25T11:53:19Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 24}
-{"ts": "2026-02-25T11:53:19Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 24}
-{"ts": "2026-02-25T11:53:19Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 25}
-{"ts": "2026-02-25T11:53:19Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 25}
-{"ts": "2026-02-25T11:53:19Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 26}
-{"ts": "2026-02-25T11:53:19Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 26}
-{"ts": "2026-02-25T11:53:19Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 27}
-{"ts": "2026-02-25T11:53:19Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 27}
-{"ts": "2026-02-25T11:53:19Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 28}
-{"ts": "2026-02-25T11:53:19Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 28}
-{"ts": "2026-02-25T11:53:19Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 29}
-{"ts": "2026-02-25T11:53:19Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 29}
-{"ts": "2026-02-25T11:53:19Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 30}
-{"ts": "2026-02-25T11:53:19Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 30}
-{"ts": "2026-02-25T11:54:56Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 31}
-{"ts": "2026-02-25T11:54:56Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 31}
-{"ts": "2026-02-25T11:54:56Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 32}
-{"ts": "2026-02-25T11:54:56Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 33}
-{"ts": "2026-02-25T11:54:56Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 34}
-{"ts": "2026-02-25T11:54:56Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 32}
-{"ts": "2026-02-25T11:54:56Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 35}
-{"ts": "2026-02-25T11:54:56Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 36}
-{"ts": "2026-02-25T11:54:56Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 37}
-{"ts": "2026-02-25T11:54:56Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 33}
-{"ts": "2026-02-25T11:54:56Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 38}
-{"ts": "2026-02-25T11:54:56Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 34}
-{"ts": "2026-02-25T11:54:56Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 39}
-{"ts": "2026-02-25T11:54:56Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 40}
-{"ts": "2026-02-25T11:54:56Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 35}
-{"ts": "2026-02-25T11:54:56Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 41}
-{"ts": "2026-02-25T11:54:56Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 36}
-{"ts": "2026-02-25T11:54:56Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 42}
-{"ts": "2026-02-25T11:54:56Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 42}
-{"ts": "2026-02-25T11:54:56Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 44}
-{"ts": "2026-02-25T11:54:56Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 37}
-{"ts": "2026-02-25T11:54:56Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 45}
-{"ts": "2026-02-25T11:54:56Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 38}
-{"ts": "2026-02-25T11:54:56Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 46}
-{"ts": "2026-02-25T11:54:56Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 47}
-{"ts": "2026-02-25T11:54:56Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 48}
-{"ts": "2026-02-25T11:54:56Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 39}
-{"ts": "2026-02-25T11:54:56Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 40}
-{"ts": "2026-02-25T11:54:56Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 41}
-{"ts": "2026-02-25T11:54:56Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 43}
-{"ts": "2026-02-25T11:54:56Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 44}
-{"ts": "2026-02-25T11:54:56Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 45}
-{"ts": "2026-02-25T11:54:56Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 46}
-{"ts": "2026-02-25T11:54:56Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 47}
-{"ts": "2026-02-25T11:54:56Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 48}
-{"ts": "2026-02-25T11:54:56Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 43}
-{"ts": "2026-02-25T11:54:57Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 49}
-{"ts": "2026-02-25T11:54:57Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 50}
-{"ts": "2026-02-25T11:54:57Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 49}
-{"ts": "2026-02-25T11:54:57Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 50}
-{"ts": "2026-02-25T11:54:57Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
-{"ts": "2026-02-25T11:54:57Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 51}
-{"ts": "2026-02-25T11:54:57Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "", "attempts": 51}
-{"ts": "2026-02-25T11:55:28Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 52}
-{"ts": "2026-02-25T11:55:28Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 52}
-{"ts": "2026-02-25T11:55:28Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 53}
-{"ts": "2026-02-25T11:55:28Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 53}
-{"ts": "2026-02-25T11:55:28Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 54}
-{"ts": "2026-02-25T11:55:28Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 54}
-{"ts": "2026-02-25T11:55:28Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 55}
-{"ts": "2026-02-25T11:55:28Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 55}
-{"ts": "2026-02-25T11:55:28Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 56}
-{"ts": "2026-02-25T11:55:28Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 56}
-{"ts": "2026-02-25T11:55:28Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 57}
-{"ts": "2026-02-25T11:55:28Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 57}
-{"ts": "2026-02-25T11:55:28Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 58}
-{"ts": "2026-02-25T11:55:28Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 58}
-{"ts": "2026-02-25T11:55:28Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 59}
-{"ts": "2026-02-25T11:55:28Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 59}
-{"ts": "2026-02-25T11:55:28Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 60}
-{"ts": "2026-02-25T11:55:28Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 60}
-{"ts": "2026-02-25T11:55:28Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 61}
-{"ts": "2026-02-25T11:55:28Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 61}
-{"ts": "2026-02-25T11:55:28Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 62}
-{"ts": "2026-02-25T11:55:28Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 62}
-{"ts": "2026-02-25T11:55:28Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 63}
-{"ts": "2026-02-25T11:55:28Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 63}
-{"ts": "2026-02-25T11:55:28Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 64}
-{"ts": "2026-02-25T11:55:28Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 64}
-{"ts": "2026-02-25T11:55:28Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 65}
-{"ts": "2026-02-25T11:55:28Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 65}
-{"ts": "2026-02-25T11:55:28Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 66}
-{"ts": "2026-02-25T11:55:28Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 66}
-{"ts": "2026-02-25T11:55:28Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 67}
-{"ts": "2026-02-25T11:55:28Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 67}
-{"ts": "2026-02-25T11:55:28Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 68}
-{"ts": "2026-02-25T11:55:28Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 68}
-{"ts": "2026-02-25T11:55:28Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 69}
-{"ts": "2026-02-25T11:55:28Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 69}
-{"ts": "2026-02-25T11:55:28Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 70}
-{"ts": "2026-02-25T11:55:28Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 70}
-{"ts": "2026-02-25T11:55:28Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 71}
-{"ts": "2026-02-25T11:55:28Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 71}
-{"ts": "2026-02-25T11:55:28Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 72}
-{"ts": "2026-02-25T11:55:28Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 72}
-{"ts": "2026-02-25T11:55:28Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 73}
-{"ts": "2026-02-25T11:55:28Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 73}
-{"ts": "2026-02-25T11:55:28Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 74}
-{"ts": "2026-02-25T11:55:28Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 74}
-{"ts": "2026-02-25T11:55:28Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 75}
-{"ts": "2026-02-25T11:55:28Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 75}
-{"ts": "2026-02-25T11:55:28Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 76}
-{"ts": "2026-02-25T11:55:28Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 76}
-{"ts": "2026-02-25T11:55:28Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 77}
-{"ts": "2026-02-25T11:55:28Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 77}
-{"ts": "2026-02-25T11:55:29Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 78}
-{"ts": "2026-02-25T11:55:29Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 78}
-{"ts": "2026-02-25T11:55:29Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 79}
-{"ts": "2026-02-25T11:55:29Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 79}
-{"ts": "2026-02-25T11:55:29Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 80}
-{"ts": "2026-02-25T11:55:29Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 80}
-{"ts": "2026-02-25T11:55:29Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 81}
-{"ts": "2026-02-25T11:55:29Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 81}
-{"ts": "2026-02-25T11:56:17Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
-{"ts": "2026-02-25T11:56:17Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR '1'='1", "attempts": 82}
-{"ts": "2026-02-25T11:56:17Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR '1'='1", "attempts": 82}
-{"ts": "2026-02-25T11:56:17Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
-{"ts": "2026-02-25T11:56:17Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR 1=1--", "attempts": 83}
-{"ts": "2026-02-25T11:56:17Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR 1=1--", "attempts": 83}
-{"ts": "2026-02-25T11:56:17Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
-{"ts": "2026-02-25T11:56:17Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "'; DROP TABLE users;--", "attempts": 84}
-{"ts": "2026-02-25T11:56:17Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "'; DROP TABLE users;--", "attempts": 84}
-{"ts": "2026-02-25T11:56:17Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
-{"ts": "2026-02-25T11:56:17Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' UNION SELECT * FROM auth_user--", "attempts": 85}
-{"ts": "2026-02-25T11:56:17Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' UNION SELECT * FROM auth_user--", "attempts": 85}
-{"ts": "2026-02-25T11:56:17Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
-{"ts": "2026-02-25T11:56:17Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "1; SELECT * FROM pg_tables--", "attempts": 86}
-{"ts": "2026-02-25T11:56:17Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "1; SELECT * FROM pg_tables--", "attempts": 86}
-{"ts": "2026-02-25T11:56:17Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin'--", "attempts": 87}
-{"ts": "2026-02-25T11:56:17Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin'--", "attempts": 87}
-{"ts": "2026-02-25T11:56:17Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/register/"}
-{"ts": "2026-02-25T11:56:17Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/register/"}
-{"ts": "2026-02-25T11:56:17Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/register/"}
-{"ts": "2026-02-25T11:56:17Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/register/"}
-{"ts": "2026-02-25T11:56:17Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/register/"}
-{"ts": "2026-02-25T11:56:17Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/users/"}
-{"ts": "2026-02-25T11:56:17Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/users/"}
-{"ts": "2026-02-25T11:56:17Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
-{"ts": "2026-02-25T11:56:18Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
-{"ts": "2026-02-25T11:56:18Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/cards/"}
-{"ts": "2026-02-25T11:56:18Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/cards/"}
-{"ts": "2026-02-25T11:56:18Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/beneficiaries/"}
-{"ts": "2026-02-25T11:56:18Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/beneficiaries/"}
-{"ts": "2026-02-25T11:56:18Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/transactions/"}
-{"ts": "2026-02-25T11:56:18Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/transactions/"}
+{"ts": "2026-02-26T22:26:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 1}
+{"ts": "2026-02-26T22:28:41Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 2}
+{"ts": "2026-02-26T22:42:39Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T22:42:39Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/users/"}
+{"ts": "2026-02-26T22:42:39Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/transactions/"}
+{"ts": "2026-02-26T22:42:39Z", "event": "PATH_TRAVERSAL", "ip": "172.18.0.1", "method": "GET", "path": "/api/../../etc/passwd"}
+{"ts": "2026-02-26T22:42:40Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 1}
+{"ts": "2026-02-26T22:42:40Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 2}
+{"ts": "2026-02-26T22:42:40Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 3}
+{"ts": "2026-02-26T22:42:40Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 4}
+{"ts": "2026-02-26T22:42:40Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 1}
+{"ts": "2026-02-26T22:42:40Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 5}
+{"ts": "2026-02-26T22:42:40Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 5}
+{"ts": "2026-02-26T22:42:40Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 6}
+{"ts": "2026-02-26T22:42:40Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 6}
+{"ts": "2026-02-26T22:42:40Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 7}
+{"ts": "2026-02-26T22:42:40Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 7}
+{"ts": "2026-02-26T22:42:41Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 2}
+{"ts": "2026-02-26T22:42:41Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 8}
+{"ts": "2026-02-26T22:42:41Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 8}
+{"ts": "2026-02-26T22:42:41Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 9}
+{"ts": "2026-02-26T22:42:41Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 9}
+{"ts": "2026-02-26T22:42:41Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 3}
+{"ts": "2026-02-26T22:42:41Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 4}
+{"ts": "2026-02-26T22:42:41Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 5}
+{"ts": "2026-02-26T22:42:41Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 5}
+{"ts": "2026-02-26T22:42:41Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 10}
+{"ts": "2026-02-26T22:42:41Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 10}
+{"ts": "2026-02-26T22:42:41Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 11}
+{"ts": "2026-02-26T22:42:41Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 11}
+{"ts": "2026-02-26T22:42:42Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 6}
+{"ts": "2026-02-26T22:42:42Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 6}
+{"ts": "2026-02-26T22:42:42Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 7}
+{"ts": "2026-02-26T22:42:42Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 7}
+{"ts": "2026-02-26T22:42:42Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 8}
+{"ts": "2026-02-26T22:42:42Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 8}
+{"ts": "2026-02-26T22:42:42Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 9}
+{"ts": "2026-02-26T22:42:42Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 9}
+{"ts": "2026-02-26T22:42:42Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 10}
+{"ts": "2026-02-26T22:42:42Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 10}
+{"ts": "2026-02-26T22:42:42Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 11}
+{"ts": "2026-02-26T22:42:42Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 11}
+{"ts": "2026-02-26T22:42:42Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 12}
+{"ts": "2026-02-26T22:42:42Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 12}
+{"ts": "2026-02-26T22:42:42Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 12}
+{"ts": "2026-02-26T22:42:42Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 12}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 13}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 13}
+{"ts": "2026-02-26T22:42:43Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR '1'='1", "attempts": 13}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR '1'='1", "attempts": 13}
+{"ts": "2026-02-26T22:42:43Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR '1'='1", "attempts": 14}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR '1'='1", "attempts": 14}
+{"ts": "2026-02-26T22:42:43Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR 1=1--", "attempts": 15}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR 1=1--", "attempts": 15}
+{"ts": "2026-02-26T22:42:43Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR 1=1--", "attempts": 14}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR 1=1--", "attempts": 14}
+{"ts": "2026-02-26T22:42:43Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' UNION SELECT 1,2,3--", "attempts": 15}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' UNION SELECT 1,2,3--", "attempts": 15}
+{"ts": "2026-02-26T22:42:43Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' UNION SELECT 1,2,3--", "attempts": 16}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' UNION SELECT 1,2,3--", "attempts": 16}
+{"ts": "2026-02-26T22:42:43Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' UNION SELECT email,password,3 FROM core_user--", "attempts": 16}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' UNION SELECT email,password,3 FROM core_user--", "attempts": 16}
+{"ts": "2026-02-26T22:42:43Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' UNION SELECT email,password,3 FROM core_user--", "attempts": 17}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' UNION SELECT email,password,3 FROM core_user--", "attempts": 17}
+{"ts": "2026-02-26T22:42:43Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "'; DROP TABLE core_user;--", "attempts": 18}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "'; DROP TABLE core_user;--", "attempts": 18}
+{"ts": "2026-02-26T22:42:43Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "'; DROP TABLE core_user;--", "attempts": 19}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "'; DROP TABLE core_user;--", "attempts": 19}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "1 AND 1=1", "attempts": 17}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "1 AND 1=1", "attempts": 17}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "1 AND 1=1", "attempts": 18}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "1 AND 1=1", "attempts": 18}
+{"ts": "2026-02-26T22:42:43Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "1 AND 1=2", "attempts": 20}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "1 AND 1=2", "attempts": 20}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "1 AND 1=2", "attempts": 19}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "1 AND 1=2", "attempts": 19}
+{"ts": "2026-02-26T22:42:43Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin'/*", "attempts": 20}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin'/*", "attempts": 20}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin'/*", "attempts": 21}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin'/*", "attempts": 21}
+{"ts": "2026-02-26T22:42:43Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "'; SELECT pg_sleep(3);--", "attempts": 21}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "'; SELECT pg_sleep(3);--", "attempts": 21}
+{"ts": "2026-02-26T22:42:43Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "'; SELECT pg_sleep(3);--", "attempts": 22}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "'; SELECT pg_sleep(3);--", "attempts": 22}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' AND EXTRACTVALUE(1,CONCAT(0x7e,version()))--", "attempts": 23}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' AND EXTRACTVALUE(1,CONCAT(0x7e,version()))--", "attempts": 23}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' AND EXTRACTVALUE(1,CONCAT(0x7e,version()))--", "attempts": 22}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' AND EXTRACTVALUE(1,CONCAT(0x7e,version()))--", "attempts": 22}
+{"ts": "2026-02-26T22:42:43Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR 1=1 LIMIT 1 OFFSET 0--", "attempts": 23}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR 1=1 LIMIT 1 OFFSET 0--", "attempts": 23}
+{"ts": "2026-02-26T22:42:43Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR 1=1 LIMIT 1 OFFSET 0--", "attempts": 24}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR 1=1 LIMIT 1 OFFSET 0--", "attempts": 24}
+{"ts": "2026-02-26T22:42:43Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<img src=x onerror=alert(1)>", "attempts": 25}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<img src=x onerror=alert(1)>", "attempts": 25}
+{"ts": "2026-02-26T22:42:43Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<img src=x onerror=alert(1)>", "attempts": 26}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<img src=x onerror=alert(1)>", "attempts": 26}
+{"ts": "2026-02-26T22:42:43Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "javascript:alert(document.cookie)", "attempts": 27}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "javascript:alert(document.cookie)", "attempts": 27}
+{"ts": "2026-02-26T22:42:43Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "javascript:alert(document.cookie)", "attempts": 28}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "javascript:alert(document.cookie)", "attempts": 28}
+{"ts": "2026-02-26T22:42:43Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<svg onload=alert(1)>", "attempts": 24}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<svg onload=alert(1)>", "attempts": 24}
+{"ts": "2026-02-26T22:42:43Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<svg onload=alert(1)>", "attempts": 29}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<svg onload=alert(1)>", "attempts": 29}
+{"ts": "2026-02-26T22:42:43Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<iframe src=javascript:alert(1)>", "attempts": 30}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<iframe src=javascript:alert(1)>", "attempts": 30}
+{"ts": "2026-02-26T22:42:43Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<iframe src=javascript:alert(1)>", "attempts": 31}
+{"ts": "2026-02-26T22:42:43Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<iframe src=javascript:alert(1)>", "attempts": 31}
+{"ts": "2026-02-26T22:42:43Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/transactions/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/users/me/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T22:42:43Z", "event": "PATH_TRAVERSAL", "ip": "172.18.0.1", "method": "GET", "path": "/api/../../../etc/passwd"}
+{"ts": "2026-02-26T22:45:10Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T22:45:10Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/users/"}
+{"ts": "2026-02-26T22:45:10Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/transactions/"}
+{"ts": "2026-02-26T22:45:10Z", "event": "PATH_TRAVERSAL", "ip": "172.18.0.1", "method": "GET", "path": "/api/../../etc/passwd"}
+{"ts": "2026-02-26T22:45:10Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 32}
+{"ts": "2026-02-26T22:45:10Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 32}
+{"ts": "2026-02-26T22:45:10Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 33}
+{"ts": "2026-02-26T22:45:10Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 33}
+{"ts": "2026-02-26T22:45:11Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 34}
+{"ts": "2026-02-26T22:45:11Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 34}
+{"ts": "2026-02-26T22:45:11Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 35}
+{"ts": "2026-02-26T22:45:11Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 35}
+{"ts": "2026-02-26T22:45:11Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 36}
+{"ts": "2026-02-26T22:45:11Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 36}
+{"ts": "2026-02-26T22:45:11Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 37}
+{"ts": "2026-02-26T22:45:11Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 37}
+{"ts": "2026-02-26T22:45:11Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 38}
+{"ts": "2026-02-26T22:45:11Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 38}
+{"ts": "2026-02-26T22:45:11Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 39}
+{"ts": "2026-02-26T22:45:11Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 39}
+{"ts": "2026-02-26T22:45:11Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 25}
+{"ts": "2026-02-26T22:45:11Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 25}
+{"ts": "2026-02-26T22:45:11Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 26}
+{"ts": "2026-02-26T22:45:11Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 26}
+{"ts": "2026-02-26T22:45:12Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 40}
+{"ts": "2026-02-26T22:45:12Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 40}
+{"ts": "2026-02-26T22:45:12Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 27}
+{"ts": "2026-02-26T22:45:12Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 27}
+{"ts": "2026-02-26T22:45:12Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 28}
+{"ts": "2026-02-26T22:45:12Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 28}
+{"ts": "2026-02-26T22:45:12Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 29}
+{"ts": "2026-02-26T22:45:12Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 29}
+{"ts": "2026-02-26T22:45:12Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 41}
+{"ts": "2026-02-26T22:45:12Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 41}
+{"ts": "2026-02-26T22:45:12Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 42}
+{"ts": "2026-02-26T22:45:12Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 42}
+{"ts": "2026-02-26T22:45:12Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 30}
+{"ts": "2026-02-26T22:45:12Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 30}
+{"ts": "2026-02-26T22:45:12Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 43}
+{"ts": "2026-02-26T22:45:12Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 43}
+{"ts": "2026-02-26T22:45:13Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 44}
+{"ts": "2026-02-26T22:45:13Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 44}
+{"ts": "2026-02-26T22:45:13Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 31}
+{"ts": "2026-02-26T22:45:13Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 31}
+{"ts": "2026-02-26T22:45:13Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 45}
+{"ts": "2026-02-26T22:45:13Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 45}
+{"ts": "2026-02-26T22:45:13Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 32}
+{"ts": "2026-02-26T22:45:13Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 32}
+{"ts": "2026-02-26T22:45:13Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 33}
+{"ts": "2026-02-26T22:45:13Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 33}
+{"ts": "2026-02-26T22:45:13Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 34}
+{"ts": "2026-02-26T22:45:13Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 34}
+{"ts": "2026-02-26T22:45:13Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 35}
+{"ts": "2026-02-26T22:45:13Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 35}
+{"ts": "2026-02-26T22:45:13Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:13Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR '1'='1", "attempts": 46}
+{"ts": "2026-02-26T22:45:13Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR '1'='1", "attempts": 46}
+{"ts": "2026-02-26T22:45:13Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:13Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR '1'='1", "attempts": 47}
+{"ts": "2026-02-26T22:45:13Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR '1'='1", "attempts": 47}
+{"ts": "2026-02-26T22:45:13Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:13Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR 1=1--", "attempts": 48}
+{"ts": "2026-02-26T22:45:13Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR 1=1--", "attempts": 48}
+{"ts": "2026-02-26T22:45:13Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:13Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR 1=1--", "attempts": 36}
+{"ts": "2026-02-26T22:45:13Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR 1=1--", "attempts": 36}
+{"ts": "2026-02-26T22:45:13Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:13Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' UNION SELECT 1,2,3--", "attempts": 37}
+{"ts": "2026-02-26T22:45:13Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' UNION SELECT 1,2,3--", "attempts": 37}
+{"ts": "2026-02-26T22:45:13Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:13Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' UNION SELECT 1,2,3--", "attempts": 49}
+{"ts": "2026-02-26T22:45:13Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' UNION SELECT 1,2,3--", "attempts": 49}
+{"ts": "2026-02-26T22:45:13Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:13Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' UNION SELECT email,password,3 FROM core_user--", "attempts": 50}
+{"ts": "2026-02-26T22:45:13Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' UNION SELECT email,password,3 FROM core_user--", "attempts": 50}
+{"ts": "2026-02-26T22:45:13Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:13Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' UNION SELECT email,password,3 FROM core_user--", "attempts": 51}
+{"ts": "2026-02-26T22:45:13Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' UNION SELECT email,password,3 FROM core_user--", "attempts": 51}
+{"ts": "2026-02-26T22:45:13Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:13Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "'; DROP TABLE core_user;--", "attempts": 38}
+{"ts": "2026-02-26T22:45:13Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "'; DROP TABLE core_user;--", "attempts": 38}
+{"ts": "2026-02-26T22:45:13Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:13Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "'; DROP TABLE core_user;--", "attempts": 39}
+{"ts": "2026-02-26T22:45:13Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "'; DROP TABLE core_user;--", "attempts": 39}
+{"ts": "2026-02-26T22:45:13Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "1 AND 1=1", "attempts": 40}
+{"ts": "2026-02-26T22:45:13Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "1 AND 1=1", "attempts": 40}
+{"ts": "2026-02-26T22:45:13Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "1 AND 1=1", "attempts": 41}
+{"ts": "2026-02-26T22:45:13Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "1 AND 1=1", "attempts": 41}
+{"ts": "2026-02-26T22:45:13Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T22:45:13Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "1 AND 1=2", "attempts": 52}
+{"ts": "2026-02-26T22:45:13Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "1 AND 1=2", "attempts": 52}
+{"ts": "2026-02-26T22:45:13Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "1 AND 1=2", "attempts": 53}
+{"ts": "2026-02-26T22:45:13Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "1 AND 1=2", "attempts": 53}
+{"ts": "2026-02-26T22:45:14Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin'/*", "attempts": 54}
+{"ts": "2026-02-26T22:45:14Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin'/*", "attempts": 54}
+{"ts": "2026-02-26T22:45:14Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin'/*", "attempts": 42}
+{"ts": "2026-02-26T22:45:14Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin'/*", "attempts": 42}
+{"ts": "2026-02-26T22:45:14Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "'; SELECT pg_sleep(3);--", "attempts": 43}
+{"ts": "2026-02-26T22:45:14Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "'; SELECT pg_sleep(3);--", "attempts": 43}
+{"ts": "2026-02-26T22:45:14Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "'; SELECT pg_sleep(3);--", "attempts": 55}
+{"ts": "2026-02-26T22:45:14Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "'; SELECT pg_sleep(3);--", "attempts": 55}
+{"ts": "2026-02-26T22:45:14Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' AND EXTRACTVALUE(1,CONCAT(0x7e,version()))--", "attempts": 44}
+{"ts": "2026-02-26T22:45:14Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' AND EXTRACTVALUE(1,CONCAT(0x7e,version()))--", "attempts": 44}
+{"ts": "2026-02-26T22:45:14Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' AND EXTRACTVALUE(1,CONCAT(0x7e,version()))--", "attempts": 45}
+{"ts": "2026-02-26T22:45:14Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' AND EXTRACTVALUE(1,CONCAT(0x7e,version()))--", "attempts": 45}
+{"ts": "2026-02-26T22:45:14Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR 1=1 LIMIT 1 OFFSET 0--", "attempts": 46}
+{"ts": "2026-02-26T22:45:14Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR 1=1 LIMIT 1 OFFSET 0--", "attempts": 46}
+{"ts": "2026-02-26T22:45:14Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR 1=1 LIMIT 1 OFFSET 0--", "attempts": 56}
+{"ts": "2026-02-26T22:45:14Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR 1=1 LIMIT 1 OFFSET 0--", "attempts": 56}
+{"ts": "2026-02-26T22:45:14Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<img src=x onerror=alert(1)>", "attempts": 57}
+{"ts": "2026-02-26T22:45:14Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<img src=x onerror=alert(1)>", "attempts": 57}
+{"ts": "2026-02-26T22:45:14Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<img src=x onerror=alert(1)>", "attempts": 47}
+{"ts": "2026-02-26T22:45:14Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<img src=x onerror=alert(1)>", "attempts": 47}
+{"ts": "2026-02-26T22:45:14Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "javascript:alert(document.cookie)", "attempts": 58}
+{"ts": "2026-02-26T22:45:14Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "javascript:alert(document.cookie)", "attempts": 58}
+{"ts": "2026-02-26T22:45:14Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "javascript:alert(document.cookie)", "attempts": 59}
+{"ts": "2026-02-26T22:45:14Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "javascript:alert(document.cookie)", "attempts": 59}
+{"ts": "2026-02-26T22:45:14Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<svg onload=alert(1)>", "attempts": 60}
+{"ts": "2026-02-26T22:45:14Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<svg onload=alert(1)>", "attempts": 60}
+{"ts": "2026-02-26T22:45:14Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<svg onload=alert(1)>", "attempts": 48}
+{"ts": "2026-02-26T22:45:14Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<svg onload=alert(1)>", "attempts": 48}
+{"ts": "2026-02-26T22:45:14Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<iframe src=javascript:alert(1)>", "attempts": 61}
+{"ts": "2026-02-26T22:45:14Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<iframe src=javascript:alert(1)>", "attempts": 61}
+{"ts": "2026-02-26T22:45:14Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<iframe src=javascript:alert(1)>", "attempts": 62}
+{"ts": "2026-02-26T22:45:14Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<iframe src=javascript:alert(1)>", "attempts": 62}
+{"ts": "2026-02-26T22:45:14Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/transactions/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/users/me/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T22:45:14Z", "event": "PATH_TRAVERSAL", "ip": "172.18.0.1", "method": "GET", "path": "/api/../../../etc/passwd"}
+{"ts": "2026-02-26T23:55:07Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T23:55:07Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/users/"}
+{"ts": "2026-02-26T23:55:07Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/transactions/"}
+{"ts": "2026-02-26T23:55:07Z", "event": "PATH_TRAVERSAL", "ip": "172.18.0.1", "method": "GET", "path": "/api/../../etc/passwd"}
+{"ts": "2026-02-26T23:55:07Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 1}
+{"ts": "2026-02-26T23:55:07Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 2}
+{"ts": "2026-02-26T23:55:07Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 3}
+{"ts": "2026-02-26T23:55:07Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 1}
+{"ts": "2026-02-26T23:55:08Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 4}
+{"ts": "2026-02-26T23:55:08Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 5}
+{"ts": "2026-02-26T23:55:08Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 5}
+{"ts": "2026-02-26T23:55:08Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 6}
+{"ts": "2026-02-26T23:55:08Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 6}
+{"ts": "2026-02-26T23:55:08Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 7}
+{"ts": "2026-02-26T23:55:08Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 7}
+{"ts": "2026-02-26T23:55:08Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 2}
+{"ts": "2026-02-26T23:55:08Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 3}
+{"ts": "2026-02-26T23:55:08Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 8}
+{"ts": "2026-02-26T23:55:08Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 8}
+{"ts": "2026-02-26T23:55:08Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 9}
+{"ts": "2026-02-26T23:55:08Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 9}
+{"ts": "2026-02-26T23:55:09Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 10}
+{"ts": "2026-02-26T23:55:09Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 10}
+{"ts": "2026-02-26T23:55:09Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 11}
+{"ts": "2026-02-26T23:55:09Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 11}
+{"ts": "2026-02-26T23:55:09Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 12}
+{"ts": "2026-02-26T23:55:09Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 12}
+{"ts": "2026-02-26T23:55:09Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 13}
+{"ts": "2026-02-26T23:55:09Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 13}
+{"ts": "2026-02-26T23:55:09Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 4}
+{"ts": "2026-02-26T23:55:09Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 14}
+{"ts": "2026-02-26T23:55:09Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 14}
+{"ts": "2026-02-26T23:55:09Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 5}
+{"ts": "2026-02-26T23:55:09Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 5}
+{"ts": "2026-02-26T23:55:10Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 6}
+{"ts": "2026-02-26T23:55:10Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 6}
+{"ts": "2026-02-26T23:55:10Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 7}
+{"ts": "2026-02-26T23:55:10Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 7}
+{"ts": "2026-02-26T23:55:10Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 15}
+{"ts": "2026-02-26T23:55:10Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 15}
+{"ts": "2026-02-26T23:55:10Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 16}
+{"ts": "2026-02-26T23:55:10Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 16}
+{"ts": "2026-02-26T23:55:10Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 17}
+{"ts": "2026-02-26T23:55:10Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 17}
+{"ts": "2026-02-26T23:55:10Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 18}
+{"ts": "2026-02-26T23:55:10Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr", "attempts": 18}
+{"ts": "2026-02-26T23:55:10Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:10Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR '1'='1", "attempts": 8}
+{"ts": "2026-02-26T23:55:10Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR '1'='1", "attempts": 8}
+{"ts": "2026-02-26T23:55:10Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:10Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR '1'='1", "attempts": 19}
+{"ts": "2026-02-26T23:55:10Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR '1'='1", "attempts": 19}
+{"ts": "2026-02-26T23:55:10Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:10Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR 1=1--", "attempts": 9}
+{"ts": "2026-02-26T23:55:10Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR 1=1--", "attempts": 9}
+{"ts": "2026-02-26T23:55:10Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:10Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR 1=1--", "attempts": 10}
+{"ts": "2026-02-26T23:55:10Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR 1=1--", "attempts": 10}
+{"ts": "2026-02-26T23:55:10Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:10Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' UNION SELECT 1,2,3--", "attempts": 20}
+{"ts": "2026-02-26T23:55:10Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' UNION SELECT 1,2,3--", "attempts": 20}
+{"ts": "2026-02-26T23:55:10Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:10Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' UNION SELECT 1,2,3--", "attempts": 11}
+{"ts": "2026-02-26T23:55:10Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' UNION SELECT 1,2,3--", "attempts": 11}
+{"ts": "2026-02-26T23:55:10Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:10Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' UNION SELECT email,password,3 FROM core_user--", "attempts": 21}
+{"ts": "2026-02-26T23:55:10Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' UNION SELECT email,password,3 FROM core_user--", "attempts": 21}
+{"ts": "2026-02-26T23:55:10Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:10Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' UNION SELECT email,password,3 FROM core_user--", "attempts": 12}
+{"ts": "2026-02-26T23:55:10Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' UNION SELECT email,password,3 FROM core_user--", "attempts": 12}
+{"ts": "2026-02-26T23:55:10Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:10Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "'; DROP TABLE core_user;--", "attempts": 22}
+{"ts": "2026-02-26T23:55:10Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "'; DROP TABLE core_user;--", "attempts": 22}
+{"ts": "2026-02-26T23:55:10Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:10Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "'; DROP TABLE core_user;--", "attempts": 23}
+{"ts": "2026-02-26T23:55:10Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "'; DROP TABLE core_user;--", "attempts": 23}
+{"ts": "2026-02-26T23:55:10Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "1 AND 1=1", "attempts": 13}
+{"ts": "2026-02-26T23:55:10Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "1 AND 1=1", "attempts": 13}
+{"ts": "2026-02-26T23:55:10Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "1 AND 1=1", "attempts": 14}
+{"ts": "2026-02-26T23:55:10Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "1 AND 1=1", "attempts": 14}
+{"ts": "2026-02-26T23:55:10Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T23:55:10Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "1 AND 1=2", "attempts": 15}
+{"ts": "2026-02-26T23:55:10Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "1 AND 1=2", "attempts": 15}
+{"ts": "2026-02-26T23:55:10Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "1 AND 1=2", "attempts": 16}
+{"ts": "2026-02-26T23:55:10Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "1 AND 1=2", "attempts": 16}
+{"ts": "2026-02-26T23:55:10Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T23:55:10Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin'/*", "attempts": 17}
+{"ts": "2026-02-26T23:55:10Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin'/*", "attempts": 17}
+{"ts": "2026-02-26T23:55:10Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin'/*", "attempts": 24}
+{"ts": "2026-02-26T23:55:10Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin'/*", "attempts": 24}
+{"ts": "2026-02-26T23:55:10Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T23:55:10Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:10Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "'; SELECT pg_sleep(3);--", "attempts": 18}
+{"ts": "2026-02-26T23:55:10Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "'; SELECT pg_sleep(3);--", "attempts": 18}
+{"ts": "2026-02-26T23:55:10Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:10Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "'; SELECT pg_sleep(3);--", "attempts": 19}
+{"ts": "2026-02-26T23:55:10Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "'; SELECT pg_sleep(3);--", "attempts": 19}
+{"ts": "2026-02-26T23:55:11Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' AND EXTRACTVALUE(1,CONCAT(0x7e,version()))--", "attempts": 20}
+{"ts": "2026-02-26T23:55:11Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' AND EXTRACTVALUE(1,CONCAT(0x7e,version()))--", "attempts": 20}
+{"ts": "2026-02-26T23:55:11Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' AND EXTRACTVALUE(1,CONCAT(0x7e,version()))--", "attempts": 25}
+{"ts": "2026-02-26T23:55:11Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' AND EXTRACTVALUE(1,CONCAT(0x7e,version()))--", "attempts": 25}
+{"ts": "2026-02-26T23:55:11Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:11Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR 1=1 LIMIT 1 OFFSET 0--", "attempts": 26}
+{"ts": "2026-02-26T23:55:11Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR 1=1 LIMIT 1 OFFSET 0--", "attempts": 26}
+{"ts": "2026-02-26T23:55:11Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:11Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR 1=1 LIMIT 1 OFFSET 0--", "attempts": 21}
+{"ts": "2026-02-26T23:55:11Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "' OR 1=1 LIMIT 1 OFFSET 0--", "attempts": 21}
+{"ts": "2026-02-26T23:55:11Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:11Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:11Z", "event": "SQL_INJECTION", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T23:55:11Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T23:55:11Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:11Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:11Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:11Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<img src=x onerror=alert(1)>", "attempts": 27}
+{"ts": "2026-02-26T23:55:11Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<img src=x onerror=alert(1)>", "attempts": 27}
+{"ts": "2026-02-26T23:55:11Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:11Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<img src=x onerror=alert(1)>", "attempts": 22}
+{"ts": "2026-02-26T23:55:11Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<img src=x onerror=alert(1)>", "attempts": 22}
+{"ts": "2026-02-26T23:55:11Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:11Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "javascript:alert(document.cookie)", "attempts": 28}
+{"ts": "2026-02-26T23:55:11Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "javascript:alert(document.cookie)", "attempts": 28}
+{"ts": "2026-02-26T23:55:11Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:11Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "javascript:alert(document.cookie)", "attempts": 23}
+{"ts": "2026-02-26T23:55:11Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "javascript:alert(document.cookie)", "attempts": 23}
+{"ts": "2026-02-26T23:55:11Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:11Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:11Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:11Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<svg onload=alert(1)>", "attempts": 24}
+{"ts": "2026-02-26T23:55:11Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<svg onload=alert(1)>", "attempts": 24}
+{"ts": "2026-02-26T23:55:11Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:11Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<svg onload=alert(1)>", "attempts": 29}
+{"ts": "2026-02-26T23:55:11Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<svg onload=alert(1)>", "attempts": 29}
+{"ts": "2026-02-26T23:55:11Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:11Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<iframe src=javascript:alert(1)>", "attempts": 30}
+{"ts": "2026-02-26T23:55:11Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<iframe src=javascript:alert(1)>", "attempts": 30}
+{"ts": "2026-02-26T23:55:11Z", "event": "XSS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/"}
+{"ts": "2026-02-26T23:55:11Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<iframe src=javascript:alert(1)>", "attempts": 31}
+{"ts": "2026-02-26T23:55:11Z", "event": "BRUTE_FORCE", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "<iframe src=javascript:alert(1)>", "attempts": 31}
+{"ts": "2026-02-26T23:55:11Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T23:55:11Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/transactions/"}
+{"ts": "2026-02-26T23:55:11Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/users/me/"}
+{"ts": "2026-02-26T23:55:11Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T23:55:11Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
+{"ts": "2026-02-26T23:55:11Z", "event": "PATH_TRAVERSAL", "ip": "172.18.0.1", "method": "GET", "path": "/api/../../../etc/passwd"}

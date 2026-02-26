@@ -74,6 +74,7 @@ services:
     volumes:
       - ./backend/logs:/var/log/django:ro   # logs Django en lecture seule
       - ./soc/promtail.yml:/etc/promtail/config.yml:ro
+      - promtail_positions:/var/positions   # position persistante entre redémarrages
     command: -config.file=/etc/promtail/config.yml
     depends_on:
       loki:
@@ -99,7 +100,7 @@ services:
       - GF_SMTP_USER=${SMTP_USER}
       - GF_SMTP_PASSWORD=${SMTP_PASSWORD}
       - GF_SMTP_FROM_ADDRESS=${SMTP_USER}
-      - GF_SMTP_FROM_NAME=SEDAD BANK SOC
+      - GF_SMTP_FROM_NAME=RSS BANK SOC
     depends_on:
       loki:
         condition: service_healthy
@@ -108,3 +109,4 @@ volumes:
   postgres_data:
   loki_data:
   grafana_data:
+  promtail_positions:

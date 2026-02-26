@@ -2,9 +2,9 @@ apiVersion: 1
 
 contactPoints:
   - orgId: 1
-    name: Email SOC SEDAD
+    name: Email SOC RSS
     receivers:
-      - uid: email-soc-sedad
+      - uid: email-soc-rss
         type: email
         settings:
           addresses: belkhairtaleb@gmail.com

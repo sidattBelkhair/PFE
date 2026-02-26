@@ -4,7 +4,7 @@
     { "type": "datasource", "id": "loki", "name": "Loki", "version": "1.0.0" }
   ],
   "annotations": { "list": [] },
-  "description": "SEDAD BANK — SOC Security Monitoring Dashboard",
+  "description": "RSS BANK — SOC Security Monitoring Dashboard",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
@@ -15,7 +15,7 @@
       "collapsed": false,
       "gridPos": { "h": 1, "w": 24, "x": 0, "y": 0 },
       "id": 1,
-      "title": "🔐 SEDAD BANK — SOC Dashboard",
+      "title": "🔐 RSS BANK — SOC Dashboard",
       "type": "row"
     },
     {
@@ -331,7 +331,7 @@
   "time": { "from": "now-3h", "to": "now" },
   "timepicker": {},
   "timezone": "browser",
-  "title": "SEDAD BANK — SOC",
-  "uid": "sedad-bank-soc",
+  "title": "RSS BANK — SOC",
+  "uid": "rss-bank-soc",
   "version": 1
 }

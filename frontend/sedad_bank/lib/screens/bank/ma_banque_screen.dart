@@ -323,7 +323,7 @@ class _MaBanqueScreenState extends State<MaBanqueScreen> {
 
             // Informations bancaires
             const Text(
-              'SEDAD BANK',
+              'RSS BANK',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: AppTheme.textPrimary),
             ),
             const SizedBox(height: 12),
@@ -331,7 +331,7 @@ class _MaBanqueScreenState extends State<MaBanqueScreen> {
               children: [
                 _InfoRow(icon: Icons.location_on_outlined, text: 'Nouakchott, Mauritanie — Rue du Commerce'),
                 _InfoRow(icon: Icons.phone_outlined,       text: '+222 45 25 10 00'),
-                _InfoRow(icon: Icons.email_outlined,       text: 'contact@sedadbank.mr'),
+                _InfoRow(icon: Icons.email_outlined,       text: 'contact@rssbank.mr'),
                 _InfoRow(icon: Icons.schedule_outlined,    text: 'Lun–Ven : 8h00–17h00'),
               ],
             ),
