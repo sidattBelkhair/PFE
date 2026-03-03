@@ -2288,3 +2288,6 @@
 {"ts": "2026-03-03T02:29:10Z", "method": "POST", "path": "/api/auth/login/", "status": 200, "ip": "172.18.0.1", "user": "anonymous", "duration_ms": 181}
 {"ts": "2026-03-03T02:29:10Z", "method": "GET", "path": "/api/accounts/", "status": 200, "ip": "172.18.0.1", "user": "gg@gmail.com", "duration_ms": 19}
 {"ts": "2026-03-03T02:29:39Z", "method": "GET", "path": "/api/accounts/", "status": 200, "ip": "172.18.0.1", "user": "gg@gmail.com", "duration_ms": 9}
+{"ts": "2026-03-03T16:46:00Z", "method": "POST", "path": "/api/auth/register/", "status": 201, "ip": "127.0.0.1", "user": "anonymous", "duration_ms": 118}
+{"ts": "2026-03-03T16:46:22Z", "method": "POST", "path": "/api/auth/login/", "status": 200, "ip": "127.0.0.1", "user": "anonymous", "duration_ms": 145}
+{"ts": "2026-03-03T16:46:22Z", "method": "GET", "path": "/api/accounts/", "status": 200, "ip": "127.0.0.1", "user": "ff@gmail.com", "duration_ms": 11}

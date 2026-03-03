@@ -3770,3 +3770,4 @@
 {"ts": "2026-03-02T13:18:23Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "method": "GET", "path": "/api/accounts/"}
 {"ts": "2026-03-02T13:18:23Z", "event": "PATH_TRAVERSAL", "ip": "172.18.0.1", "method": "GET", "path": "/api/../../../etc/passwd"}
 {"ts": "2026-03-03T02:29:10Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "gg@gmail.com"}
+{"ts": "2026-03-03T16:46:22Z", "event": "LOGIN_SUCCESS", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/login/", "user": "ff@gmail.com"}

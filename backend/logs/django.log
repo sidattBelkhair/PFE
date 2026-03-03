@@ -2236,3 +2236,8 @@ WARNING 2026-03-02 13:18:23,501 log Not Found: /etc/passwd
 INFO 2026-03-02 20:21:03,799 autoreload Watching for file changes with StatReloader
 INFO 2026-03-03 04:06:17,175 autoreload Watching for file changes with StatReloader
 INFO 2026-03-03 04:06:50,496 autoreload Watching for file changes with StatReloader
+INFO 2026-03-03 16:41:21,425 autoreload Watching for file changes with StatReloader
+INFO 2026-03-03 16:44:56,032 autoreload Watching for file changes with StatReloader
+INFO 2026-03-03 16:46:00,387 basehttp "POST /api/auth/register/ HTTP/1.1" 201 462
+INFO 2026-03-03 16:46:22,641 basehttp "POST /api/auth/login/ HTTP/1.1" 200 980
+INFO 2026-03-03 16:46:22,739 basehttp "GET /api/accounts/ HTTP/1.1" 200 52
