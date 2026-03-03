@@ -275,3 +275,1964 @@ WARNING 2026-02-26 23:55:11,260 log Unauthorized: /api/accounts/
 WARNING 2026-02-26 23:55:11,270 log Not Found: /etc/passwd
 WARNING 2026-02-26 23:55:11,281 log Not Found: /api/../../../etc/passwd
 WARNING 2026-02-26 23:55:11,290 log Not Found: /etc/passwd
+WARNING 2026-02-27 00:27:00,494 log Method Not Allowed: /api/auth/login/
+WARNING 2026-02-27 00:27:00,501 log Unauthorized: /api/accounts/
+WARNING 2026-02-27 00:27:00,510 log Unauthorized: /api/users/
+WARNING 2026-02-27 00:27:00,516 log Unauthorized: /api/transactions/
+WARNING 2026-02-27 00:27:00,527 log Not Found: /api/admin/
+WARNING 2026-02-27 00:27:00,663 log Not Found: /api/schema/swagger-ui/
+WARNING 2026-02-27 00:27:00,672 log Not Found: /.env
+WARNING 2026-02-27 00:27:00,681 log Not Found: /config.php
+WARNING 2026-02-27 00:27:00,690 log Not Found: /wp-admin
+WARNING 2026-02-27 00:27:00,699 log Not Found: /phpmyadmin
+WARNING 2026-02-27 00:27:00,708 log Not Found: /backup.sql
+WARNING 2026-02-27 00:27:00,716 log Not Found: /.git/config
+WARNING 2026-02-27 00:27:00,727 log Not Found: /server-status
+WARNING 2026-02-27 00:27:00,735 log Not Found: /etc/passwd
+WARNING 2026-02-27 00:27:00,746 log Not Found: /api/../../etc/passwd
+WARNING 2026-02-27 00:27:00,872 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:00,996 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:01,122 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:01,251 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:01,379 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:01,507 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:01,635 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:01,758 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:01,886 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:02,008 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:02,132 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:02,257 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:02,380 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:02,503 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:02,625 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:02,748 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:02,872 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:02,994 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:03,117 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:03,240 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:03,364 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:03,486 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:03,609 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:03,731 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:03,853 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:03,860 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:03,867 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:03,890 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:03,896 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:03,919 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:03,926 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:03,948 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:03,955 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:03,978 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:03,984 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,008 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,014 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,041 log Unauthorized: /api/accounts/
+WARNING 2026-02-27 00:27:04,047 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,053 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,082 log Unauthorized: /api/accounts/
+WARNING 2026-02-27 00:27:04,089 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,096 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,115 log Unauthorized: /api/accounts/
+WARNING 2026-02-27 00:27:04,122 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,129 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,152 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,160 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,186 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,192 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,215 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,222 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,248 log Unauthorized: /api/accounts/
+WARNING 2026-02-27 00:27:04,255 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,263 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,270 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,278 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,284 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,293 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,299 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,307 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,313 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,322 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,329 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,337 log Bad Request: /api/auth/login/
+WARNING 2026-02-27 00:27:04,344 log Unauthorized: /api/accounts/
+WARNING 2026-02-27 00:27:04,350 log Unauthorized: /api/transactions/
+WARNING 2026-02-27 00:27:04,356 log Unauthorized: /api/users/me/
+WARNING 2026-02-27 00:27:04,372 log Not Found: /api/admin/
+WARNING 2026-02-27 00:27:04,381 log Unauthorized: /api/accounts/
+WARNING 2026-02-27 00:27:04,391 log Unauthorized: /api/accounts/
+WARNING 2026-02-27 00:27:04,409 log Not Found: /etc/passwd
+WARNING 2026-02-27 00:27:04,423 log Not Found: /api/../../../etc/passwd
+WARNING 2026-02-27 00:27:04,437 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:19:18,481 log Method Not Allowed: /api/auth/login/
+WARNING 2026-03-02 12:19:18,489 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:19:18,543 log Unauthorized: /api/users/
+WARNING 2026-03-02 12:19:18,551 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 12:19:18,566 log Not Found: /api/admin/
+WARNING 2026-03-02 12:19:18,699 log Not Found: /api/schema/swagger-ui/
+WARNING 2026-03-02 12:19:18,709 log Not Found: /.env
+WARNING 2026-03-02 12:19:18,717 log Not Found: /config.php
+WARNING 2026-03-02 12:19:18,726 log Not Found: /wp-admin
+WARNING 2026-03-02 12:19:18,734 log Not Found: /phpmyadmin
+WARNING 2026-03-02 12:19:18,743 log Not Found: /backup.sql
+WARNING 2026-03-02 12:19:18,751 log Not Found: /.git/config
+WARNING 2026-03-02 12:19:18,760 log Not Found: /server-status
+WARNING 2026-03-02 12:19:18,768 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:19:18,780 log Not Found: /api/../../etc/passwd
+WARNING 2026-03-02 12:19:18,906 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:19,028 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:19,152 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:19,280 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:19,400 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:19,520 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:19,647 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:19,768 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:19,889 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:20,012 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:20,133 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:20,254 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:20,374 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:20,494 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:20,618 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:20,740 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:20,861 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:20,982 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:21,103 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:21,227 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:21,350 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:21,474 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:21,598 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:21,719 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:21,839 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:21,847 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:21,854 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:21,892 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:21,898 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:21,921 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:21,928 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:21,950 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:21,957 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:21,980 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:21,987 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,010 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,016 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,050 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:19:22,056 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,063 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,089 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:19:22,096 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,103 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,121 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:19:22,128 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,134 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,158 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,164 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,188 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,194 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,219 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,225 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,251 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:19:22,258 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,266 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,272 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,281 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,287 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,296 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,302 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,310 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,317 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,325 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,332 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,340 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:22,347 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:19:22,353 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 12:19:22,358 log Unauthorized: /api/users/me/
+WARNING 2026-03-02 12:19:22,369 log Not Found: /api/admin/
+WARNING 2026-03-02 12:19:22,380 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:19:22,391 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:19:22,399 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:19:22,410 log Not Found: /api/../../../etc/passwd
+WARNING 2026-03-02 12:19:22,418 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:19:30,023 log Method Not Allowed: /api/auth/login/
+WARNING 2026-03-02 12:19:30,029 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:19:30,036 log Unauthorized: /api/users/
+WARNING 2026-03-02 12:19:30,041 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 12:19:30,051 log Not Found: /api/admin/
+WARNING 2026-03-02 12:19:30,166 log Not Found: /api/schema/swagger-ui/
+WARNING 2026-03-02 12:19:30,175 log Not Found: /.env
+WARNING 2026-03-02 12:19:30,183 log Not Found: /config.php
+WARNING 2026-03-02 12:19:30,192 log Not Found: /wp-admin
+WARNING 2026-03-02 12:19:30,201 log Not Found: /phpmyadmin
+WARNING 2026-03-02 12:19:30,209 log Not Found: /backup.sql
+WARNING 2026-03-02 12:19:30,218 log Not Found: /.git/config
+WARNING 2026-03-02 12:19:30,226 log Not Found: /server-status
+WARNING 2026-03-02 12:19:30,235 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:19:30,246 log Not Found: /api/../../etc/passwd
+WARNING 2026-03-02 12:19:30,371 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:30,492 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:30,613 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:30,735 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:30,856 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:30,979 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:31,101 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:31,224 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:31,350 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:31,472 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:31,597 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:31,718 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:31,840 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:31,961 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:32,082 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:32,203 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:32,322 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:32,444 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:32,563 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:32,684 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:32,806 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:32,928 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,052 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,177 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,298 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,305 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,312 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,335 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,342 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,365 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,372 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,394 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,402 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,424 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,430 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,453 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,459 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,485 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:19:33,492 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,498 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,525 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:19:33,531 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,538 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,556 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:19:33,564 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,571 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,594 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,600 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,624 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,631 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,653 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,660 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,686 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:19:33,693 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,701 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,708 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,716 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,723 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,732 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,738 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,746 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,752 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,761 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,767 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,776 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:19:33,782 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:19:33,787 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 12:19:33,793 log Unauthorized: /api/users/me/
+WARNING 2026-03-02 12:19:33,804 log Not Found: /api/admin/
+WARNING 2026-03-02 12:19:33,810 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:19:33,817 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:19:33,825 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:19:33,836 log Not Found: /api/../../../etc/passwd
+WARNING 2026-03-02 12:19:33,844 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:28:50,300 log Method Not Allowed: /api/auth/login/
+WARNING 2026-03-02 12:28:50,306 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:28:50,312 log Unauthorized: /api/users/
+WARNING 2026-03-02 12:28:50,318 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 12:28:50,328 log Not Found: /api/admin/
+WARNING 2026-03-02 12:28:50,436 log Not Found: /api/schema/swagger-ui/
+WARNING 2026-03-02 12:28:50,445 log Not Found: /.env
+WARNING 2026-03-02 12:28:50,453 log Not Found: /config.php
+WARNING 2026-03-02 12:28:50,462 log Not Found: /wp-admin
+WARNING 2026-03-02 12:28:50,471 log Not Found: /phpmyadmin
+WARNING 2026-03-02 12:28:50,480 log Not Found: /backup.sql
+WARNING 2026-03-02 12:28:50,488 log Not Found: /.git/config
+WARNING 2026-03-02 12:28:50,497 log Not Found: /server-status
+WARNING 2026-03-02 12:28:50,505 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:28:50,516 log Not Found: /api/../../etc/passwd
+WARNING 2026-03-02 12:28:50,638 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:50,761 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:50,884 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:51,005 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:51,127 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:51,247 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:51,368 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:51,490 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:51,613 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:51,733 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:51,855 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:51,977 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:52,099 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:52,221 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:52,341 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:52,461 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:52,583 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:52,704 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:52,829 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:52,953 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,075 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,199 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,320 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,443 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,564 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,572 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,578 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,600 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,607 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,630 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,636 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,660 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,667 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,691 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,697 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,720 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,727 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,753 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:28:53,760 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,766 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,792 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:28:53,799 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,805 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,824 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:28:53,831 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,838 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,861 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,867 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,891 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,898 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,921 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,927 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,953 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:28:53,959 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,967 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,975 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,982 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,989 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:53,997 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:54,004 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:54,012 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:54,018 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:54,028 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:54,034 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:54,043 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:54,049 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:28:54,056 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 12:28:54,062 log Unauthorized: /api/users/me/
+WARNING 2026-03-02 12:28:54,071 log Not Found: /api/admin/
+WARNING 2026-03-02 12:28:54,078 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:28:54,084 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:28:54,094 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:28:54,104 log Not Found: /api/../../../etc/passwd
+WARNING 2026-03-02 12:28:54,112 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:28:55,853 log Method Not Allowed: /api/auth/login/
+WARNING 2026-03-02 12:28:55,859 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:28:55,865 log Unauthorized: /api/users/
+WARNING 2026-03-02 12:28:55,871 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 12:28:55,881 log Not Found: /api/admin/
+WARNING 2026-03-02 12:28:56,000 log Not Found: /api/schema/swagger-ui/
+WARNING 2026-03-02 12:28:56,010 log Not Found: /.env
+WARNING 2026-03-02 12:28:56,018 log Not Found: /config.php
+WARNING 2026-03-02 12:28:56,027 log Not Found: /wp-admin
+WARNING 2026-03-02 12:28:56,036 log Not Found: /phpmyadmin
+WARNING 2026-03-02 12:28:56,044 log Not Found: /backup.sql
+WARNING 2026-03-02 12:28:56,053 log Not Found: /.git/config
+WARNING 2026-03-02 12:28:56,062 log Not Found: /server-status
+WARNING 2026-03-02 12:28:56,070 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:28:56,080 log Not Found: /api/../../etc/passwd
+WARNING 2026-03-02 12:28:56,204 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:56,325 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:56,447 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:56,572 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:56,692 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:56,813 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:56,935 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:57,055 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:57,178 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:57,300 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:57,423 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:57,544 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:57,666 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:57,788 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:57,912 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:58,035 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:58,157 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:58,278 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:58,400 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:58,521 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:58,640 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:58,775 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:58,896 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,017 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,140 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,146 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,153 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,175 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,182 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,205 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,212 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,234 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,242 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,265 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,273 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,295 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,302 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,328 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:28:59,334 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,341 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,367 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:28:59,374 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,382 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,400 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:28:59,408 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,414 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,437 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,444 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,468 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,476 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,499 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,506 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,532 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:28:59,539 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,547 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,554 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,562 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,568 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,577 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,583 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,592 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,598 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,607 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,613 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,622 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:28:59,628 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:28:59,633 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 12:28:59,640 log Unauthorized: /api/users/me/
+WARNING 2026-03-02 12:28:59,649 log Not Found: /api/admin/
+WARNING 2026-03-02 12:28:59,656 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:28:59,662 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:28:59,670 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:28:59,680 log Not Found: /api/../../../etc/passwd
+WARNING 2026-03-02 12:28:59,690 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:29:01,234 log Method Not Allowed: /api/auth/login/
+WARNING 2026-03-02 12:29:01,245 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:01,253 log Unauthorized: /api/users/
+WARNING 2026-03-02 12:29:01,260 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 12:29:01,270 log Not Found: /api/admin/
+WARNING 2026-03-02 12:29:01,402 log Not Found: /api/schema/swagger-ui/
+WARNING 2026-03-02 12:29:01,411 log Not Found: /.env
+WARNING 2026-03-02 12:29:01,419 log Not Found: /config.php
+WARNING 2026-03-02 12:29:01,428 log Not Found: /wp-admin
+WARNING 2026-03-02 12:29:01,437 log Not Found: /phpmyadmin
+WARNING 2026-03-02 12:29:01,445 log Not Found: /backup.sql
+WARNING 2026-03-02 12:29:01,453 log Not Found: /.git/config
+WARNING 2026-03-02 12:29:01,462 log Not Found: /server-status
+WARNING 2026-03-02 12:29:01,470 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:29:01,481 log Not Found: /api/../../etc/passwd
+WARNING 2026-03-02 12:29:01,603 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:01,725 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:01,847 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:01,971 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:02,093 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:02,214 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:02,341 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:02,463 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:02,585 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:02,706 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:02,829 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:02,951 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:03,076 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:03,198 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:03,319 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:03,441 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:03,564 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:03,685 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:03,808 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:03,930 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,052 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,174 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,294 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,416 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,537 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,544 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,551 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,575 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,581 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,604 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,610 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,634 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,642 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,665 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,672 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,695 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,701 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,728 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:04,734 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,740 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,767 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:04,775 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,781 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,801 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:04,808 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,814 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,837 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,844 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,867 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,872 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,895 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,901 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,928 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:04,934 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,942 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,949 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,957 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,964 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,973 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,979 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,987 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:04,994 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:05,002 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:05,009 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:05,018 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:05,025 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:05,030 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 12:29:05,036 log Unauthorized: /api/users/me/
+WARNING 2026-03-02 12:29:05,046 log Not Found: /api/admin/
+WARNING 2026-03-02 12:29:05,052 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:05,058 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:05,066 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:29:05,077 log Not Found: /api/../../../etc/passwd
+WARNING 2026-03-02 12:29:05,085 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:29:06,812 log Method Not Allowed: /api/auth/login/
+WARNING 2026-03-02 12:29:06,818 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:06,824 log Unauthorized: /api/users/
+WARNING 2026-03-02 12:29:06,830 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 12:29:06,841 log Not Found: /api/admin/
+WARNING 2026-03-02 12:29:06,951 log Not Found: /api/schema/swagger-ui/
+WARNING 2026-03-02 12:29:06,960 log Not Found: /.env
+WARNING 2026-03-02 12:29:06,968 log Not Found: /config.php
+WARNING 2026-03-02 12:29:06,977 log Not Found: /wp-admin
+WARNING 2026-03-02 12:29:06,985 log Not Found: /phpmyadmin
+WARNING 2026-03-02 12:29:06,994 log Not Found: /backup.sql
+WARNING 2026-03-02 12:29:07,003 log Not Found: /.git/config
+WARNING 2026-03-02 12:29:07,012 log Not Found: /server-status
+WARNING 2026-03-02 12:29:07,020 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:29:07,031 log Not Found: /api/../../etc/passwd
+WARNING 2026-03-02 12:29:07,153 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:07,276 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:07,400 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:07,522 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:07,642 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:07,763 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:07,885 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:08,006 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:08,128 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:08,250 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:08,375 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:08,496 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:08,616 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:08,744 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:08,865 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:08,985 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:09,105 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:09,227 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:09,349 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:09,470 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:09,592 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:09,712 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:09,837 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:09,958 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,081 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,089 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,095 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,119 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,126 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,149 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,157 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,180 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,187 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,210 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,216 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,240 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,246 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,272 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:10,278 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,286 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,312 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:10,319 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,325 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,344 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:10,351 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,358 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,380 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,387 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,410 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,417 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,440 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,446 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,473 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:10,479 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,488 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,494 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,503 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,509 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,518 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,524 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,532 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,539 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,547 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,553 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,562 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:10,568 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:10,574 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 12:29:10,580 log Unauthorized: /api/users/me/
+WARNING 2026-03-02 12:29:10,590 log Not Found: /api/admin/
+WARNING 2026-03-02 12:29:10,596 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:10,603 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:10,611 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:29:10,622 log Not Found: /api/../../../etc/passwd
+WARNING 2026-03-02 12:29:10,630 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:29:12,103 log Method Not Allowed: /api/auth/login/
+WARNING 2026-03-02 12:29:12,110 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:12,115 log Unauthorized: /api/users/
+WARNING 2026-03-02 12:29:12,121 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 12:29:12,132 log Not Found: /api/admin/
+WARNING 2026-03-02 12:29:12,265 log Not Found: /api/schema/swagger-ui/
+WARNING 2026-03-02 12:29:12,274 log Not Found: /.env
+WARNING 2026-03-02 12:29:12,282 log Not Found: /config.php
+WARNING 2026-03-02 12:29:12,291 log Not Found: /wp-admin
+WARNING 2026-03-02 12:29:12,300 log Not Found: /phpmyadmin
+WARNING 2026-03-02 12:29:12,308 log Not Found: /backup.sql
+WARNING 2026-03-02 12:29:12,317 log Not Found: /.git/config
+WARNING 2026-03-02 12:29:12,326 log Not Found: /server-status
+WARNING 2026-03-02 12:29:12,334 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:29:12,345 log Not Found: /api/../../etc/passwd
+WARNING 2026-03-02 12:29:12,467 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:12,588 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:12,710 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:12,835 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:12,959 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:13,082 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:13,204 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:13,325 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:13,446 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:13,567 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:13,688 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:13,808 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:13,932 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:14,055 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:14,176 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:14,300 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:14,423 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:14,543 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:14,665 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:14,786 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:14,910 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,031 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,153 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,276 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,398 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,405 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,411 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,435 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,442 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,465 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,472 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,497 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,504 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,527 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,534 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,557 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,563 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,589 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:15,596 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,603 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,629 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:15,635 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,642 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,660 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:15,667 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,673 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,696 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,703 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,725 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,731 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,755 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,760 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,787 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:15,793 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,801 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,808 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,817 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,824 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,831 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,838 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,846 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,853 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,861 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,868 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,876 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:15,882 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:15,888 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 12:29:15,894 log Unauthorized: /api/users/me/
+WARNING 2026-03-02 12:29:15,906 log Not Found: /api/admin/
+WARNING 2026-03-02 12:29:15,911 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:15,919 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:15,927 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:29:15,938 log Not Found: /api/../../../etc/passwd
+WARNING 2026-03-02 12:29:15,946 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:29:19,622 log Method Not Allowed: /api/auth/login/
+WARNING 2026-03-02 12:29:19,627 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:19,633 log Unauthorized: /api/users/
+WARNING 2026-03-02 12:29:19,640 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 12:29:19,649 log Not Found: /api/admin/
+WARNING 2026-03-02 12:29:19,758 log Not Found: /api/schema/swagger-ui/
+WARNING 2026-03-02 12:29:19,767 log Not Found: /.env
+WARNING 2026-03-02 12:29:19,776 log Not Found: /config.php
+WARNING 2026-03-02 12:29:19,784 log Not Found: /wp-admin
+WARNING 2026-03-02 12:29:19,793 log Not Found: /phpmyadmin
+WARNING 2026-03-02 12:29:19,802 log Not Found: /backup.sql
+WARNING 2026-03-02 12:29:19,811 log Not Found: /.git/config
+WARNING 2026-03-02 12:29:19,820 log Not Found: /server-status
+WARNING 2026-03-02 12:29:19,828 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:29:19,839 log Not Found: /api/../../etc/passwd
+WARNING 2026-03-02 12:29:19,966 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:20,087 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:20,208 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:20,330 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:20,453 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:20,576 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:20,697 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:20,819 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:20,942 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:21,063 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:21,186 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:21,308 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:21,430 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:21,550 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:21,672 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:21,792 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:21,914 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:22,037 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:22,158 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:22,280 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:22,402 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:22,523 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:22,645 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:22,766 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:22,890 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:22,897 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:22,903 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:22,926 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:22,933 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:22,955 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:22,961 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:22,984 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:22,991 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,014 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,021 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,044 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,051 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,077 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:23,083 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,090 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,116 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:23,123 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,129 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,147 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:23,154 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,161 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,184 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,190 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,214 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,223 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,245 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,252 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,278 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:23,285 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,292 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,300 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,308 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,315 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,323 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,329 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,337 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,344 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,352 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,359 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,367 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:23,374 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:23,380 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 12:29:23,386 log Unauthorized: /api/users/me/
+WARNING 2026-03-02 12:29:23,396 log Not Found: /api/admin/
+WARNING 2026-03-02 12:29:23,403 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:23,409 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:23,419 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:29:23,429 log Not Found: /api/../../../etc/passwd
+WARNING 2026-03-02 12:29:23,438 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:29:25,183 log Method Not Allowed: /api/auth/login/
+WARNING 2026-03-02 12:29:25,189 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:25,195 log Unauthorized: /api/users/
+WARNING 2026-03-02 12:29:25,201 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 12:29:25,211 log Not Found: /api/admin/
+WARNING 2026-03-02 12:29:25,320 log Not Found: /api/schema/swagger-ui/
+WARNING 2026-03-02 12:29:25,328 log Not Found: /.env
+WARNING 2026-03-02 12:29:25,338 log Not Found: /config.php
+WARNING 2026-03-02 12:29:25,346 log Not Found: /wp-admin
+WARNING 2026-03-02 12:29:25,355 log Not Found: /phpmyadmin
+WARNING 2026-03-02 12:29:25,363 log Not Found: /backup.sql
+WARNING 2026-03-02 12:29:25,373 log Not Found: /.git/config
+WARNING 2026-03-02 12:29:25,381 log Not Found: /server-status
+WARNING 2026-03-02 12:29:25,390 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:29:25,401 log Not Found: /api/../../etc/passwd
+WARNING 2026-03-02 12:29:25,522 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:25,642 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:25,763 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:25,884 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:26,023 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:26,146 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:26,267 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:26,391 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:26,514 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:26,635 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:26,756 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:26,877 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:26,999 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:27,119 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:27,241 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:27,363 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:27,486 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:27,605 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:27,726 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:27,848 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:27,969 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,091 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,210 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,341 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,462 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,469 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,475 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,498 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,505 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,528 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,535 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,559 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,566 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,589 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,596 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,619 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,625 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,651 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:28,658 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,665 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,691 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:28,698 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,705 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,723 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:28,730 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,737 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,759 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,766 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,789 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,796 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,820 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,825 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,853 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:28,859 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,867 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,874 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,882 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,889 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,899 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,904 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,912 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,919 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,927 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,934 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,942 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:28,949 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:28,955 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 12:29:28,961 log Unauthorized: /api/users/me/
+WARNING 2026-03-02 12:29:28,972 log Not Found: /api/admin/
+WARNING 2026-03-02 12:29:28,978 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:28,985 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:28,994 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:29:29,005 log Not Found: /api/../../../etc/passwd
+WARNING 2026-03-02 12:29:29,013 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:29:30,252 log Method Not Allowed: /api/auth/login/
+WARNING 2026-03-02 12:29:30,265 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:30,272 log Unauthorized: /api/users/
+WARNING 2026-03-02 12:29:30,277 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 12:29:30,288 log Not Found: /api/admin/
+WARNING 2026-03-02 12:29:30,396 log Not Found: /api/schema/swagger-ui/
+WARNING 2026-03-02 12:29:30,405 log Not Found: /.env
+WARNING 2026-03-02 12:29:30,413 log Not Found: /config.php
+WARNING 2026-03-02 12:29:30,422 log Not Found: /wp-admin
+WARNING 2026-03-02 12:29:30,431 log Not Found: /phpmyadmin
+WARNING 2026-03-02 12:29:30,440 log Not Found: /backup.sql
+WARNING 2026-03-02 12:29:30,448 log Not Found: /.git/config
+WARNING 2026-03-02 12:29:30,458 log Not Found: /server-status
+WARNING 2026-03-02 12:29:30,467 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:29:30,478 log Not Found: /api/../../etc/passwd
+WARNING 2026-03-02 12:29:30,600 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:30,723 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:30,845 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:30,967 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:31,085 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:31,206 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:31,328 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:31,450 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:31,573 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:31,694 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:31,814 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:31,935 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:32,056 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:32,177 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:32,299 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:32,419 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:32,542 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:32,663 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:32,784 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:32,909 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,030 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,151 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,272 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,393 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,516 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,523 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,529 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,553 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,560 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,584 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,590 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,613 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,619 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,642 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,649 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,671 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,677 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,704 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:33,710 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,717 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,743 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:33,750 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,756 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,774 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:33,780 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,787 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,809 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,816 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,839 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,845 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,868 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,874 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,901 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:33,908 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,916 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,923 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,932 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,938 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,946 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,953 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,961 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,969 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,977 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,985 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,992 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:33,999 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:34,005 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 12:29:34,011 log Unauthorized: /api/users/me/
+WARNING 2026-03-02 12:29:34,022 log Not Found: /api/admin/
+WARNING 2026-03-02 12:29:34,028 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:34,034 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:34,043 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:29:34,054 log Not Found: /api/../../../etc/passwd
+WARNING 2026-03-02 12:29:34,062 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:29:35,586 log Method Not Allowed: /api/auth/login/
+WARNING 2026-03-02 12:29:35,592 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:35,599 log Unauthorized: /api/users/
+WARNING 2026-03-02 12:29:35,605 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 12:29:35,614 log Not Found: /api/admin/
+WARNING 2026-03-02 12:29:35,723 log Not Found: /api/schema/swagger-ui/
+WARNING 2026-03-02 12:29:35,732 log Not Found: /.env
+WARNING 2026-03-02 12:29:35,740 log Not Found: /config.php
+WARNING 2026-03-02 12:29:35,750 log Not Found: /wp-admin
+WARNING 2026-03-02 12:29:35,758 log Not Found: /phpmyadmin
+WARNING 2026-03-02 12:29:35,767 log Not Found: /backup.sql
+WARNING 2026-03-02 12:29:35,775 log Not Found: /.git/config
+WARNING 2026-03-02 12:29:35,784 log Not Found: /server-status
+WARNING 2026-03-02 12:29:35,792 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:29:35,803 log Not Found: /api/../../etc/passwd
+WARNING 2026-03-02 12:29:35,927 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:36,051 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:36,173 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:36,297 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:36,417 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:36,540 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:36,661 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:36,783 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:36,905 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:37,028 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:37,148 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:37,270 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:37,393 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:37,515 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:37,637 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:37,758 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:37,880 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:38,003 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:38,124 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:38,247 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:38,370 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:38,492 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:38,615 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:38,736 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:38,859 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:38,867 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:38,873 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:38,896 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:38,902 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:38,925 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:38,932 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:38,956 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:38,963 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:38,986 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:38,993 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,016 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,022 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,048 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:39,055 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,061 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,087 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:39,094 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,101 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,120 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:39,126 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,134 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,156 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,163 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,186 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,192 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,214 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,221 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,247 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:39,254 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,261 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,268 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,277 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,284 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,292 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,298 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,306 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,313 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,321 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,327 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,335 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 12:29:39,342 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:39,349 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 12:29:39,354 log Unauthorized: /api/users/me/
+WARNING 2026-03-02 12:29:39,364 log Not Found: /api/admin/
+WARNING 2026-03-02 12:29:39,370 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:39,377 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 12:29:39,386 log Not Found: /etc/passwd
+WARNING 2026-03-02 12:29:39,395 log Not Found: /api/../../../etc/passwd
+WARNING 2026-03-02 12:29:39,405 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:06:13,072 log Method Not Allowed: /api/auth/login/
+WARNING 2026-03-02 13:06:13,079 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:06:13,085 log Unauthorized: /api/users/
+WARNING 2026-03-02 13:06:13,091 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 13:06:13,104 log Not Found: /api/admin/
+WARNING 2026-03-02 13:06:13,234 log Not Found: /api/schema/swagger-ui/
+WARNING 2026-03-02 13:06:13,243 log Not Found: /.env
+WARNING 2026-03-02 13:06:13,251 log Not Found: /config.php
+WARNING 2026-03-02 13:06:13,311 log Not Found: /wp-admin
+WARNING 2026-03-02 13:06:13,319 log Not Found: /phpmyadmin
+WARNING 2026-03-02 13:06:13,329 log Not Found: /backup.sql
+WARNING 2026-03-02 13:06:13,337 log Not Found: /.git/config
+WARNING 2026-03-02 13:06:13,346 log Not Found: /server-status
+WARNING 2026-03-02 13:06:13,354 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:06:13,365 log Not Found: /api/../../etc/passwd
+WARNING 2026-03-02 13:06:13,490 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:13,611 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:13,731 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:13,850 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:13,972 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:14,098 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:14,220 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:14,342 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:14,464 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:14,586 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:14,709 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:14,832 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:14,957 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:15,079 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:15,202 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:15,324 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:15,447 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:15,569 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:15,690 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:15,811 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:15,934 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,056 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,179 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,300 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,420 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,428 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,434 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,460 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,467 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,491 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,498 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,520 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,527 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,550 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,558 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,580 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,587 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,613 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:06:16,619 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,626 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,653 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:06:16,659 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,666 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,684 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:06:16,690 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,697 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,719 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,726 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,750 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,756 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,779 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,785 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,811 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:06:16,818 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,826 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,833 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,842 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,848 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,857 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,863 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,871 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,878 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,886 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,893 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,900 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:16,907 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:06:16,913 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 13:06:16,919 log Unauthorized: /api/users/me/
+WARNING 2026-03-02 13:06:16,930 log Not Found: /api/admin/
+WARNING 2026-03-02 13:06:16,939 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:06:16,946 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:06:16,955 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:06:16,965 log Not Found: /api/../../../etc/passwd
+WARNING 2026-03-02 13:06:16,974 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:06:22,949 log Method Not Allowed: /api/auth/login/
+WARNING 2026-03-02 13:06:22,956 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:06:22,962 log Unauthorized: /api/users/
+WARNING 2026-03-02 13:06:22,967 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 13:06:22,978 log Not Found: /api/admin/
+WARNING 2026-03-02 13:06:23,104 log Not Found: /api/schema/swagger-ui/
+WARNING 2026-03-02 13:06:23,113 log Not Found: /.env
+WARNING 2026-03-02 13:06:23,122 log Not Found: /config.php
+WARNING 2026-03-02 13:06:23,131 log Not Found: /wp-admin
+WARNING 2026-03-02 13:06:23,139 log Not Found: /phpmyadmin
+WARNING 2026-03-02 13:06:23,148 log Not Found: /backup.sql
+WARNING 2026-03-02 13:06:23,159 log Not Found: /.git/config
+WARNING 2026-03-02 13:06:23,169 log Not Found: /server-status
+WARNING 2026-03-02 13:06:23,178 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:06:23,188 log Not Found: /api/../../etc/passwd
+WARNING 2026-03-02 13:06:23,312 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:23,437 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:23,561 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:23,686 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:23,809 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:23,931 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:24,056 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:24,184 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:24,309 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:24,432 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:24,557 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:24,681 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:24,806 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:24,930 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:25,054 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:25,177 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:25,302 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:25,429 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:25,555 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:25,678 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:25,804 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:25,928 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,052 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,174 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,298 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,305 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,311 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,334 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,341 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,364 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,371 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,394 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,401 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,425 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,431 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,453 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,460 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,486 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:06:26,493 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,499 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,525 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:06:26,531 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,538 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,556 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:06:26,562 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,569 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,592 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,598 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,621 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,628 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,650 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,657 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,682 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:06:26,689 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,697 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,704 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,713 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,719 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,727 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,733 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,741 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,748 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,757 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,763 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,772 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:06:26,778 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:06:26,785 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 13:06:26,791 log Unauthorized: /api/users/me/
+WARNING 2026-03-02 13:06:26,801 log Not Found: /api/admin/
+WARNING 2026-03-02 13:06:26,808 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:06:26,814 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:06:26,823 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:06:26,833 log Not Found: /api/../../../etc/passwd
+WARNING 2026-03-02 13:06:26,843 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:09:05,926 log Method Not Allowed: /api/auth/login/
+WARNING 2026-03-02 13:09:05,933 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:05,939 log Unauthorized: /api/users/
+WARNING 2026-03-02 13:09:05,945 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 13:09:05,955 log Not Found: /api/admin/
+WARNING 2026-03-02 13:09:06,075 log Not Found: /api/schema/swagger-ui/
+WARNING 2026-03-02 13:09:06,084 log Not Found: /.env
+WARNING 2026-03-02 13:09:06,093 log Not Found: /config.php
+WARNING 2026-03-02 13:09:06,102 log Not Found: /wp-admin
+WARNING 2026-03-02 13:09:06,110 log Not Found: /phpmyadmin
+WARNING 2026-03-02 13:09:06,120 log Not Found: /backup.sql
+WARNING 2026-03-02 13:09:06,128 log Not Found: /.git/config
+WARNING 2026-03-02 13:09:06,138 log Not Found: /server-status
+WARNING 2026-03-02 13:09:06,145 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:09:06,156 log Not Found: /api/../../etc/passwd
+WARNING 2026-03-02 13:09:06,279 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:06,401 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:06,525 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:06,648 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:06,771 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:06,893 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:07,014 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:07,140 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:07,264 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:07,387 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:07,509 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:07,636 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:07,759 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:07,881 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:08,002 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:08,136 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:08,259 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:08,380 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:08,504 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:08,625 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:08,747 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:08,874 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:08,997 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,119 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,266 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,273 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,279 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,303 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,309 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,332 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,340 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,365 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,373 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,396 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,403 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,426 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,433 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,459 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:09,466 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,472 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,499 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:09,506 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,511 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,530 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:09,536 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,543 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,567 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,574 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,596 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,603 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,627 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,634 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,661 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:09,668 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,675 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,683 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,691 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,697 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,705 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,712 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,720 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,726 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,735 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,741 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,750 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:09,756 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:09,761 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 13:09:09,768 log Unauthorized: /api/users/me/
+WARNING 2026-03-02 13:09:09,778 log Not Found: /api/admin/
+WARNING 2026-03-02 13:09:09,785 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:09,793 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:09,803 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:09:09,812 log Not Found: /api/../../../etc/passwd
+WARNING 2026-03-02 13:09:09,822 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:09:10,965 log Method Not Allowed: /api/auth/login/
+WARNING 2026-03-02 13:09:10,972 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:10,978 log Unauthorized: /api/users/
+WARNING 2026-03-02 13:09:10,984 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 13:09:10,994 log Not Found: /api/admin/
+WARNING 2026-03-02 13:09:11,104 log Not Found: /api/schema/swagger-ui/
+WARNING 2026-03-02 13:09:11,112 log Not Found: /.env
+WARNING 2026-03-02 13:09:11,122 log Not Found: /config.php
+WARNING 2026-03-02 13:09:11,130 log Not Found: /wp-admin
+WARNING 2026-03-02 13:09:11,139 log Not Found: /phpmyadmin
+WARNING 2026-03-02 13:09:11,147 log Not Found: /backup.sql
+WARNING 2026-03-02 13:09:11,156 log Not Found: /.git/config
+WARNING 2026-03-02 13:09:11,165 log Not Found: /server-status
+WARNING 2026-03-02 13:09:11,174 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:09:11,185 log Not Found: /api/../../etc/passwd
+WARNING 2026-03-02 13:09:11,307 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:11,431 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:11,552 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:11,679 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:11,801 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:11,926 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:12,048 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:12,171 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:12,293 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:12,415 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:12,535 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:12,656 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:12,778 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:12,899 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:13,022 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:13,145 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:13,266 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:13,389 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:13,510 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:13,633 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:13,757 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:13,877 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:13,997 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,119 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,240 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,247 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,253 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,276 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,282 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,306 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,312 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,336 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,343 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,366 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,373 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,395 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,402 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,428 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:14,435 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,441 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,475 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:14,482 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,489 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,510 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:14,517 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,524 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,546 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,553 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,576 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,583 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,605 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,611 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,638 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:14,645 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,654 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,661 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,669 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,676 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,685 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,691 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,699 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,706 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,714 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,720 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,729 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:14,736 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:14,741 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 13:09:14,747 log Unauthorized: /api/users/me/
+WARNING 2026-03-02 13:09:14,757 log Not Found: /api/admin/
+WARNING 2026-03-02 13:09:14,763 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:14,770 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:14,778 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:09:14,789 log Not Found: /api/../../../etc/passwd
+WARNING 2026-03-02 13:09:14,797 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:09:15,809 log Method Not Allowed: /api/auth/login/
+WARNING 2026-03-02 13:09:15,816 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:15,822 log Unauthorized: /api/users/
+WARNING 2026-03-02 13:09:15,827 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 13:09:15,837 log Not Found: /api/admin/
+WARNING 2026-03-02 13:09:15,973 log Not Found: /api/schema/swagger-ui/
+WARNING 2026-03-02 13:09:15,982 log Not Found: /.env
+WARNING 2026-03-02 13:09:15,991 log Not Found: /config.php
+WARNING 2026-03-02 13:09:16,001 log Not Found: /wp-admin
+WARNING 2026-03-02 13:09:16,009 log Not Found: /phpmyadmin
+WARNING 2026-03-02 13:09:16,018 log Not Found: /backup.sql
+WARNING 2026-03-02 13:09:16,026 log Not Found: /.git/config
+WARNING 2026-03-02 13:09:16,036 log Not Found: /server-status
+WARNING 2026-03-02 13:09:16,044 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:09:16,055 log Not Found: /api/../../etc/passwd
+WARNING 2026-03-02 13:09:16,178 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:16,302 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:16,423 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:16,546 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:16,672 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:16,799 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:16,921 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:17,048 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:17,174 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:17,298 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:17,421 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:17,544 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:17,665 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:17,787 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:17,907 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:18,035 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:18,156 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:18,277 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:18,401 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:18,524 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:18,647 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:18,770 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:18,891 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,013 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,135 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,141 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,148 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,171 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,178 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,202 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,209 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,233 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,239 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,262 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,269 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,292 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,298 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,325 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:19,332 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,338 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,365 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:19,371 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,378 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,397 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:19,403 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,410 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,433 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,439 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,462 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,469 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,491 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,498 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,523 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:19,529 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,538 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,544 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,552 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,559 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,568 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,574 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,582 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,588 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,596 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,603 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,612 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:19,618 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:19,623 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 13:09:19,629 log Unauthorized: /api/users/me/
+WARNING 2026-03-02 13:09:19,639 log Not Found: /api/admin/
+WARNING 2026-03-02 13:09:19,645 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:19,652 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:19,660 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:09:19,671 log Not Found: /api/../../../etc/passwd
+WARNING 2026-03-02 13:09:19,680 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:09:21,033 log Method Not Allowed: /api/auth/login/
+WARNING 2026-03-02 13:09:21,041 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:21,048 log Unauthorized: /api/users/
+WARNING 2026-03-02 13:09:21,053 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 13:09:21,063 log Not Found: /api/admin/
+WARNING 2026-03-02 13:09:21,176 log Not Found: /api/schema/swagger-ui/
+WARNING 2026-03-02 13:09:21,185 log Not Found: /.env
+WARNING 2026-03-02 13:09:21,193 log Not Found: /config.php
+WARNING 2026-03-02 13:09:21,202 log Not Found: /wp-admin
+WARNING 2026-03-02 13:09:21,210 log Not Found: /phpmyadmin
+WARNING 2026-03-02 13:09:21,220 log Not Found: /backup.sql
+WARNING 2026-03-02 13:09:21,229 log Not Found: /.git/config
+WARNING 2026-03-02 13:09:21,239 log Not Found: /server-status
+WARNING 2026-03-02 13:09:21,248 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:09:21,259 log Not Found: /api/../../etc/passwd
+WARNING 2026-03-02 13:09:21,381 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:21,509 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:21,636 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:21,765 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:21,884 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:22,009 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:22,128 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:22,254 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:22,376 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:22,498 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:22,619 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:22,742 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:22,864 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:22,985 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:23,109 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:23,230 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:23,353 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:23,475 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:23,597 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:23,720 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:23,842 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:23,962 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,086 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,207 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,329 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,336 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,342 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,365 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,373 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,396 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,402 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,425 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,432 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,456 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,463 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,485 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,492 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,519 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:24,525 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,532 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,559 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:24,565 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,572 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,591 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:24,598 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,605 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,628 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,634 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,657 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,664 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,686 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,693 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,720 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:24,726 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,735 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,741 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,749 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,756 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,765 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,771 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,779 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,786 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,794 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,801 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,809 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:09:24,816 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:24,821 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 13:09:24,828 log Unauthorized: /api/users/me/
+WARNING 2026-03-02 13:09:24,838 log Not Found: /api/admin/
+WARNING 2026-03-02 13:09:24,845 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:24,851 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:09:24,860 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:09:24,870 log Not Found: /api/../../../etc/passwd
+WARNING 2026-03-02 13:09:24,878 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:16:27,792 log Method Not Allowed: /api/auth/login/
+WARNING 2026-03-02 13:16:27,799 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:16:27,806 log Unauthorized: /api/users/
+WARNING 2026-03-02 13:16:27,812 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 13:16:27,824 log Not Found: /api/admin/
+WARNING 2026-03-02 13:16:28,003 log Not Found: /api/schema/swagger-ui/
+WARNING 2026-03-02 13:16:28,013 log Not Found: /.env
+WARNING 2026-03-02 13:16:28,022 log Not Found: /config.php
+WARNING 2026-03-02 13:16:28,031 log Not Found: /wp-admin
+WARNING 2026-03-02 13:16:28,039 log Not Found: /phpmyadmin
+WARNING 2026-03-02 13:16:28,048 log Not Found: /backup.sql
+WARNING 2026-03-02 13:16:28,057 log Not Found: /.git/config
+WARNING 2026-03-02 13:16:28,066 log Not Found: /server-status
+WARNING 2026-03-02 13:16:28,075 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:16:28,085 log Not Found: /api/../../etc/passwd
+WARNING 2026-03-02 13:16:28,208 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:28,335 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:28,459 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:28,582 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:28,704 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:28,825 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:28,951 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:29,078 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:29,200 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:29,323 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:29,448 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:29,571 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:29,694 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:29,819 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:29,941 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:30,064 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:30,184 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:30,306 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:30,430 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:30,551 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:30,671 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:30,793 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:30,913 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,035 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,155 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,161 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,168 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,192 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,198 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,221 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,228 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,251 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,258 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,281 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,289 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,311 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,319 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,346 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:16:31,352 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,359 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,384 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:16:31,392 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,397 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,415 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:16:31,422 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,428 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,450 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,458 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,481 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,488 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,510 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,516 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,542 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:16:31,549 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,558 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,564 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,572 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,579 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,587 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,594 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,601 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,608 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,616 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,623 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,631 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:16:31,637 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:16:31,643 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 13:16:31,649 log Unauthorized: /api/users/me/
+WARNING 2026-03-02 13:16:31,660 log Not Found: /api/admin/
+WARNING 2026-03-02 13:16:31,669 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:16:31,679 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:16:31,688 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:16:31,699 log Not Found: /api/../../../etc/passwd
+WARNING 2026-03-02 13:16:31,707 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:17:00,827 log Method Not Allowed: /api/auth/login/
+WARNING 2026-03-02 13:17:00,833 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:17:00,839 log Unauthorized: /api/users/
+WARNING 2026-03-02 13:17:00,845 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 13:17:00,855 log Not Found: /api/admin/
+WARNING 2026-03-02 13:17:00,973 log Not Found: /api/schema/swagger-ui/
+WARNING 2026-03-02 13:17:00,981 log Not Found: /.env
+WARNING 2026-03-02 13:17:00,990 log Not Found: /config.php
+WARNING 2026-03-02 13:17:00,999 log Not Found: /wp-admin
+WARNING 2026-03-02 13:17:01,008 log Not Found: /phpmyadmin
+WARNING 2026-03-02 13:17:01,017 log Not Found: /backup.sql
+WARNING 2026-03-02 13:17:01,025 log Not Found: /.git/config
+WARNING 2026-03-02 13:17:01,035 log Not Found: /server-status
+WARNING 2026-03-02 13:17:01,044 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:17:01,054 log Not Found: /api/../../etc/passwd
+WARNING 2026-03-02 13:17:01,173 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:01,294 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:01,416 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:01,540 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:01,663 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:01,786 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:01,908 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:02,030 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:02,152 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:02,274 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:02,395 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:02,518 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:02,640 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:02,765 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:02,890 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:03,014 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:03,137 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:03,262 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:03,387 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:03,515 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:03,641 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:03,768 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:03,892 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,017 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,143 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,150 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,156 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,181 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,187 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,211 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,218 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,241 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,248 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,271 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,277 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,301 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,307 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,334 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:17:04,341 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,348 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,375 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:17:04,382 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,389 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,408 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:17:04,414 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,421 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,444 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,451 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,474 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,481 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,504 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,511 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,537 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:17:04,544 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,552 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,558 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,567 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,574 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,583 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,589 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,597 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,604 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,613 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,620 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,628 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:04,634 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:17:04,639 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 13:17:04,645 log Unauthorized: /api/users/me/
+WARNING 2026-03-02 13:17:04,656 log Not Found: /api/admin/
+WARNING 2026-03-02 13:17:04,662 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:17:04,669 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:17:04,677 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:17:04,687 log Not Found: /api/../../../etc/passwd
+WARNING 2026-03-02 13:17:04,697 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:17:26,954 log Method Not Allowed: /api/auth/login/
+WARNING 2026-03-02 13:17:26,960 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:17:26,966 log Unauthorized: /api/users/
+WARNING 2026-03-02 13:17:26,972 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 13:17:26,982 log Not Found: /api/admin/
+WARNING 2026-03-02 13:17:27,098 log Not Found: /api/schema/swagger-ui/
+WARNING 2026-03-02 13:17:27,107 log Not Found: /.env
+WARNING 2026-03-02 13:17:27,116 log Not Found: /config.php
+WARNING 2026-03-02 13:17:27,125 log Not Found: /wp-admin
+WARNING 2026-03-02 13:17:27,135 log Not Found: /phpmyadmin
+WARNING 2026-03-02 13:17:27,145 log Not Found: /backup.sql
+WARNING 2026-03-02 13:17:27,153 log Not Found: /.git/config
+WARNING 2026-03-02 13:17:27,162 log Not Found: /server-status
+WARNING 2026-03-02 13:17:27,170 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:17:27,182 log Not Found: /api/../../etc/passwd
+WARNING 2026-03-02 13:17:27,305 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:27,429 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:27,552 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:27,675 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:27,797 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:27,921 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:28,045 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:28,169 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:28,298 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:28,421 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:28,544 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:28,666 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:28,793 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:28,934 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:29,062 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:29,191 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:29,319 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:29,446 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:29,584 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:29,711 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:29,838 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:29,968 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,096 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,221 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,344 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,351 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,358 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,381 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,388 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,411 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,418 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,441 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,447 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,471 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,478 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,500 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,508 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,535 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:17:30,541 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,547 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,574 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:17:30,580 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,587 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,606 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:17:30,612 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,619 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,642 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,648 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,671 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,678 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,699 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,707 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,733 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:17:30,740 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,748 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,754 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,763 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,769 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,778 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,784 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,792 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,798 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,806 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,813 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,822 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:17:30,828 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:17:30,835 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 13:17:30,841 log Unauthorized: /api/users/me/
+WARNING 2026-03-02 13:17:30,851 log Not Found: /api/admin/
+WARNING 2026-03-02 13:17:30,856 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:17:30,863 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:17:30,871 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:17:30,882 log Not Found: /api/../../../etc/passwd
+WARNING 2026-03-02 13:17:30,891 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:18:19,675 log Method Not Allowed: /api/auth/login/
+WARNING 2026-03-02 13:18:19,681 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:18:19,688 log Unauthorized: /api/users/
+WARNING 2026-03-02 13:18:19,694 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 13:18:19,703 log Not Found: /api/admin/
+WARNING 2026-03-02 13:18:19,811 log Not Found: /api/schema/swagger-ui/
+WARNING 2026-03-02 13:18:19,819 log Not Found: /.env
+WARNING 2026-03-02 13:18:19,828 log Not Found: /config.php
+WARNING 2026-03-02 13:18:19,836 log Not Found: /wp-admin
+WARNING 2026-03-02 13:18:19,846 log Not Found: /phpmyadmin
+WARNING 2026-03-02 13:18:19,855 log Not Found: /backup.sql
+WARNING 2026-03-02 13:18:19,864 log Not Found: /.git/config
+WARNING 2026-03-02 13:18:19,873 log Not Found: /server-status
+WARNING 2026-03-02 13:18:19,882 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:18:19,893 log Not Found: /api/../../etc/passwd
+WARNING 2026-03-02 13:18:20,016 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:20,139 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:20,273 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:20,420 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:20,545 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:20,670 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:20,795 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:20,914 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:21,035 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:21,158 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:21,280 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:21,401 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:21,521 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:21,640 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:21,760 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:21,879 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:21,998 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:22,121 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:22,242 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:22,363 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:22,484 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:22,605 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:22,724 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:22,845 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:22,964 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:22,971 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:22,977 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:22,999 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,027 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,049 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,055 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,077 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,084 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,105 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,112 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,134 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,140 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,164 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:18:23,170 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,176 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,201 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:18:23,207 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,213 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,230 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:18:23,236 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,242 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,264 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,270 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,292 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,298 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,320 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,329 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,354 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:18:23,360 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,368 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,374 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,381 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,388 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,395 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,401 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,408 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,414 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,422 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,428 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,436 log Bad Request: /api/auth/login/
+WARNING 2026-03-02 13:18:23,442 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:18:23,448 log Unauthorized: /api/transactions/
+WARNING 2026-03-02 13:18:23,453 log Unauthorized: /api/users/me/
+WARNING 2026-03-02 13:18:23,463 log Not Found: /api/admin/
+WARNING 2026-03-02 13:18:23,469 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:18:23,475 log Unauthorized: /api/accounts/
+WARNING 2026-03-02 13:18:23,483 log Not Found: /etc/passwd
+WARNING 2026-03-02 13:18:23,493 log Not Found: /api/../../../etc/passwd
+WARNING 2026-03-02 13:18:23,501 log Not Found: /etc/passwd
+INFO 2026-03-02 20:21:03,799 autoreload Watching for file changes with StatReloader
+INFO 2026-03-03 04:06:17,175 autoreload Watching for file changes with StatReloader
+INFO 2026-03-03 04:06:50,496 autoreload Watching for file changes with StatReloader
