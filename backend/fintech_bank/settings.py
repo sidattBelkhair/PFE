@@ -231,6 +231,26 @@ LOGGING = {
     },
 }
 
+# ── Email ───────────────────────────────────────────────────────────────────
+# En DEBUG sans vraies credentials Gmail → console (OTP visible dans le terminal)
+_email_user = config('EMAIL_HOST_USER', default='')
+_email_pass = config('EMAIL_HOST_PASSWORD', default='')
+_has_real_creds = bool(_email_user and _email_user != 'TON_EMAIL@gmail.com' and _email_pass and _email_pass != 'TON_MOT_DE_PASSE_APPLICATION')
+
+if _has_real_creds:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = config('EMAIL_HOST', default='smtp.gmail.com')
+    EMAIL_PORT = config('EMAIL_PORT', default=587, cast=int)
+    EMAIL_USE_TLS = True
+    EMAIL_HOST_USER = _email_user
+    EMAIL_HOST_PASSWORD = _email_pass
+    DEFAULT_FROM_EMAIL = _email_user
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    EMAIL_HOST_USER = ''
+    EMAIL_HOST_PASSWORD = ''
+    DEFAULT_FROM_EMAIL = 'noreply@rssbank.mr'
+
 # Cache pour le comptage brute-force (en mémoire)
 CACHES = {
     'default': {

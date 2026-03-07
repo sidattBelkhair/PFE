@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import '../../providers/auth_provider.dart';
+import '../../providers/language_provider.dart';
 import '../../core/theme/app_theme.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -37,10 +39,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: AppTheme.backgroundColor,
       appBar: AppBar(
-        title: const Text('Mon Profil'),
+        title: Text(l.profile),
         backgroundColor: Colors.white,
         foregroundColor: AppTheme.textPrimary,
         elevation: 0,
@@ -62,7 +65,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         builder: (context, auth, _) {
           final user = auth.currentUser;
           if (user == null) {
-            return const Center(child: Text('Utilisateur non trouvé'));
+            return Center(child: Text(l.error));
           }
           final initials =
               '${user.firstName.isNotEmpty ? user.firstName[0] : ''}${user.lastName.isNotEmpty ? user.lastName[0] : ''}'
@@ -134,10 +137,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 // Infos / formulaire
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: _isEditing ? _buildForm(auth) : _buildInfoCard(user),
+                  child: _isEditing ? _buildForm(auth, l) : _buildInfoCard(user, l),
                 ),
 
                 const SizedBox(height: 20),
+
+                // Switcher de langue
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: _buildLanguageCard(l),
+                ),
+
+                const SizedBox(height: 10),
 
                 // Actions
                 Padding(
@@ -146,7 +157,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     children: [
                       _ProfileAction(
                         icon: Icons.lock_outline,
-                        label: 'Changer le mot de passe',
+                        label: l.changePassword,
                         onTap: () => context.push('/change-password'),
                       ),
                       const SizedBox(height: 10),
@@ -166,9 +177,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         width: double.infinity,
                         child: OutlinedButton.icon(
                           icon: const Icon(Icons.logout, color: AppTheme.errorColor),
-                          label: const Text(
-                            'Déconnexion',
-                            style: TextStyle(color: AppTheme.errorColor),
+                          label: Text(
+                            l.logout,
+                            style: const TextStyle(color: AppTheme.errorColor),
                           ),
                           style: OutlinedButton.styleFrom(
                             side: const BorderSide(color: AppTheme.errorColor),
@@ -176,7 +187,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12)),
                           ),
-                          onPressed: () => _logout(context, auth),
+                          onPressed: () => _logout(context, auth, l),
                         ),
                       ),
                       const SizedBox(height: 24),
@@ -191,7 +202,48 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
-  Widget _buildInfoCard(user) {
+  Widget _buildLanguageCard(AppLocalizations l) {
+    return Consumer<LanguageProvider>(
+      builder: (context, lang, _) {
+        return Container(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(12),
+            boxShadow: [
+              BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 6),
+            ],
+          ),
+          child: Row(
+            children: [
+              const Icon(Icons.language, color: AppTheme.primaryGold, size: 22),
+              const SizedBox(width: 14),
+              Text(
+                l.language,
+                style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 14),
+              ),
+              const Spacer(),
+              // Bouton FR
+              _LangButton(
+                label: 'FR',
+                selected: !lang.isArabic,
+                onTap: () => lang.setLocale(const Locale('fr')),
+              ),
+              const SizedBox(width: 8),
+              // Bouton AR
+              _LangButton(
+                label: 'AR',
+                selected: lang.isArabic,
+                onTap: () => lang.setLocale(const Locale('ar')),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildInfoCard(user, AppLocalizations l) {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -206,14 +258,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
       child: Column(
         children: [
-          _InfoRow(label: 'Prénom', value: user.firstName, icon: Icons.person_outline),
+          _InfoRow(label: l.firstName, value: user.firstName, icon: Icons.person_outline),
           const Divider(indent: 56, height: 1),
-          _InfoRow(label: 'Nom', value: user.lastName, icon: Icons.person_outline),
+          _InfoRow(label: l.lastName, value: user.lastName, icon: Icons.person_outline),
           const Divider(indent: 56, height: 1),
-          _InfoRow(label: 'Email', value: user.email, icon: Icons.email_outlined),
+          _InfoRow(label: l.email, value: user.email, icon: Icons.email_outlined),
           const Divider(indent: 56, height: 1),
           _InfoRow(
-            label: 'Téléphone',
+            label: l.phone,
             value: user.phoneNumber ?? '-',
             icon: Icons.phone_outlined,
           ),
@@ -229,35 +281,35 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
-  Widget _buildForm(AuthProvider auth) {
+  Widget _buildForm(AuthProvider auth, AppLocalizations l) {
     return Form(
       key: _formKey,
       child: Column(
         children: [
           TextFormField(
             controller: _firstNameCtrl,
-            decoration: const InputDecoration(
-              labelText: 'Prénom',
-              prefixIcon: Icon(Icons.person_outline),
+            decoration: InputDecoration(
+              labelText: l.firstName,
+              prefixIcon: const Icon(Icons.person_outline),
             ),
-            validator: (v) => (v == null || v.isEmpty) ? 'Requis' : null,
+            validator: (v) => (v == null || v.isEmpty) ? l.required : null,
           ),
           const SizedBox(height: 14),
           TextFormField(
             controller: _lastNameCtrl,
-            decoration: const InputDecoration(
-              labelText: 'Nom',
-              prefixIcon: Icon(Icons.person_outline),
+            decoration: InputDecoration(
+              labelText: l.lastName,
+              prefixIcon: const Icon(Icons.person_outline),
             ),
-            validator: (v) => (v == null || v.isEmpty) ? 'Requis' : null,
+            validator: (v) => (v == null || v.isEmpty) ? l.required : null,
           ),
           const SizedBox(height: 14),
           TextFormField(
             controller: _phoneCtrl,
             keyboardType: TextInputType.phone,
-            decoration: const InputDecoration(
-              labelText: 'Téléphone',
-              prefixIcon: Icon(Icons.phone_outlined),
+            decoration: InputDecoration(
+              labelText: l.phone,
+              prefixIcon: const Icon(Icons.phone_outlined),
             ),
           ),
           if (auth.errorMessage != null) ...[
@@ -270,13 +322,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Expanded(
                 child: OutlinedButton(
                   onPressed: () => setState(() => _isEditing = false),
-                  child: const Text('Annuler'),
+                  child: Text(l.cancel),
                 ),
               ),
               const SizedBox(width: 14),
               Expanded(
                 child: ElevatedButton(
-                  onPressed: auth.isLoading ? null : () => _save(auth),
+                  onPressed: auth.isLoading ? null : () => _save(auth, l),
                   child: auth.isLoading
                       ? const SizedBox(
                           height: 18,
@@ -284,7 +336,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           child:
                               CircularProgressIndicator(color: Colors.white, strokeWidth: 2),
                         )
-                      : const Text('Enregistrer'),
+                      : Text(l.save),
                 ),
               ),
             ],
@@ -294,7 +346,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
-  Future<void> _save(AuthProvider auth) async {
+  Future<void> _save(AuthProvider auth, AppLocalizations l) async {
     if (!_formKey.currentState!.validate()) return;
     final ok = await auth.updateProfile(
       firstName: _firstNameCtrl.text.trim(),
@@ -304,26 +356,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
     if (ok && mounted) {
       setState(() => _isEditing = false);
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Profil mis à jour'),
+        SnackBar(
+          content: Text(l.success),
           backgroundColor: AppTheme.successColor,
         ),
       );
     }
   }
 
-  Future<void> _logout(BuildContext context, AuthProvider auth) async {
+  Future<void> _logout(BuildContext context, AuthProvider auth, AppLocalizations l) async {
     final confirm = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: const Text('Déconnexion'),
+        title: Text(l.logout),
         content: const Text('Êtes-vous sûr de vouloir vous déconnecter ?'),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text('Annuler')),
+          TextButton(onPressed: () => Navigator.pop(ctx, false), child: Text(l.cancel)),
           ElevatedButton(
             style: ElevatedButton.styleFrom(backgroundColor: AppTheme.errorColor),
             onPressed: () => Navigator.pop(ctx, true),
-            child: const Text('Déconnexion'),
+            child: Text(l.logout),
           ),
         ],
       ),
@@ -332,6 +384,40 @@ class _ProfileScreenState extends State<ProfileScreen> {
       await auth.logout();
       if (mounted) context.go('/login');
     }
+  }
+}
+
+class _LangButton extends StatelessWidget {
+  final String label;
+  final bool selected;
+  final VoidCallback onTap;
+
+  const _LangButton({required this.label, required this.selected, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+        decoration: BoxDecoration(
+          color: selected ? AppTheme.primaryGold : Colors.transparent,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+            color: selected ? AppTheme.primaryGold : AppTheme.textHint,
+          ),
+        ),
+        child: Text(
+          label,
+          style: TextStyle(
+            color: selected ? Colors.white : AppTheme.textSecondary,
+            fontWeight: selected ? FontWeight.bold : FontWeight.normal,
+            fontSize: 13,
+          ),
+        ),
+      ),
+    );
   }
 }
 

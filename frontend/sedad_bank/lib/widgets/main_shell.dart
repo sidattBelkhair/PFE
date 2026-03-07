@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import '../core/theme/app_theme.dart';
 
@@ -51,18 +52,23 @@ class _BottomNav extends StatelessWidget {
       ),
       child: SafeArea(
         top: false,
-        child: SizedBox(
-          height: 62,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              _NavItem(icon: Icons.home_outlined,           activeIcon: Icons.home_rounded,        label: 'Accueil',         index: 0, current: currentIndex, onTap: onTap),
-              _NavItem(icon: Icons.history_outlined,        activeIcon: Icons.history_rounded,     label: 'Historique',      index: 1, current: currentIndex, onTap: onTap),
-              _NavItem(icon: Icons.qr_code_scanner_rounded, activeIcon: Icons.qr_code_scanner_rounded, label: 'Transactions QR', index: 2, current: currentIndex, onTap: onTap),
-              _NavItem(icon: Icons.account_balance_outlined, activeIcon: Icons.account_balance,   label: 'Ma banque',       index: 3, current: currentIndex, onTap: onTap),
-              _NavItem(icon: Icons.person_outline,          activeIcon: Icons.person_rounded,      label: 'Profil',          index: 4, current: currentIndex, onTap: onTap),
-            ],
-          ),
+        child: Builder(
+          builder: (context) {
+            final l = AppLocalizations.of(context)!;
+            return SizedBox(
+              height: 62,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  _NavItem(icon: Icons.home_outlined,            activeIcon: Icons.home_rounded,            label: l.home,           index: 0, current: currentIndex, onTap: onTap),
+                  _NavItem(icon: Icons.history_outlined,         activeIcon: Icons.history_rounded,         label: l.history,        index: 1, current: currentIndex, onTap: onTap),
+                  _NavItem(icon: Icons.qr_code_scanner_rounded,  activeIcon: Icons.qr_code_scanner_rounded, label: l.qrTransactions, index: 2, current: currentIndex, onTap: onTap),
+                  _NavItem(icon: Icons.account_balance_outlined, activeIcon: Icons.account_balance,         label: l.myBank,         index: 3, current: currentIndex, onTap: onTap),
+                  _NavItem(icon: Icons.person_outline,           activeIcon: Icons.person_rounded,          label: l.profile,        index: 4, current: currentIndex, onTap: onTap),
+                ],
+              ),
+            );
+          },
         ),
       ),
     );

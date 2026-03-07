@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'core/theme/app_theme.dart';
@@ -6,6 +8,7 @@ import 'providers/auth_provider.dart';
 import 'providers/account_provider.dart';
 import 'providers/transaction_provider.dart';
 import 'providers/user_provider.dart';
+import 'providers/language_provider.dart';
 import 'routes/app_routes.dart';
 
 void main() async {
@@ -16,28 +19,57 @@ void main() async {
   final authProvider = AuthProvider();
   await authProvider.loadSession();
 
-  runApp(MyApp(authProvider: authProvider));
+  final languageProvider = LanguageProvider();
+
+  runApp(MyApp(authProvider: authProvider, languageProvider: languageProvider));
 }
 
 class MyApp extends StatelessWidget {
   final AuthProvider authProvider;
+  final LanguageProvider languageProvider;
 
-  const MyApp({Key? key, required this.authProvider}) : super(key: key);
+  const MyApp({Key? key, required this.authProvider, required this.languageProvider})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider.value(value: authProvider),
+        ChangeNotifierProvider.value(value: languageProvider),
         ChangeNotifierProvider(create: (_) => AccountProvider()),
         ChangeNotifierProvider(create: (_) => TransactionProvider()),
         ChangeNotifierProvider(create: (_) => UserProvider()),
       ],
-      child: MaterialApp.router(
-        title: 'RSS BANK',
-        theme: AppTheme.lightTheme,
-        routerConfig: AppRoutes.router,
-        debugShowCheckedModeBanner: false,
+      child: Consumer<LanguageProvider>(
+        builder: (context, lang, _) => MaterialApp.router(
+          title: 'RSS BANK',
+          theme: AppTheme.lightTheme,
+          routerConfig: AppRoutes.router,
+          debugShowCheckedModeBanner: false,
+          locale: lang.locale,
+          localizationsDelegates: const [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: const [
+            Locale('fr'),
+            Locale('ar'),
+          ],
+          // Force le rebuild de TOUS les écrans quand la locale change
+          builder: (context, child) => Consumer<LanguageProvider>(
+            builder: (_, langP, __) => Localizations.override(
+              context: context,
+              locale: langP.locale,
+              child: Directionality(
+                textDirection: langP.isArabic ? TextDirection.rtl : TextDirection.ltr,
+                child: child!,
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }

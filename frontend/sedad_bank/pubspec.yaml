@@ -11,6 +11,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   
   # HTTP & API
   http: ^1.1.0
@@ -44,7 +46,7 @@ dependencies:
   form_validator: ^2.1.1
 
   # Date & Time
-  intl: ^0.19.0
+  intl: ^0.18.1
 
   # Utils
   uuid: ^4.0.0
@@ -58,3 +60,4 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  generate: true

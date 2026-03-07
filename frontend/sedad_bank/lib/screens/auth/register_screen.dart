@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import '../../providers/auth_provider.dart';
@@ -35,6 +36,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: AppTheme.backgroundColor,
       appBar: AppBar(
@@ -51,9 +53,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
             }
           },
         ),
-        title: const Text(
-          'Inscription',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        title: Text(
+          l.register,
+          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
       body: SafeArea(
@@ -67,18 +69,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      'Créer un compte',
-                      style: TextStyle(
+                    Text(
+                      l.registerTitle,
+                      style: const TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
                         color: AppTheme.textPrimary,
                       ),
                     ),
                     const SizedBox(height: 6),
-                    const Text(
-                      'Remplissez les informations ci-dessous',
-                      style: TextStyle(color: AppTheme.textSecondary, fontSize: 13),
+                    Text(
+                      l.registerSubtitle,
+                      style: const TextStyle(color: AppTheme.textSecondary, fontSize: 13),
                     ),
                     const SizedBox(height: 24),
 
@@ -89,12 +91,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           child: TextFormField(
                             controller: _firstNameCtrl,
                             textCapitalization: TextCapitalization.words,
-                            decoration: const InputDecoration(
-                              labelText: 'Prénom',
-                              prefixIcon: Icon(Icons.person_outline),
+                            decoration: InputDecoration(
+                              labelText: l.firstName,
+                              prefixIcon: const Icon(Icons.person_outline),
                             ),
                             validator: (v) =>
-                                (v == null || v.isEmpty) ? 'Requis' : null,
+                                (v == null || v.isEmpty) ? l.required : null,
                           ),
                         ),
                         const SizedBox(width: 12),
@@ -102,12 +104,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           child: TextFormField(
                             controller: _lastNameCtrl,
                             textCapitalization: TextCapitalization.words,
-                            decoration: const InputDecoration(
-                              labelText: 'Nom',
-                              prefixIcon: Icon(Icons.person_outline),
+                            decoration: InputDecoration(
+                              labelText: l.lastName,
+                              prefixIcon: const Icon(Icons.person_outline),
                             ),
                             validator: (v) =>
-                                (v == null || v.isEmpty) ? 'Requis' : null,
+                                (v == null || v.isEmpty) ? l.required : null,
                           ),
                         ),
                       ],
@@ -117,14 +119,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     TextFormField(
                       controller: _emailCtrl,
                       keyboardType: TextInputType.emailAddress,
-                      decoration: const InputDecoration(
-                        labelText: 'Email',
+                      decoration: InputDecoration(
+                        labelText: l.email,
                         hintText: 'nom@exemple.com',
-                        prefixIcon: Icon(Icons.email_outlined),
+                        prefixIcon: const Icon(Icons.email_outlined),
                       ),
                       validator: (v) {
-                        if (v == null || v.isEmpty) return 'Email requis';
-                        if (!v.contains('@')) return 'Email invalide';
+                        if (v == null || v.isEmpty) return l.required;
+                        if (!v.contains('@')) return l.invalidEmail;
                         return null;
                       },
                     ),
@@ -133,13 +135,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     TextFormField(
                       controller: _phoneCtrl,
                       keyboardType: TextInputType.phone,
-                      decoration: const InputDecoration(
-                        labelText: 'Numéro de téléphone',
+                      decoration: InputDecoration(
+                        labelText: l.phone,
                         hintText: '0612345678',
-                        prefixIcon: Icon(Icons.phone_outlined),
+                        prefixIcon: const Icon(Icons.phone_outlined),
                       ),
                       validator: (v) =>
-                          (v == null || v.isEmpty) ? 'Téléphone requis' : null,
+                          (v == null || v.isEmpty) ? l.required : null,
                     ),
                     const SizedBox(height: 14),
 
@@ -147,7 +149,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       controller: _passwordCtrl,
                       obscureText: _obscurePassword,
                       decoration: InputDecoration(
-                        labelText: 'Mot de passe',
+                        labelText: l.password,
                         prefixIcon: const Icon(Icons.lock_outlined),
                         suffixIcon: IconButton(
                           icon: Icon(
@@ -161,8 +163,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                       ),
                       validator: (v) {
-                        if (v == null || v.isEmpty) return 'Mot de passe requis';
-                        if (v.length < 8) return '8 caractères minimum';
+                        if (v == null || v.isEmpty) return l.required;
+                        if (v.length < 8) return l.minPassword;
                         return null;
                       },
                     ),
@@ -172,7 +174,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       controller: _confirmCtrl,
                       obscureText: _obscureConfirm,
                       decoration: InputDecoration(
-                        labelText: 'Confirmer le mot de passe',
+                        labelText: l.confirmPassword,
                         prefixIcon: const Icon(Icons.lock_outlined),
                         suffixIcon: IconButton(
                           icon: Icon(
@@ -186,10 +188,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                       ),
                       validator: (v) {
-                        if (v == null || v.isEmpty) return 'Confirmation requise';
-                        if (v != _passwordCtrl.text) {
-                          return 'Les mots de passe ne correspondent pas';
-                        }
+                        if (v == null || v.isEmpty) return l.required;
+                        if (v != _passwordCtrl.text) return l.passwordMismatch;
                         return null;
                       },
                     ),
@@ -234,7 +234,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   strokeWidth: 2,
                                 ),
                               )
-                            : const Text("S'inscrire"),
+                            : Text(l.registerButton),
                       ),
                     ),
 
@@ -244,10 +244,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text(
-                          'Déjà un compte ? ',
-                          style: TextStyle(color: AppTheme.textSecondary, fontSize: 14),
+                        Text(
+                          l.alreadyAccount,
+                          style: const TextStyle(color: AppTheme.textSecondary, fontSize: 14),
                         ),
+                        const SizedBox(width: 4),
                         GestureDetector(
                           onTap: () {
                             if (context.canPop()) {
@@ -256,9 +257,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               context.go('/login');
                             }
                           },
-                          child: const Text(
-                            'Se connecter',
-                            style: TextStyle(
+                          child: Text(
+                            l.connect,
+                            style: const TextStyle(
                               color: AppTheme.primaryGold,
                               fontWeight: FontWeight.bold,
                               fontSize: 14,
@@ -289,13 +290,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       phoneNumber: _phoneCtrl.text.trim(),
     );
     if (ok && mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Compte créé avec succès ! Connectez-vous.'),
-          backgroundColor: AppTheme.successColor,
-        ),
-      );
-      context.go('/login');
+      context.go('/verify-email', extra: _emailCtrl.text.trim());
     }
   }
 }

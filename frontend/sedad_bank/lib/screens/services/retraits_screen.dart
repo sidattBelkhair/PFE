@@ -76,7 +76,7 @@ class _RetraitsScreenState extends State<RetraitsScreen>
                 unselectedLabelColor: AppTheme.textSecondary,
                 labelStyle: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
                 dividerColor: Colors.transparent,
-                tabs: const [Tab(text: 'Sedad'), Tab(text: 'GIMTEL')],
+                tabs: const [Tab(text: 'rssbank'), Tab(text: 'GIMTEL')],
               ),
             ),
           ),
@@ -241,7 +241,7 @@ class _RetraitsScreenState extends State<RetraitsScreen>
 
     final desc = isGimtel
         ? 'Retrait GIMTEL - ${_selectedBank ?? ''}'
-        : 'Retrait Sedad';
+        : 'Retrait rssbank';
 
     final ok = await tp.createTransaction(
       fromAccountId: account.id,

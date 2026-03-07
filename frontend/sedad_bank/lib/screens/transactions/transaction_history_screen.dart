@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import '../../providers/transaction_provider.dart';
@@ -16,12 +17,12 @@ class TransactionHistoryScreen extends StatefulWidget {
 class _TransactionHistoryScreenState extends State<TransactionHistoryScreen> {
   String _filter = 'all';
 
-  static const _filters = [
-    {'value': 'all',        'label': 'Tous'},
-    {'value': 'transfer',   'label': 'Virements'},
-    {'value': 'received',   'label': 'Reçus'},
-    {'value': 'withdrawal', 'label': 'Retraits'},
-    {'value': 'payment',    'label': 'Paiements'},
+  List<Map<String, String>> _filters(AppLocalizations l) => [
+    {'value': 'all',        'label': l.all},
+    {'value': 'transfer',   'label': l.transfers},
+    {'value': 'received',   'label': l.received},
+    {'value': 'withdrawal', 'label': l.withdrawal},
+    {'value': 'payment',    'label': l.payment},
   ];
 
   @override
@@ -32,12 +33,23 @@ class _TransactionHistoryScreenState extends State<TransactionHistoryScreen> {
     });
   }
 
+  String _dateLabel(DateTime date, AppLocalizations l) {
+    final now = DateTime.now();
+    final today = DateTime(now.year, now.month, now.day);
+    final d = DateTime(date.year, date.month, date.day);
+    if (d == today) return l.today;
+    if (d == today.subtract(const Duration(days: 1))) return l.yesterday;
+    return DateFormat('dd MMMM yyyy', 'fr').format(date);
+  }
+
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context)!;
+
     return Scaffold(
       backgroundColor: AppTheme.backgroundColor,
       appBar: AppBar(
-        title: const Text('Historique'),
+        title: Text(l.history),
         backgroundColor: Colors.white,
         foregroundColor: AppTheme.textPrimary,
         elevation: 0,
@@ -57,7 +69,7 @@ class _TransactionHistoryScreenState extends State<TransactionHistoryScreen> {
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
-                children: _filters.map((f) {
+                children: _filters(l).map((f) {
                   final selected = _filter == f['value'];
                   return GestureDetector(
                     onTap: () => setState(() => _filter = f['value']!),
@@ -104,7 +116,7 @@ class _TransactionHistoryScreenState extends State<TransactionHistoryScreen> {
                         const SizedBox(height: 12),
                         ElevatedButton(
                           onPressed: tp.fetchTransactions,
-                          child: const Text('Réessayer'),
+                          child: Text(l.retry),
                         ),
                       ],
                     ),
@@ -132,18 +144,18 @@ class _TransactionHistoryScreenState extends State<TransactionHistoryScreen> {
                               color: AppTheme.primaryGold, size: 48),
                         ),
                         const SizedBox(height: 16),
-                        const Text(
-                          'Aucune transaction',
-                          style: TextStyle(
+                        Text(
+                          l.noTransactions,
+                          style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                             color: AppTheme.textPrimary,
                           ),
                         ),
                         const SizedBox(height: 8),
-                        const Text(
-                          'Vos opérations apparaîtront ici',
-                          style: TextStyle(color: AppTheme.textSecondary, fontSize: 13),
+                        Text(
+                          l.noTransactionsDesc,
+                          style: const TextStyle(color: AppTheme.textSecondary, fontSize: 13),
                         ),
                       ],
                     ),
@@ -153,7 +165,7 @@ class _TransactionHistoryScreenState extends State<TransactionHistoryScreen> {
                 // Groupement par date
                 final grouped = <String, List<TransactionModel>>{};
                 for (final tx in filtered) {
-                  final key = _dateLabel(tx.createdAt);
+                  final key = _dateLabel(tx.createdAt, l);
                   grouped.putIfAbsent(key, () => []).add(tx);
                 }
 
@@ -189,15 +201,6 @@ class _TransactionHistoryScreenState extends State<TransactionHistoryScreen> {
       ),
     );
   }
-
-  String _dateLabel(DateTime date) {
-    final now = DateTime.now();
-    final today = DateTime(now.year, now.month, now.day);
-    final d = DateTime(date.year, date.month, date.day);
-    if (d == today) return "Aujourd'hui";
-    if (d == today.subtract(const Duration(days: 1))) return 'Hier';
-    return DateFormat('dd MMMM yyyy', 'fr').format(date);
-  }
 }
 
 // ── Carte de transaction ─────────────────────────────────────────────────────
@@ -232,19 +235,20 @@ class _TransactionCard extends StatelessWidget {
     return tx.isCredit ? AppTheme.successColor : AppTheme.errorColor;
   }
 
-  String get _statusLabel {
+  String _statusLabel(AppLocalizations l) {
     switch (tx.status) {
-      case 'completed': return 'Complété';
-      case 'pending': return 'En attente';
-      case 'processing': return 'En cours';
-      case 'failed': return 'Échoué';
-      case 'reversed': return 'Annulé';
+      case 'completed': return l.statusCompleted;
+      case 'pending': return l.statusPending;
+      case 'processing': return l.statusProcessing;
+      case 'failed': return l.statusFailed;
+      case 'reversed': return l.statusCancelled;
       default: return tx.status;
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context)!;
     final time = DateFormat('HH:mm').format(tx.createdAt);
     return Container(
       margin: const EdgeInsets.only(bottom: 10),
@@ -291,7 +295,8 @@ class _TransactionCard extends StatelessWidget {
                 const SizedBox(height: 3),
                 Row(
                   children: [
-                    Text(time, style: const TextStyle(color: AppTheme.textSecondary, fontSize: 12)),
+                    Text(time,
+                        style: const TextStyle(color: AppTheme.textSecondary, fontSize: 12)),
                     const SizedBox(width: 8),
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
@@ -300,8 +305,11 @@ class _TransactionCard extends StatelessWidget {
                         borderRadius: BorderRadius.circular(6),
                       ),
                       child: Text(
-                        _statusLabel,
-                        style: TextStyle(color: _statusColor, fontSize: 10, fontWeight: FontWeight.w600),
+                        _statusLabel(l),
+                        style: TextStyle(
+                            color: _statusColor,
+                            fontSize: 10,
+                            fontWeight: FontWeight.w600),
                       ),
                     ),
                   ],

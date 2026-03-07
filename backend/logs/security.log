@@ -3771,3 +3771,27 @@
 {"ts": "2026-03-02T13:18:23Z", "event": "PATH_TRAVERSAL", "ip": "172.18.0.1", "method": "GET", "path": "/api/../../../etc/passwd"}
 {"ts": "2026-03-03T02:29:10Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "gg@gmail.com"}
 {"ts": "2026-03-03T16:46:22Z", "event": "LOGIN_SUCCESS", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/login/", "user": "ff@gmail.com"}
+{"ts": "2026-03-03T20:59:35Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "method": "POST", "path": "/api/auth/login/", "user": "pp@gmail.com"}
+{"ts": "2026-03-06T14:28:52Z", "event": "LOGIN_SUCCESS", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr"}
+{"ts": "2026-03-06T14:32:29Z", "event": "LOGIN_SUCCESS", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr"}
+{"ts": "2026-03-06T14:32:43Z", "event": "SQL_INJECTION", "ip": "127.0.0.1", "method": "PATCH", "path": "/api/users/37090dee-20c2-4379-9305-88b91024f1dc/update-status/"}
+{"ts": "2026-03-06T14:32:48Z", "event": "SQL_INJECTION", "ip": "127.0.0.1", "method": "PATCH", "path": "/api/users/37090dee-20c2-4379-9305-88b91024f1dc/update-status/"}
+{"ts": "2026-03-06T14:33:58Z", "event": "LOGIN_FAILED", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rrs.mr", "attempts": 1}
+{"ts": "2026-03-06T14:34:12Z", "event": "LOGIN_FAILED", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rrs.mr", "attempts": 2}
+{"ts": "2026-03-06T14:34:59Z", "event": "LOGIN_SUCCESS", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.mr"}
+{"ts": "2026-03-06T15:43:57Z", "event": "UNAUTHORIZED", "ip": "127.0.0.1", "method": "GET", "path": "/api/users/me/"}
+{"ts": "2026-03-06T16:02:54Z", "event": "LOGIN_FAILED", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin", "attempts": 1}
+{"ts": "2026-03-06T16:03:07Z", "event": "LOGIN_FAILED", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@rrs.mr", "attempts": 2}
+{"ts": "2026-03-06T16:03:16Z", "event": "LOGIN_FAILED", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 3}
+{"ts": "2026-03-06T16:03:18Z", "event": "LOGIN_FAILED", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/login/", "user": "admin@sedad.mr", "attempts": 4}
+{"ts": "2026-03-06T16:05:32Z", "event": "LOGIN_SUCCESS", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/login/", "user": "23007@supnum.mr"}
+{"ts": "2026-03-06T16:38:22Z", "event": "LOGIN_FAILED", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/login/", "user": "belkairtaleb@gmail.com", "attempts": 1}
+{"ts": "2026-03-06T16:40:31Z", "event": "LOGIN_SUCCESS", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/login/", "user": "saadmeiloud40@gmail.com"}
+{"ts": "2026-03-07T18:21:43Z", "event": "UNAUTHORIZED", "ip": "127.0.0.1", "method": "GET", "path": "/api/users/me/"}
+{"ts": "2026-03-07T18:21:43Z", "event": "UNAUTHORIZED", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/token/refresh/"}
+{"ts": "2026-03-07T18:23:10Z", "event": "LOGIN_SUCCESS", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr"}
+{"ts": "2026-03-07T20:00:54Z", "event": "UNAUTHORIZED", "ip": "127.0.0.1", "method": "GET", "path": "/api/users/me/"}
+{"ts": "2026-03-07T20:01:37Z", "event": "LOGIN_SUCCESS", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr"}
+{"ts": "2026-03-07T20:39:42Z", "event": "LOGIN_SUCCESS", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr"}
+{"ts": "2026-03-07T20:40:16Z", "event": "LOGIN_SUCCESS", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr"}
+{"ts": "2026-03-07T20:44:46Z", "event": "LOGIN_SUCCESS", "ip": "127.0.0.1", "method": "POST", "path": "/api/auth/login/", "user": "ba9179287@gmail.com"}

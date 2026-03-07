@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import '../core/theme/app_theme.dart';
 import '../providers/auth_provider.dart';
+import '../providers/language_provider.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({Key? key}) : super(key: key);
@@ -146,32 +147,42 @@ class AppDrawer extends StatelessWidget {
                 ],
                 const Divider(indent: 16, endIndent: 16),
                 // Sélecteur de langue
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text(
-                        'Langue',
-                        style: TextStyle(
-                          color: AppTheme.textSecondary,
-                          fontSize: 13,
-                          fontWeight: FontWeight.w500,
+                Consumer<LanguageProvider>(
+                  builder: (context, lang, _) => Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          'Langue',
+                          style: TextStyle(
+                            color: AppTheme.textSecondary,
+                            fontSize: 13,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: AppTheme.lightGold,
-                          borderRadius: BorderRadius.circular(20),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: AppTheme.lightGold,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Row(
+                            children: [
+                              _LangButton(
+                                label: 'Français',
+                                selected: !lang.isArabic,
+                                onTap: () => lang.setLocale(const Locale('fr')),
+                              ),
+                              _LangButton(
+                                label: 'العربية',
+                                selected: lang.isArabic,
+                                onTap: () => lang.setLocale(const Locale('ar')),
+                              ),
+                            ],
+                          ),
                         ),
-                        child: Row(
-                          children: [
-                            _LangButton(label: 'Français', selected: true),
-                            _LangButton(label: 'العربية', selected: false),
-                          ],
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -223,22 +234,26 @@ class _DrawerItem extends StatelessWidget {
 class _LangButton extends StatelessWidget {
   final String label;
   final bool selected;
-  const _LangButton({required this.label, required this.selected});
+  final VoidCallback onTap;
+  const _LangButton({required this.label, required this.selected, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
-      decoration: BoxDecoration(
-        color: selected ? AppTheme.primaryGold : Colors.transparent,
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Text(
-        label,
-        style: TextStyle(
-          color: selected ? Colors.white : AppTheme.textSecondary,
-          fontSize: 12,
-          fontWeight: FontWeight.w600,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+        decoration: BoxDecoration(
+          color: selected ? AppTheme.primaryGold : Colors.transparent,
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Text(
+          label,
+          style: TextStyle(
+            color: selected ? Colors.white : AppTheme.textSecondary,
+            fontSize: 12,
+            fontWeight: FontWeight.w600,
+          ),
         ),
       ),
     );

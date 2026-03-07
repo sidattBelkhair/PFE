@@ -1,9 +1,12 @@
 import random
 import string
 from decimal import Decimal
+from datetime import timedelta
 
 from django.core.cache import cache
+from django.core.mail import send_mail
 from django.db import transaction as db_transaction
+from django.utils import timezone
 from rest_framework import viewsets, status
 from rest_framework.decorators import action
 from rest_framework.exceptions import PermissionDenied, ValidationError
@@ -18,9 +21,40 @@ from .models import User, UserProfile, Account, Card, Beneficiary, Transaction, 
 from .serializers import (
     UserSerializer, UserProfileSerializer, RegisterSerializer,
     LoginSerializer, ChangePasswordSerializer,
+    VerifyEmailSerializer, ForgotPasswordSerializer, ResetPasswordSerializer,
     AccountSerializer, CardSerializer, BeneficiarySerializer,
     TransactionSerializer, TransactionHistorySerializer
 )
+
+
+def generate_otp():
+    """Génère un code OTP à 6 chiffres."""
+    return ''.join(random.choices(string.digits, k=6))
+
+
+def send_otp_email(email, code, otp_type):
+    """Envoie l'OTP par email."""
+    if otp_type == 'verify_email':
+        subject = 'RSS BANK — Vérification de votre adresse email'
+        message = (
+            f'Bonjour,\n\n'
+            f'Votre code de vérification RSS BANK est :\n\n'
+            f'    {code}\n\n'
+            f'Ce code expire dans 10 minutes.\n\n'
+            f'Si vous n\'avez pas créé de compte, ignorez cet email.\n\n'
+            f'— RSS BANK'
+        )
+    else:
+        subject = 'RSS BANK — Réinitialisation de votre mot de passe'
+        message = (
+            f'Bonjour,\n\n'
+            f'Votre code de réinitialisation RSS BANK est :\n\n'
+            f'    {code}\n\n'
+            f'Ce code expire dans 10 minutes.\n\n'
+            f'Si vous n\'avez pas demandé cette réinitialisation, ignorez cet email.\n\n'
+            f'— RSS BANK'
+        )
+    send_mail(subject, message, None, [email], fail_silently=False)
 
 
 def generate_reference_number():
@@ -41,11 +75,139 @@ class RegisterView(viewsets.ViewSet):
         serializer = RegisterSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
+
+        # Envoyer OTP de vérification email
+        profile, _ = UserProfile.objects.get_or_create(user=user)
+        code = generate_otp()
+        profile.otp_code = code
+        profile.otp_expires_at = timezone.now() + timedelta(minutes=10)
+        profile.otp_type = 'verify_email'
+        profile.save()
+        try:
+            send_otp_email(user.email, code, 'verify_email')
+        except Exception:
+            pass  # Ne pas bloquer l'inscription si l'email échoue
+
         return Response({
-            'message': 'Utilisateur créé avec succès',
-            'user': UserSerializer(user).data,
-            'status': 'success'
+            'message': 'Compte créé. Vérifiez votre email pour le code de confirmation.',
+            'email': user.email,
+            'status': 'pending_verification'
         }, status=status.HTTP_201_CREATED)
+
+
+class VerifyEmailView(APIView):
+    permission_classes = [AllowAny]
+
+    def post(self, request):
+        serializer = VerifyEmailSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        email = serializer.validated_data['email']
+        code = serializer.validated_data['code']
+
+        try:
+            user = User.objects.get(email=email)
+            profile = user.profile
+        except (User.DoesNotExist, UserProfile.DoesNotExist):
+            return Response({'detail': 'Utilisateur introuvable.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        if profile.otp_type != 'verify_email':
+            return Response({'detail': 'Code invalide.'}, status=status.HTTP_400_BAD_REQUEST)
+        if profile.otp_code != code:
+            return Response({'detail': 'Code incorrect.'}, status=status.HTTP_400_BAD_REQUEST)
+        if profile.otp_expires_at and timezone.now() > profile.otp_expires_at:
+            return Response({'detail': 'Code expiré. Demandez un nouveau code.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        profile.verified_email = True
+        profile.otp_code = None
+        profile.otp_expires_at = None
+        profile.otp_type = None
+        profile.save()
+
+        return Response({'message': 'Email vérifié avec succès. Vous pouvez vous connecter.'})
+
+
+class ResendOtpView(APIView):
+    permission_classes = [AllowAny]
+
+    def post(self, request):
+        email = request.data.get('email', '')
+        otp_type = request.data.get('type', 'verify_email')
+        try:
+            user = User.objects.get(email=email)
+            profile, _ = UserProfile.objects.get_or_create(user=user)
+        except User.DoesNotExist:
+            return Response({'detail': 'Email introuvable.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        code = generate_otp()
+        profile.otp_code = code
+        profile.otp_expires_at = timezone.now() + timedelta(minutes=10)
+        profile.otp_type = otp_type
+        profile.save()
+        try:
+            send_otp_email(email, code, otp_type)
+        except Exception:
+            pass
+        return Response({'message': 'Nouveau code envoyé.'})
+
+
+class ForgotPasswordView(APIView):
+    permission_classes = [AllowAny]
+
+    def post(self, request):
+        serializer = ForgotPasswordSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        email = serializer.validated_data['email']
+
+        try:
+            user = User.objects.get(email=email)
+            profile, _ = UserProfile.objects.get_or_create(user=user)
+        except User.DoesNotExist:
+            # Réponse générique pour ne pas révéler si l'email existe
+            return Response({'message': 'Si cet email existe, un code a été envoyé.'})
+
+        code = generate_otp()
+        profile.otp_code = code
+        profile.otp_expires_at = timezone.now() + timedelta(minutes=10)
+        profile.otp_type = 'reset_password'
+        profile.save()
+        try:
+            send_otp_email(email, code, 'reset_password')
+        except Exception:
+            pass
+        return Response({'message': 'Code de réinitialisation envoyé à votre email.'})
+
+
+class ResetPasswordView(APIView):
+    permission_classes = [AllowAny]
+
+    def post(self, request):
+        serializer = ResetPasswordSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        email = serializer.validated_data['email']
+        code = serializer.validated_data['code']
+        new_password = serializer.validated_data['new_password']
+
+        try:
+            user = User.objects.get(email=email)
+            profile = user.profile
+        except (User.DoesNotExist, UserProfile.DoesNotExist):
+            return Response({'detail': 'Utilisateur introuvable.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        if profile.otp_type != 'reset_password':
+            return Response({'detail': 'Code invalide.'}, status=status.HTTP_400_BAD_REQUEST)
+        if profile.otp_code != code:
+            return Response({'detail': 'Code incorrect.'}, status=status.HTTP_400_BAD_REQUEST)
+        if profile.otp_expires_at and timezone.now() > profile.otp_expires_at:
+            return Response({'detail': 'Code expiré. Demandez un nouveau code.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        user.set_password(new_password)
+        user.save()
+        profile.otp_code = None
+        profile.otp_expires_at = None
+        profile.otp_type = None
+        profile.save()
+
+        return Response({'message': 'Mot de passe réinitialisé avec succès. Connectez-vous.'})
 
 
 class LoginView(APIView):

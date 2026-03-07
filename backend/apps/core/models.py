@@ -77,6 +77,10 @@ class UserProfile(models.Model):
     notification_email = models.BooleanField(default=True)
     notification_sms = models.BooleanField(default=False)
     notification_push = models.BooleanField(default=True)
+    # OTP pour vérification email et réinitialisation mot de passe
+    otp_code = models.CharField(max_length=6, null=True, blank=True)
+    otp_expires_at = models.DateTimeField(null=True, blank=True)
+    otp_type = models.CharField(max_length=20, null=True, blank=True)  # 'verify_email' | 'reset_password'
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

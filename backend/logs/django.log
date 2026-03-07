@@ -2241,3 +2241,274 @@ INFO 2026-03-03 16:44:56,032 autoreload Watching for file changes with StatReloa
 INFO 2026-03-03 16:46:00,387 basehttp "POST /api/auth/register/ HTTP/1.1" 201 462
 INFO 2026-03-03 16:46:22,641 basehttp "POST /api/auth/login/ HTTP/1.1" 200 980
 INFO 2026-03-03 16:46:22,739 basehttp "GET /api/accounts/ HTTP/1.1" 200 52
+INFO 2026-03-03 21:05:04,844 autoreload Watching for file changes with StatReloader
+INFO 2026-03-03 21:07:09,492 autoreload Watching for file changes with StatReloader
+INFO 2026-03-06 13:44:09,977 autoreload Watching for file changes with StatReloader
+WARNING 2026-03-06 14:22:28,800 log Bad Request: /api/auth/login/
+WARNING 2026-03-06 14:22:28,801 basehttp "POST /api/auth/login/ HTTP/1.1" 400 76
+INFO 2026-03-06 14:25:41,257 autoreload Watching for file changes with StatReloader
+INFO 2026-03-06 14:28:52,361 basehttp "POST /api/auth/login/ HTTP/1.1" 200 957
+INFO 2026-03-06 14:31:51,820 autoreload Watching for file changes with StatReloader
+INFO 2026-03-06 14:32:29,438 basehttp "POST /api/auth/login/ HTTP/1.1" 200 957
+INFO 2026-03-06 14:32:29,604 basehttp "GET /api/users/ HTTP/1.1" 200 1949
+INFO 2026-03-06 14:32:29,626 basehttp "GET /api/transactions/ HTTP/1.1" 200 3248
+INFO 2026-03-06 14:32:29,627 basehttp "GET /api/accounts/ HTTP/1.1" 200 10515
+INFO 2026-03-06 14:32:29,741 basehttp "GET /api/transactions/received/ HTTP/1.1" 200 2
+INFO 2026-03-06 14:32:43,472 basehttp "PATCH /api/users/37090dee-20c2-4379-9305-88b91024f1dc/update-status/ HTTP/1.1" 200 396
+INFO 2026-03-06 14:32:48,135 basehttp "PATCH /api/users/37090dee-20c2-4379-9305-88b91024f1dc/update-status/ HTTP/1.1" 200 393
+WARNING 2026-03-06 14:33:58,599 log Bad Request: /api/auth/login/
+WARNING 2026-03-06 14:33:58,599 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-03-06 14:34:12,325 log Bad Request: /api/auth/login/
+WARNING 2026-03-06 14:34:12,325 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+INFO 2026-03-06 14:34:59,449 basehttp "POST /api/auth/login/ HTTP/1.1" 200 957
+INFO 2026-03-06 14:34:59,515 basehttp "GET /api/users/ HTTP/1.1" 200 1949
+INFO 2026-03-06 14:34:59,531 basehttp "GET /api/accounts/ HTTP/1.1" 200 10515
+INFO 2026-03-06 14:34:59,531 basehttp "GET /api/transactions/ HTTP/1.1" 200 3248
+INFO 2026-03-06 14:34:59,553 basehttp "GET /api/transactions/received/ HTTP/1.1" 200 2
+INFO 2026-03-06 15:09:10,898 autoreload /home/sidatt/PFE/backend/apps/core/models.py changed, reloading.
+INFO 2026-03-06 15:09:11,460 autoreload Watching for file changes with StatReloader
+INFO 2026-03-06 15:09:32,929 autoreload /home/sidatt/PFE/backend/fintech_bank/settings.py changed, reloading.
+INFO 2026-03-06 15:09:33,385 autoreload Watching for file changes with StatReloader
+INFO 2026-03-06 15:10:05,121 autoreload /home/sidatt/PFE/backend/apps/core/serializers.py changed, reloading.
+INFO 2026-03-06 15:10:05,580 autoreload Watching for file changes with StatReloader
+INFO 2026-03-06 15:10:27,240 autoreload /home/sidatt/PFE/backend/apps/core/views.py changed, reloading.
+INFO 2026-03-06 15:10:27,754 autoreload Watching for file changes with StatReloader
+INFO 2026-03-06 15:10:50,398 autoreload /home/sidatt/PFE/backend/apps/core/views.py changed, reloading.
+INFO 2026-03-06 15:10:50,807 autoreload Watching for file changes with StatReloader
+INFO 2026-03-06 15:11:03,229 autoreload /home/sidatt/PFE/backend/apps/core/urls.py changed, reloading.
+INFO 2026-03-06 15:11:03,614 autoreload Watching for file changes with StatReloader
+INFO 2026-03-06 15:11:10,937 autoreload /home/sidatt/PFE/backend/apps/core/urls.py changed, reloading.
+INFO 2026-03-06 15:11:11,401 autoreload Watching for file changes with StatReloader
+INFO 2026-03-06 15:42:56,040 autoreload Watching for file changes with StatReloader
+INFO 2026-03-06 15:43:09,559 autoreload Watching for file changes with StatReloader
+WARNING 2026-03-06 15:43:57,068 log Unauthorized: /api/users/me/
+WARNING 2026-03-06 15:43:57,068 basehttp "GET /api/users/me/ HTTP/1.1" 401 172
+INFO 2026-03-06 15:43:57,121 basehttp "POST /api/auth/token/refresh/ HTTP/1.1" 200 290
+INFO 2026-03-06 15:45:27,123 basehttp "POST /api/auth/register/ HTTP/1.1" 201 138
+ERROR 2026-03-06 15:46:07,628 log Internal Server Error: /api/auth/resend-otp/
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/apps/core/views.py", line 146, in post
+    send_otp_email(email, code, otp_type)
+  File "/home/sidatt/PFE/backend/apps/core/views.py", line 57, in send_otp_email
+    send_mail(subject, message, None, [email], fail_silently=False)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/mail/__init__.py", line 87, in send_mail
+    return mail.send()
+           ^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/mail/message.py", line 298, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/mail/backends/smtp.py", line 127, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/mail/backends/smtp.py", line 94, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python3.11/smtplib.py", line 750, in login
+    raise last_exception
+  File "/usr/lib/python3.11/smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ^^^^^^^^^^
+  File "/usr/lib/python3.11/smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-4851fae02a8sm189060675e9.5 - gsmtp')
+ERROR 2026-03-06 15:46:07,629 basehttp "POST /api/auth/resend-otp/ HTTP/1.1" 500 145491
+INFO 2026-03-06 15:53:56,164 autoreload Watching for file changes with StatReloader
+INFO 2026-03-06 15:54:11,389 basehttp "GET /api/users/me/ HTTP/1.1" 200 367
+INFO 2026-03-06 15:54:12,121 basehttp "GET /api/users/ HTTP/1.1" 200 2350
+INFO 2026-03-06 15:54:12,135 basehttp "GET /api/accounts/ HTTP/1.1" 200 10515
+INFO 2026-03-06 15:54:12,135 basehttp "GET /api/transactions/ HTTP/1.1" 200 3248
+INFO 2026-03-06 15:54:12,318 basehttp "GET /api/transactions/received/ HTTP/1.1" 200 2
+ERROR 2026-03-06 15:54:55,048 log Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "users_username_key"
+DETAIL:  Key (username)=(23017@supnum.mr) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/apps/core/views.py", line 77, in create
+    user = serializer.save()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/apps/core/serializers.py", line 47, in create
+    user = User.objects.create_user(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/contrib/auth/models.py", line 161, in create_user
+    return self._create_user(username, email, password, **extra_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/contrib/auth/models.py", line 155, in _create_user
+    user.save(using=self._db)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/contrib/auth/base_user.py", line 76, in save
+    super().save(*args, **kwargs)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "users_username_key"
+DETAIL:  Key (username)=(23017@supnum.mr) already exists.
+
+ERROR 2026-03-06 15:54:55,051 basehttp "POST /api/auth/register/ HTTP/1.1" 500 218503
+INFO 2026-03-06 15:59:51,435 autoreload /home/sidatt/PFE/backend/apps/core/serializers.py changed, reloading.
+INFO 2026-03-06 15:59:51,897 autoreload Watching for file changes with StatReloader
+WARNING 2026-03-06 16:02:54,035 log Bad Request: /api/auth/login/
+WARNING 2026-03-06 16:02:54,035 basehttp "POST /api/auth/login/ HTTP/1.1" 400 50
+WARNING 2026-03-06 16:03:07,318 log Bad Request: /api/auth/login/
+WARNING 2026-03-06 16:03:07,318 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-03-06 16:03:16,425 log Bad Request: /api/auth/login/
+WARNING 2026-03-06 16:03:16,425 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+WARNING 2026-03-06 16:03:18,315 log Bad Request: /api/auth/login/
+WARNING 2026-03-06 16:03:18,316 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+INFO 2026-03-06 16:04:17,848 basehttp "POST /api/auth/register/ HTTP/1.1" 201 138
+INFO 2026-03-06 16:05:04,600 basehttp "POST /api/auth/verify-email/ HTTP/1.1" 200 71
+INFO 2026-03-06 16:05:32,478 basehttp "POST /api/auth/login/ HTTP/1.1" 200 989
+INFO 2026-03-06 16:05:32,582 basehttp "GET /api/accounts/ HTTP/1.1" 200 52
+INFO 2026-03-06 16:05:43,267 basehttp "GET /api/transactions/ HTTP/1.1" 200 52
+INFO 2026-03-06 16:05:43,278 basehttp "GET /api/transactions/received/ HTTP/1.1" 200 2
+INFO 2026-03-06 16:05:45,083 basehttp "GET /api/accounts/ HTTP/1.1" 200 52
+INFO 2026-03-06 16:05:46,133 basehttp "GET /api/accounts/ HTTP/1.1" 200 52
+INFO 2026-03-06 16:05:51,442 basehttp "GET /api/accounts/ HTTP/1.1" 200 52
+INFO 2026-03-06 16:05:53,774 basehttp "GET /api/accounts/ HTTP/1.1" 200 52
+INFO 2026-03-06 16:32:06,657 autoreload Watching for file changes with StatReloader
+INFO 2026-03-06 16:32:18,517 basehttp "GET /api/users/me/ HTTP/1.1" 200 399
+INFO 2026-03-06 16:32:19,392 basehttp "GET /api/accounts/ HTTP/1.1" 200 52
+INFO 2026-03-06 16:34:20,348 basehttp "POST /api/auth/register/ HTTP/1.1" 201 145
+INFO 2026-03-06 16:36:33,267 autoreload Watching for file changes with StatReloader
+INFO 2026-03-06 16:37:35,169 basehttp "POST /api/auth/register/ HTTP/1.1" 201 146
+INFO 2026-03-06 16:38:00,799 basehttp "POST /api/auth/verify-email/ HTTP/1.1" 200 71
+WARNING 2026-03-06 16:38:22,174 log Bad Request: /api/auth/login/
+WARNING 2026-03-06 16:38:22,174 basehttp "POST /api/auth/login/ HTTP/1.1" 400 47
+INFO 2026-03-06 16:39:37,861 basehttp "POST /api/auth/register/ HTTP/1.1" 201 146
+INFO 2026-03-06 16:40:05,332 basehttp "POST /api/auth/verify-email/ HTTP/1.1" 200 71
+INFO 2026-03-06 16:40:31,522 basehttp "POST /api/auth/login/ HTTP/1.1" 200 1006
+INFO 2026-03-06 16:40:31,649 basehttp "GET /api/accounts/ HTTP/1.1" 200 52
+INFO 2026-03-07 18:21:21,448 autoreload Watching for file changes with StatReloader
+WARNING 2026-03-07 18:21:43,728 log Unauthorized: /api/users/me/
+WARNING 2026-03-07 18:21:43,729 basehttp "GET /api/users/me/ HTTP/1.1" 401 172
+WARNING 2026-03-07 18:21:43,814 log Unauthorized: /api/auth/token/refresh/
+WARNING 2026-03-07 18:21:43,815 basehttp "POST /api/auth/token/refresh/ HTTP/1.1" 401 54
+WARNING 2026-03-07 18:22:30,343 log Bad Request: /api/auth/register/
+WARNING 2026-03-07 18:22:30,343 basehttp "POST /api/auth/register/ HTTP/1.1" 400 53
+INFO 2026-03-07 18:23:10,907 basehttp "POST /api/auth/login/ HTTP/1.1" 200 990
+INFO 2026-03-07 18:23:11,064 basehttp "GET /api/accounts/ HTTP/1.1" 200 52
+INFO 2026-03-07 18:23:42,713 basehttp "GET /api/accounts/ HTTP/1.1" 200 52
+INFO 2026-03-07 18:24:06,569 basehttp "GET /api/accounts/ HTTP/1.1" 200 52
+INFO 2026-03-07 18:24:11,026 basehttp "GET /api/accounts/ HTTP/1.1" 200 52
+INFO 2026-03-07 18:24:18,026 basehttp "GET /api/transactions/ HTTP/1.1" 200 52
+INFO 2026-03-07 18:24:18,050 basehttp "GET /api/transactions/received/ HTTP/1.1" 200 2
+INFO 2026-03-07 18:24:20,360 basehttp "GET /api/accounts/ HTTP/1.1" 200 52
+INFO 2026-03-07 18:39:08,160 autoreload Watching for file changes with StatReloader
+INFO 2026-03-07 18:39:24,495 basehttp "GET /api/users/me/ HTTP/1.1" 200 400
+INFO 2026-03-07 18:39:25,596 basehttp "GET /api/accounts/ HTTP/1.1" 200 52
+INFO 2026-03-07 18:39:38,409 basehttp "GET /api/transactions/ HTTP/1.1" 200 52
+INFO 2026-03-07 18:39:38,424 basehttp "GET /api/transactions/received/ HTTP/1.1" 200 2
+INFO 2026-03-07 18:39:51,796 basehttp "GET /api/accounts/ HTTP/1.1" 200 52
+INFO 2026-03-07 18:39:53,898 basehttp "GET /api/transactions/ HTTP/1.1" 200 52
+INFO 2026-03-07 18:39:53,923 basehttp "GET /api/transactions/received/ HTTP/1.1" 200 2
+INFO 2026-03-07 18:39:56,022 basehttp "GET /api/accounts/ HTTP/1.1" 200 52
+INFO 2026-03-07 18:39:57,581 basehttp "GET /api/transactions/ HTTP/1.1" 200 52
+INFO 2026-03-07 18:39:57,623 basehttp "GET /api/transactions/received/ HTTP/1.1" 200 2
+INFO 2026-03-07 18:40:18,140 basehttp "GET /api/transactions/ HTTP/1.1" 200 52
+INFO 2026-03-07 18:40:18,164 basehttp "GET /api/transactions/received/ HTTP/1.1" 200 2
+INFO 2026-03-07 18:40:20,746 basehttp "GET /api/accounts/ HTTP/1.1" 200 52
+INFO 2026-03-07 18:40:36,466 basehttp "POST /api/accounts/ HTTP/1.1" 201 749
+INFO 2026-03-07 18:40:40,909 basehttp "GET /api/accounts/ HTTP/1.1" 200 801
+INFO 2026-03-07 20:00:42,141 autoreload Watching for file changes with StatReloader
+WARNING 2026-03-07 20:00:54,552 log Unauthorized: /api/users/me/
+WARNING 2026-03-07 20:00:54,552 basehttp "GET /api/users/me/ HTTP/1.1" 401 172
+INFO 2026-03-07 20:00:54,605 basehttp "POST /api/auth/token/refresh/ HTTP/1.1" 200 290
+INFO 2026-03-07 20:01:37,218 basehttp "POST /api/auth/login/ HTTP/1.1" 200 990
+INFO 2026-03-07 20:01:37,343 basehttp "GET /api/accounts/ HTTP/1.1" 200 801
+INFO 2026-03-07 20:02:09,603 basehttp "GET /api/accounts/ HTTP/1.1" 200 801
+INFO 2026-03-07 20:38:44,892 autoreload Watching for file changes with StatReloader
+INFO 2026-03-07 20:39:42,381 basehttp "POST /api/auth/login/ HTTP/1.1" 200 990
+INFO 2026-03-07 20:39:42,528 basehttp "GET /api/accounts/ HTTP/1.1" 200 801
+INFO 2026-03-07 20:40:16,582 basehttp "POST /api/auth/login/ HTTP/1.1" 200 990
+INFO 2026-03-07 20:40:16,639 basehttp "GET /api/accounts/ HTTP/1.1" 200 801
+INFO 2026-03-07 20:40:58,350 basehttp "GET /api/transactions/ HTTP/1.1" 200 52
+INFO 2026-03-07 20:40:58,361 basehttp "GET /api/transactions/received/ HTTP/1.1" 200 2
+INFO 2026-03-07 20:43:21,211 basehttp "POST /api/auth/register/ HTTP/1.1" 201 142
+INFO 2026-03-07 20:43:53,230 basehttp "POST /api/auth/verify-email/ HTTP/1.1" 200 71
+INFO 2026-03-07 20:44:46,641 basehttp "POST /api/auth/login/ HTTP/1.1" 200 1002
+INFO 2026-03-07 20:44:46,701 basehttp "GET /api/accounts/ HTTP/1.1" 200 52
+INFO 2026-03-07 20:45:00,447 basehttp "GET /api/accounts/ HTTP/1.1" 200 52
+INFO 2026-03-07 20:45:25,830 basehttp "POST /api/accounts/ HTTP/1.1" 201 759

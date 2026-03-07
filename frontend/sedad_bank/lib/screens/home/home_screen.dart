@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import '../../providers/auth_provider.dart';
@@ -17,13 +18,13 @@ class HomeContent extends StatefulWidget {
 class _HomeContentState extends State<HomeContent> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  static const _services = [
-    {'label': 'Paiements',          'icon': Icons.payments_outlined,          'route': '/paiements'},
-    {'label': 'Transferts',         'icon': Icons.swap_horiz_rounded,         'route': '/transfer'},
-    {'label': 'Retraits',           'icon': Icons.atm_rounded,                'route': '/retraits'},
-    {'label': 'Recharge tél.',      'icon': Icons.phone_android_outlined,     'route': '/recharge'},
-    {'label': 'Paiement factures',  'icon': Icons.receipt_long_outlined,      'route': '/paiement-factures'},
-    {'label': 'Plus de services',   'icon': Icons.apps_rounded,               'route': '/plus-services'},
+  List<Map<String, dynamic>> _services(AppLocalizations l) => [
+    {'label': l.payment,     'icon': Icons.payments_outlined,      'route': '/paiements'},
+    {'label': l.transfer,    'icon': Icons.swap_horiz_rounded,     'route': '/transfer'},
+    {'label': l.withdrawal,  'icon': Icons.atm_rounded,            'route': '/retraits'},
+    {'label': l.recharge,    'icon': Icons.phone_android_outlined, 'route': '/recharge'},
+    {'label': l.billPayment, 'icon': Icons.receipt_long_outlined,  'route': '/paiement-factures'},
+    {'label': l.moreServices,'icon': Icons.apps_rounded,           'route': '/plus-services'},
   ];
 
   @override
@@ -36,6 +37,7 @@ class _HomeContentState extends State<HomeContent> {
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context)!;
     final user = context.watch<AuthProvider>().currentUser;
     final firstName = user?.firstName ?? '';
 
@@ -61,11 +63,11 @@ class _HomeContentState extends State<HomeContent> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          _greeting(),
+                          _greeting(l),
                           style: const TextStyle(color: AppTheme.textSecondary, fontSize: 12),
                         ),
                         Text(
-                          firstName.isNotEmpty ? firstName : 'Bienvenue',
+                          firstName.isNotEmpty ? firstName : l.welcome,
                           style: const TextStyle(
                             color: AppTheme.textPrimary,
                             fontSize: 16,
@@ -169,9 +171,9 @@ class _HomeContentState extends State<HomeContent> {
                           crossAxisSpacing: 14,
                           childAspectRatio: 1.3,
                         ),
-                        itemCount: _services.length,
+                        itemCount: _services(l).length,
                         itemBuilder: (context, i) {
-                          final s = _services[i];
+                          final s = _services(l)[i];
                           return _ServiceCard(
                             icon: s['icon'] as IconData,
                             label: s['label'] as String,
@@ -198,11 +200,11 @@ class _HomeContentState extends State<HomeContent> {
     );
   }
 
-  String _greeting() {
+  String _greeting(AppLocalizations l) {
     final h = DateTime.now().hour;
-    if (h < 12) return 'Bonjour';
-    if (h < 18) return '';
-    return 'Bonsoir';
+    if (h < 12) return l.goodMorning;
+    if (h < 18) return l.welcome;
+    return l.goodEvening;
   }
 }
 
@@ -230,7 +232,7 @@ class _EmptyCard extends StatelessWidget {
           children: [
             const Icon(Icons.account_balance_wallet_outlined, color: Colors.white70, size: 48),
             const SizedBox(height: 12),
-            const Text('Aucun compte', style: TextStyle(color: Colors.white, fontSize: 16)),
+            Text(AppLocalizations.of(context)!.noAccounts, style: const TextStyle(color: Colors.white, fontSize: 16)),
             const SizedBox(height: 12),
             TextButton(
               onPressed: onCreateTap,
@@ -239,7 +241,7 @@ class _EmptyCard extends StatelessWidget {
                 foregroundColor: Colors.white,
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
               ),
-              child: const Text('Créer un compte'),
+              child: Text(AppLocalizations.of(context)!.createAccount),
             ),
           ],
         ),

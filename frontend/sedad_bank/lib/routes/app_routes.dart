@@ -6,6 +6,9 @@ import '../screens/auth/login_screen.dart';
 import '../screens/auth/register_screen.dart';
 import '../screens/auth/register_step2_screen.dart';
 import '../screens/auth/change_password_screen.dart';
+import '../screens/auth/verify_email_screen.dart';
+import '../screens/auth/forgot_password_screen.dart';
+import '../screens/auth/reset_password_screen.dart';
 import '../screens/home/home_screen.dart';
 import '../screens/transactions/transfer_screen.dart';
 import '../screens/transactions/transfer_confirmation_screen.dart';
@@ -22,7 +25,10 @@ import '../screens/qr/qr_transactions_screen.dart';
 import '../screens/bank/ma_banque_screen.dart';
 import '../widgets/main_shell.dart';
 
-const _publicRoutes = ['/login', '/register', '/register-step2'];
+const _publicRoutes = [
+  '/login', '/register', '/register-step2',
+  '/verify-email', '/forgot-password', '/reset-password',
+];
 
 class AppRoutes {
   static final GoRouter router = GoRouter(
@@ -38,9 +44,22 @@ class AppRoutes {
     },
     routes: [
       // ── Pages publiques ────────────────────────────────────────────────
-      GoRoute(path: '/login',          builder: (_, __) => const LoginScreen()),
-      GoRoute(path: '/register',       builder: (_, __) => const RegisterScreen()),
-      GoRoute(path: '/register-step2', builder: (_, __) => const RegisterStep2Screen()),
+      GoRoute(path: '/login',            builder: (_, __) => const LoginScreen()),
+      GoRoute(path: '/register',         builder: (_, __) => const RegisterScreen()),
+      GoRoute(path: '/register-step2',   builder: (_, __) => const RegisterStep2Screen()),
+      GoRoute(
+        path: '/verify-email',
+        builder: (_, state) => VerifyEmailScreen(
+          email: state.extra as String? ?? '',
+        ),
+      ),
+      GoRoute(path: '/forgot-password',  builder: (_, __) => const ForgotPasswordScreen()),
+      GoRoute(
+        path: '/reset-password',
+        builder: (_, state) => ResetPasswordScreen(
+          email: state.extra as String? ?? '',
+        ),
+      ),
 
       // ── Admin ──────────────────────────────────────────────────────────
       GoRoute(path: '/admin', builder: (_, __) => const AdminDashboardScreen()),

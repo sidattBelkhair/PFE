@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import '../../providers/auth_provider.dart';
@@ -26,6 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: AppTheme.backgroundColor,
       body: SafeArea(
@@ -65,9 +67,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                         const SizedBox(height: 16),
-                        const Text(
-                          'RSS BANK',
-                          style: TextStyle(
+                        Text(
+                          l.appName,
+                          style: const TextStyle(
                             color: Colors.white,
                             fontSize: 26,
                             fontWeight: FontWeight.bold,
@@ -76,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         const SizedBox(height: 4),
                         Text(
-                          'Votre banque digitale',
+                          l.appSlogan,
                           style: TextStyle(
                             color: Colors.white.withOpacity(0.85),
                             fontSize: 13,
@@ -94,18 +96,18 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
-                            'Connexion',
-                            style: TextStyle(
+                          Text(
+                            l.login,
+                            style: const TextStyle(
                               fontSize: 22,
                               fontWeight: FontWeight.bold,
                               color: AppTheme.textPrimary,
                             ),
                           ),
                           const SizedBox(height: 6),
-                          const Text(
-                            'Connectez-vous à votre compte',
-                            style: TextStyle(color: AppTheme.textSecondary, fontSize: 13),
+                          Text(
+                            l.loginSubtitle,
+                            style: const TextStyle(color: AppTheme.textSecondary, fontSize: 13),
                           ),
                           const SizedBox(height: 28),
 
@@ -113,13 +115,13 @@ class _LoginScreenState extends State<LoginScreen> {
                           TextFormField(
                             controller: _emailCtrl,
                             keyboardType: TextInputType.emailAddress,
-                            decoration: const InputDecoration(
-                              labelText: 'Email',
+                            decoration: InputDecoration(
+                              labelText: l.email,
                               hintText: 'nom@exemple.com',
-                              prefixIcon: Icon(Icons.email_outlined),
+                              prefixIcon: const Icon(Icons.email_outlined),
                             ),
                             validator: (v) =>
-                                (v == null || v.isEmpty) ? 'Email requis' : null,
+                                (v == null || v.isEmpty) ? l.required : null,
                           ),
                           const SizedBox(height: 16),
 
@@ -128,7 +130,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             controller: _passwordCtrl,
                             obscureText: _obscure,
                             decoration: InputDecoration(
-                              labelText: 'Mot de passe',
+                              labelText: l.password,
                               prefixIcon: const Icon(Icons.lock_outlined),
                               suffixIcon: IconButton(
                                 icon: Icon(
@@ -142,17 +144,17 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             ),
                             validator: (v) =>
-                                (v == null || v.isEmpty) ? 'Mot de passe requis' : null,
+                                (v == null || v.isEmpty) ? l.required : null,
                           ),
 
                           // Mot de passe oublié
                           Align(
                             alignment: Alignment.centerRight,
                             child: TextButton(
-                              onPressed: () {},
-                              child: const Text(
-                                'Mot de passe oublié ?',
-                                style: TextStyle(
+                              onPressed: () => context.go('/forgot-password'),
+                              child: Text(
+                                l.forgotPassword,
+                                style: const TextStyle(
                                   color: AppTheme.primaryGold,
                                   fontSize: 13,
                                 ),
@@ -201,7 +203,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         strokeWidth: 2,
                                       ),
                                     )
-                                  : const Text('Connexion'),
+                                  : Text(l.loginButton),
                             ),
                           ),
 
@@ -211,17 +213,17 @@ class _LoginScreenState extends State<LoginScreen> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              const Text(
-                                'Pas encore de compte ? ',
-                                style: TextStyle(
+                              Text(
+                                l.noAccount,
+                                style: const TextStyle(
                                     color: AppTheme.textSecondary, fontSize: 14),
                               ),
+                              const SizedBox(width: 4),
                               GestureDetector(
-                                // push pour conserver la pile de navigation
                                 onTap: () => context.push('/register'),
-                                child: const Text(
-                                  "S'inscrire",
-                                  style: TextStyle(
+                                child: Text(
+                                  l.signUp,
+                                  style: const TextStyle(
                                     color: AppTheme.primaryGold,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 14,
@@ -240,9 +242,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               onPressed: () {},
                               icon: const Icon(Icons.headset_mic_outlined,
                                   color: AppTheme.primaryGold),
-                              label: const Text(
-                                'Nous contacter',
-                                style: TextStyle(color: AppTheme.primaryGold),
+                              label: Text(
+                                l.contactUs,
+                                style: const TextStyle(color: AppTheme.primaryGold),
                               ),
                               style: OutlinedButton.styleFrom(
                                 side: const BorderSide(color: AppTheme.primaryGold),

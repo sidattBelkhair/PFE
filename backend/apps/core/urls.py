@@ -3,6 +3,7 @@ from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenRefreshView
 from .views import (
     RegisterView, LoginView,
+    VerifyEmailView, ResendOtpView, ForgotPasswordView, ResetPasswordView,
     UserViewSet, UserProfileViewSet,
     AccountViewSet, CardViewSet, BeneficiaryViewSet,
     TransactionViewSet, TransactionHistoryViewSet
@@ -27,5 +28,9 @@ urlpatterns = [
     path('auth/register/', RegisterView.as_view({'post': 'create'})),
     path('auth/login/', LoginView.as_view()),
     path('auth/token/refresh/', TokenRefreshView.as_view()),
+    path('auth/verify-email/', VerifyEmailView.as_view()),
+    path('auth/resend-otp/', ResendOtpView.as_view()),
+    path('auth/forgot-password/', ForgotPasswordView.as_view()),
+    path('auth/reset-password/', ResetPasswordView.as_view()),
     path('', include(router.urls)),
 ]

@@ -41,16 +41,20 @@ class RegisterSerializer(serializers.ModelSerializer):
     def validate(self, attrs):
         if attrs['password'] != attrs.pop('password_confirm'):
             raise serializers.ValidationError("Les mots de passe ne correspondent pas")
+        if User.objects.filter(email=attrs['email']).exists():
+            raise serializers.ValidationError({"email": "Un compte avec cet email existe déjà."})
         return attrs
 
     def create(self, validated_data):
+        import uuid
+        unique_username = validated_data['email'][:140] + '_' + str(uuid.uuid4())[:8]
         user = User.objects.create_user(
             email=validated_data['email'],
             phone_number=validated_data.get('phone_number'),
             password=validated_data['password'],
             first_name=validated_data.get('first_name', ''),
             last_name=validated_data.get('last_name', ''),
-            username=validated_data['email']
+            username=unique_username
         )
         UserProfile.objects.get_or_create(user=user)
         return user
@@ -75,6 +79,27 @@ class LoginSerializer(serializers.Serializer):
 
 class ChangePasswordSerializer(serializers.Serializer):
     old_password = serializers.CharField()
+    new_password = serializers.CharField(min_length=8)
+    new_password_confirm = serializers.CharField(min_length=8)
+
+    def validate(self, attrs):
+        if attrs['new_password'] != attrs['new_password_confirm']:
+            raise serializers.ValidationError("Les mots de passe ne correspondent pas")
+        return attrs
+
+
+class VerifyEmailSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    code = serializers.CharField(max_length=6, min_length=6)
+
+
+class ForgotPasswordSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+
+
+class ResetPasswordSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    code = serializers.CharField(max_length=6, min_length=6)
     new_password = serializers.CharField(min_length=8)
     new_password_confirm = serializers.CharField(min_length=8)
 

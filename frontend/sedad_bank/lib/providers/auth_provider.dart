@@ -242,6 +242,86 @@ class AuthProvider extends ChangeNotifier {
     return false;
   }
 
+  Future<bool> verifyEmail(String email, String code) async {
+    _isLoading = true;
+    _errorMessage = null;
+    notifyListeners();
+    try {
+      final response = await _apiService.post(
+        'auth/verify-email/',
+        data: {'email': email, 'code': code},
+      );
+      if (response.statusCode == 200) {
+        _isLoading = false;
+        notifyListeners();
+        return true;
+      }
+    } on DioException catch (e) {
+      _errorMessage = _extractError(e, 'Code incorrect');
+    }
+    _isLoading = false;
+    notifyListeners();
+    return false;
+  }
+
+  Future<void> resendOtp(String email, String type) async {
+    try {
+      await _apiService.post(
+        'auth/resend-otp/',
+        data: {'email': email, 'type': type},
+      );
+    } catch (_) {}
+  }
+
+  Future<bool> forgotPassword(String email) async {
+    _isLoading = true;
+    _errorMessage = null;
+    notifyListeners();
+    try {
+      final response = await _apiService.post(
+        'auth/forgot-password/',
+        data: {'email': email},
+      );
+      if (response.statusCode == 200) {
+        _isLoading = false;
+        notifyListeners();
+        return true;
+      }
+    } on DioException catch (e) {
+      _errorMessage = _extractError(e, 'Erreur lors de l\'envoi');
+    }
+    _isLoading = false;
+    notifyListeners();
+    return false;
+  }
+
+  Future<bool> resetPassword(String email, String code, String newPassword) async {
+    _isLoading = true;
+    _errorMessage = null;
+    notifyListeners();
+    try {
+      final response = await _apiService.post(
+        'auth/reset-password/',
+        data: {
+          'email': email,
+          'code': code,
+          'new_password': newPassword,
+          'new_password_confirm': newPassword,
+        },
+      );
+      if (response.statusCode == 200) {
+        _isLoading = false;
+        notifyListeners();
+        return true;
+      }
+    } on DioException catch (e) {
+      _errorMessage = _extractError(e, 'Code incorrect ou expiré');
+    }
+    _isLoading = false;
+    notifyListeners();
+    return false;
+  }
+
   Future<bool> updateProfile({
     required String firstName,
     required String lastName,
