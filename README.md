@@ -500,6 +500,13 @@ Réponse `201` :
 | Factures | `/paiement-factures` | Eau, électricité, internet |
 | Plus | `/plus-services` | Autres services |
 
+### Validation du numéro de téléphone (Mauritanie)
+
+- Commence obligatoirement par **2, 3 ou 4**
+- Exactement **8 chiffres** (bloqué au-delà)
+- Clavier numérique uniquement (pas de lettres possibles)
+- Exemple valide : `20000000`, `31234567`, `44455566`
+
 ### Fonctionnement QR
 
 - Génère un QR contenant les informations du compte (JSON)

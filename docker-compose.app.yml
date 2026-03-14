@@ -1,0 +1,68 @@
+services:
+  db:
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: sedad_bank
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - app-net
+      - soc-bridge
+
+  backend:
+    build: ./backend
+    restart: always
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/media:/app/media
+      - ./backend/logs:/app/logs
+    env_file:
+      - ./backend/.env
+    environment:
+      - DB_HOST=db
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - app-net
+      - soc-bridge
+
+  frontend:
+    build: ./frontend/sedad_bank
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - app-net
+
+  promtail:
+    image: grafana/promtail:2.9.0
+    restart: always
+    volumes:
+      - ./backend/logs:/var/log/django:ro
+      - ./soc/promtail-local.yml:/etc/promtail/config.yml:ro
+      - promtail_positions:/var/positions
+    command: -config.file=/etc/promtail/config.yml
+    networks:
+      - app-net
+      - soc-bridge
+
+volumes:
+  postgres_data:
+  promtail_positions:
+
+networks:
+  app-net:
+  soc-bridge:
+    external: true

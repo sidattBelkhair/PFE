@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
@@ -135,13 +136,22 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     TextFormField(
                       controller: _phoneCtrl,
                       keyboardType: TextInputType.phone,
+                      maxLength: 8,
+                      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                       decoration: InputDecoration(
                         labelText: l.phone,
-                        hintText: '0612345678',
+                        hintText: '20000000',
                         prefixIcon: const Icon(Icons.phone_outlined),
+                        counterText: '',
                       ),
-                      validator: (v) =>
-                          (v == null || v.isEmpty) ? l.required : null,
+                      validator: (v) {
+                        if (v == null || v.isEmpty) return l.required;
+                        if (v.length != 8) return 'Le numéro doit contenir exactement 8 chiffres';
+                        if (!RegExp(r'^[234]').hasMatch(v)) {
+                          return 'Le numéro doit commencer par 2, 3 ou 4';
+                        }
+                        return null;
+                      },
                     ),
                     const SizedBox(height: 14),
 

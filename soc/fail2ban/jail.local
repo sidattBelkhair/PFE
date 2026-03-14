@@ -1,0 +1,38 @@
+[DEFAULT]
+banaction = iptables-multiport
+
+[rss-bruteforce]
+enabled  = true
+filter   = rss-bruteforce
+logpath  = /var/log/apps/security.log
+maxretry = 5
+findtime = 300
+bantime  = 3600
+port     = 80,443,8000
+
+[rss-sqli]
+enabled  = true
+filter   = rss-sqli
+logpath  = /var/log/apps/security.log
+maxretry = 1
+findtime = 300
+bantime  = 86400
+port     = 80,443,8000
+
+[rss-xss]
+enabled  = true
+filter   = rss-xss
+logpath  = /var/log/apps/security.log
+maxretry = 1
+findtime = 300
+bantime  = 86400
+port     = 80,443,8000
+
+[rss-traversal]
+enabled  = true
+filter   = rss-traversal
+logpath  = /var/log/apps/security.log
+maxretry = 1
+findtime = 300
+bantime  = 86400
+port     = 80,443,8000
