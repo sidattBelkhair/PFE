@@ -258,3 +258,20 @@ CACHES = {
         'LOCATION': 'rss-security-cache',
     }
 }
+
+# ── Loki (SOC distant) ──────────────────────────────────────────────────────
+# Si LOKI_URL est défini dans .env, les logs de sécurité sont pushés vers Loki
+LOKI_URL = config('LOKI_URL', default='')
+if LOKI_URL:
+    import logging_loki
+    logging_loki.emitter.LokiEmitter.level_tag = 'level'
+    LOGGING['handlers']['loki'] = {
+        'class': 'logging_loki.LokiHandler',
+        'url': f'{LOKI_URL}/loki/api/v1/push',
+        'tags': {'app': 'sedad-bank', 'env': 'production'},
+        'version': '1',
+        'level': 'INFO',
+    }
+    for logger in LOGGING.get('loggers', {}).values():
+        if 'handlers' in logger:
+            logger['handlers'].append('loki')

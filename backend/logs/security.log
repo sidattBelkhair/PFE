@@ -13057,3 +13057,5 @@
 {"ts": "2026-03-14T04:14:06Z", "event": "BRUTE_FORCE", "ip": "172.20.0.1", "method": "POST", "path": "/api/auth/login/", "user": "test@test.com", "attempts": 2686}
 {"ts": "2026-03-14T04:14:06Z", "event": "LOGIN_FAILED", "ip": "172.20.0.1", "method": "POST", "path": "/api/auth/login/", "user": "test@test.com", "attempts": 2668}
 {"ts": "2026-03-14T04:14:06Z", "event": "BRUTE_FORCE", "ip": "172.20.0.1", "method": "POST", "path": "/api/auth/login/", "user": "test@test.com", "attempts": 2668}
+{"ts": "2026-04-01T18:13:55Z", "event": "LOGIN_FAILED", "ip": "172.19.0.1", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr", "attempts": 1}
+{"ts": "2026-04-01T18:14:03Z", "event": "LOGIN_SUCCESS", "ip": "172.19.0.1", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr"}

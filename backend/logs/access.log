@@ -7757,3 +7757,13 @@
 {"ts": "2026-03-14T04:14:06Z", "method": "POST", "path": "/api/auth/login/", "status": 400, "ip": "172.20.0.1", "user": "anonymous", "duration_ms": 6}
 {"ts": "2026-03-14T04:14:06Z", "method": "POST", "path": "/api/auth/login/", "status": 400, "ip": "172.20.0.1", "user": "anonymous", "duration_ms": 6}
 {"ts": "2026-03-14T04:14:06Z", "method": "POST", "path": "/api/auth/login/", "status": 400, "ip": "172.20.0.1", "user": "anonymous", "duration_ms": 7}
+{"ts": "2026-04-01T17:35:09Z", "method": "POST", "path": "/api/auth/register/", "status": 201, "ip": "172.19.0.1", "user": "anonymous", "duration_ms": 4686}
+{"ts": "2026-04-01T17:39:13Z", "method": "POST", "path": "/api/auth/resend-otp/", "status": 200, "ip": "172.19.0.1", "user": "anonymous", "duration_ms": 3910}
+{"ts": "2026-04-01T17:41:41Z", "method": "POST", "path": "/api/auth/verify-email/", "status": 400, "ip": "172.19.0.1", "user": "anonymous", "duration_ms": 9}
+{"ts": "2026-04-01T18:13:07Z", "method": "POST", "path": "/api/auth/register/", "status": 201, "ip": "172.19.0.1", "user": "anonymous", "duration_ms": 2278}
+{"ts": "2026-04-01T18:13:33Z", "method": "POST", "path": "/api/auth/verify-email/", "status": 200, "ip": "172.19.0.1", "user": "anonymous", "duration_ms": 85}
+{"ts": "2026-04-01T18:13:55Z", "method": "POST", "path": "/api/auth/login/", "status": 400, "ip": "172.19.0.1", "user": "anonymous", "duration_ms": 180}
+{"ts": "2026-04-01T18:14:03Z", "method": "POST", "path": "/api/auth/login/", "status": 200, "ip": "172.19.0.1", "user": "anonymous", "duration_ms": 173}
+{"ts": "2026-04-01T18:14:03Z", "method": "GET", "path": "/api/accounts/", "status": 200, "ip": "172.19.0.1", "user": "23017@supnum.mr", "duration_ms": 14}
+{"ts": "2026-04-01T18:14:08Z", "method": "GET", "path": "/api/transactions/", "status": 200, "ip": "172.19.0.1", "user": "23017@supnum.mr", "duration_ms": 16}
+{"ts": "2026-04-01T18:14:08Z", "method": "GET", "path": "/api/transactions/received/", "status": 200, "ip": "172.19.0.1", "user": "23017@supnum.mr", "duration_ms": 14}

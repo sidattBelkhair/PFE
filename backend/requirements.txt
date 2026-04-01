@@ -5,6 +5,8 @@ django-cors-headers==4.3.1
 django-filter==23.4
 python-decouple==3.8
 psycopg2-binary==2.9.9
+mysqlclient==2.2.4
 Pillow==10.1.0
 drf-spectacular==0.26.5
 gunicorn==21.2.0
+python-logging-loki==0.3.1

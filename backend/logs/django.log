@@ -7879,3 +7879,5 @@ WARNING 2026-03-14 04:14:06,640 log Bad Request: /api/auth/login/
 WARNING 2026-03-14 04:14:06,649 log Bad Request: /api/auth/login/
 WARNING 2026-03-14 04:14:06,657 log Bad Request: /api/auth/login/
 WARNING 2026-03-14 04:14:06,666 log Bad Request: /api/auth/login/
+WARNING 2026-04-01 17:41:41,295 log Bad Request: /api/auth/verify-email/
+WARNING 2026-04-01 18:13:55,806 log Bad Request: /api/auth/login/
