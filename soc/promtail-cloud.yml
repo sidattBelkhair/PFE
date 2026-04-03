@@ -7,7 +7,7 @@ positions:
 
 clients:
   # Grafana Cloud Loki — remplace USER_ID et API_TOKEN
-  - url: https://USER_ID:API_TOKEN@logs-prod-eu-west-0.grafana.net/loki/api/v1/push
+  - url: https://1538328:glc_eyJvIjoiMTcxODk1NCIsIm4iOiJzdGFjay0xNTgwNTM5LWhsLXJlYWQtbG9raSIsImsiOiJydzZMbGtUeDFCOG05N1c3N3hQQnA3MTEiLCJtIjp7InIiOiJwcm9kLWV1LWNlbnRyYWwtMCJ9fQ==@logs-prod-039.grafana.net/loki/api/v1/push
 
 scrape_configs:
   - job_name: django-security

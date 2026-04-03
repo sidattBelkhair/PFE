@@ -259,19 +259,45 @@ CACHES = {
     }
 }
 
-# ── Loki (SOC distant) ──────────────────────────────────────────────────────
-# Si LOKI_URL est défini dans .env, les logs de sécurité sont pushés vers Loki
+# ── Loki (SOC distant — Grafana Cloud) ─────────────────────────────────────
+# LOKI_URL format : https://USER_ID:API_TOKEN@logs-prod-039.grafana.net
 LOKI_URL = config('LOKI_URL', default='')
 if LOKI_URL:
-    import logging_loki
-    logging_loki.emitter.LokiEmitter.level_tag = 'level'
-    LOGGING['handlers']['loki'] = {
-        'class': 'logging_loki.LokiHandler',
-        'url': f'{LOKI_URL}/loki/api/v1/push',
-        'tags': {'app': 'rss-bank', 'env': 'production'},
-        'version': '1',
-        'level': 'INFO',
-    }
-    for logger in LOGGING.get('loggers', {}).values():
-        if 'handlers' in logger:
-            logger['handlers'].append('loki')
+    try:
+        import logging_loki
+        logging_loki.emitter.LokiEmitter.level_tag = 'level'
+
+        LOKI_PUSH_URL = f'{LOKI_URL}/loki/api/v1/push'
+
+        # Handler sécurité — job=django-security
+        LOGGING['handlers']['loki_security'] = {
+            'class': 'logging_loki.LokiHandler',
+            'url': LOKI_PUSH_URL,
+            'tags': {
+                'app': 'rss-bank',
+                'env': 'production',
+                'job': 'django-security',
+            },
+            'version': '1',
+            'level': 'WARNING',
+        }
+
+        # Handler accès — job=django-access
+        LOGGING['handlers']['loki_access'] = {
+            'class': 'logging_loki.LokiHandler',
+            'url': LOKI_PUSH_URL,
+            'tags': {
+                'app': 'rss-bank',
+                'env': 'production',
+                'job': 'django-access',
+            },
+            'version': '1',
+            'level': 'INFO',
+        }
+
+        # Ajouter les handlers aux bons loggers uniquement
+        LOGGING['loggers']['security']['handlers'].append('loki_security')
+        LOGGING['loggers']['access']['handlers'].append('loki_access')
+
+    except Exception:
+        pass  # Ne pas bloquer si logging_loki non installé

@@ -1,337 +1,319 @@
 {
   "__inputs": [],
-  "__requires": [
-    { "type": "datasource", "id": "loki", "name": "Loki", "version": "1.0.0" }
-  ],
+  "__requires": [{ "type": "datasource", "id": "loki", "name": "Loki", "version": "1.0.0" }],
   "annotations": { "list": [] },
-  "description": "RSS BANK — SOC Security Monitoring Dashboard",
+  "description": "RSS BANK — SOC Dashboard | Monitoring sécurité multi-applications bancaires",
   "editable": true,
-  "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
   "id": null,
   "links": [],
   "panels": [
+
     {
       "collapsed": false,
       "gridPos": { "h": 1, "w": 24, "x": 0, "y": 0 },
-      "id": 1,
-      "title": "🔐 RSS BANK — SOC Dashboard",
+      "id": 100,
+      "title": "📊 VUE GLOBALE — RSS BANK",
       "type": "row"
     },
+
     {
-      "datasource": { "type": "loki", "uid": "loki-main" },
+      "datasource": { "type": "loki", "uid": "${datasource}" },
       "fieldConfig": {
         "defaults": {
-          "color": { "mode": "thresholds" },
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              { "color": "green", "value": null },
-              { "color": "yellow", "value": 10 },
-              { "color": "red", "value": 50 }
-            ]
-          },
+          "color": { "fixedColor": "#3274D9", "mode": "fixed" },
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "blue", "value": null }] },
           "unit": "short"
         }
       },
-      "gridPos": { "h": 4, "w": 6, "x": 0, "y": 1 },
+      "gridPos": { "h": 4, "w": 4, "x": 0, "y": 1 },
+      "id": 1,
+      "options": { "colorMode": "background", "graphMode": "none", "justifyMode": "center", "reduceOptions": { "calcs": ["count"], "fields": "", "values": false }, "textMode": "auto" },
+      "title": "🌐 Total Requêtes (1h)",
+      "type": "stat",
+      "targets": [{ "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "{job=\"django-access\", app=\"rss-bank\"}", "queryType": "range", "refId": "A" }]
+    },
+
+    {
+      "datasource": { "type": "loki", "uid": "${datasource}" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "fixedColor": "#F2495C", "mode": "fixed" },
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "red", "value": null }] },
+          "unit": "short"
+        }
+      },
+      "gridPos": { "h": 4, "w": 4, "x": 4, "y": 1 },
       "id": 2,
-      "options": { "colorMode": "background", "graphMode": "area", "orientation": "auto", "reduceOptions": { "calcs": ["lastNotNull"] }, "textMode": "auto" },
-      "title": "Requêtes totales (1h)",
+      "options": { "colorMode": "background", "graphMode": "none", "justifyMode": "center", "reduceOptions": { "calcs": ["count"], "fields": "", "values": false }, "textMode": "auto" },
+      "title": "🚨 Total Attaques (1h)",
       "type": "stat",
-      "targets": [
-        {
-          "datasource": { "type": "loki", "uid": "loki-main" },
-          "expr": "sum(count_over_time({job=\"django-access\"}[1h]))",
-          "legendFormat": "Requêtes",
-          "refId": "A"
-        }
-      ]
+      "targets": [{ "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "{job=\"django-security\", app=\"rss-bank\"} |~ \"BRUTE_FORCE|SQL_INJECTION|XSS|PATH_TRAVERSAL|ML_ANOMALY\"", "queryType": "range", "refId": "A" }]
     },
+
     {
-      "datasource": { "type": "loki", "uid": "loki-main" },
+      "datasource": { "type": "loki", "uid": "${datasource}" },
       "fieldConfig": {
         "defaults": {
-          "color": { "mode": "thresholds" },
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              { "color": "green", "value": null },
-              { "color": "orange", "value": 3 },
-              { "color": "red", "value": 10 }
-            ]
-          },
+          "color": { "fixedColor": "#FF9830", "mode": "fixed" },
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "orange", "value": null }] },
           "unit": "short"
         }
       },
-      "gridPos": { "h": 4, "w": 6, "x": 6, "y": 1 },
+      "gridPos": { "h": 4, "w": 4, "x": 8, "y": 1 },
       "id": 3,
-      "options": { "colorMode": "background", "graphMode": "none", "orientation": "auto", "reduceOptions": { "calcs": ["lastNotNull"] }, "textMode": "auto" },
-      "title": "Échecs connexion (1h)",
+      "options": { "colorMode": "background", "graphMode": "none", "justifyMode": "center", "reduceOptions": { "calcs": ["count"], "fields": "", "values": false }, "textMode": "auto" },
+      "title": "🔑 Brute Force (1h)",
       "type": "stat",
-      "targets": [
-        {
-          "datasource": { "type": "loki", "uid": "loki-main" },
-          "expr": "sum(count_over_time({job=\"django-security\"} |= \"LOGIN_FAILED\" [1h]))",
-          "legendFormat": "Échecs",
-          "refId": "A"
-        }
-      ]
+      "targets": [{ "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "{job=\"django-security\", app=\"rss-bank\"} |= \"BRUTE_FORCE\"", "queryType": "range", "refId": "A" }]
     },
+
     {
-      "datasource": { "type": "loki", "uid": "loki-main" },
+      "datasource": { "type": "loki", "uid": "${datasource}" },
       "fieldConfig": {
         "defaults": {
-          "color": { "mode": "thresholds" },
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              { "color": "green", "value": null },
-              { "color": "red", "value": 1 }
-            ]
-          },
+          "color": { "fixedColor": "#E02F44", "mode": "fixed" },
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "dark-red", "value": null }] },
           "unit": "short"
         }
       },
-      "gridPos": { "h": 4, "w": 6, "x": 12, "y": 1 },
+      "gridPos": { "h": 4, "w": 4, "x": 12, "y": 1 },
       "id": 4,
-      "options": { "colorMode": "background", "graphMode": "none", "orientation": "auto", "reduceOptions": { "calcs": ["lastNotNull"] }, "textMode": "auto" },
-      "title": "Injections SQL (24h)",
+      "options": { "colorMode": "background", "graphMode": "none", "justifyMode": "center", "reduceOptions": { "calcs": ["count"], "fields": "", "values": false }, "textMode": "auto" },
+      "title": "💉 SQL Injection (1h)",
       "type": "stat",
-      "targets": [
-        {
-          "datasource": { "type": "loki", "uid": "loki-main" },
-          "expr": "sum(count_over_time({job=\"django-security\"} |= \"SQL_INJECTION\" [24h]))",
-          "legendFormat": "SQL Injection",
-          "refId": "A"
-        }
-      ]
+      "targets": [{ "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "{job=\"django-security\", app=\"rss-bank\"} |= \"SQL_INJECTION\"", "queryType": "range", "refId": "A" }]
     },
+
     {
-      "datasource": { "type": "loki", "uid": "loki-main" },
+      "datasource": { "type": "loki", "uid": "${datasource}" },
       "fieldConfig": {
         "defaults": {
-          "color": { "mode": "thresholds" },
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              { "color": "green", "value": null },
-              { "color": "orange", "value": 1 },
-              { "color": "red", "value": 3 }
-            ]
-          },
+          "color": { "fixedColor": "#B877D9", "mode": "fixed" },
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "purple", "value": null }] },
           "unit": "short"
         }
       },
-      "gridPos": { "h": 4, "w": 6, "x": 18, "y": 1 },
+      "gridPos": { "h": 4, "w": 4, "x": 16, "y": 1 },
       "id": 5,
-      "options": { "colorMode": "background", "graphMode": "none", "orientation": "auto", "reduceOptions": { "calcs": ["lastNotNull"] }, "textMode": "auto" },
-      "title": "Brute Force (24h)",
+      "options": { "colorMode": "background", "graphMode": "none", "justifyMode": "center", "reduceOptions": { "calcs": ["count"], "fields": "", "values": false }, "textMode": "auto" },
+      "title": "⚡ XSS (1h)",
       "type": "stat",
-      "targets": [
-        {
-          "datasource": { "type": "loki", "uid": "loki-main" },
-          "expr": "sum(count_over_time({job=\"django-security\"} |= \"BRUTE_FORCE\" [24h]))",
-          "legendFormat": "Brute Force",
-          "refId": "A"
-        }
-      ]
+      "targets": [{ "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "{job=\"django-security\", app=\"rss-bank\"} |= \"XSS\"", "queryType": "range", "refId": "A" }]
     },
+
+    {
+      "datasource": { "type": "loki", "uid": "${datasource}" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "fixedColor": "#1F60C4", "mode": "fixed" },
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "blue", "value": null }] },
+          "unit": "short"
+        }
+      },
+      "gridPos": { "h": 4, "w": 4, "x": 20, "y": 1 },
+      "id": 6,
+      "options": { "colorMode": "background", "graphMode": "none", "justifyMode": "center", "reduceOptions": { "calcs": ["count"], "fields": "", "values": false }, "textMode": "auto" },
+      "title": "🤖 ML Anomalies (1h)",
+      "type": "stat",
+      "targets": [{ "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "{job=\"django-security\", app=\"rss-bank\"} |= \"ML_ANOMALY\"", "queryType": "range", "refId": "A" }]
+    },
+
     {
       "collapsed": false,
       "gridPos": { "h": 1, "w": 24, "x": 0, "y": 5 },
-      "id": 6,
-      "title": "📈 Activité en temps réel",
+      "id": 101,
+      "title": "📈 TIMELINE DES ATTAQUES",
       "type": "row"
     },
+
     {
-      "datasource": { "type": "loki", "uid": "loki-main" },
+      "datasource": { "type": "loki", "uid": "${datasource}" },
       "fieldConfig": {
-        "defaults": {
-          "custom": { "lineWidth": 2, "fillOpacity": 10 },
-          "unit": "short"
-        },
-        "overrides": [
-          { "matcher": { "id": "byName", "options": "LOGIN_FAILED" }, "properties": [{ "id": "color", "value": { "fixedColor": "orange", "mode": "fixed" } }] },
-          { "matcher": { "id": "byName", "options": "BRUTE_FORCE" },   "properties": [{ "id": "color", "value": { "fixedColor": "red",    "mode": "fixed" } }] },
-          { "matcher": { "id": "byName", "options": "SQL_INJECTION" }, "properties": [{ "id": "color", "value": { "fixedColor": "purple", "mode": "fixed" } }] },
-          { "matcher": { "id": "byName", "options": "XSS" },           "properties": [{ "id": "color", "value": { "fixedColor": "pink",   "mode": "fixed" } }] },
-          { "matcher": { "id": "byName", "options": "LOGIN_SUCCESS" }, "properties": [{ "id": "color", "value": { "fixedColor": "green",  "mode": "fixed" } }] }
-        ]
+        "defaults": { "color": { "mode": "palette-classic" }, "custom": { "lineWidth": 2, "fillOpacity": 10 } }
       },
-      "gridPos": { "h": 8, "w": 16, "x": 0, "y": 6 },
-      "id": 7,
-      "options": { "legend": { "calcs": ["sum"], "displayMode": "table", "placement": "bottom" }, "tooltip": { "mode": "multi" } },
-      "title": "Événements de sécurité",
+      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 6 },
+      "id": 10,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" }, "tooltip": { "mode": "multi" } },
+      "title": "Toutes les attaques dans le temps",
       "type": "timeseries",
       "targets": [
-        {
-          "datasource": { "type": "loki", "uid": "loki-main" },
-          "expr": "sum(count_over_time({job=\"django-security\"} |= \"LOGIN_FAILED\" [$__interval]))",
-          "legendFormat": "LOGIN_FAILED",
-          "refId": "A"
-        },
-        {
-          "datasource": { "type": "loki", "uid": "loki-main" },
-          "expr": "sum(count_over_time({job=\"django-security\"} |= \"BRUTE_FORCE\" [$__interval]))",
-          "legendFormat": "BRUTE_FORCE",
-          "refId": "B"
-        },
-        {
-          "datasource": { "type": "loki", "uid": "loki-main" },
-          "expr": "sum(count_over_time({job=\"django-security\"} |= \"SQL_INJECTION\" [$__interval]))",
-          "legendFormat": "SQL_INJECTION",
-          "refId": "C"
-        },
-        {
-          "datasource": { "type": "loki", "uid": "loki-main" },
-          "expr": "sum(count_over_time({job=\"django-security\"} |= \"XSS\" [$__interval]))",
-          "legendFormat": "XSS",
-          "refId": "D"
-        },
-        {
-          "datasource": { "type": "loki", "uid": "loki-main" },
-          "expr": "sum(count_over_time({job=\"django-security\"} |= \"LOGIN_SUCCESS\" [$__interval]))",
-          "legendFormat": "LOGIN_SUCCESS",
-          "refId": "E"
-        }
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-security\", app=\"rss-bank\"} |= \"BRUTE_FORCE\" [1m]))", "legendFormat": "Brute Force", "refId": "A" },
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-security\", app=\"rss-bank\"} |= \"SQL_INJECTION\" [1m]))", "legendFormat": "SQL Injection", "refId": "B" },
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-security\", app=\"rss-bank\"} |= \"XSS\" [1m]))", "legendFormat": "XSS", "refId": "C" },
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-security\", app=\"rss-bank\"} |= \"PATH_TRAVERSAL\" [1m]))", "legendFormat": "Path Traversal", "refId": "D" },
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-security\", app=\"rss-bank\"} |= \"ML_ANOMALY\" [1m]))", "legendFormat": "ML Anomaly", "refId": "E" },
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-access\", app=\"rss-bank\"} [1m]))", "legendFormat": "Total Requêtes", "refId": "F" }
       ]
     },
-    {
-      "datasource": { "type": "loki", "uid": "loki-main" },
-      "fieldConfig": {
-        "defaults": { "unit": "short" },
-        "overrides": [
-          { "matcher": { "id": "byName", "options": "ip" },    "properties": [{ "id": "displayName", "value": "IP Source" }, { "id": "custom.width", "value": 130 }] },
-          { "matcher": { "id": "byName", "options": "Value" }, "properties": [{ "id": "displayName", "value": "Tentatives" }, { "id": "custom.displayMode", "value": "color-background" }, { "id": "thresholds", "value": { "mode": "absolute", "steps": [{ "color": "yellow", "value": null }, { "color": "red", "value": 10 }] } }] }
-        ]
-      },
-      "gridPos": { "h": 8, "w": 8, "x": 16, "y": 6 },
-      "id": 8,
-      "options": { "footer": { "show": false }, "showHeader": true, "sortBy": [{ "desc": true, "displayName": "Tentatives" }] },
-      "title": "Top IPs attaquantes (1h)",
-      "type": "table",
-      "targets": [
-        {
-          "datasource": { "type": "loki", "uid": "loki-main" },
-          "expr": "topk(10, sum by (ip) (count_over_time({job=\"django-security\"} |= \"LOGIN_FAILED\" | json | __error__=`` [1h])))",
-          "legendFormat": "{{ip}}",
-          "refId": "A",
-          "instant": true
-        }
-      ]
-    },
+
     {
       "collapsed": false,
       "gridPos": { "h": 1, "w": 24, "x": 0, "y": 14 },
-      "id": 9,
-      "title": "📋 Logs en direct",
+      "id": 102,
+      "title": "🎯 RÉPARTITION ET COMPTEURS",
       "type": "row"
     },
+
     {
-      "datasource": { "type": "loki", "uid": "loki-main" },
-      "gridPos": { "h": 10, "w": 12, "x": 0, "y": 15 },
-      "id": 10,
-      "options": {
-        "dedupStrategy": "none",
-        "enableLogDetails": true,
-        "prettifyLogMessage": true,
-        "showTime": true,
-        "wrapLogMessage": true
-      },
-      "title": "🚨 Événements sécurité (live)",
-      "type": "logs",
-      "targets": [
-        {
-          "datasource": { "type": "loki", "uid": "loki-main" },
-          "expr": "{job=\"django-security\"}",
-          "refId": "A"
-        }
-      ]
-    },
-    {
-      "datasource": { "type": "loki", "uid": "loki-main" },
-      "gridPos": { "h": 10, "w": 12, "x": 12, "y": 15 },
-      "id": 11,
-      "options": {
-        "dedupStrategy": "none",
-        "enableLogDetails": true,
-        "prettifyLogMessage": true,
-        "showTime": true,
-        "wrapLogMessage": true
-      },
-      "title": "🌐 Access Log (live)",
-      "type": "logs",
-      "targets": [
-        {
-          "datasource": { "type": "loki", "uid": "loki-main" },
-          "expr": "{job=\"django-access\"}",
-          "refId": "A"
-        }
-      ]
-    },
-    {
-      "collapsed": false,
-      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 25 },
-      "id": 12,
-      "title": "📊 Codes HTTP",
-      "type": "row"
-    },
-    {
-      "datasource": { "type": "loki", "uid": "loki-main" },
+      "datasource": { "type": "loki", "uid": "${datasource}" },
       "fieldConfig": {
-        "defaults": { "unit": "short" },
+        "defaults": { "color": { "mode": "palette-classic" }, "custom": { "hideFrom": { "legend": false, "tooltip": false, "viz": false } } }
+      },
+      "gridPos": { "h": 8, "w": 8, "x": 0, "y": 15 },
+      "id": 20,
+      "options": { "legend": { "displayMode": "table", "placement": "right", "values": ["value", "percent"] }, "pieType": "pie", "tooltip": { "mode": "single" } },
+      "title": "Types d'attaques",
+      "type": "piechart",
+      "targets": [
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-security\", app=\"rss-bank\"} |= \"BRUTE_FORCE\" [1h]))", "legendFormat": "Brute Force", "refId": "A" },
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-security\", app=\"rss-bank\"} |= \"SQL_INJECTION\" [1h]))", "legendFormat": "SQL Injection", "refId": "B" },
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-security\", app=\"rss-bank\"} |= \"XSS\" [1h]))", "legendFormat": "XSS", "refId": "C" },
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-security\", app=\"rss-bank\"} |= \"PATH_TRAVERSAL\" [1h]))", "legendFormat": "Path Traversal", "refId": "D" },
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-security\", app=\"rss-bank\"} |= \"ML_ANOMALY\" [1h]))", "legendFormat": "ML Anomaly", "refId": "E" }
+      ]
+    },
+
+    {
+      "datasource": { "type": "loki", "uid": "${datasource}" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "thresholds" },
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }, { "color": "orange", "value": 5 }, { "color": "red", "value": 20 }] },
+          "unit": "short"
+        },
         "overrides": [
-          { "matcher": { "id": "byName", "options": "200" }, "properties": [{ "id": "color", "value": { "fixedColor": "green",  "mode": "fixed" } }] },
-          { "matcher": { "id": "byName", "options": "201" }, "properties": [{ "id": "color", "value": { "fixedColor": "teal",   "mode": "fixed" } }] },
-          { "matcher": { "id": "byName", "options": "400" }, "properties": [{ "id": "color", "value": { "fixedColor": "yellow", "mode": "fixed" } }] },
-          { "matcher": { "id": "byName", "options": "401" }, "properties": [{ "id": "color", "value": { "fixedColor": "orange", "mode": "fixed" } }] },
-          { "matcher": { "id": "byName", "options": "403" }, "properties": [{ "id": "color", "value": { "fixedColor": "red",    "mode": "fixed" } }] },
-          { "matcher": { "id": "byName", "options": "500" }, "properties": [{ "id": "color", "value": { "fixedColor": "dark-red", "mode": "fixed" } }] }
+          { "matcher": { "id": "byName", "options": "Type d'attaque" }, "properties": [{ "id": "custom.width", "value": 180 }] }
         ]
       },
-      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 26 },
-      "id": 13,
-      "options": { "legend": { "calcs": ["sum"], "displayMode": "table", "placement": "right" }, "tooltip": { "mode": "multi" } },
-      "title": "Codes de réponse HTTP",
+      "gridPos": { "h": 8, "w": 8, "x": 8, "y": 15 },
+      "id": 21,
+      "options": { "footer": { "show": false }, "showHeader": true },
+      "title": "Compteur par type d'attaque",
+      "type": "table",
+      "transformations": [{ "id": "merge", "options": {} }],
+      "targets": [
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-security\", app=\"rss-bank\"} |= \"BRUTE_FORCE\" [1h]))", "legendFormat": "Brute Force", "instant": true, "refId": "A" },
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-security\", app=\"rss-bank\"} |= \"SQL_INJECTION\" [1h]))", "legendFormat": "SQL Injection", "instant": true, "refId": "B" },
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-security\", app=\"rss-bank\"} |= \"XSS\" [1h]))", "legendFormat": "XSS", "instant": true, "refId": "C" },
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-security\", app=\"rss-bank\"} |= \"PATH_TRAVERSAL\" [1h]))", "legendFormat": "Path Traversal", "instant": true, "refId": "D" },
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-security\", app=\"rss-bank\"} |= \"UNAUTHORIZED\" [1h]))", "legendFormat": "Unauthorized 401", "instant": true, "refId": "E" },
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-security\", app=\"rss-bank\"} |= \"ML_ANOMALY\" [1h]))", "legendFormat": "ML Anomaly", "instant": true, "refId": "F" }
+      ]
+    },
+
+    {
+      "datasource": { "type": "loki", "uid": "${datasource}" },
+      "fieldConfig": {
+        "defaults": { "color": { "mode": "thresholds" }, "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }, { "color": "orange", "value": 10 }, { "color": "red", "value": 50 }] }, "unit": "short" }
+      },
+      "gridPos": { "h": 8, "w": 8, "x": 16, "y": 15 },
+      "id": 22,
+      "options": { "displayMode": "gradient", "orientation": "horizontal", "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false }, "showUnfilled": true },
+      "title": "Trafic en temps réel",
+      "type": "bargauge",
+      "targets": [
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-access\", app=\"rss-bank\"} [5m]))", "legendFormat": "Requêtes/5min", "refId": "A" },
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-security\", app=\"rss-bank\"} [5m]))", "legendFormat": "Alertes/5min", "refId": "B" }
+      ]
+    },
+
+    {
+      "collapsed": false,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 23 },
+      "id": 103,
+      "title": "🌍 TOP ATTAQUANTS & CODES HTTP",
+      "type": "row"
+    },
+
+    {
+      "datasource": { "type": "loki", "uid": "${datasource}" },
+      "fieldConfig": {
+        "defaults": { "color": { "mode": "palette-classic" }, "custom": { "lineWidth": 2 } }
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 24 },
+      "id": 31,
+      "options": { "legend": { "displayMode": "list", "placement": "bottom" } },
+      "title": "Codes HTTP dans le temps",
       "type": "timeseries",
       "targets": [
-        {
-          "datasource": { "type": "loki", "uid": "loki-main" },
-          "expr": "sum(count_over_time({job=\"django-access\"} |= \"\\\"status\\\": 200\" [$__interval]))",
-          "legendFormat": "200 OK", "refId": "A"
-        },
-        {
-          "datasource": { "type": "loki", "uid": "loki-main" },
-          "expr": "sum(count_over_time({job=\"django-access\"} |= \"\\\"status\\\": 400\" [$__interval]))",
-          "legendFormat": "400 Bad Request", "refId": "B"
-        },
-        {
-          "datasource": { "type": "loki", "uid": "loki-main" },
-          "expr": "sum(count_over_time({job=\"django-access\"} |= \"\\\"status\\\": 401\" [$__interval]))",
-          "legendFormat": "401 Unauthorized", "refId": "C"
-        },
-        {
-          "datasource": { "type": "loki", "uid": "loki-main" },
-          "expr": "sum(count_over_time({job=\"django-access\"} |= \"\\\"status\\\": 403\" [$__interval]))",
-          "legendFormat": "403 Forbidden", "refId": "D"
-        },
-        {
-          "datasource": { "type": "loki", "uid": "loki-main" },
-          "expr": "sum(count_over_time({job=\"django-access\"} |= \"\\\"status\\\": 500\" [$__interval]))",
-          "legendFormat": "500 Server Error", "refId": "E"
-        }
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-access\", app=\"rss-bank\"} |= \"\\\"status\\\": 200\" [1m]))", "legendFormat": "200 OK", "refId": "A" },
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-access\", app=\"rss-bank\"} |= \"\\\"status\\\": 401\" [1m]))", "legendFormat": "401 Unauthorized", "refId": "B" },
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-access\", app=\"rss-bank\"} |= \"\\\"status\\\": 403\" [1m]))", "legendFormat": "403 Forbidden", "refId": "C" },
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-access\", app=\"rss-bank\"} |= \"\\\"status\\\": 500\" [1m]))", "legendFormat": "500 Server Error", "refId": "D" }
       ]
+    },
+
+    {
+      "datasource": { "type": "loki", "uid": "${datasource}" },
+      "fieldConfig": {
+        "defaults": { "color": { "mode": "palette-classic" }, "custom": { "hideFrom": { "legend": false, "tooltip": false, "viz": false } } }
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 24 },
+      "id": 32,
+      "options": { "legend": { "displayMode": "table", "placement": "right", "values": ["value", "percent"] }, "pieType": "donut" },
+      "title": "Distribution codes HTTP",
+      "type": "piechart",
+      "targets": [
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-access\", app=\"rss-bank\"} |= \"\\\"status\\\": 200\" [1h]))", "legendFormat": "200 OK", "refId": "A" },
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-access\", app=\"rss-bank\"} |= \"\\\"status\\\": 401\" [1h]))", "legendFormat": "401 Unauthorized", "refId": "B" },
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-access\", app=\"rss-bank\"} |= \"\\\"status\\\": 403\" [1h]))", "legendFormat": "403 Forbidden", "refId": "C" },
+        { "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "sum(count_over_time({job=\"django-access\", app=\"rss-bank\"} |= \"\\\"status\\\": 500\" [1h]))", "legendFormat": "500 Error", "refId": "D" }
+      ]
+    },
+
+    {
+      "collapsed": false,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 32 },
+      "id": 104,
+      "title": "📋 LOGS EN TEMPS RÉEL",
+      "type": "row"
+    },
+
+    {
+      "datasource": { "type": "loki", "uid": "${datasource}" },
+      "gridPos": { "h": 10, "w": 24, "x": 0, "y": 33 },
+      "id": 40,
+      "options": { "dedupStrategy": "none", "enableLogDetails": true, "prettifyLogMessage": true, "showCommonLabels": false, "showLabels": true, "showTime": true, "sortOrder": "Descending", "wrapLogMessage": true },
+      "title": "🚨 Alertes Sécurité en direct",
+      "type": "logs",
+      "targets": [{ "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "{job=\"django-security\", app=\"rss-bank\"}", "queryType": "range", "refId": "A" }]
+    },
+
+    {
+      "datasource": { "type": "loki", "uid": "${datasource}" },
+      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 43 },
+      "id": 41,
+      "options": { "dedupStrategy": "none", "enableLogDetails": true, "prettifyLogMessage": false, "showCommonLabels": false, "showLabels": false, "showTime": true, "sortOrder": "Descending", "wrapLogMessage": false },
+      "title": "🌐 Access Log — Toutes les requêtes",
+      "type": "logs",
+      "targets": [{ "datasource": { "type": "loki", "uid": "${datasource}" }, "expr": "{job=\"django-access\", app=\"rss-bank\"}", "queryType": "range", "refId": "A" }]
     }
+
   ],
-  "refresh": "30s",
+  "refresh": "10s",
   "schemaVersion": 38,
-  "tags": ["soc", "security", "fintech"],
-  "templating": { "list": [] },
-  "time": { "from": "now-3h", "to": "now" },
+  "tags": ["soc", "rss-bank", "security"],
+  "templating": {
+    "list": [
+      {
+        "current": {},
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "datasource",
+        "options": [],
+        "query": "loki",
+        "refresh": 1,
+        "type": "datasource",
+        "label": "Loki Source"
+      }
+    ]
+  },
+  "time": { "from": "now-1h", "to": "now" },
   "timepicker": {},
   "timezone": "browser",
-  "title": "RSS BANK — SOC",
+  "title": "RSS BANK — SOC Dashboard",
   "uid": "rss-bank-soc",
   "version": 1
 }
