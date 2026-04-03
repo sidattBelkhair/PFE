@@ -1,4 +1,54 @@
-<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="200" height="200" rx="40" fill="#1E3A8A"/>
-  <text x="100" y="120" font-size="60" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial">SEDAD</text>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fond arrondi dégradé bleu foncé -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0D2B6B"/>
+      <stop offset="100%" stop-color="#1A4F9C"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="400" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F5C842"/>
+      <stop offset="100%" stop-color="#FFE066"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fond -->
+  <rect width="1024" height="1024" rx="200" fill="url(#bgGrad)"/>
+
+  <!-- Icône bâtiment bancaire (colonnes) -->
+  <!-- Toit -->
+  <polygon points="512,160 720,300 304,300" fill="url(#goldGrad)"/>
+  <!-- Colonnes -->
+  <rect x="345" y="310" width="55" height="220" rx="10" fill="white" fill-opacity="0.92"/>
+  <rect x="440" y="310" width="55" height="220" rx="10" fill="white" fill-opacity="0.92"/>
+  <rect x="535" y="310" width="55" height="220" rx="10" fill="white" fill-opacity="0.92"/>
+  <rect x="630" y="310" width="55" height="220" rx="10" fill="white" fill-opacity="0.92"/>
+  <!-- Base -->
+  <rect x="304" y="530" width="416" height="35" rx="8" fill="url(#goldGrad)"/>
+  <!-- Socle -->
+  <rect x="270" y="565" width="484" height="30" rx="8" fill="white" fill-opacity="0.5"/>
+
+  <!-- Ligne dorée séparatrice -->
+  <rect x="150" y="640" width="724" height="6" rx="3" fill="url(#goldGrad)"/>
+
+  <!-- Texte RSS -->
+  <text x="512" y="760"
+    font-family="Arial Black, Arial, sans-serif"
+    font-size="145"
+    font-weight="900"
+    fill="white"
+    text-anchor="middle"
+    letter-spacing="12">RSS</text>
+
+  <!-- Texte BANK -->
+  <text x="512" y="870"
+    font-family="Arial, sans-serif"
+    font-size="72"
+    font-weight="400"
+    fill="url(#goldGrad)"
+    text-anchor="middle"
+    letter-spacing="28">BANK</text>
+
+  <!-- Points décoratifs dorés -->
+  <circle cx="200" cy="760" r="12" fill="url(#goldGrad)" fill-opacity="0.6"/>
+  <circle cx="824" cy="760" r="12" fill="url(#goldGrad)" fill-opacity="0.6"/>
 </svg>

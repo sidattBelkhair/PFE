@@ -268,7 +268,7 @@ if LOKI_URL:
     LOGGING['handlers']['loki'] = {
         'class': 'logging_loki.LokiHandler',
         'url': f'{LOKI_URL}/loki/api/v1/push',
-        'tags': {'app': 'sedad-bank', 'env': 'production'},
+        'tags': {'app': 'rss-bank', 'env': 'production'},
         'version': '1',
         'level': 'INFO',
     }
