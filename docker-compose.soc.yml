@@ -55,6 +55,24 @@ services:
       - ./backend/logs:/var/log/apps:ro
       - fail2ban_data:/data
 
+  # ─────────────────────────────────────────────
+  #  SOC — ANOMALY DETECTOR (scikit-learn ML)
+  # ─────────────────────────────────────────────
+  anomaly-detector:
+    build: ./soc/anomaly_detector
+    restart: always
+    volumes:
+      - ./backend/logs:/var/log/django:ro       # lit access.log
+      - ./backend/logs:/var/log/django-rw        # écrit dans security.log
+    environment:
+      - ACCESS_LOG=/var/log/django/access.log
+      - SECURITY_LOG=/var/log/django-rw/security.log
+      - WINDOW_SEC=60
+      - MIN_REQUESTS=5
+      - CONTAMINATION=0.1
+    networks:
+      - soc-net
+
 volumes:
   loki_data:
   grafana_data:
