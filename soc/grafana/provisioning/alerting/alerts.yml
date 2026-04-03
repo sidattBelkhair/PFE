@@ -163,6 +163,45 @@ groups:
           severity: high
           team: soc
 
+      - uid: alert-ml-anomaly
+        title: "Anomalie ML Detectee (IsolationForest)"
+        condition: condition
+        data:
+          - refId: query
+            relativeTimeRange: { from: 300, to: 0 }
+            datasourceUid: loki-main
+            model:
+              expr: 'count_over_time({job="django-security"} |= "ML_ANOMALY" [5m])'
+              queryType: range
+              refId: query
+          - refId: threshold
+            relativeTimeRange: { from: 300, to: 0 }
+            datasourceUid: __expr__
+            model:
+              type: reduce
+              refId: threshold
+              reducer: last
+              expression: query
+          - refId: condition
+            relativeTimeRange: { from: 300, to: 0 }
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              refId: condition
+              conditions:
+                - evaluator: { params: [0], type: gt }
+                  operator: { type: and }
+                  query: { params: [threshold] }
+        noDataState: OK
+        execErrState: Error
+        for: 30s
+        annotations:
+          summary: "Comportement anormal detecte par ML sur RSS BANK"
+          description: "IsolationForest a detecte une IP avec un comportement anormal."
+        labels:
+          severity: high
+          team: soc
+
       - uid: alert-server-errors
         title: "Erreurs Serveur 500"
         condition: condition
