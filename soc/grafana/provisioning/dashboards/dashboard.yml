@@ -1,0 +1,46 @@
+apiVersion: 1
+
+providers:
+  - name: TrackPay SOC
+    orgId: 1
+    folder: TrackPay SOC
+    folderUid: folder-trackpay
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 30
+    allowUiUpdates: true
+    options:
+      path: /etc/grafana/provisioning/dashboards/trackpay
+
+  - name: FinanceApp SOC
+    orgId: 1
+    folder: FinanceApp SOC
+    folderUid: folder-financeapp
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 30
+    allowUiUpdates: true
+    options:
+      path: /etc/grafana/provisioning/dashboards/financeapp
+
+  - name: Nova SSO SOC
+    orgId: 1
+    folder: Nova SSO SOC
+    folderUid: folder-nova
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 30
+    allowUiUpdates: true
+    options:
+      path: /etc/grafana/provisioning/dashboards/nova
+
+  - name: RSS Bank SOC
+    orgId: 1
+    folder: RSS Bank SOC
+    folderUid: folder-rssbank
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 30
+    allowUiUpdates: true
+    options:
+      path: /etc/grafana/provisioning/dashboards/rssbank

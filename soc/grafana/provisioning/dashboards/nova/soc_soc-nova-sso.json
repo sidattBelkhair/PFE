@@ -1,0 +1,954 @@
+{
+  "annotations": {
+    "list": []
+  },
+  "description": "NOVA SOC Dashboard",
+  "editable": true,
+  "graphTooltip": 1,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 100,
+      "title": "\ud83d\udcca VUE GLOBALE \u2014 NOVA  BANK",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "loki-main"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#3274D9",
+            "mode": "fixed"
+          },
+          "unit": "short"
+        }
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 0,
+        "y": 1
+      },
+      "id": 1,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "title": "\ud83c\udf10 Total Requ\u00eates (1h)",
+      "type": "stat",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki-main"
+          },
+          "expr": "sum(count_over_time({app=~\"$app\", job=\"django-access\"}[1h]))",
+          "queryType": "instant",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "loki-main"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#F2495C",
+            "mode": "fixed"
+          },
+          "unit": "short"
+        }
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 4,
+        "y": 1
+      },
+      "id": 2,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "title": "\ud83d\udea8 Total Attaques (1h)",
+      "type": "stat",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki-main"
+          },
+          "expr": "sum(count_over_time({app=~\"$app\", job=\"django-security\"}[1h]))",
+          "queryType": "instant",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "loki-main"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#FF9830",
+            "mode": "fixed"
+          },
+          "unit": "short"
+        }
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 8,
+        "y": 1
+      },
+      "id": 3,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "title": "\ud83d\udd11 Brute Force (1h)",
+      "type": "stat",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki-main"
+          },
+          "expr": "sum(count_over_time({app=~\"$app\", event=\"BRUTE_FORCE\"}[1h]))",
+          "queryType": "instant",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "loki-main"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#E02F44",
+            "mode": "fixed"
+          },
+          "unit": "short"
+        }
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 12,
+        "y": 1
+      },
+      "id": 4,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "title": "\ud83d\udc89 SQL Injection (1h)",
+      "type": "stat",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki-main"
+          },
+          "expr": "sum(count_over_time({app=~\"$app\", event=\"SQL_INJECTION\"}[1h]))",
+          "queryType": "instant",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "loki-main"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#B877D9",
+            "mode": "fixed"
+          },
+          "unit": "short"
+        }
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 16,
+        "y": 1
+      },
+      "id": 5,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "title": "\u26a1 XSS (1h)",
+      "type": "stat",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki-main"
+          },
+          "expr": "sum(count_over_time({app=~\"$app\", event=\"XSS\"}[1h]))",
+          "queryType": "instant",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "loki-main"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#73BF69",
+            "mode": "fixed"
+          },
+          "unit": "short"
+        }
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 20,
+        "y": 1
+      },
+      "id": 6,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "title": "\ud83d\udcc1 Path Traversal (1h)",
+      "type": "stat",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki-main"
+          },
+          "expr": "sum(count_over_time({app=~\"$app\", event=\"PATH_TRAVERSAL\"}[1h]))",
+          "queryType": "instant",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 5
+      },
+      "id": 101,
+      "title": "\ud83d\udcc8 TIMELINE DES ATTAQUES",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "loki-main"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "lineWidth": 2,
+            "fillOpacity": 10
+          }
+        }
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 6
+      },
+      "id": 10,
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "title": "Toutes les attaques dans le temps",
+      "type": "timeseries",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki-main"
+          },
+          "expr": "sum(count_over_time({app=~\"$app\", event=\"BRUTE_FORCE\"}[1m]))",
+          "legendFormat": "Brute Force",
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki-main"
+          },
+          "expr": "sum(count_over_time({app=~\"$app\", event=\"SQL_INJECTION\"}[1m]))",
+          "legendFormat": "SQL Injection",
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki-main"
+          },
+          "expr": "sum(count_over_time({app=~\"$app\", event=\"XSS\"}[1m]))",
+          "legendFormat": "XSS",
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki-main"
+          },
+          "expr": "sum(count_over_time({app=~\"$app\", event=\"PATH_TRAVERSAL\"}[1m]))",
+          "legendFormat": "Path Traversal",
+          "refId": "D"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki-main"
+          },
+          "expr": "sum(count_over_time({app=~\"$app\", job=\"django-access\"}[1m]))",
+          "legendFormat": "Total Requ\u00eates",
+          "refId": "E"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 14
+      },
+      "id": 102,
+      "title": "\ufffd\ufffd R\u00c9PARTITION ET COMPTEURS",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "loki-main"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          }
+        }
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 15
+      },
+      "id": 20,
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "right",
+          "values": [
+            "value",
+            "percent"
+          ]
+        },
+        "pieType": "pie",
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "title": "Types d'attaques",
+      "type": "piechart",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki-main"
+          },
+          "expr": "sum(count_over_time({app=~\"$app\", event=\"BRUTE_FORCE\"}[1h]))",
+          "legendFormat": "Brute Force",
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki-main"
+          },
+          "expr": "sum(count_over_time({app=~\"$app\", event=\"SQL_INJECTION\"}[1h]))",
+          "legendFormat": "SQL Injection",
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki-main"
+          },
+          "expr": "sum(count_over_time({app=~\"$app\", event=\"XSS\"}[1h]))",
+          "legendFormat": "XSS",
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki-main"
+          },
+          "expr": "sum(count_over_time({app=~\"$app\", event=\"PATH_TRAVERSAL\"}[1h]))",
+          "legendFormat": "Path Traversal",
+          "refId": "D"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "loki-main"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        }
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 15
+      },
+      "id": 22,
+      "options": {
+        "displayMode": "gradient",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true
+      },
+      "title": "Trafic en temps r\u00e9el (5min)",
+      "type": "bargauge",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki-main"
+          },
+          "expr": "sum(count_over_time({app=~\"$app\", job=\"django-access\"}[5m]))",
+          "legendFormat": "Requ\u00eates",
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki-main"
+          },
+          "expr": "sum(count_over_time({app=~\"$app\", job=\"django-security\"}[5m]))",
+          "legendFormat": "Alertes",
+          "refId": "B"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 23
+      },
+      "id": 103,
+      "title": "\ud83d\udccb LOGS EN TEMPS R\u00c9EL",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "loki-main"
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 24,
+        "x": 0,
+        "y": 24
+      },
+      "id": 40,
+      "options": {
+        "dedupStrategy": "none",
+        "enableLogDetails": true,
+        "prettifyLogMessage": true,
+        "showCommonLabels": false,
+        "showLabels": true,
+        "showTime": true,
+        "sortOrder": "Descending",
+        "wrapLogMessage": true
+      },
+      "title": "\ud83d\udea8 Alertes S\u00e9curit\u00e9 en direct",
+      "type": "logs",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki-main"
+          },
+          "expr": "{app=~\"$app\", job=\"django-security\"}",
+          "queryType": "range",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "loki-main"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 34
+      },
+      "id": 41,
+      "options": {
+        "dedupStrategy": "none",
+        "enableLogDetails": true,
+        "prettifyLogMessage": false,
+        "showCommonLabels": false,
+        "showLabels": false,
+        "showTime": true,
+        "sortOrder": "Descending",
+        "wrapLogMessage": false
+      },
+      "title": "\ud83c\udf10 Access Log \u2014 Toutes les requ\u00eates",
+      "type": "logs",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki-main"
+          },
+          "expr": "{app=~\"$app\", job=\"django-access\"}",
+          "queryType": "range",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "loki-main"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#73BF69",
+            "mode": "fixed"
+          },
+          "unit": "short"
+        }
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 0,
+        "y": 100
+      },
+      "id": 7,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "title": "\u2705 Login Success (1h)",
+      "type": "stat",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki-main"
+          },
+          "expr": "sum(count_over_time({app=~\"$app\", event=\"LOGIN_SUCCESS\"}[1h]))",
+          "queryType": "instant",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "loki-main"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#F2495C",
+            "mode": "fixed"
+          },
+          "unit": "short"
+        }
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 6,
+        "y": 100
+      },
+      "id": 8,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "title": "\u274c Login Failed (1h)",
+      "type": "stat",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki-main"
+          },
+          "expr": "sum(count_over_time({app=~\"$app\", event=\"LOGIN_FAILURE\"}[1h]))",
+          "queryType": "instant",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "loki-main"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#FA6400",
+            "mode": "fixed"
+          },
+          "unit": "short"
+        }
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 12,
+        "y": 100
+      },
+      "id": 9,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "title": "\ud83d\udea8 Unauthorized 401 (1h)",
+      "type": "stat",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki-main"
+          },
+          "expr": "sum(count_over_time({app=~\"$app\", event=\"UNAUTHORIZED\"}[1h]))",
+          "queryType": "instant",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "loki-main"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#73BF69",
+            "mode": "fixed"
+          },
+          "unit": "short"
+        }
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 0,
+        "y": 100
+      },
+      "id": 7,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "title": "\u2705 Login Success (1h)",
+      "type": "stat",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki-main"
+          },
+          "expr": "sum(count_over_time({app=~\"$app\", event=\"LOGIN_SUCCESS\"}[1h]))",
+          "queryType": "instant",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "loki-main"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#F2495C",
+            "mode": "fixed"
+          },
+          "unit": "short"
+        }
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 6,
+        "y": 100
+      },
+      "id": 8,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "title": "\u274c Login Failed (1h)",
+      "type": "stat",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki-main"
+          },
+          "expr": "sum(count_over_time({app=~\"$app\", event=\"LOGIN_FAILURE\"}[1h]))",
+          "queryType": "instant",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "loki-main"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#FA6400",
+            "mode": "fixed"
+          },
+          "unit": "short"
+        }
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 12,
+        "y": 100
+      },
+      "id": 9,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "title": "\ud83d\udea8 Unauthorized 401 (1h)",
+      "type": "stat",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki-main"
+          },
+          "expr": "sum(count_over_time({app=~\"$app\", event=\"UNAUTHORIZED\"}[1h]))",
+          "queryType": "instant",
+          "refId": "A"
+        }
+      ]
+    }
+  ],
+  "refresh": "10s",
+  "schemaVersion": 38,
+  "tags": [
+    "soc",
+    "rss-bank",
+    "security"
+  ],
+  "templating": {
+    "list": [
+      {
+        "name": "app",
+        "label": "Application",
+        "type": "constant",
+        "hide": 2,
+        "query": "nova_sso",
+        "current": {
+          "selected": true,
+          "text": "nova_sso",
+          "value": "nova_sso"
+        },
+        "options": [
+          {
+            "selected": true,
+            "text": "nova_sso",
+            "value": "nova_sso"
+          }
+        ]
+      }
+    ]
+  },
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "timezone": "browser",
+  "title": "nova_sso \u2014 SOC Dashboard",
+  "uid": "nova-soc-dash",
+  "version": 2
+}

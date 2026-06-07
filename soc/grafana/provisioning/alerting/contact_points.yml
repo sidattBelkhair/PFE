@@ -1,0 +1,112 @@
+apiVersion: 1
+
+contactPoints:
+  # Admin reçoit TOUT
+  - orgId: 1
+    name: contact-admin
+    receivers:
+      - uid: email-admin
+        type: email
+        disableResolveMessage: false
+        settings:
+          addresses: 23017@supnum.mr
+          singleEmail: false
+          subject: "[ADMIN SOC] {{ .CommonLabels.app }} — {{ .CommonLabels.alertname }}"
+          message: |
+            🛡️ ALERTE SÉCURITÉ — ADMIN RSS BANK SOC
+            =========================================
+            Application : {{ .CommonLabels.app }}
+            {{ range .Alerts }}
+            ⚠️  Attaque  : {{ .Labels.alertname }}
+            📊 Sévérité : {{ .Labels.severity | toUpper }}
+            ⏰ Heure    : {{ .StartsAt.Format "2006-01-02 15:04:05 UTC" }}
+            🔍 Détails  : {{ .Annotations.description }}
+            {{ end }}
+
+  # TrackPay + Admin
+  - orgId: 1
+    name: contact-trackpay
+    receivers:
+      - uid: email-trackpay
+        type: email
+        disableResolveMessage: false
+        settings:
+          addresses: alinteymi@gmail.com, 23017@supnum.mr
+          singleEmail: false
+          subject: "[TrackPay SOC] 🚨 {{ .CommonLabels.alertname }}"
+          message: |
+            🛡️ ALERTE SÉCURITÉ — TrackPay SOC
+            =====================================
+            {{ range .Alerts }}
+            ⚠️  Attaque  : {{ .Labels.alertname }}
+            📊 Sévérité : {{ .Labels.severity | toUpper }}
+            ⏰ Heure    : {{ .StartsAt.Format "2006-01-02 15:04:05 UTC" }}
+            🔍 Détails  : {{ .Annotations.description }}
+            {{ end }}
+            📈 Dashboard : http://198.199.70.48:3000/d/trackpay-soc-dash
+
+  # FinanceApp + Admin
+  - orgId: 1
+    name: contact-financeapp
+    receivers:
+      - uid: email-financeapp
+        type: email
+        disableResolveMessage: false
+        settings:
+          addresses: 23017@supnum.mr, 23017@supnum.mr
+          singleEmail: false
+          subject: "[FinanceApp SOC] 🚨 {{ .CommonLabels.alertname }}"
+          message: |
+            🛡️ ALERTE SÉCURITÉ — FinanceApp SOC
+            =====================================
+            {{ range .Alerts }}
+            ⚠️  Attaque  : {{ .Labels.alertname }}
+            📊 Sévérité : {{ .Labels.severity | toUpper }}
+            ⏰ Heure    : {{ .StartsAt.Format "2006-01-02 15:04:05 UTC" }}
+            🔍 Détails  : {{ .Annotations.description }}
+            {{ end }}
+            📈 Dashboard : http://198.199.70.48:3000/d/financeapp-soc-dash
+
+  # Nova SSO + Admin
+  - orgId: 1
+    name: contact-nova
+    receivers:
+      - uid: email-nova
+        type: email
+        disableResolveMessage: false
+        settings:
+          addresses: outstaleb151@gmail.com, 23017@supnum.mr
+          singleEmail: false
+          subject: "[Nova SSO SOC] 🚨 {{ .CommonLabels.alertname }}"
+          message: |
+            🛡️ ALERTE SÉCURITÉ — Nova SSO SOC
+            =====================================
+            {{ range .Alerts }}
+            ⚠️  Attaque  : {{ .Labels.alertname }}
+            📊 Sévérité : {{ .Labels.severity | toUpper }}
+            ⏰ Heure    : {{ .StartsAt.Format "2006-01-02 15:04:05 UTC" }}
+            🔍 Détails  : {{ .Annotations.description }}
+            {{ end }}
+            📈 Dashboard : http://198.199.70.48:3000/d/nova-soc-dash
+
+  # RSS Bank + Admin
+  - orgId: 1
+    name: contact-rssbank
+    receivers:
+      - uid: email-rssbank
+        type: email
+        disableResolveMessage: false
+        settings:
+          addresses: belkhairtaleb@gmail.com, 23017@supnum.mr
+          singleEmail: false
+          subject: "[RSS Bank SOC] 🚨 {{ .CommonLabels.alertname }}"
+          message: |
+            🛡️ ALERTE SÉCURITÉ — RSS Bank SOC
+            =====================================
+            {{ range .Alerts }}
+            ⚠️  Attaque  : {{ .Labels.alertname }}
+            📊 Sévérité : {{ .Labels.severity | toUpper }}
+            ⏰ Heure    : {{ .StartsAt.Format "2006-01-02 15:04:05 UTC" }}
+            🔍 Détails  : {{ .Annotations.description }}
+            {{ end }}
+            📈 Dashboard : http://198.199.70.48:3000/d/rssbank-soc-dash
