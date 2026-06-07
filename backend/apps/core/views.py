@@ -6,6 +6,7 @@ from datetime import timedelta
 from django.core.cache import cache
 from django.core.mail import send_mail
 from django.db import transaction as db_transaction
+import threading
 from django.utils import timezone
 from rest_framework import viewsets, status
 from rest_framework.decorators import action
@@ -14,6 +15,9 @@ from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
+import requests as http_requests
+from django.conf import settings
+from django.shortcuts import redirect
 
 from .security_middleware import log_security_event, get_client_ip
 
@@ -83,10 +87,7 @@ class RegisterView(viewsets.ViewSet):
         profile.otp_expires_at = timezone.now() + timedelta(minutes=10)
         profile.otp_type = 'verify_email'
         profile.save()
-        try:
-            send_otp_email(user.email, code, 'verify_email')
-        except Exception:
-            pass  # Ne pas bloquer l'inscription si l'email échoue
+        threading.Thread(target=send_otp_email, args=(user.email, code, 'verify_email',), daemon=True).start()
 
         return Response({
             'message': 'Compte créé. Vérifiez votre email pour le code de confirmation.',
@@ -143,10 +144,7 @@ class ResendOtpView(APIView):
         profile.otp_expires_at = timezone.now() + timedelta(minutes=10)
         profile.otp_type = otp_type
         profile.save()
-        try:
-            send_otp_email(email, code, otp_type)
-        except Exception:
-            pass
+        threading.Thread(target=send_otp_email, args=(email, code, otp_type,), daemon=True).start()
         return Response({'message': 'Nouveau code envoyé.'})
 
 
@@ -170,10 +168,7 @@ class ForgotPasswordView(APIView):
         profile.otp_expires_at = timezone.now() + timedelta(minutes=10)
         profile.otp_type = 'reset_password'
         profile.save()
-        try:
-            send_otp_email(email, code, 'reset_password')
-        except Exception:
-            pass
+        threading.Thread(target=send_otp_email, args=(email, code, 'reset_password',), daemon=True).start()
         return Response({'message': 'Code de réinitialisation envoyé à votre email.'})
 
 
@@ -293,6 +288,80 @@ class UserViewSet(viewsets.ModelViewSet):
         user.status = new_status
         user.save(update_fields=['status'])
         return Response(UserSerializer(user).data)
+
+    @action(detail=False, methods=['post'], url_path='complete-kyc', permission_classes=[IsAuthenticated])
+    def complete_kyc(self, request):
+        """
+        POST /api/users/complete-kyc/
+        Appelé par Flutter après vérification OCR + Face réussie.
+        """
+        user = request.user
+
+        if user.kyc_status == 'approved':
+            return Response(
+                {'detail': 'KYC déjà validé', 'kyc_status': 'approved'},
+                status=status.HTTP_200_OK,
+            )
+
+        face_confidence = request.data.get('face_match_confidence', 0)
+        try:
+            face_confidence = float(face_confidence)
+        except (TypeError, ValueError):
+            face_confidence = 0.0
+
+        SEUIL_REJET = 0.3
+        if 0 < face_confidence < SEUIL_REJET:
+            user.kyc_status = 'rejected'
+            user.save(update_fields=['kyc_status'])
+            return Response(
+                {
+                    'detail': 'Vérification faciale insuffisante',
+                    'kyc_status': 'rejected',
+                    'confidence': face_confidence,
+                },
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        national_id = request.data.get('national_id', '').strip()
+        extracted_first = request.data.get('extracted_first_name', '').strip()
+        extracted_last = request.data.get('extracted_last_name', '').strip()
+
+        if national_id and not user.national_id:
+            user.national_id = national_id
+        if extracted_first and not user.first_name:
+            user.first_name = extracted_first
+        if extracted_last and not user.last_name:
+            user.last_name = extracted_last
+
+        user.kyc_status = 'approved'
+        user.kyc_submitted_at = timezone.now()
+        user.save()
+
+        return Response(
+            {
+                'detail': 'KYC validé avec succès',
+                'kyc_status': 'approved',
+                'user': UserSerializer(user).data,
+            },
+            status=status.HTTP_200_OK,
+        )
+
+    @action(detail=False, methods=['get'], url_path='kyc-status', permission_classes=[IsAuthenticated])
+    def kyc_status_view(self, request):
+        """
+        GET /api/users/kyc-status/
+        Retourne le statut KYC de l'utilisateur courant.
+        """
+        user = request.user
+        return Response({
+            'kyc_status': user.kyc_status,
+            'national_id_set': bool(user.national_id),
+            'requires_kyc': user.kyc_status != 'approved',
+        })
+
+
+
+
 
 
 class UserProfileViewSet(viewsets.ModelViewSet):
@@ -471,3 +540,87 @@ class TransactionHistoryViewSet(viewsets.ReadOnlyModelViewSet):
         return TransactionHistory.objects.filter(
             transaction__from_account__user=self.request.user
         )
+
+class SSOStartView(APIView):
+    permission_classes = [AllowAny]
+
+    def get(self, request):
+        auth_url = (
+            f"{settings.SSO_AUTHORIZE_URL}"
+            f"?client_id={settings.SSO_CLIENT_ID}"
+            f"&response_type=code"
+            f"&redirect_uri={settings.SSO_REDIRECT_URI}"
+            f"&scope=openid profile email"
+        )
+        return redirect(auth_url)
+
+
+class SSOCallbackView(APIView):
+    permission_classes = [AllowAny]
+
+    def get(self, request):
+        code = request.GET.get("code")
+        if not code:
+            return Response({"error": "Code OAuth manquant"}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            # 1. Échanger le code contre un token
+            token_resp = http_requests.post(
+                settings.SSO_TOKEN_URL,
+                data={
+                    "grant_type": "authorization_code",
+                    "code": code,
+                    "client_id": settings.SSO_CLIENT_ID,
+                    "client_secret": settings.SSO_CLIENT_SECRET,
+                    "redirect_uri": settings.SSO_REDIRECT_URI,
+                },
+                timeout=10,
+            )
+
+            if token_resp.status_code != 200:
+                return Response(
+                    {"error": "Impossible de récupérer le token SSO", "detail": token_resp.text},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+
+            access_token = token_resp.json().get("access_token")
+
+            # 2. Récupérer les infos utilisateur
+            userinfo_resp = http_requests.get(
+                settings.SSO_USERINFO_URL,
+                headers={"Authorization": f"Bearer {access_token}"},
+                timeout=10,
+            )
+
+            if userinfo_resp.status_code != 200:
+                return Response({"error": "Impossible de récupérer le profil SSO"}, status=status.HTTP_400_BAD_REQUEST)
+
+            userinfo = userinfo_resp.json()
+            email = userinfo.get("email")
+            if not email:
+                return Response({"error": "Email manquant dans le profil SSO"}, status=status.HTTP_400_BAD_REQUEST)
+
+            # 3. Créer ou récupérer l'utilisateur RSS Bank
+            user, created = User.objects.get_or_create(
+                email=email,
+                defaults={
+                    "first_name": userinfo.get("given_name", ""),
+                    "last_name": userinfo.get("family_name", ""),
+                    "is_active": True,
+                }
+            )
+            if created:
+                user.set_unusable_password()
+                user.save()
+
+            # 4. Générer JWT RSS Bank
+            refresh = RefreshToken.for_user(user)
+            return Response({
+                "message": "Connexion SSO réussie",
+                "access": str(refresh.access_token),
+                "refresh": str(refresh),
+                "user": UserSerializer(user).data,
+            })
+
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

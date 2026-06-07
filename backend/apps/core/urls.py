@@ -1,12 +1,16 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenRefreshView
+
 from .views import (
     RegisterView, LoginView,
     VerifyEmailView, ResendOtpView, ForgotPasswordView, ResetPasswordView,
     UserViewSet, UserProfileViewSet,
     AccountViewSet, CardViewSet, BeneficiaryViewSet,
-    TransactionViewSet, TransactionHistoryViewSet
+    TransactionViewSet, TransactionHistoryViewSet,
+    # SSOLoginView,
+    SSOStartView,
+    SSOCallbackView,
 )
 
 router = DefaultRouter()
@@ -32,5 +36,9 @@ urlpatterns = [
     path('auth/resend-otp/', ResendOtpView.as_view()),
     path('auth/forgot-password/', ForgotPasswordView.as_view()),
     path('auth/reset-password/', ResetPasswordView.as_view()),
+    path('auth/sso/start/', SSOStartView.as_view()),
+    path('auth/sso/callback/', SSOCallbackView.as_view()),
+    # path('auth/sso-login/', SSOLoginView.as_view(), name='sso-login'),
     path('', include(router.urls)),
+   
 ]

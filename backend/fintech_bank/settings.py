@@ -231,27 +231,25 @@ LOGGING = {
     },
 }
 
-# ── Email ───────────────────────────────────────────────────────────────────
-# En DEBUG sans vraies credentials Gmail → console (OTP visible dans le terminal)
-_email_user = config('EMAIL_HOST_USER', default='')
-_email_pass = config('EMAIL_HOST_PASSWORD', default='')
-_has_real_creds = bool(_email_user and _email_user != 'TON_EMAIL@gmail.com' and _email_pass and _email_pass != 'TON_MOT_DE_PASSE_APPLICATION')
-
-if _has_real_creds:
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_HOST = config('EMAIL_HOST', default='smtp.gmail.com')
-    EMAIL_PORT = config('EMAIL_PORT', default=587, cast=int)
-    EMAIL_USE_TLS = True
-    EMAIL_HOST_USER = _email_user
-    EMAIL_HOST_PASSWORD = _email_pass
-    DEFAULT_FROM_EMAIL = _email_user
-else:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    EMAIL_HOST_USER = ''
-    EMAIL_HOST_PASSWORD = ''
-    DEFAULT_FROM_EMAIL = 'noreply@rssbank.mr'
 
 # Cache pour le comptage brute-force (en mémoire)
+
+
+# ── Email (Brevo API HTTPS) ────────────────────────────────────────────────
+# === BREVO EMAIL CONFIG ===
+BREVO_API_KEY    = config('BREVO_API_KEY', default='')
+BREVO_FROM_EMAIL = config('BREVO_FROM_EMAIL', default='rssbank700@gmail.com')
+BREVO_FROM_NAME  = config('BREVO_FROM_NAME', default='RSS Bank')
+
+if BREVO_API_KEY.startswith('xkeysib-'):
+    EMAIL_BACKEND = 'apps.core.brevo_backend.BrevoAPIBackend'
+    DEFAULT_FROM_EMAIL = BREVO_FROM_EMAIL
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    DEFAULT_FROM_EMAIL = 'noreply@rssbank.mr'
+    
+
+
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
@@ -301,3 +299,26 @@ if LOKI_URL:
 
     except Exception:
         pass  # Ne pas bloquer si logging_loki non installé
+
+# ─────────────────────────────────────────────
+# SSO CONFIG
+# ─────────────────────────────────────────────
+
+SSO_CLIENT_ID = config(
+    'SSO_CLIENT_ID',
+    default='FaACVS7Ds3qjR5i6ynVmhGtzlZ44wan45hgDJwVF'
+)
+
+SSO_CLIENT_SECRET = config(
+    'SSO_CLIENT_SECRET',
+    default=''
+)
+
+SSO_AUTHORIZE_URL = 'https://sso-backend-6b1e.onrender.com/o/authorize/'
+SSO_TOKEN_URL = 'https://sso-backend-6b1e.onrender.com/o/token/'
+SSO_USERINFO_URL = 'https://sso-backend-6b1e.onrender.com/o/userinfo/'
+
+SSO_REDIRECT_URI = config(
+    'SSO_REDIRECT_URI',
+    default='http://104.248.61.147:8000/api/auth/sso/callback/'
+)

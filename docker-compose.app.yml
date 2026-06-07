@@ -15,7 +15,6 @@ services:
       retries: 5
     networks:
       - app-net
-      - soc-bridge
 
   backend:
     build: ./backend
@@ -34,35 +33,9 @@ services:
         condition: service_healthy
     networks:
       - app-net
-      - soc-bridge
-
-  frontend:
-    build: ./frontend/sedad_bank
-    restart: always
-    ports:
-      - "80:80"
-    depends_on:
-      - backend
-    networks:
-      - app-net
-
-  promtail:
-    image: grafana/promtail:2.9.0
-    restart: always
-    volumes:
-      - ./backend/logs:/var/log/django:ro
-      - ./soc/promtail-local.yml:/etc/promtail/config.yml:ro
-      - promtail_positions:/var/positions
-    command: -config.file=/etc/promtail/config.yml
-    networks:
-      - app-net
-      - soc-bridge
 
 volumes:
   postgres_data:
-  promtail_positions:
 
 networks:
   app-net:
-  soc-bridge:
-    external: true
