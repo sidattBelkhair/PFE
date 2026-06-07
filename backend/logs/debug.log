@@ -1,0 +1,1346 @@
+INFO 2026-02-18 18:43:31,192 autoreload 187028 139759005281152 Watching for file changes with StatReloader
+WARNING 2026-02-18 18:47:16,306 log 187028 139758835594944 Not Found: /
+WARNING 2026-02-18 18:47:16,381 log 187028 139758835594944 Not Found: /favicon.ico
+WARNING 2026-02-18 18:48:59,465 log 187028 139758827202240 Not Found: /doca
+WARNING 2026-02-18 18:49:03,158 log 187028 139758827202240 Not Found: /docs
+WARNING 2026-02-18 18:49:07,969 log 187028 139758827202240 Not Found: /docs/
+WARNING 2026-02-18 18:49:23,999 log 187028 139758827202240 Not Found: /users
+WARNING 2026-02-18 18:49:34,666 log 187028 139758827202240 Not Found: /users/
+WARNING 2026-02-18 18:50:04,330 log 187028 139758827202240 Not Found: /api/schema/swagger-ui/
+WARNING 2026-02-18 18:50:09,018 log 187028 139758827202240 Not Found: /api/schema/swagger-ui/
+INFO 2026-02-18 19:17:48,273 autoreload 209242 140362928388992 Watching for file changes with StatReloader
+INFO 2026-02-18 19:21:48,307 autoreload 209242 140362928388992 /home/sidatt/PFE/backend/apps/users/models.py changed, reloading.
+INFO 2026-02-18 19:21:48,618 autoreload 211612 140033388534656 Watching for file changes with StatReloader
+INFO 2026-02-18 19:22:04,020 autoreload 211612 140033388534656 /home/sidatt/PFE/backend/apps/transactions/views.py changed, reloading.
+INFO 2026-02-18 19:22:04,319 autoreload 211795 140471508659072 Watching for file changes with StatReloader
+INFO 2026-02-18 19:22:16,666 autoreload 211795 140471508659072 /home/sidatt/PFE/backend/apps/transactions/views.py changed, reloading.
+INFO 2026-02-18 19:22:16,968 autoreload 211949 140030076738432 Watching for file changes with StatReloader
+WARNING 2026-02-18 19:23:17,657 log 211949 140029974279872 Not Found: /
+WARNING 2026-02-18 19:23:35,973 log 211949 140029974279872 Not Found: /docs
+WARNING 2026-02-18 19:23:55,526 log 211949 140029974279872 Unauthorized: /api/users/
+WARNING 2026-02-18 19:24:11,256 log 211949 140029974279872 Not Found: /api/counts/
+WARNING 2026-02-18 19:24:21,442 log 211949 140029974279872 Unauthorized: /api/accounts/
+WARNING 2026-02-18 19:24:24,848 log 211949 140029974279872 Unauthorized: /api/accounts/
+WARNING 2026-02-18 19:24:25,851 log 211949 140029974279872 Unauthorized: /api/accounts/
+WARNING 2026-02-18 19:24:28,428 log 211949 140029974279872 Unauthorized: /api/accounts/
+WARNING 2026-02-18 19:24:28,469 log 211949 140029850527424 Not Found: /favicon.ico
+WARNING 2026-02-18 19:45:10,552 log 211949 140029850527424 Unauthorized: /api/accounts/
+WARNING 2026-02-18 19:45:26,026 log 211949 140029850527424 Unauthorized: /api/transactions/
+WARNING 2026-02-18 19:45:28,698 log 211949 140029850527424 Unauthorized: /api/transactions/
+WARNING 2026-02-18 19:45:31,509 log 211949 140029850527424 Unauthorized: /api/transactions/
+WARNING 2026-02-18 19:45:31,541 log 211949 140029867312832 Not Found: /favicon.ico
+INFO 2026-02-18 19:48:48,345 autoreload 211949 140030076738432 /home/sidatt/PFE/backend/apps/transactions/views.py changed, reloading.
+INFO 2026-02-18 19:48:48,645 autoreload 231137 139713862253440 Watching for file changes with StatReloader
+WARNING 2026-02-18 19:49:00,104 log 231137 139713761507008 Not Found: /docs
+WARNING 2026-02-18 19:50:25,638 log 231137 139713761507008 Method Not Allowed: /api/users/login/
+WARNING 2026-02-18 19:50:56,109 log 231137 139713761507008 Unauthorized: /api/users/rejister/
+WARNING 2026-02-18 19:52:00,789 log 231137 139713761507008 Bad Request: /api/users/register/
+WARNING 2026-02-18 19:53:25,555 log 231137 139713761507008 Unauthorized: /api/users/
+WARNING 2026-02-18 19:53:31,266 log 231137 139713761507008 Method Not Allowed: /api/users/login/
+WARNING 2026-02-18 19:53:56,436 log 231137 139713761507008 Unauthorized: /api/users/
+WARNING 2026-02-18 19:54:02,529 log 231137 139713761507008 Unauthorized: /api/users/
+WARNING 2026-02-18 19:54:05,907 log 231137 139713761507008 Unauthorized: /api/users/
+WARNING 2026-02-18 19:54:05,937 log 231137 139713753114304 Not Found: /favicon.ico
+ERROR 2026-02-18 19:56:08,675 log 231137 139713761507008 Internal Server Error: /api/users/register/
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: UNIQUE constraint failed: users.username
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/apps/users/views.py", line 23, in create
+    user = serializer.save()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/apps/users/serializers.py", line 40, in create
+    user = User.objects.create_user(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/contrib/auth/models.py", line 161, in create_user
+    return self._create_user(username, email, password, **extra_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/contrib/auth/models.py", line 155, in _create_user
+    user.save(using=self._db)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/contrib/auth/base_user.py", line 76, in save
+    super().save(*args, **kwargs)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: UNIQUE constraint failed: users.username
+WARNING 2026-02-18 19:57:28,179 log 231137 139713541306048 Method Not Allowed: /api/users/login/
+WARNING 2026-02-18 20:16:22,149 log 231137 139713541306048 Unauthorized: /api/users/cards/
+WARNING 2026-02-18 20:16:40,080 log 231137 139713516127936 Unauthorized: /api/users/beneficiers/
+WARNING 2026-02-18 20:16:54,414 log 231137 139713532913344 Unauthorized: /api/users/beneficiaries/
+WARNING 2026-02-18 20:17:31,652 log 231137 139713753114304 Unauthorized: /api/users/transaction/
+WARNING 2026-02-18 20:17:35,742 log 231137 139713761507008 Unauthorized: /api/users/transactions/
+WARNING 2026-02-18 20:17:35,790 log 231137 139713761507008 Not Found: /favicon.ico
+WARNING 2026-02-18 20:36:40,850 log 231137 139713524520640 Not Found: /api/schema/swagger-ui/
+WARNING 2026-02-18 20:36:53,973 log 231137 139713524520640 Not Found: /api/token
+INFO 2026-02-18 21:02:29,488 autoreload 284554 140582527757184 Watching for file changes with StatReloader
+WARNING 2026-02-18 21:03:39,719 log 284554 140582357825216 Not Found: /apiusers/register/
+INFO 2026-02-18 21:07:48,313 autoreload 284554 140582527757184 /home/sidatt/PFE/backend/fintech_bank/settings.py changed, reloading.
+INFO 2026-02-18 21:07:48,692 autoreload 288000 139688901278592 Watching for file changes with StatReloader
+INFO 2026-02-18 22:15:40,051 autoreload 345525 139884183706496 Watching for file changes with StatReloader
+INFO 2026-02-18 22:16:45,807 autoreload 288000 139688901278592 /home/sidatt/PFE/backend/fintech_bank/settings.py changed, reloading.
+INFO 2026-02-18 22:16:46,137 autoreload 347008 140459132734336 Watching for file changes with StatReloader
+WARNING 2026-02-18 22:18:50,986 log 347008 140458961401536 Bad Request: /api/users/login/
+ERROR 2026-02-18 22:19:42,300 log 347008 140458961401536 Internal Server Error: /api/users/login/
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: auth_user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/apps/users/views.py", line 37, in create
+    serializer.is_valid(raise_exception=True)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/serializers.py", line 429, in run_validation
+    value = self.validate(value)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/apps/users/serializers.py", line 57, in validate
+    user = authenticate(username=attrs['email'], password=attrs['password'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/views/decorators/debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/contrib/auth/__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/contrib/auth/backends.py", line 46, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/contrib/auth/base_user.py", line 54, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 633, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: auth_user
+INFO 2026-02-18 22:23:00,417 autoreload 347008 140459132734336 /home/sidatt/PFE/backend/apps/users/views.py changed, reloading.
+INFO 2026-02-18 22:23:00,805 autoreload 351997 140648927161216 Watching for file changes with StatReloader
+ERROR 2026-02-18 22:35:09,492 log 351997 140648757851840 Internal Server Error: /api/users/login/
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: auth_user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/apps/users/views.py", line 42, in create
+    serializer.is_valid(raise_exception=True)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/serializers.py", line 429, in run_validation
+    value = self.validate(value)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/apps/users/serializers.py", line 57, in validate
+    user = authenticate(username=attrs['email'], password=attrs['password'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/views/decorators/debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/contrib/auth/__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/contrib/auth/backends.py", line 46, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/contrib/auth/base_user.py", line 54, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 633, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: auth_user
+INFO 2026-02-18 22:35:28,310 autoreload 351997 140648927161216 /home/sidatt/PFE/backend/apps/users/views.py changed, reloading.
+INFO 2026-02-18 22:35:28,650 autoreload 360469 140063117388672 Watching for file changes with StatReloader
+INFO 2026-02-18 22:35:38,982 autoreload 360469 140063117388672 /home/sidatt/PFE/backend/apps/users/views.py changed, reloading.
+INFO 2026-02-18 22:35:39,295 autoreload 360603 139972860451712 Watching for file changes with StatReloader
+INFO 2026-02-18 22:36:43,386 autoreload 362345 140140363930496 Watching for file changes with StatReloader
+ERROR 2026-02-18 22:36:55,513 log 362345 140140190103232 Internal Server Error: /api/users/login/
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: auth_user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/apps/users/views.py", line 43, in post
+    serializer.is_valid(raise_exception=True)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/serializers.py", line 429, in run_validation
+    value = self.validate(value)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/apps/users/serializers.py", line 57, in validate
+    user = authenticate(username=attrs['email'], password=attrs['password'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/views/decorators/debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/contrib/auth/__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/contrib/auth/backends.py", line 46, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/contrib/auth/base_user.py", line 54, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 633, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: auth_user
+INFO 2026-02-18 22:38:47,453 autoreload 362345 140140363930496 /home/sidatt/PFE/backend/apps/users/views.py changed, reloading.
+INFO 2026-02-18 22:38:47,786 autoreload 364395 139792576142208 Watching for file changes with StatReloader
+INFO 2026-02-18 22:39:26,147 autoreload 365023 140077048474496 Watching for file changes with StatReloader
+ERROR 2026-02-18 22:39:49,030 log 365023 140076946290368 Internal Server Error: /api/users/register/
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/utils.py", line 98, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: FOREIGN KEY constraint failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/apps/users/views.py", line 24, in create
+    user = serializer.save()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/apps/users/serializers.py", line 48, in create
+    UserProfile.objects.create(user=user)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1833, in execute_sql
+    self.connection.ops.fetch_returned_insert_columns(
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/backends/base/operations.py", line 213, in fetch_returned_insert_columns
+    return cursor.fetchone()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/utils.py", line 97, in inner
+    with self:
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/utils.py", line 98, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: FOREIGN KEY constraint failed
+WARNING 2026-02-18 22:40:04,859 log 365023 140076946290368 Bad Request: /api/users/register/
+INFO 2026-02-18 22:40:24,249 autoreload 365023 140077048474496 /home/sidatt/PFE/backend/apps/users/models.py changed, reloading.
+INFO 2026-02-18 22:40:24,614 autoreload 366357 140014784072576 Watching for file changes with StatReloader
+INFO 2026-02-18 22:41:18,261 autoreload 367271 139954092321664 Watching for file changes with StatReloader
+WARNING 2026-02-18 22:42:36,368 log 367271 139953921062592 Bad Request: /api/users/login/
+INFO 2026-02-18 22:43:56,788 autoreload 367271 139954092321664 /home/sidatt/PFE/backend/apps/users/serializers.py changed, reloading.
+INFO 2026-02-18 22:43:57,102 autoreload 370940 140273453480832 Watching for file changes with StatReloader
+INFO 2026-02-18 22:44:16,605 autoreload 371356 139897225948032 Watching for file changes with StatReloader
+INFO 2026-02-18 22:46:14,470 autoreload 371356 139897225948032 /home/sidatt/PFE/backend/apps/users/models.py changed, reloading.
+INFO 2026-02-18 22:46:14,784 autoreload 372950 139657980951424 Watching for file changes with StatReloader
+INFO 2026-02-18 22:47:41,651 autoreload 374671 140643017407360 Watching for file changes with StatReloader
+INFO 2026-02-18 22:47:58,807 autoreload 375199 140634010893184 Watching for file changes with StatReloader
+INFO 2026-02-18 22:55:46,054 autoreload 380611 139928069507968 Watching for file changes with StatReloader
+ERROR 2026-02-18 22:58:35,003 log 380611 139927887017664 Internal Server Error: /api/accounts/
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2053, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '0c3a3387-058f-4837-86bf-69c12dcb22a0'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 324, in perform_authentication
+    request.user
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/request.py", line 227, in user
+    self._authenticate()
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework_simplejwt/authentication.py", line 51, in authenticate
+    return self.get_user(validated_token), validated_token
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework_simplejwt/authentication.py", line 132, in get_user
+    user = self.user_model.objects.get(**{api_settings.USER_ID_FIELD: user_id})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 623, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1491, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1318, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got '0c3a3387-058f-4837-86bf-69c12dcb22a0'.
+INFO 2026-02-18 23:27:46,509 autoreload 407692 140568715418496 Watching for file changes with StatReloader
+INFO 2026-02-18 23:28:04,091 autoreload 408309 140263678057344 Watching for file changes with StatReloader
+WARNING 2026-02-18 23:28:07,012 log 407692 140568541787840 Not Found: /api/
+WARNING 2026-02-18 23:28:25,436 log 407692 140568541787840 Not Found: /api/
+ERROR 2026-02-18 23:29:12,887 log 407692 140568541787840 Internal Server Error: /api/users/me/
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2053, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'e7c8e93a-a2d8-4bf5-8a88-9df7b472a14b'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 324, in perform_authentication
+    request.user
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/request.py", line 227, in user
+    self._authenticate()
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework_simplejwt/authentication.py", line 51, in authenticate
+    return self.get_user(validated_token), validated_token
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework_simplejwt/authentication.py", line 132, in get_user
+    user = self.user_model.objects.get(**{api_settings.USER_ID_FIELD: user_id})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 623, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1491, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1318, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'e7c8e93a-a2d8-4bf5-8a88-9df7b472a14b'.
+WARNING 2026-02-18 23:29:45,394 log 407692 140568281728704 Bad Request: /api/users/login/
+WARNING 2026-02-18 23:29:45,404 log 407692 140568281728704 Unauthorized: /api/users/
+ERROR 2026-02-18 23:30:01,666 log 407692 140568281728704 Internal Server Error: /api/accounts/
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2053, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'e7c8e93a-a2d8-4bf5-8a88-9df7b472a14b'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 324, in perform_authentication
+    request.user
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/request.py", line 227, in user
+    self._authenticate()
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework_simplejwt/authentication.py", line 51, in authenticate
+    return self.get_user(validated_token), validated_token
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework_simplejwt/authentication.py", line 132, in get_user
+    user = self.user_model.objects.get(**{api_settings.USER_ID_FIELD: user_id})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 623, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1491, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1318, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'e7c8e93a-a2d8-4bf5-8a88-9df7b472a14b'.
+WARNING 2026-02-18 23:30:14,612 log 407692 140568281728704 Unauthorized: /api/accounts/
+ERROR 2026-02-18 23:30:29,268 log 407692 140568281728704 Internal Server Error: /api/accounts/
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2053, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'e7c8e93a-a2d8-4bf5-8a88-9df7b472a14b'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 324, in perform_authentication
+    request.user
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/request.py", line 227, in user
+    self._authenticate()
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework_simplejwt/authentication.py", line 51, in authenticate
+    return self.get_user(validated_token), validated_token
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework_simplejwt/authentication.py", line 132, in get_user
+    user = self.user_model.objects.get(**{api_settings.USER_ID_FIELD: user_id})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 623, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1491, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1318, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'e7c8e93a-a2d8-4bf5-8a88-9df7b472a14b'.
+INFO 2026-02-18 23:33:26,903 autoreload 407692 140568715418496 /home/sidatt/PFE/backend/apps/accounts/views.py changed, reloading.
+INFO 2026-02-18 23:33:27,212 autoreload 415149 140562057485184 Watching for file changes with StatReloader
+INFO 2026-02-18 23:33:39,591 autoreload 415149 140562057485184 /home/sidatt/PFE/backend/apps/accounts/views.py changed, reloading.
+INFO 2026-02-18 23:33:39,921 autoreload 415263 139623919324032 Watching for file changes with StatReloader
+INFO 2026-02-18 23:34:22,826 autoreload 415263 139623919324032 /home/sidatt/PFE/backend/apps/accounts/views.py changed, reloading.
+INFO 2026-02-18 23:34:23,124 autoreload 415676 140662993148800 Watching for file changes with StatReloader
+INFO 2026-02-18 23:34:53,481 autoreload 416249 140562153905024 Watching for file changes with StatReloader
+ERROR 2026-02-18 23:35:19,017 log 416249 140561981896384 Internal Server Error: /api/accounts/
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2053, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'e7c8e93a-a2d8-4bf5-8a88-9df7b472a14b'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 324, in perform_authentication
+    request.user
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/request.py", line 227, in user
+    self._authenticate()
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework_simplejwt/authentication.py", line 51, in authenticate
+    return self.get_user(validated_token), validated_token
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework_simplejwt/authentication.py", line 132, in get_user
+    user = self.user_model.objects.get(**{api_settings.USER_ID_FIELD: user_id})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 623, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1491, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1318, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'e7c8e93a-a2d8-4bf5-8a88-9df7b472a14b'.
+INFO 2026-02-18 23:36:14,236 autoreload 418061 140104775695232 Watching for file changes with StatReloader
+ERROR 2026-02-18 23:36:17,731 log 418061 140104674834112 Internal Server Error: /api/accounts/
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2053, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'e7c8e93a-a2d8-4bf5-8a88-9df7b472a14b'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 324, in perform_authentication
+    request.user
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/request.py", line 227, in user
+    self._authenticate()
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework_simplejwt/authentication.py", line 51, in authenticate
+    return self.get_user(validated_token), validated_token
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework_simplejwt/authentication.py", line 132, in get_user
+    user = self.user_model.objects.get(**{api_settings.USER_ID_FIELD: user_id})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 623, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1491, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1318, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'e7c8e93a-a2d8-4bf5-8a88-9df7b472a14b'.
+ERROR 2026-02-18 23:36:37,540 log 418061 140104674834112 Internal Server Error: /api/accounts/
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2053, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'e7c8e93a-a2d8-4bf5-8a88-9df7b472a14b'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 324, in perform_authentication
+    request.user
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/request.py", line 227, in user
+    self._authenticate()
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework_simplejwt/authentication.py", line 51, in authenticate
+    return self.get_user(validated_token), validated_token
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework_simplejwt/authentication.py", line 132, in get_user
+    user = self.user_model.objects.get(**{api_settings.USER_ID_FIELD: user_id})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 623, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1491, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1318, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'e7c8e93a-a2d8-4bf5-8a88-9df7b472a14b'.
+INFO 2026-02-18 23:37:07,203 autoreload 418061 140104775695232 /home/sidatt/PFE/backend/fintech_bank/settings.py changed, reloading.
+INFO 2026-02-18 23:37:07,513 autoreload 419578 140151957216128 Watching for file changes with StatReloader
+INFO 2026-02-18 23:39:18,653 autoreload 419578 140151957216128 /home/sidatt/PFE/backend/fintech_bank/settings.py changed, reloading.
+INFO 2026-02-18 23:39:18,956 autoreload 421867 139794998709120 Watching for file changes with StatReloader
+INFO 2026-02-18 23:39:44,735 autoreload 422479 139820810791808 Watching for file changes with StatReloader
+WARNING 2026-02-18 23:40:06,899 log 422479 139820638664384 Not Found: /api/
+INFO 2026-02-18 23:43:17,287 autoreload 422479 139820810791808 /home/sidatt/PFE/backend/fintech_bank/settings.py changed, reloading.
+INFO 2026-02-18 23:43:17,618 autoreload 432402 140681967565696 Watching for file changes with StatReloader
+INFO 2026-02-18 23:47:01,498 autoreload 439949 140491460582272 Watching for file changes with StatReloader
+INFO 2026-02-18 23:48:49,717 autoreload 441680 140394720775040 Watching for file changes with StatReloader
+INFO 2026-02-19 07:35:15,396 autoreload 17315 140033461877632 Watching for file changes with StatReloader
+WARNING 2026-02-19 07:45:10,940 log 17315 140033289877184 Forbidden (CSRF cookie not set.): /admin/login/
+WARNING 2026-02-19 07:45:10,977 log 17315 140033289877184 Not Found: /favicon.ico
+WARNING 2026-02-19 07:46:07,598 log 17315 140033289877184 Not Found: /
+WARNING 2026-02-19 07:46:25,174 log 17315 140033289877184 Not Found: /schema
+WARNING 2026-02-19 07:46:48,258 log 17315 140033289877184 Method Not Allowed: /api/users/login/
+WARNING 2026-02-19 07:47:03,731 log 17315 140033289877184 Bad Request: /api/users/login/
+WARNING 2026-02-19 08:06:57,799 log 17315 140033289877184 Not Found: /users/
+WARNING 2026-02-19 08:06:59,702 log 17315 140033289877184 Not Found: /api/token
+WARNING 2026-02-19 09:11:24,692 log 17315 140033289877184 Unauthorized: /api/users/register/
+WARNING 2026-02-19 09:13:15,764 log 17315 140033289877184 Unauthorized: /api/users/login/
+WARNING 2026-02-19 09:13:21,305 log 17315 140033289877184 Unauthorized: /api/users/login/
+WARNING 2026-02-19 09:13:55,863 log 17315 140033289877184 Method Not Allowed: /api/users/login/
+INFO 2026-02-19 09:17:08,932 autoreload 17315 140033461877632 /home/sidatt/PFE/backend/apps/users/urls.py changed, reloading.
+INFO 2026-02-19 09:17:09,216 autoreload 97097 139724614118272 Watching for file changes with StatReloader
+INFO 2026-02-19 09:22:39,407 autoreload 97097 139724614118272 /home/sidatt/PFE/backend/apps/users/views.py changed, reloading.
+INFO 2026-02-19 09:22:39,818 autoreload 100252 139750383999872 Watching for file changes with StatReloader
+INFO 2026-02-19 09:22:52,099 autoreload 100252 139750383999872 /home/sidatt/PFE/backend/apps/users/views.py changed, reloading.
+INFO 2026-02-19 09:22:52,423 autoreload 100388 140251318315904 Watching for file changes with StatReloader
+INFO 2026-02-19 09:23:38,423 autoreload 101137 139669043747712 Watching for file changes with StatReloader
+INFO 2026-02-19 09:25:08,942 autoreload 103212 139832550607744 Watching for file changes with StatReloader
+INFO 2026-02-19 09:25:24,175 autoreload 103212 139832550607744 /home/sidatt/PFE/backend/apps/users/views.py changed, reloading.
+INFO 2026-02-19 09:25:24,492 autoreload 103398 139810845100928 Watching for file changes with StatReloader
+INFO 2026-02-19 09:25:24,922 autoreload 101137 139669043747712 /home/sidatt/PFE/backend/apps/users/views.py changed, reloading.
+INFO 2026-02-19 09:25:25,221 autoreload 103406 140062580693888 Watching for file changes with StatReloader
+INFO 2026-02-19 09:26:08,430 autoreload 104598 140074431363968 Watching for file changes with StatReloader
+INFO 2026-02-19 09:26:50,249 autoreload 105370 139702702418816 Watching for file changes with StatReloader
+INFO 2026-02-19 09:26:55,470 autoreload 105370 139702702418816 /home/sidatt/PFE/backend/apps/users/views.py changed, reloading.
+INFO 2026-02-19 09:26:55,770 autoreload 105440 140521925688192 Watching for file changes with StatReloader
+WARNING 2026-02-19 09:27:02,094 log 105440 140521825629888 Unauthorized: /api/users/login/
+INFO 2026-02-19 09:27:30,273 autoreload 106053 140347114072960 Watching for file changes with StatReloader
+INFO 2026-02-19 09:32:14,634 autoreload 110926 140528305732480 Watching for file changes with StatReloader
+WARNING 2026-02-19 09:47:30,241 log 110926 140528133863104 Unauthorized: /api/users/login/
+WARNING 2026-02-19 09:48:20,734 log 110926 140528133863104 Unauthorized: /api/users/register/
+WARNING 2026-02-19 09:48:22,046 log 110926 140528133863104 Unauthorized: /api/users/register/
+WARNING 2026-02-19 09:48:22,990 log 110926 140528133863104 Unauthorized: /api/users/register/
+WARNING 2026-02-19 09:50:29,618 log 110926 140528133863104 Unauthorized: /api/users/register/
+INFO 2026-02-19 09:52:33,220 autoreload 110926 140528305732480 /home/sidatt/PFE/backend/fintech_bank/settings.py changed, reloading.
+INFO 2026-02-19 09:52:33,506 autoreload 122402 139708021189504 Watching for file changes with StatReloader
+WARNING 2026-02-19 10:50:48,850 log 122402 139707920938688 Unauthorized: /api/users/register/
+WARNING 2026-02-19 10:50:50,123 log 122402 139707920938688 Unauthorized: /api/users/register/
+INFO 2026-02-19 10:50:56,639 autoreload 154803 139913330535296 Watching for file changes with StatReloader
+WARNING 2026-02-19 11:31:23,084 log 154803 139913160816320 Unauthorized: /api/users/register/
+INFO 2026-02-19 11:35:16,743 autoreload 154803 139913330535296 /home/sidatt/PFE/backend/fintech_bank/settings.py changed, reloading.
+INFO 2026-02-19 11:35:17,182 autoreload 181807 140403080539008 Watching for file changes with StatReloader
+WARNING 2026-02-19 11:35:49,045 log 181807 140402908722880 Unauthorized: /api/users/register/
+INFO 2026-02-21 16:49:23,681 autoreload 25192 140596400397184 Watching for file changes with StatReloader
+WARNING 2026-02-21 16:49:29,890 log 25192 140596224194240 Not Found: /
+WARNING 2026-02-21 16:49:41,365 log 25192 140596224194240 Not Found: /users
+WARNING 2026-02-21 16:50:05,913 log 25192 140596224194240 Unauthorized: /api/users/
+WARNING 2026-02-21 16:51:16,260 log 25192 140596190623424 Unauthorized: /api/transactions/
+INFO 2026-02-21 16:54:07,211 autoreload 31330 139724206717824 Watching for file changes with StatReloader
+INFO 2026-02-21 16:54:25,647 autoreload 31641 139664171613056 Watching for file changes with StatReloader
+WARNING 2026-02-21 17:19:02,403 log 31641 139664002381504 Unauthorized: /api/accounts/
+INFO 2026-02-21 22:30:22,710 autoreload 291330 139850444962688 Watching for file changes with StatReloader
+INFO 2026-02-21 22:33:54,894 autoreload 294995 140700899330944 Watching for file changes with StatReloader
+WARNING 2026-02-21 22:33:57,479 log 294995 140700798678720 Not Found: /
+WARNING 2026-02-21 22:33:57,515 log 294995 140700798678720 Not Found: /favicon.ico
+WARNING 2026-02-21 22:35:03,944 log 294995 140700570085056 Not Found: /favicon.ico
+INFO 2026-02-21 22:38:39,766 autoreload 298984 140559379409792 Watching for file changes with StatReloader
+WARNING 2026-02-21 22:38:43,402 log 298984 140559209461440 Not Found: /
+WARNING 2026-02-21 22:41:08,760 log 298984 140559209461440 Not Found: /
+WARNING 2026-02-21 22:49:11,704 log 298984 140558970382016 Not Found: /api/login
+WARNING 2026-02-21 22:49:25,479 log 298984 140558970382016 Unauthorized: /api/users/login/
+WARNING 2026-02-21 22:49:38,582 log 298984 140559201068736 Unauthorized: /api/users/register/
+WARNING 2026-02-21 22:50:04,178 log 298984 140558970382016 Unauthorized: /api/users/
+WARNING 2026-02-21 22:52:52,420 log 298984 140558970382016 Unauthorized: /api/users/login/
+WARNING 2026-02-21 22:53:06,419 log 298984 140559201068736 Unauthorized: /api/users/
+WARNING 2026-02-21 22:54:28,117 log 298984 140558970382016 Method Not Allowed: /api/auth/login/
+WARNING 2026-02-21 22:54:52,293 log 298984 140558970382016 Method Not Allowed: /api/auth/register/
+INFO 2026-02-22 00:42:45,968 autoreload 400548 140476404939648 Watching for file changes with StatReloader
+WARNING 2026-02-22 00:42:56,167 log 400548 140476233545408 Not Found: /favicon.ico
+WARNING 2026-02-22 00:44:32,529 log 400548 140476233545408 Unauthorized: /api/auth/login/
+WARNING 2026-02-22 00:45:01,457 log 400548 140476233545408 Unauthorized: /api/auth/login/
+WARNING 2026-02-22 00:45:31,930 log 400548 140476233545408 Unauthorized: /api/auth/login/
+WARNING 2026-02-22 00:45:46,551 log 400548 140476233545408 Bad Request: /api/auth/login/
+WARNING 2026-02-22 00:45:49,762 log 400548 140476233545408 Bad Request: /api/auth/login/
+WARNING 2026-02-22 00:46:36,394 log 400548 140476233545408 Unauthorized: /api/auth/login/
+WARNING 2026-02-22 00:56:23,113 log 400548 140476233545408 Unauthorized: /api/users/me/
+WARNING 2026-02-22 00:56:23,125 log 400548 140476233545408 Unauthorized: /api/users/change_password/
+WARNING 2026-02-22 00:56:23,137 log 400548 140476233545408 Unauthorized: /api/users/profile/me/
+WARNING 2026-02-22 00:57:02,429 log 400548 140476233545408 Unauthorized: /api/users/profile/me/
+WARNING 2026-02-22 00:57:36,890 log 400548 140476233545408 Unauthorized: /api/accounts/
+WARNING 2026-02-22 00:58:48,724 log 400548 140476233545408 Bad Request: /api/auth/login/
+WARNING 2026-02-22 00:59:18,654 log 400548 140476233545408 Bad Request: /api/auth/login/
+WARNING 2026-02-22 01:00:05,192 log 400548 140476233545408 Unauthorized: /api/users/me/
+WARNING 2026-02-22 01:00:43,363 log 400548 140476233545408 Unauthorized: /api/accounts/
+WARNING 2026-02-22 01:02:26,743 log 400548 140476225152704 Unauthorized: /api/accounts/
+WARNING 2026-02-22 01:02:26,759 log 400548 140476225152704 Unauthorized: /api/accounts/
+WARNING 2026-02-22 01:02:41,590 log 400548 140476225152704 Unauthorized: /api/beneficiaries/
+WARNING 2026-02-22 01:02:41,608 log 400548 140476225152704 Unauthorized: /api/beneficiaries/
+WARNING 2026-02-22 01:02:56,699 log 400548 140476225152704 Unauthorized: /api/auth/token/refresh/
+WARNING 2026-02-22 02:12:41,419 log 400548 140476233545408 Unauthorized: /api/auth/login/
+WARNING 2026-02-22 02:14:08,379 log 400548 140476233545408 Unauthorized: /api/auth/login/
+WARNING 2026-02-22 02:14:15,175 log 400548 140476233545408 Unauthorized: /api/auth/login/
+WARNING 2026-02-22 02:14:23,719 log 400548 140476233545408 Unauthorized: /api/auth/register/
+WARNING 2026-02-22 02:14:24,483 log 400548 140476233545408 Unauthorized: /api/auth/register/
+WARNING 2026-02-22 02:14:51,159 log 400548 140476233545408 Unauthorized: /api/auth/register/
+WARNING 2026-02-22 02:19:27,762 log 400548 140476225152704 Unauthorized: /api/auth/login/
+WARNING 2026-02-22 02:19:49,028 log 400548 140476233545408 Not Found: /
+WARNING 2026-02-22 02:20:29,057 log 400548 140476233545408 Method Not Allowed: /api/auth/login/
+WARNING 2026-02-22 02:20:47,645 log 400548 140476233545408 Method Not Allowed: /api/auth/login/
+WARNING 2026-02-22 02:30:11,244 log 400548 140476233545408 Unauthorized: /api/auth/register/
+WARNING 2026-02-22 02:30:32,274 log 400548 140476233545408 Unauthorized: /api/auth/register/
+INFO 2026-02-22 21:31:31,098 autoreload 71533 140621066345344 Watching for file changes with StatReloader
+WARNING 2026-02-22 21:33:08,101 log 71533 140620895090368 Unauthorized: /api/users/me/
+INFO 2026-02-23 02:21:25,799 autoreload 256735 139931416451968 Watching for file changes with StatReloader
+WARNING 2026-02-23 02:21:32,589 log 256735 139931242460864 Unauthorized: /api/users/me/
+WARNING 2026-02-23 02:22:07,735 log 256735 139931242460864 Bad Request: /api/auth/register/
+WARNING 2026-02-23 02:22:48,788 log 256735 139931242460864 Not Found: /
+WARNING 2026-02-23 02:22:53,479 log 256735 139931225675456 Not Found: /favicon.ico
+WARNING 2026-02-23 02:23:01,245 log 256735 139931208890048 Not Found: /favicon.ico
+WARNING 2026-02-23 02:24:41,932 log 256735 139931208890048 Bad Request: /api/auth/login/
+WARNING 2026-02-23 02:27:32,970 log 256735 139931242460864 Bad Request: /api/auth/login/
+WARNING 2026-02-23 02:27:42,216 log 256735 139931242460864 Bad Request: /api/auth/login/
+INFO 2026-02-23 02:48:12,194 autoreload 278869 140491315460992 Watching for file changes with StatReloader
+WARNING 2026-02-23 02:48:14,803 log 256735 139931242460864 Bad Request: /api/auth/register/
+WARNING 2026-02-23 02:49:30,854 log 256735 139931242460864 Bad Request: /api/auth/login/
+WARNING 2026-02-23 02:49:30,903 log 256735 139931242460864 Unauthorized: /api/users/me/
+INFO 2026-02-24 00:23:13,840 autoreload 195978 140429495876480 Watching for file changes with StatReloader
+WARNING 2026-02-24 00:25:04,885 log 195978 140429324449472 Bad Request: /api/auth/register/
+INFO 2026-02-24 00:28:41,857 autoreload 203176 140242998639488 Watching for file changes with StatReloader
+INFO 2026-02-24 01:08:34,428 autoreload 232292 140077575236480 Watching for file changes with StatReloader
+WARNING 2026-02-24 01:08:57,642 log 232292 140077405566656 Unauthorized: /api/users/me/
+ERROR 2026-02-24 01:08:57,759 log 232292 140077405566656 Internal Server Error: /api/auth/token/refresh/
+Traceback (most recent call last):
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework_simplejwt/views.py", line 46, in post
+    serializer.is_valid(raise_exception=True)
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework/serializers.py", line 429, in run_validation
+    value = self.validate(value)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/rest_framework_simplejwt/serializers.py", line 116, in validate
+    user := get_user_model().objects.get(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sidatt/PFE/backend/venv/lib/python3.11/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+apps.core.models.User.DoesNotExist: User matching query does not exist.
+WARNING 2026-02-24 01:09:24,721 log 232292 140077405566656 Bad Request: /api/auth/login/
+WARNING 2026-02-24 01:13:41,465 log 232292 140077405566656 Bad Request: /api/accounts/
+INFO 2026-02-24 01:52:29,286 autoreload 232292 140077575236480 /home/sidatt/PFE/backend/apps/core/models.py changed, reloading.
+INFO 2026-02-24 01:52:29,641 autoreload 261204 139709681822592 Watching for file changes with StatReloader
+INFO 2026-02-24 02:41:43,557 autoreload 296273 140378783185792 Watching for file changes with StatReloader
+INFO 2026-02-24 03:07:16,757 autoreload 312024 140041545575296 Watching for file changes with StatReloader
+INFO 2026-02-24 03:53:01,806 autoreload 340747 140319360486272 Watching for file changes with StatReloader
+WARNING 2026-02-24 03:55:09,646 log 340747 140319237600960 Bad Request: /api/auth/login/
+INFO 2026-02-24 13:22:55,835 autoreload 25233 140416633760640 Watching for file changes with StatReloader
+WARNING 2026-02-24 13:23:13,494 log 25233 140416288544448 Not Found: /favicon.ico
+WARNING 2026-02-24 13:26:02,334 log 25233 140416280151744 Not Found: /favicon.ico
+WARNING 2026-02-24 13:26:05,448 log 25233 140416523429568 Not Found: /favicon.ico
+WARNING 2026-02-24 13:26:18,196 log 25233 140416305329856 Not Found: /favicon.ico
+WARNING 2026-02-24 13:35:39,286 log 25233 140416305329856 Bad Request: /api/auth/login/
+INFO 2026-02-24 13:36:54,105 autoreload 34869 140383415532416 Watching for file changes with StatReloader
+INFO 2026-02-24 13:48:06,730 autoreload 41764 140338264005504 Watching for file changes with StatReloader
+INFO 2026-02-24 14:24:54,042 autoreload 71455 139715189627776 Watching for file changes with StatReloader
+WARNING 2026-02-24 14:49:06,195 log 71455 139714996729536 Bad Request: /api/transactions/
+WARNING 2026-02-24 14:49:32,312 log 71455 139714996729536 Bad Request: /api/transactions/
+WARNING 2026-02-24 14:49:52,416 log 71455 139714996729536 Bad Request: /api/transactions/
+WARNING 2026-02-24 14:50:10,780 log 71455 139714996729536 Bad Request: /api/transactions/
+WARNING 2026-02-24 14:51:00,213 log 71455 139714996729536 Bad Request: /api/transactions/
+WARNING 2026-02-24 14:51:09,746 log 71455 139714996729536 Bad Request: /api/transactions/
+WARNING 2026-02-24 14:51:19,457 log 71455 139714996729536 Bad Request: /api/transactions/
+WARNING 2026-02-24 14:51:25,424 log 71455 139714996729536 Bad Request: /api/transactions/
+WARNING 2026-02-24 14:52:23,424 log 71455 139714996729536 Bad Request: /api/transactions/
+WARNING 2026-02-24 14:53:06,813 log 71455 139714996729536 Bad Request: /api/transactions/
+WARNING 2026-02-24 14:53:17,147 log 71455 139714996729536 Bad Request: /api/transactions/
+WARNING 2026-02-24 14:53:22,524 log 71455 139714996729536 Bad Request: /api/transactions/
+WARNING 2026-02-24 14:54:17,109 log 71455 139714996729536 Bad Request: /api/transactions/
+WARNING 2026-02-24 14:58:00,761 log 71455 139714996729536 Unauthorized: /api/transactions/
+INFO 2026-02-24 14:58:04,816 autoreload 71455 139715189627776 /home/sidatt/PFE/backend/apps/core/views.py changed, reloading.
+INFO 2026-02-24 14:58:05,442 autoreload 98747 140715357006720 Watching for file changes with StatReloader
+WARNING 2026-02-24 14:58:09,837 log 98747 140715254347456 Unauthorized: /api/accounts/
+WARNING 2026-02-24 14:58:12,944 log 98747 140715254347456 Unauthorized: /api/transactions/
+WARNING 2026-02-24 14:58:13,903 log 98747 140715233375936 Unauthorized: /api/accounts/
+WARNING 2026-02-24 14:58:15,915 log 98747 140715233375936 Unauthorized: /api/accounts/
+WARNING 2026-02-24 14:58:20,634 log 98747 140715233375936 Unauthorized: /api/accounts/
+WARNING 2026-02-24 15:06:06,973 log 98747 140715233375936 Unauthorized: /api/transactions/
+WARNING 2026-02-24 15:06:08,883 log 98747 140715233375936 Unauthorized: /api/transactions/
+WARNING 2026-02-24 15:08:13,574 log 98747 140715233375936 Unauthorized: /api/transactions/
+INFO 2026-02-24 15:08:34,115 autoreload 104857 140713744436096 Watching for file changes with StatReloader
+WARNING 2026-02-24 15:08:42,731 log 104857 140713641637568 Unauthorized: /api/transactions/
+WARNING 2026-02-24 15:09:16,730 log 104857 140713641637568 Unauthorized: /api/users/me/
+WARNING 2026-02-24 15:11:39,923 log 104857 140713641637568 Bad Request: /api/transactions/
