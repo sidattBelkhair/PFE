@@ -31,7 +31,7 @@ contactPoints:
         type: email
         disableResolveMessage: false
         settings:
-          addresses: alinteymi@gmail.com, 23017@supnum.mr
+          addresses: teyebsidimbareck@gmail.com, 23017@supnum.mr
           singleEmail: false
           subject: "[TrackPay SOC] 🚨 {{ .CommonLabels.alertname }}"
           message: |
@@ -53,7 +53,7 @@ contactPoints:
         type: email
         disableResolveMessage: false
         settings:
-          addresses: 23017@supnum.mr, 23017@supnum.mr
+          addresses: moulayabdrehman73@gmail.com, 23017@supnum.mr
           singleEmail: false
           subject: "[FinanceApp SOC] 🚨 {{ .CommonLabels.alertname }}"
           message: |
@@ -75,7 +75,7 @@ contactPoints:
         type: email
         disableResolveMessage: false
         settings:
-          addresses: outstaleb151@gmail.com, 23017@supnum.mr
+          addresses: mnt6abb@gmail.com, 23017@supnum.mr
           singleEmail: false
           subject: "[Nova SSO SOC] 🚨 {{ .CommonLabels.alertname }}"
           message: |
