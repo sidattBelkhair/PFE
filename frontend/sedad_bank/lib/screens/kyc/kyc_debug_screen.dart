@@ -12,7 +12,6 @@ class KycDebugScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final kyc    = context.watch<KycProvider>();
     final ocr    = kyc.ocrResult;
-    final enroll = kyc.enrollResult;
     final verify = kyc.verifyResult;
     final b64    = ocr?.faceImageBase64;
 
@@ -86,7 +85,7 @@ class KycDebugScreen extends StatelessWidget {
 
             // ── Visage CNI ───────────────────────────────────────────────
             _Section(
-              title: '2. Visage extrait de la CNI',
+              title: '2. Visage extrait de la CNI (image1 pour kyc/verify)',
               color: const Color(0xFF1E40AF),
               rows: const [],
               child: Padding(
@@ -97,8 +96,8 @@ class KycDebugScreen extends StatelessWidget {
                     const SizedBox(width: 16),
                     const Expanded(
                       child: Text(
-                        'Ce visage est utilisé pour\nl\'enrôlement.\n\n'
-                        'Il doit correspondre à\nla photo sur la CNI.',
+                        'Ce visage sert de référence\npour /kyc/verify.\n\n'
+                        'Aucun enrollment ni stockage\npermanent côté serveur.',
                         style: TextStyle(
                             fontSize: 13, color: Color(0xFF555555)),
                       ),
@@ -110,33 +109,11 @@ class KycDebugScreen extends StatelessWidget {
 
             const SizedBox(height: 16),
 
-            // ── Enroll ───────────────────────────────────────────────────
-            _Section(
-              title: '3. Enroll — POST /face/enroll',
-              color: const Color(0xFF7C3AED),
-              rows: [
-                _kv('user_id envoyé', ocr?.identifier),
-                _kv('Status',         enroll?.status),
-                _kv('Déjà enrôlé',    enroll?.alreadyEnrolled.toString()),
-                _kv('Liveness score',
-                    enroll?.livenessScore != null
-                        ? '${(enroll!.livenessScore! * 100).toStringAsFixed(0)}%'
-                        : null),
-                _kv('Quality score',
-                    enroll?.qualityScore != null
-                        ? '${(enroll!.qualityScore! * 100).toStringAsFixed(0)}%'
-                        : null),
-              ],
-            ),
-
-            const SizedBox(height: 16),
-
             // ── Verify ───────────────────────────────────────────────────
             _Section(
-              title: '4. Verify — POST /face/verify',
+              title: '3. KYC Verify — POST /kyc/verify (sans enrollment)',
               color: const Color(0xFFB45309),
               rows: [
-                _kv('user_id envoyé',   ocr?.identifier),
                 _kv('Match',            verify?.match.toString()),
                 _kv('Decision',         verify?.decision),
                 _kv('Similarité',

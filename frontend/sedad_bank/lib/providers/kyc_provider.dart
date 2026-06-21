@@ -61,8 +61,8 @@ class KycProvider extends ChangeNotifier {
   DocumentType? _documentType;
   File? _documentImage;
   OcrResult? _ocrResult;
+  File? _idFaceImage;
   File? _faceImage;
-  FaceEnrollResult? _enrollResult;
   FaceVerifyResult? _verifyResult;
   bool _isLoading = false;
   String? _errorMessage;
@@ -79,7 +79,6 @@ class KycProvider extends ChangeNotifier {
   File? get documentImage => _documentImage;
   OcrResult? get ocrResult => _ocrResult;
   File? get faceImage => _faceImage;
-  FaceEnrollResult? get enrollResult => _enrollResult;
   FaceVerifyResult? get verifyResult => _verifyResult;
   bool get isLoading => _isLoading;
   String? get errorMessage => _errorMessage;
@@ -145,21 +144,19 @@ class KycProvider extends ChangeNotifier {
     }
   }
 
-  void confirmExtractedInfo() {
-    _currentStep = KycStep.faceVerify;
-    notifyListeners();
-  }
-
   void setFaceImage(File image) {
     _faceImage = image;
     notifyListeners();
   }
 
-  // ── ÉTAPE 2 : Enroll silencieux (visage CNI → serveur) ─────────────────────
+  // ── ÉTAPE 2 : Préparation de la vérification faciale ───────────────────────
   // Appelé depuis l'écran "Confirmer infos" quand l'user clique "Confirmer".
-  // user_id = NNI extrait du document (pas l'UUID Django).
+  // Plus d'enrôlement biométrique permanent côté serveur (évite le stockage
+  // durable de données personnelles non nécessaire) : on prépare juste l'image
+  // de référence (visage CNI) qui sera comparée au selfie via /kyc/verify,
+  // un endpoint de comparaison 1:1 sans enrollment.
   // Priorité : faceImageBase64 (crop visage par OCR) → fallback : photo CNI entière
-  Future<bool> enrollCniFace() async {
+  Future<bool> prepareFaceVerification() async {
     final nni = _ocrResult?.identifier;
     if (nni == null || nni.isEmpty) {
       _errorMessage = 'Numéro de CNI introuvable. Reprenez la photo.';
@@ -167,8 +164,8 @@ class KycProvider extends ChangeNotifier {
       return false;
     }
 
-    // Choisir l'image à envoyer : visage cropé ou CNI complète (fallback)
-    File? enrollFile;
+    // Choisir l'image de référence : visage cropé ou CNI complète (fallback)
+    File? idFaceFile;
     final b64 = _ocrResult?.faceImageBase64;
     if (b64 != null && b64.isNotEmpty) {
       try {
@@ -177,63 +174,33 @@ class KycProvider extends ChangeNotifier {
         final tmp = await getTemporaryDirectory();
         final f = File('${tmp.path}/cni_face_${DateTime.now().millisecondsSinceEpoch}.jpg');
         await f.writeAsBytes(bytes);
-        enrollFile = f;
-        print('[KYC] Enroll → using OCR face crop (${bytes.length} bytes)');
+        idFaceFile = f;
+        print('[KYC] Référence → visage cropé par OCR (${bytes.length} bytes)');
       } catch (_) {
-        enrollFile = null;
+        idFaceFile = null;
       }
     }
-    // Fallback : photo CNI originale (le serveur face détecte lui-même le visage)
-    enrollFile ??= _documentImage;
-    if (enrollFile == null) {
-      _errorMessage = 'Aucune image disponible pour l\'enrôlement.';
+    // Fallback : photo CNI originale (le serveur détecte lui-même le visage)
+    idFaceFile ??= _documentImage;
+    if (idFaceFile == null) {
+      _errorMessage = 'Aucune image disponible pour la vérification.';
       notifyListeners();
       return false;
     }
 
-    _setLoading(true);
-    try {
-      // Device ID stable par installation
-      final prefs = await SharedPreferences.getInstance();
-      var deviceId = prefs.getString('rss_device_id');
-      if (deviceId == null) {
-        deviceId = 'rss-${DateTime.now().millisecondsSinceEpoch}';
-        await prefs.setString('rss_device_id', deviceId);
-      }
+    _idFaceImage = idFaceFile;
+    _errorMessage = null;
 
-      print('[KYC] Enroll → userId=$nni  file=${enrollFile.path}');
+    // Sauvegarde locale (pas côté serveur) du visage + NNI, pour permettre
+    // plus tard l'activation optionnelle de "Connect avec Face" depuis le profil.
+    await _persistFaceLoginData(nni, idFaceFile);
 
-      final result = await _faceService.enroll(
-        userId: nni,
-        imageFile: enrollFile,
-        deviceId: deviceId,
-      );
-
-      if (result == null) {
-        _errorMessage = 'Erreur réseau lors de l\'enrôlement';
-        return false;
-      }
-
-      if (!result.isSuccess) {
-        _errorMessage = 'Échec enrôlement (status=${result.status})';
-        return false;
-      }
-
-      _enrollResult = result;
-      _errorMessage = null;
-      print('[KYC] ✅ Enroll OK — already=${result.alreadyEnrolled} '
-            'liveness=${result.livenessScore} quality=${result.qualityScore}');
-      return true;
-    } catch (e) {
-      _errorMessage = 'Erreur inattendue : $e';
-      return false;
-    } finally {
-      _setLoading(false);
-    }
+    _currentStep = KycStep.faceVerify;
+    notifyListeners();
+    return true;
   }
 
-  // ── ÉTAPE 3 : Verify (selfie ↔ visage CNI enrôlé) ──────────────────────────
-  // user_id = même NNI qu'à l'enroll.
+  // ── ÉTAPE 3 : Verify (selfie ↔ visage CNI), sans enrollment ────────────────
   Future<bool> submitFaceVerification() async {
     if (_faceImage == null) {
       _errorMessage = 'Aucun selfie capturé';
@@ -241,18 +208,17 @@ class KycProvider extends ChangeNotifier {
       return false;
     }
 
-    final nni = _ocrResult?.identifier;
-    if (nni == null || nni.isEmpty) {
-      _errorMessage = 'Numéro CNI manquant pour la vérification';
+    if (_idFaceImage == null) {
+      _errorMessage = 'Image de référence manquante. Reprenez la vérification.';
       notifyListeners();
       return false;
     }
 
     _setLoading(true);
     try {
-      final result = await _faceService.verify(
-        userId: nni,
-        imageFile: _faceImage!,
+      final result = await _faceService.kycVerify(
+        idImage: _idFaceImage!,
+        selfieImage: _faceImage!,
       );
 
       if (result == null) {
@@ -262,13 +228,13 @@ class KycProvider extends ChangeNotifier {
 
       _verifyResult = result;
       final sim = result.similarityScore ?? result.confidence ?? 0.0;
-      print('[KYC] Verify => match=${result.match} '
+      print('[KYC] kyc/verify => match=${result.match} '
             'similarity=$sim decision=${result.decision}');
 
       // Marquer KYC complété seulement si match
       if (result.match) {
         _currentStep = KycStep.done;
-        await _markKycCompleted(nni);
+        await _markKycCompleted(_ocrResult?.identifier ?? '');
       }
       _errorMessage = null;
       return true; // toujours naviguer vers la page résultat
@@ -282,7 +248,6 @@ class KycProvider extends ChangeNotifier {
     try {
       final sim = _verifyResult?.similarityScore
                 ?? _verifyResult?.confidence
-                ?? _enrollResult?.confidence
                 ?? 0.0;
       await _apiService.post('/users/complete-kyc/', data: {
         'document_type':        _documentType?.backendValue,
@@ -291,8 +256,7 @@ class KycProvider extends ChangeNotifier {
         'extracted_last_name':  editedLastName   ?? _ocrResult?.lastNameLatin,
         'birth_date':           editedBirthDate  ?? _ocrResult?.birthDate,
         'face_match_confidence': sim,
-        'liveness_score':        _enrollResult?.livenessScore ?? 0.0,
-        'quality_score':         _enrollResult?.qualityScore  ?? 0.0,
+        'liveness_score':        _verifyResult?.livenessScore ?? 0.0,
         'similarity_score':      _verifyResult?.similarityScore ?? 0.0,
         'ocr_engine':            _ocrResult?.engineUsed,
         'ocr_confidence':        _ocrResult?.confidenceScore,
@@ -301,6 +265,22 @@ class KycProvider extends ChangeNotifier {
     } catch (e) {
       print('[KYC] Backend submission failed (non bloquant): $e');
       return false;
+    }
+  }
+
+  /// Sauvegarde le visage enrôlé (CNI/passeport) + le NNI de façon durable,
+  /// pour permettre le bouton "Connect avec Face" depuis le profil.
+  Future<void> _persistFaceLoginData(String nni, File enrollFile) async {
+    try {
+      final dir = await getApplicationDocumentsDirectory();
+      final dest = File('${dir.path}/face_login_enroll.jpg');
+      await dest.writeAsBytes(await enrollFile.readAsBytes());
+
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString('face_login_nni', nni);
+      await prefs.setString('face_login_image_path', dest.path);
+    } catch (e) {
+      print('[KYC] Persist face-login data failed (non bloquant): $e');
     }
   }
 
@@ -338,8 +318,8 @@ class KycProvider extends ChangeNotifier {
     _documentType = null;
     _documentImage = null;
     _ocrResult = null;
+    _idFaceImage = null;
     _faceImage = null;
-    _enrollResult = null;
     _verifyResult = null;
     _errorMessage = null;
     editedFirstName = null;

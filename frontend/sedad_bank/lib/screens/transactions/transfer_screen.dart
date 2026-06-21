@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import '../../providers/transaction_provider.dart';
@@ -33,10 +34,11 @@ class _TransferScreenState extends State<TransferScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: AppTheme.backgroundColor,
       appBar: AppBar(
-        title: const Text('Virement'),
+        title: Text(l.transfer),
         backgroundColor: Colors.white,
         foregroundColor: AppTheme.textPrimary,
         elevation: 0,
@@ -81,13 +83,13 @@ class _TransferScreenState extends State<TransferScreen> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Text(
-                                'Compte source',
-                                style: TextStyle(color: Colors.white70, fontSize: 12),
+                              Text(
+                                l.sourceAccount,
+                                style: const TextStyle(color: Colors.white70, fontSize: 12),
                               ),
                               const SizedBox(height: 2),
                               Text(
-                                account?.accountNumber ?? 'Aucun compte',
+                                account?.accountNumber ?? l.noAccountAvailable,
                                 style: const TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
@@ -95,7 +97,7 @@ class _TransferScreenState extends State<TransferScreen> {
                               ),
                               if (account != null)
                                 Text(
-                                  'Solde : ${account.getFormattedBalance()}',
+                                  l.accountBalanceLabel(account.getFormattedBalance()),
                                   style: TextStyle(
                                     color: Colors.white.withOpacity(0.8),
                                     fontSize: 12,
@@ -115,9 +117,9 @@ class _TransferScreenState extends State<TransferScreen> {
 
 
               // Téléphone bénéficiaire
-              const Text(
-                'Numéro de téléphone',
-                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 13, color: AppTheme.textSecondary),
+              Text(
+                l.phone,
+                style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 13, color: AppTheme.textSecondary),
               ),
               const SizedBox(height: 8),
               TextFormField(
@@ -127,15 +129,15 @@ class _TransferScreenState extends State<TransferScreen> {
                   hintText: '0612345678',
                   prefixIcon: Icon(Icons.phone_outlined),
                 ),
-                validator: (v) => (v == null || v.isEmpty) ? 'Numéro requis' : null,
+                validator: (v) => (v == null || v.isEmpty) ? l.phoneRequired : null,
               ),
 
               const SizedBox(height: 16),
 
               // Montant
-              const Text(
-                'Montant',
-                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 13, color: AppTheme.textSecondary),
+              Text(
+                l.amount,
+                style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 13, color: AppTheme.textSecondary),
               ),
               const SizedBox(height: 8),
               TextFormField(
@@ -147,9 +149,9 @@ class _TransferScreenState extends State<TransferScreen> {
                   suffixText: 'MRU',
                 ),
                 validator: (v) {
-                  if (v == null || v.isEmpty) return 'Montant requis';
+                  if (v == null || v.isEmpty) return l.amountRequired;
                   final d = double.tryParse(v);
-                  if (d == null || d <= 0) return 'Montant invalide';
+                  if (d == null || d <= 0) return l.amountInvalid;
                   return null;
                 },
               ),
@@ -157,17 +159,17 @@ class _TransferScreenState extends State<TransferScreen> {
               const SizedBox(height: 16),
 
               // Motif
-              const Text(
-                'Motif (optionnel)',
-                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 13, color: AppTheme.textSecondary),
+              Text(
+                l.reasonOptional,
+                style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 13, color: AppTheme.textSecondary),
               ),
               const SizedBox(height: 8),
               TextFormField(
                 controller: _descCtrl,
                 maxLines: 2,
-                decoration: const InputDecoration(
-                  hintText: 'Loyer, remboursement…',
-                  prefixIcon: Icon(Icons.description_outlined),
+                decoration: InputDecoration(
+                  hintText: l.reasonHint,
+                  prefixIcon: const Icon(Icons.description_outlined),
                 ),
               ),
 
@@ -184,7 +186,7 @@ class _TransferScreenState extends State<TransferScreen> {
                             child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2),
                           )
                         : const Icon(Icons.send_rounded),
-                    label: Text(tp.isLoading ? 'Traitement…' : 'Confirmer le virement'),
+                    label: Text(tp.isLoading ? l.processing : l.confirmTransfer),
                     onPressed: tp.isLoading ? null : () => _submit(context),
                   ),
                 ),
@@ -198,12 +200,13 @@ class _TransferScreenState extends State<TransferScreen> {
 
   Future<void> _submit(BuildContext context) async {
     if (!_formKey.currentState!.validate()) return;
+    final l = AppLocalizations.of(context)!;
     final ap = context.read<AccountProvider>();
     final tp = context.read<TransactionProvider>();
     final account = ap.selectedAccount ?? (ap.accounts.isNotEmpty ? ap.accounts.first : null);
     if (account == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Aucun compte sélectionné')),
+        SnackBar(content: Text(l.noAccountSelected)),
       );
       return;
     }
@@ -219,7 +222,7 @@ class _TransferScreenState extends State<TransferScreen> {
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(tp.errorMessage ?? 'Erreur lors du virement'),
+            content: Text(tp.errorMessage ?? l.transferError),
             backgroundColor: AppTheme.errorColor,
           ),
         );

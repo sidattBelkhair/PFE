@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:dio/dio.dart';
@@ -105,8 +106,9 @@ class AuthProvider extends ChangeNotifier {
   Future<void> _clearSession(SharedPreferences prefs) async {
     await prefs.remove('access_token');
     await prefs.remove('refresh_token');
-    await prefs.remove('user_id');
     await prefs.remove('logged_via_sso');
+    // 'user_id' et les clés 'face_login_*' sont conservées : elles permettent
+    // de proposer la connexion par visage sur l'écran de login après déconnexion.
     _accessToken = null;
     _refreshToken = null;
     _currentUser = null;
@@ -448,6 +450,111 @@ class AuthProvider extends ChangeNotifier {
 
     _isLoading = false;
     notifyListeners();
+    return false;
+  }
+
+  /// ─── CONNEXION PAR VISAGE ────────────────────────────────────────
+  /// Indique si l'utilisateur courant a activé la connexion par visage.
+  Future<bool> isFaceLoginEnabled() async {
+    if (_currentUser == null) return false;
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getBool('face_login_enabled_${_currentUser!.id}') ?? false;
+  }
+
+  /// Indique si une connexion par visage est disponible pour le dernier
+  /// utilisateur connecté (utilisable depuis l'écran de login, avant token).
+  Future<bool> isFaceLoginAvailable() async {
+    final prefs = await SharedPreferences.getInstance();
+    final userId = prefs.getString('user_id');
+    final nni = prefs.getString('face_login_nni');
+    if (userId == null || nni == null) return false;
+    return prefs.getBool('face_login_enabled_$userId') ?? false;
+  }
+
+  /// Bouton "Connect avec Face" du profil : envoie la photo de référence
+  /// (visage extrait pendant le KYC) au backend Django, qui la conserve pour
+  /// pouvoir la comparer via /kyc/verify à chaque connexion. Aucun enrôlement
+  /// biométrique permanent côté service de reconnaissance faciale tiers.
+  Future<bool> enrollFaceLogin() async {
+    if (_currentUser == null) return false;
+    _isLoading = true;
+    _errorMessage = null;
+    notifyListeners();
+
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final nni = prefs.getString('face_login_nni');
+      final imagePath = prefs.getString('face_login_image_path');
+
+      if (nni == null || imagePath == null || !File(imagePath).existsSync()) {
+        _errorMessage =
+            'Aucune photo de vérification disponible. Refaites la vérification KYC.';
+        return false;
+      }
+
+      final formData = FormData.fromMap({
+        'national_id': nni,
+        'file': await MultipartFile.fromFile(imagePath, filename: 'reference.jpg'),
+      });
+
+      final response = await _apiService.postForm('auth/face-login/enroll/', formData);
+
+      if (response.statusCode != 200 && response.statusCode != 201) {
+        _errorMessage = 'Échec de l\'activation de la connexion par visage.';
+        return false;
+      }
+
+      await prefs.setBool('face_login_enabled_${_currentUser!.id}', true);
+      return true;
+    } on DioException catch (e) {
+      _errorMessage = _extractError(e, 'Échec de l\'activation de la connexion par visage');
+      return false;
+    } finally {
+      _isLoading = false;
+      notifyListeners();
+    }
+  }
+
+  /// Tente une connexion par reconnaissance faciale : envoie le selfie et le
+  /// NNI au backend, qui effectue lui-même la vérification biométrique
+  /// auprès du service de reconnaissance faciale puis renvoie des tokens JWT.
+  Future<bool> loginWithFace(File selfie) async {
+    _isLoading = true;
+    _errorMessage = null;
+    notifyListeners();
+
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final nni = prefs.getString('face_login_nni');
+      if (nni == null) {
+        _errorMessage = 'Connexion par visage non configurée.';
+        return false;
+      }
+
+      final formData = FormData.fromMap({
+        'national_id': nni,
+        'file': await MultipartFile.fromFile(selfie.path, filename: 'selfie.jpg'),
+      });
+
+      final response = await _apiService.postForm('auth/face-login/', formData);
+
+      if (response.statusCode == 200) {
+        final data = response.data;
+        _accessToken = data['access'];
+        _refreshToken = data['refresh'];
+        _currentUser = UserModel.fromJson(data['user']);
+
+        await prefs.setString('access_token', _accessToken!);
+        await prefs.setString('refresh_token', _refreshToken!);
+        await prefs.setString('user_id', _currentUser!.id);
+        return true;
+      }
+    } on DioException catch (e) {
+      _errorMessage = _extractError(e, 'Erreur lors de la connexion par visage');
+    } finally {
+      _isLoading = false;
+      notifyListeners();
+    }
     return false;
   }
 }

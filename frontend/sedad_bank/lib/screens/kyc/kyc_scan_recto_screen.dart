@@ -5,11 +5,13 @@
 
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 
 import '../../providers/kyc_provider.dart';
+import '../../widgets/camera_capture_screen.dart';
 
 class KycScanRectoScreen extends StatefulWidget {
   const KycScanRectoScreen({super.key});
@@ -24,6 +26,13 @@ class _KycScanRectoScreenState extends State<KycScanRectoScreen> {
 
   Future<void> _pickImage(ImageSource source) async {
     try {
+      if (source == ImageSource.camera) {
+        final file = await openCameraCapture(context, title: 'Photo du document');
+        if (file != null && mounted) {
+          context.read<KycProvider>().setDocumentImage(file);
+        }
+        return;
+      }
       final image = await _picker.pickImage(
         source: source,
         maxWidth: 2000,
@@ -34,14 +43,16 @@ class _KycScanRectoScreenState extends State<KycScanRectoScreen> {
       }
     } catch (e) {
       if (mounted) {
+        final l = AppLocalizations.of(context)!;
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Erreur : $e')),
+          SnackBar(content: Text(l.errorWithDetail(e.toString()))),
         );
       }
     }
   }
 
   Future<void> _showImageSourceDialog() async {
+    final l = AppLocalizations.of(context)!;
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
@@ -55,12 +66,12 @@ class _KycScanRectoScreenState extends State<KycScanRectoScreen> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text('Choisissez une source',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+              Text(l.chooseSource,
+                  style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
               const SizedBox(height: 16),
               ListTile(
                 leading: const Icon(Icons.camera_alt, color: rssGreen),
-                title: const Text('Prendre une photo'),
+                title: Text(l.takePhoto),
                 onTap: () {
                   Navigator.of(ctx).pop();
                   _pickImage(ImageSource.camera);
@@ -68,7 +79,7 @@ class _KycScanRectoScreenState extends State<KycScanRectoScreen> {
               ),
               ListTile(
                 leading: const Icon(Icons.photo_library, color: rssGreen),
-                title: const Text('Depuis la galerie'),
+                title: Text(l.fromGallery),
                 onTap: () {
                   Navigator.of(ctx).pop();
                   _pickImage(ImageSource.gallery);
@@ -90,8 +101,9 @@ class _KycScanRectoScreenState extends State<KycScanRectoScreen> {
     if (success) {
       context.push('/kyc/confirm-info');
     } else {
+      final l = AppLocalizations.of(context)!;
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(kyc.errorMessage ?? 'Erreur OCR')),
+        SnackBar(content: Text(kyc.errorMessage ?? l.ocrError)),
       );
     }
   }
@@ -100,6 +112,7 @@ class _KycScanRectoScreenState extends State<KycScanRectoScreen> {
   Widget build(BuildContext context) {
     final kyc = context.watch<KycProvider>();
     final image = kyc.documentImage;
+    final l = AppLocalizations.of(context)!;
 
     return Scaffold(
       backgroundColor: const Color(0xFFF4F6F8),
@@ -113,21 +126,21 @@ class _KycScanRectoScreenState extends State<KycScanRectoScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   _BackButton(onTap: () => Navigator.of(context).pop()),
-                  const Text('Vérifier le recto',
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                  Text(l.kycScanRectoTitle,
+                      style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                   _ProgressDots(activeIndex: 2, total: 4),
                 ],
               ),
               const SizedBox(height: 28),
 
-              const Text(
-                'Vérifiez votre photo',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              Text(
+                l.kycCheckPhotoHeading,
+                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 8),
-              const Text(
-                'Assurez-vous que tout le texte est clairement visible et que l\'image n\'est pas floue.',
-                style: TextStyle(color: Color(0xFF666666), fontSize: 13, height: 1.4),
+              Text(
+                l.kycCheckPhotoSubtitle,
+                style: const TextStyle(color: Color(0xFF666666), fontSize: 13, height: 1.4),
               ),
               const SizedBox(height: 24),
 
@@ -161,14 +174,14 @@ class _KycScanRectoScreenState extends State<KycScanRectoScreen> {
                                     color: rssGreen, size: 32),
                               ),
                               const SizedBox(height: 16),
-                              const Text(
-                                'Appuyez pour prendre une photo',
-                                style: TextStyle(fontWeight: FontWeight.w600),
+                              Text(
+                                l.tapToTakePhoto,
+                                style: const TextStyle(fontWeight: FontWeight.w600),
                               ),
                               const SizedBox(height: 4),
-                              const Text(
-                                'ou choisir depuis la galerie',
-                                style: TextStyle(color: Color(0xFF666666), fontSize: 12),
+                              Text(
+                                l.orChooseFromGallery,
+                                style: const TextStyle(color: Color(0xFF666666), fontSize: 12),
                               ),
                             ],
                           )
@@ -190,10 +203,10 @@ class _KycScanRectoScreenState extends State<KycScanRectoScreen> {
                   ),
                   child: Column(
                     children: [
-                      _Check('Tout le texte est clairement lisible'),
-                      _Check('Pas de reflets ni d\'ombres sur le document'),
-                      _Check('Les quatre coins sont visibles'),
-                      _Check('L\'image est nette et non floue'),
+                      _Check(l.checkTextReadable),
+                      _Check(l.checkNoGlare),
+                      _Check(l.checkCornersVisible),
+                      _Check(l.checkImageSharp),
                     ],
                   ),
                 ),
@@ -222,9 +235,9 @@ class _KycScanRectoScreenState extends State<KycScanRectoScreen> {
                             strokeWidth: 2.5,
                           ),
                         )
-                      : const Text(
-                          'Parfait',
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                      : Text(
+                          l.perfectButton,
+                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                         ),
                 ),
               ),
@@ -234,9 +247,9 @@ class _KycScanRectoScreenState extends State<KycScanRectoScreen> {
                   onPressed: kyc.isLoading
                       ? null
                       : () => context.read<KycProvider>().setDocumentImage(File('')),
-                  child: const Text(
-                    'Reprendre',
-                    style: TextStyle(color: Color(0xFF666666)),
+                  child: Text(
+                    l.retake,
+                    style: const TextStyle(color: Color(0xFF666666)),
                   ),
                 ),
             ],

@@ -3,6 +3,7 @@ import 'dart:typed_data';
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:share_plus/share_plus.dart';
@@ -42,15 +43,16 @@ class _QrTransactionsScreenState extends State<QrTransactionsScreen>
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: const Color(0xFFF8F9FA),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
         automaticallyImplyLeading: false,
-        title: const Text(
-          'Transactions QR',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: AppTheme.textPrimary),
+        title: Text(
+          l.qrTransactionsTitle,
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: AppTheme.textPrimary),
         ),
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(52),
@@ -74,7 +76,7 @@ class _QrTransactionsScreenState extends State<QrTransactionsScreen>
                 unselectedLabelColor: AppTheme.textSecondary,
                 labelStyle: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
                 dividerColor: Colors.transparent,
-                tabs: const [Tab(text: 'Mon QR'), Tab(text: 'Scanner')],
+                tabs: [Tab(text: l.tabMyQr), Tab(text: l.tabScanner)],
               ),
             ),
           ),
@@ -82,22 +84,22 @@ class _QrTransactionsScreenState extends State<QrTransactionsScreen>
       ),
       body: TabBarView(
         controller: _tabController,
-        children: [_buildMyQR(), const _ScannerTab()],
+        children: [_buildMyQR(l), const _ScannerTab()],
       ),
     );
   }
 
-  Widget _buildMyQR() {
+  Widget _buildMyQR(AppLocalizations l) {
     return Consumer2<AuthProvider, AccountProvider>(
       builder: (context, auth, ap, _) {
         final user = auth.currentUser;
         final account = ap.selectedAccount ?? (ap.accounts.isNotEmpty ? ap.accounts.first : null);
 
         if (account == null) {
-          return const Center(
+          return Center(
             child: Text(
-              'Aucun compte disponible',
-              style: TextStyle(color: AppTheme.textSecondary),
+              l.noAccountAvailableMsg,
+              style: const TextStyle(color: AppTheme.textSecondary),
             ),
           );
         }
@@ -138,7 +140,7 @@ class _QrTransactionsScreenState extends State<QrTransactionsScreen>
                     ),
                     const SizedBox(height: 20),
                     Text(
-                      user?.getFullName() ?? 'Utilisateur',
+                      user?.getFullName() ?? l.defaultUserName,
                       style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: AppTheme.textPrimary),
                     ),
                     const SizedBox(height: 4),
@@ -162,12 +164,12 @@ class _QrTransactionsScreenState extends State<QrTransactionsScreen>
                 ),
               ),
               const SizedBox(height: 24),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 40),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 40),
                 child: Text(
-                  'Partagez ce QR code pour recevoir des paiements instantanément.',
+                  l.shareQrHint,
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: AppTheme.textSecondary, fontSize: 13, height: 1.5),
+                  style: const TextStyle(color: AppTheme.textSecondary, fontSize: 13, height: 1.5),
                 ),
               ),
               const SizedBox(height: 24),
@@ -179,7 +181,7 @@ class _QrTransactionsScreenState extends State<QrTransactionsScreen>
                       child: OutlinedButton.icon(
                         onPressed: () => _shareQr(context),
                         icon: const Icon(Icons.share_outlined, size: 18),
-                        label: const Text('Partager'),
+                        label: Text(l.shareButton),
                         style: OutlinedButton.styleFrom(
                           foregroundColor: AppTheme.primaryGold,
                           side: const BorderSide(color: AppTheme.primaryGold),
@@ -193,7 +195,7 @@ class _QrTransactionsScreenState extends State<QrTransactionsScreen>
                       child: ElevatedButton.icon(
                         onPressed: () => _downloadQr(context),
                         icon: const Icon(Icons.download_outlined, size: 18),
-                        label: const Text('Télécharger'),
+                        label: Text(l.downloadButton),
                         style: ElevatedButton.styleFrom(
                           padding: const EdgeInsets.symmetric(vertical: 12),
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -236,11 +238,12 @@ class _QrTransactionsScreenState extends State<QrTransactionsScreen>
   }
 
   Future<void> _downloadQr(BuildContext ctx) async {
+    final l = AppLocalizations.of(ctx)!;
     final bytes = await _captureQr();
     if (bytes == null) {
       if (ctx.mounted) {
         ScaffoldMessenger.of(ctx).showSnackBar(
-          const SnackBar(content: Text('Erreur lors de la capture'), backgroundColor: AppTheme.errorColor),
+          SnackBar(content: Text(l.captureError), backgroundColor: AppTheme.errorColor),
         );
       }
       return;
@@ -253,10 +256,10 @@ class _QrTransactionsScreenState extends State<QrTransactionsScreen>
       if (ctx.mounted) {
         ScaffoldMessenger.of(ctx).showSnackBar(
           SnackBar(
-            content: Text('QR enregistré : $fileName'),
+            content: Text(l.qrSavedMsg(fileName)),
             backgroundColor: AppTheme.successColor,
             action: SnackBarAction(
-              label: 'Partager',
+              label: l.shareButton,
               textColor: Colors.white,
               onPressed: () async {
                 await Share.shareXFiles([XFile(file.path, mimeType: 'image/png')]);
@@ -268,7 +271,7 @@ class _QrTransactionsScreenState extends State<QrTransactionsScreen>
     } catch (e) {
       if (ctx.mounted) {
         ScaffoldMessenger.of(ctx).showSnackBar(
-          SnackBar(content: Text('Erreur: $e'), backgroundColor: AppTheme.errorColor),
+          SnackBar(content: Text(l.errorWithDetail(e.toString())), backgroundColor: AppTheme.errorColor),
         );
       }
     }
@@ -357,6 +360,7 @@ class _ScannerTabState extends State<_ScannerTab> {
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context)!;
     if (_scanning && _controller != null) {
       return Stack(
         children: [
@@ -388,7 +392,7 @@ class _ScannerTabState extends State<_ScannerTab> {
               child: ElevatedButton.icon(
                 onPressed: _stopScan,
                 icon: const Icon(Icons.close),
-                label: const Text('Annuler'),
+                label: Text(l.cancel),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white,
                   foregroundColor: AppTheme.textPrimary,
@@ -400,10 +404,10 @@ class _ScannerTabState extends State<_ScannerTab> {
             top: 48,
             left: 0,
             right: 0,
-            child: const Center(
+            child: Center(
               child: Text(
-                'Pointez la caméra vers le QR code',
-                style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w600),
+                l.pointCameraQr,
+                style: const TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w600),
               ),
             ),
           ),
@@ -427,15 +431,15 @@ class _ScannerTabState extends State<_ScannerTab> {
               child: const Icon(Icons.qr_code_scanner_rounded, size: 60, color: AppTheme.primaryGold),
             ),
             const SizedBox(height: 24),
-            const Text(
-              'Scanner un QR code',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: AppTheme.textPrimary),
+            Text(
+              l.scanQrTitle,
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: AppTheme.textPrimary),
             ),
             const SizedBox(height: 12),
-            const Text(
-              'Scannez le QR code d\'un compte RSS BANK pour effectuer un virement instantané.',
+            Text(
+              l.scanQrSubtitle,
               textAlign: TextAlign.center,
-              style: TextStyle(color: AppTheme.textSecondary, fontSize: 14, height: 1.5),
+              style: const TextStyle(color: AppTheme.textSecondary, fontSize: 14, height: 1.5),
             ),
             const SizedBox(height: 32),
             if (_scannedData != null) ...[
@@ -446,7 +450,7 @@ class _ScannerTabState extends State<_ScannerTab> {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Text(
-                  'Dernier scan : $_scannedData',
+                  l.lastScanLabel(_scannedData!),
                   style: const TextStyle(fontSize: 12, color: AppTheme.darkGold),
                   textAlign: TextAlign.center,
                 ),
@@ -459,9 +463,9 @@ class _ScannerTabState extends State<_ScannerTab> {
               child: ElevatedButton.icon(
                 onPressed: _startScan,
                 icon: const Icon(Icons.camera_alt_outlined),
-                label: const Text(
-                  'Ouvrir la caméra',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                label: Text(
+                  l.openCameraButton,
+                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                 ),
               ),
             ),
@@ -488,6 +492,7 @@ class _ScannedResultSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context)!;
     return Container(
       padding: const EdgeInsets.all(28),
       child: Column(
@@ -504,9 +509,9 @@ class _ScannedResultSheet extends StatelessWidget {
           const SizedBox(height: 20),
           const Icon(Icons.check_circle_rounded, color: AppTheme.successColor, size: 56),
           const SizedBox(height: 12),
-          const Text(
-            'QR Code scanné !',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: AppTheme.textPrimary),
+          Text(
+            l.qrScannedTitle,
+            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: AppTheme.textPrimary),
           ),
           const SizedBox(height: 8),
           if (name != null && name!.isNotEmpty) ...[
@@ -526,7 +531,7 @@ class _ScannedResultSheet extends StatelessWidget {
             child: ElevatedButton.icon(
               onPressed: onTransfer,
               icon: const Icon(Icons.send_rounded),
-              label: const Text('Effectuer un virement'),
+              label: Text(l.makeTransferButton),
             ),
           ),
           const SizedBox(height: 12),
@@ -534,7 +539,7 @@ class _ScannedResultSheet extends StatelessWidget {
             width: double.infinity,
             child: OutlinedButton(
               onPressed: () => Navigator.pop(context),
-              child: const Text('Annuler'),
+              child: Text(l.cancel),
             ),
           ),
         ],

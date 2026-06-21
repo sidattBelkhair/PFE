@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../../core/theme/app_theme.dart';
@@ -52,6 +53,7 @@ class _RechargeScreenState extends State<RechargeScreen>
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -61,9 +63,9 @@ class _RechargeScreenState extends State<RechargeScreen>
           icon: const Icon(Icons.arrow_back),
           onPressed: () => context.canPop() ? context.pop() : context.go('/home'),
         ),
-        title: const Text(
-          'Recharge téléphonique',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: AppTheme.textPrimary),
+        title: Text(
+          l.rechargeTitle,
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: AppTheme.textPrimary),
         ),
       ),
       body: Column(
@@ -89,14 +91,14 @@ class _RechargeScreenState extends State<RechargeScreen>
                 unselectedLabelColor: AppTheme.textSecondary,
                 labelStyle: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
                 dividerColor: Colors.transparent,
-                tabs: const [Tab(text: 'Mauritanie'), Tab(text: 'International')],
+                tabs: [Tab(text: l.tabMauritania), Tab(text: l.tabInternational)],
               ),
             ),
           ),
           Expanded(
             child: TabBarView(
               controller: _tabController,
-              children: [_buildMauritanieTab(), _buildInternationalTab()],
+              children: [_buildMauritanieTab(l), _buildInternationalTab(l)],
             ),
           ),
         ],
@@ -104,23 +106,23 @@ class _RechargeScreenState extends State<RechargeScreen>
     );
   }
 
-  Widget _buildMauritanieTab() {
+  Widget _buildMauritanieTab(AppLocalizations l) {
     return SingleChildScrollView(
       padding: const EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 8),
-          const Text(
-            'Veuillez entrer votre numéro de téléphone pour\nvoir les offres disponibles de votre opérateur.',
-            style: TextStyle(color: AppTheme.textSecondary, fontSize: 13, height: 1.5),
+          Text(
+            l.rechargeMauritaniaHint,
+            style: const TextStyle(color: AppTheme.textSecondary, fontSize: 13, height: 1.5),
           ),
           const SizedBox(height: 16),
           TextField(
             controller: _phoneCtrl,
             keyboardType: TextInputType.phone,
             decoration: InputDecoration(
-              labelText: 'Numéro de téléphone',
+              labelText: l.phone,
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
@@ -206,7 +208,7 @@ class _RechargeScreenState extends State<RechargeScreen>
                 elevation: 0,
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
               ),
-              child: const Text('Demander', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+              child: Text(l.requestButton, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
             ),
           ),
         ],
@@ -214,15 +216,15 @@ class _RechargeScreenState extends State<RechargeScreen>
     );
   }
 
-  Widget _buildInternationalTab() {
+  Widget _buildInternationalTab(AppLocalizations l) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Padding(
-          padding: EdgeInsets.fromLTRB(20, 20, 20, 4),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20, 20, 20, 4),
           child: Text(
-            'Choisissez un pays',
-            style: TextStyle(color: AppTheme.textSecondary, fontSize: 14),
+            l.chooseCountry,
+            style: const TextStyle(color: AppTheme.textSecondary, fontSize: 14),
           ),
         ),
         Expanded(
@@ -239,7 +241,7 @@ class _RechargeScreenState extends State<RechargeScreen>
                 ),
                 trailing: const Icon(Icons.chevron_right, color: AppTheme.textSecondary),
                 onTap: () => ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('${c['name']} — Bientôt disponible')),
+                  SnackBar(content: Text(l.comingSoonFor(c['name']!))),
                 ),
               );
             },
@@ -250,10 +252,11 @@ class _RechargeScreenState extends State<RechargeScreen>
   }
 
   Future<void> _handleRecharge() async {
+    final l = AppLocalizations.of(context)!;
     final phone = _phoneCtrl.text.trim();
     if (phone.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Entrez un numéro de téléphone')),
+        SnackBar(content: Text(l.enterPhoneNumber)),
       );
       return;
     }
@@ -262,13 +265,13 @@ class _RechargeScreenState extends State<RechargeScreen>
       context: context,
       builder: (_) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        title: const Text('Confirmer la recharge'),
-        content: Text('Recharger $phone avec $_selectedAmount MRU ?'),
+        title: Text(l.confirmRechargeTitle),
+        content: Text(l.confirmRechargeContent(phone, _selectedAmount.toString())),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('Annuler')),
+          TextButton(onPressed: () => Navigator.pop(context, false), child: Text(l.cancel)),
           ElevatedButton(
             onPressed: () => Navigator.pop(context, true),
-            child: const Text('Confirmer'),
+            child: Text(l.confirm),
           ),
         ],
       ),
@@ -282,7 +285,7 @@ class _RechargeScreenState extends State<RechargeScreen>
 
     if (account == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Aucun compte disponible'), backgroundColor: AppTheme.errorColor),
+        SnackBar(content: Text(l.noAccountAvailableMsg), backgroundColor: AppTheme.errorColor),
       );
       return;
     }
@@ -315,10 +318,10 @@ class _RechargeScreenState extends State<RechargeScreen>
                   child: const Icon(Icons.phone_android_rounded, color: AppTheme.successColor, size: 40),
                 ),
                 const SizedBox(height: 16),
-                const Text('Recharge effectuée !', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                Text(l.rechargeSuccessTitle, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 const SizedBox(height: 8),
                 Text(
-                  'Le numéro $phone a été rechargé de $_selectedAmount MRU avec succès.',
+                  l.rechargeSuccessMsg(phone, _selectedAmount.toString()),
                   textAlign: TextAlign.center,
                   style: const TextStyle(color: AppTheme.textSecondary, fontSize: 13, height: 1.4),
                 ),
@@ -327,7 +330,7 @@ class _RechargeScreenState extends State<RechargeScreen>
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () => Navigator.pop(ctx),
-                    child: const Text('Parfait !'),
+                    child: Text(l.perfectExclaim),
                   ),
                 ),
               ],
@@ -337,7 +340,7 @@ class _RechargeScreenState extends State<RechargeScreen>
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(tp.errorMessage ?? 'Erreur lors de la recharge'),
+            content: Text(tp.errorMessage ?? l.rechargeError),
             backgroundColor: AppTheme.errorColor,
           ),
         );

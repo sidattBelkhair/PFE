@@ -296,50 +296,6 @@
 import 'dart:io';
 import 'package:dio/dio.dart';
 
-class FaceEnrollResult {
-  final String status;
-  final String? userId;
-  final double? livenessScore;
-  final double? qualityScore;
-  final bool alreadyEnrolled;
-  final Map<String, dynamic> raw;
-
-  FaceEnrollResult({
-    required this.status,
-    this.userId,
-    this.livenessScore,
-    this.qualityScore,
-    this.alreadyEnrolled = false,
-    required this.raw,
-  });
-
-  factory FaceEnrollResult.fromJson(Map<String, dynamic> json) {
-    return FaceEnrollResult(
-      status: json['status']?.toString() ?? 'unknown',
-      userId: json['user_id']?.toString(),
-      livenessScore: _toDouble(json['liveness_score']),
-      qualityScore: _toDouble(json['quality_score']),
-      raw: json,
-    );
-  }
-
-  static double? _toDouble(dynamic v) {
-    if (v == null) return null;
-    if (v is num) return v.toDouble();
-    if (v is String) return double.tryParse(v);
-    return null;
-  }
-
-  bool get isSuccess =>
-      status.toLowerCase() == 'success' || alreadyEnrolled;
-
-  double get confidence {
-    final l = livenessScore ?? 0.0;
-    final q = qualityScore ?? 0.0;
-    return l < q ? l : q;
-  }
-}
-
 // Verify API response shape:
 // {
 //   "status": "failed", "decision": "allow"/"deny",
@@ -420,84 +376,32 @@ class FaceService {
   }
 
   // ============================================================
-  // ENROLL
+  // KYC VERIFY — comparaison 1:1 (pièce d'identité ↔ selfie) SANS enrollment
+  // ni stockage permanent côté serveur (POST /kyc/verify, image1 + image2).
   // ============================================================
 
-  Future<FaceEnrollResult?> enroll({
-    required String userId,
-    required File imageFile,
-    String? deviceId,
+  Future<FaceVerifyResult?> kycVerify({
+    required File idImage,
+    required File selfieImage,
   }) async {
     try {
       final formData = FormData.fromMap({
-        'user_id': userId,
-        'device_id': deviceId ?? 'flutter-rss-bank',
-
-        'file': await MultipartFile.fromFile(
-          imageFile.path,
-          filename: 'enroll.jpg',
+        'image1': await MultipartFile.fromFile(
+          idImage.path,
+          filename: 'id.jpg',
+        ),
+        'image2': await MultipartFile.fromFile(
+          selfieImage.path,
+          filename: 'selfie.jpg',
         ),
       });
 
       final response = await _dio.post(
-        '/face/enroll',
+        '/kyc/verify',
         data: formData,
       );
 
-      print('[FaceService] Enroll => ${response.statusCode}');
-      print(response.data);
-
-      if (response.statusCode == 200) {
-        final data = response.data is Map
-            ? Map<String, dynamic>.from(response.data as Map)
-            : <String, dynamic>{'status': 'success'};
-        return FaceEnrollResult.fromJson(data);
-      }
-    } on DioException catch (e) {
-      final code = e.response?.statusCode;
-      final body  = e.response?.data;
-      final detail = (body is Map ? body['detail'] : null)?.toString() ?? '';
-      print('[FaceService] Enroll ERROR => $code $body');
-
-      // 400 "User already enrolled" → not an error, continue to verify
-      if (code == 400 && detail.toLowerCase().contains('enrolled')) {
-        return FaceEnrollResult(
-          status: 'already_enrolled',
-          alreadyEnrolled: true,
-          raw: (e.response?.data is Map)
-              ? Map<String, dynamic>.from(e.response!.data)
-              : {},
-        );
-      }
-    }
-
-    return null;
-  }
-
-  // ============================================================
-  // VERIFY
-  // ============================================================
-
-  Future<FaceVerifyResult?> verify({
-    required String userId,
-    required File imageFile,
-  }) async {
-    try {
-      final formData = FormData.fromMap({
-        'user_id': userId,
-
-        'file': await MultipartFile.fromFile(
-          imageFile.path,
-          filename: 'verify.jpg',
-        ),
-      });
-
-      final response = await _dio.post(
-        '/face/verify',
-        data: formData,
-      );
-
-      print('[FaceService] Verify => ${response.statusCode}');
+      print('[FaceService] KycVerify => ${response.statusCode}');
       print(response.data);
 
       if (response.statusCode == 200) {
@@ -507,15 +411,7 @@ class FaceService {
         return FaceVerifyResult.fromJson(data);
       }
     } on DioException catch (e) {
-      print('[FaceService] Verify ERROR => ${e.response?.statusCode} ${e.response?.data}');
-
-      if (e.response?.statusCode == 404) {
-        return FaceVerifyResult(
-          match: false,
-          message: 'Utilisateur non enrôlé',
-          raw: {'error': 'not_enrolled'},
-        );
-      }
+      print('[FaceService] KycVerify ERROR => ${e.response?.statusCode} ${e.response?.data}');
     }
 
     return null;

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import '../../providers/auth_provider.dart';
@@ -38,10 +39,11 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen>
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: AppTheme.backgroundColor,
       appBar: AppBar(
-        title: const Text('Administration'),
+        title: Text(l.adminDashboard),
         backgroundColor: AppTheme.primaryGold,
         foregroundColor: Colors.white,
         elevation: 0,
@@ -60,10 +62,10 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen>
           unselectedLabelColor: Colors.white60,
           indicatorColor: Colors.white,
           indicatorWeight: 3,
-          tabs: const [
-            Tab(icon: Icon(Icons.people_rounded), text: 'Utilisateurs'),
-            Tab(icon: Icon(Icons.account_balance_rounded), text: 'Comptes'),
-            Tab(icon: Icon(Icons.receipt_long_rounded), text: 'Transactions'),
+          tabs: [
+            Tab(icon: const Icon(Icons.people_rounded), text: l.users),
+            Tab(icon: const Icon(Icons.account_balance_rounded), text: l.accountsTab),
+            Tab(icon: const Icon(Icons.receipt_long_rounded), text: l.transactions),
           ],
         ),
       ),
@@ -83,6 +85,7 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen>
 class _UsersTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context)!;
     return Consumer<UserProvider>(
       builder: (context, provider, _) {
         if (provider.isLoading) {
@@ -99,13 +102,13 @@ class _UsersTab extends StatelessWidget {
                 const SizedBox(height: 12),
                 Text(provider.errorMessage!),
                 const SizedBox(height: 12),
-                ElevatedButton(onPressed: provider.fetchUsers, child: const Text('Réessayer')),
+                ElevatedButton(onPressed: provider.fetchUsers, child: Text(l.retry)),
               ],
             ),
           );
         }
         if (provider.users.isEmpty) {
-          return const Center(child: Text('Aucun utilisateur'));
+          return Center(child: Text(l.noUsers));
         }
         return ListView.separated(
           padding: const EdgeInsets.all(16),
@@ -131,18 +134,19 @@ class _UserCard extends StatelessWidget {
     }
   }
 
-  String get _statusLabel {
+  String _statusLabel(AppLocalizations l) {
     switch (user.status) {
-      case 'active': return 'Actif';
-      case 'suspended': return 'Suspendu';
-      case 'blocked': return 'Bloqué';
-      case 'closed': return 'Fermé';
+      case 'active': return l.active;
+      case 'suspended': return l.suspended;
+      case 'blocked': return l.blocked;
+      case 'closed': return l.closed;
       default: return user.status;
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context)!;
     final initials =
         '${user.firstName.isNotEmpty ? user.firstName[0] : ''}${user.lastName.isNotEmpty ? user.lastName[0] : ''}'
             .toUpperCase();
@@ -199,9 +203,9 @@ class _UserCard extends StatelessWidget {
                           color: AppTheme.lightGold,
                           borderRadius: BorderRadius.circular(6),
                         ),
-                        child: const Text(
-                          'Admin',
-                          style: TextStyle(
+                        child: Text(
+                          l.adminBadge,
+                          style: const TextStyle(
                             color: AppTheme.darkGold,
                             fontSize: 10,
                             fontWeight: FontWeight.bold,
@@ -227,7 +231,7 @@ class _UserCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
             ),
             child: Text(
-              _statusLabel,
+              _statusLabel(l),
               style: TextStyle(
                 color: _statusColor,
                 fontSize: 11,
@@ -243,35 +247,35 @@ class _UserCard extends StatelessWidget {
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
               itemBuilder: (_) => [
                 if (user.status != 'active')
-                  const PopupMenuItem(
+                  PopupMenuItem(
                     value: 'active',
                     child: Row(
                       children: [
-                        Icon(Icons.check_circle_outline, color: AppTheme.successColor, size: 18),
-                        SizedBox(width: 10),
-                        Text('Activer'),
+                        const Icon(Icons.check_circle_outline, color: AppTheme.successColor, size: 18),
+                        const SizedBox(width: 10),
+                        Text(l.activate),
                       ],
                     ),
                   ),
                 if (user.status != 'suspended')
-                  const PopupMenuItem(
+                  PopupMenuItem(
                     value: 'suspended',
                     child: Row(
                       children: [
-                        Icon(Icons.pause_circle_outline, color: Color(0xFFE67E22), size: 18),
-                        SizedBox(width: 10),
-                        Text('Suspendre'),
+                        const Icon(Icons.pause_circle_outline, color: Color(0xFFE67E22), size: 18),
+                        const SizedBox(width: 10),
+                        Text(l.suspend),
                       ],
                     ),
                   ),
                 if (user.status != 'blocked')
-                  const PopupMenuItem(
+                  PopupMenuItem(
                     value: 'blocked',
                     child: Row(
                       children: [
-                        Icon(Icons.block, color: AppTheme.errorColor, size: 18),
-                        SizedBox(width: 10),
-                        Text('Bloquer'),
+                        const Icon(Icons.block, color: AppTheme.errorColor, size: 18),
+                        const SizedBox(width: 10),
+                        Text(l.block),
                       ],
                     ),
                   ),
@@ -282,7 +286,7 @@ class _UserCard extends StatelessWidget {
                 if (context.mounted) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text(ok ? 'Statut mis à jour' : (provider.errorMessage ?? 'Erreur')),
+                      content: Text(ok ? l.statusUpdated : (provider.errorMessage ?? l.error)),
                       backgroundColor: ok ? AppTheme.successColor : AppTheme.errorColor,
                     ),
                   );
@@ -299,6 +303,7 @@ class _UserCard extends StatelessWidget {
 class _AccountsTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context)!;
     return Consumer<AccountProvider>(
       builder: (context, ap, _) {
         if (ap.isLoading) {
@@ -318,21 +323,21 @@ class _AccountsTab extends StatelessWidget {
               child: Row(
                 children: [
                   _StatCard(
-                    label: 'Total comptes',
+                    label: l.statTotalAccounts,
                     value: '${ap.accounts.length}',
                     icon: Icons.account_balance_rounded,
                     color: AppTheme.primaryGold,
                   ),
                   const SizedBox(width: 12),
                   _StatCard(
-                    label: 'Actifs',
+                    label: l.statActive,
                     value: '$active',
                     icon: Icons.check_circle_rounded,
                     color: AppTheme.successColor,
                   ),
                   const SizedBox(width: 12),
                   _StatCard(
-                    label: 'Total soldes',
+                    label: l.statTotalBalance,
                     value: '${totalBalance.toStringAsFixed(0)} DZD',
                     icon: Icons.attach_money_rounded,
                     color: const Color(0xFF4A90D9),
@@ -343,7 +348,7 @@ class _AccountsTab extends StatelessWidget {
 
             Expanded(
               child: ap.accounts.isEmpty
-                  ? const Center(child: Text('Aucun compte'))
+                  ? Center(child: Text(l.noAccountAvailableMsg))
                   : ListView.separated(
                       padding: const EdgeInsets.all(16),
                       itemCount: ap.accounts.length,
@@ -440,6 +445,7 @@ class _AccountsTab extends StatelessWidget {
 class _TransactionsTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context)!;
     return Consumer<TransactionProvider>(
       builder: (context, tp, _) {
         if (tp.isLoading) {
@@ -457,21 +463,21 @@ class _TransactionsTab extends StatelessWidget {
               child: Row(
                 children: [
                   _StatCard(
-                    label: 'Total transactions',
+                    label: l.statTotalTransactions,
                     value: '${tp.transactions.length}',
                     icon: Icons.receipt_long_rounded,
                     color: AppTheme.primaryGold,
                   ),
                   const SizedBox(width: 12),
                   _StatCard(
-                    label: 'Complétées',
+                    label: l.statCompleted,
                     value: '$completed',
                     icon: Icons.check_rounded,
                     color: AppTheme.successColor,
                   ),
                   const SizedBox(width: 12),
                   _StatCard(
-                    label: 'Volume total',
+                    label: l.statTotalVolume,
                     value: '${totalAmount.toStringAsFixed(0)} DZD',
                     icon: Icons.trending_up_rounded,
                     color: const Color(0xFF4A90D9),
@@ -481,7 +487,7 @@ class _TransactionsTab extends StatelessWidget {
             ),
             Expanded(
               child: tp.transactions.isEmpty
-                  ? const Center(child: Text('Aucune transaction'))
+                  ? Center(child: Text(l.noTransactions))
                   : ListView.separated(
                       padding: const EdgeInsets.all(16),
                       itemCount: tp.transactions.length,

@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import '../../providers/auth_provider.dart';
 import '../../providers/kyc_provider.dart';
 import '../../core/theme/app_theme.dart';
+import '../../widgets/camera_capture_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -18,6 +19,39 @@ class _LoginScreenState extends State<LoginScreen> {
   final _passwordCtrl = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   bool _obscure = true;
+  bool _faceLoginAvailable = false;
+
+  @override
+  void initState() {
+    super.initState();
+    context.read<AuthProvider>().isFaceLoginAvailable().then((value) {
+      if (mounted) setState(() => _faceLoginAvailable = value);
+    });
+  }
+
+  Future<void> _loginWithFace(AuthProvider auth) async {
+    final selfie = await openCameraCapture(
+      context,
+      title: 'Connexion par visage',
+      preferFrontCamera: true,
+    );
+    if (selfie == null || !mounted) return;
+
+    final ok = await auth.loginWithFace(selfie);
+    if (!mounted) return;
+
+    if (ok) {
+      await _navigateAfterLogin(auth);
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(auth.errorMessage ?? 'Visage non reconnu'),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
+  }
+
   Future<void> _loginWithSSO(AuthProvider auth) async {
     final ok = await auth.loginWithSSO();
     if (!mounted) return;
@@ -293,6 +327,27 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             ),
                           ),
+
+                          if (_faceLoginAvailable) ...[
+                            const SizedBox(height: 12),
+                            SizedBox(
+                              width: double.infinity,
+                              child: OutlinedButton.icon(
+                                onPressed: auth.isLoading ? null : () => _loginWithFace(auth),
+                                icon: const Icon(Icons.face_outlined,
+                                    color: AppTheme.primaryGold),
+                                label: const Text(
+                                  'Connexion par visage',
+                                  style: TextStyle(color: AppTheme.primaryGold),
+                                ),
+                                style: OutlinedButton.styleFrom(
+                                  side: const BorderSide(color: AppTheme.primaryGold),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(12)),
+                                ),
+                              ),
+                            ),
+                          ],
                         ],
                       ),
                     ),

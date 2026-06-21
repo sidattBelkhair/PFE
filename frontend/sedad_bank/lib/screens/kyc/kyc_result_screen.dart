@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
@@ -11,6 +12,7 @@ class KycResultScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final kyc    = context.watch<KycProvider>();
     final verify = kyc.verifyResult;
+    final l = AppLocalizations.of(context)!;
 
     final bool accepted  = verify?.match ?? false;
     final double sim     = verify?.similarityScore ?? verify?.confidence ?? 0.0;
@@ -20,10 +22,10 @@ class KycResultScreen extends StatelessWidget {
     final Color primary  = accepted ? const Color(0xFF0F6E4E) : const Color(0xFFDC2626);
     final Color bgColor  = accepted ? const Color(0xFFECFDF5) : const Color(0xFFFEF2F2);
     final IconData icon  = accepted ? Icons.verified_user : Icons.cancel_outlined;
-    final String title   = accepted ? 'Identité vérifiée' : 'Vérification échouée';
+    final String title   = accepted ? l.identityVerifiedTitle : l.verificationFailedTitle;
     final String subtitle = accepted
-        ? 'Votre selfie correspond à votre CNI. Votre compte est maintenant actif.'
-        : 'Votre selfie ne correspond pas à votre CNI. Vous pouvez réessayer ou contacter le support.';
+        ? l.identityVerifiedSubtitle
+        : l.verificationFailedSubtitle;
 
     return Scaffold(
       backgroundColor: const Color(0xFFF4F6F8),
@@ -102,8 +104,8 @@ class KycResultScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text('Similarité',
-                            style: TextStyle(
+                        Text(l.similarityLabel,
+                            style: const TextStyle(
                                 fontSize: 14, color: Color(0xFF777777))),
                         Text(
                           pct,
@@ -133,8 +135,8 @@ class KycResultScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text('Décision API',
-                            style: TextStyle(
+                        Text(l.decisionApiLabel,
+                            style: const TextStyle(
                                 fontSize: 14, color: Color(0xFF777777))),
                         Container(
                           padding: const EdgeInsets.symmetric(
@@ -162,8 +164,8 @@ class KycResultScreen extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text('Liveness',
-                              style: TextStyle(
+                          Text(l.livenessLabel,
+                              style: const TextStyle(
                                   fontSize: 14, color: Color(0xFF777777))),
                           Text(
                             '${((verify!.livenessScore!) * 100).toStringAsFixed(0)}%',
@@ -195,10 +197,10 @@ class KycResultScreen extends StatelessWidget {
                     ),
                     elevation: 0,
                   ),
-                  child: const Text(
-                    'Retour à l\'accueil',
+                  child: Text(
+                    l.backToHome,
                     style:
-                        TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                        const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                   ),
                 ),
               ),
@@ -207,9 +209,9 @@ class KycResultScreen extends StatelessWidget {
                 const SizedBox(height: 12),
                 TextButton(
                   onPressed: () => context.go('/kyc/face-verify'),
-                  child: const Text(
-                    'Réessayer avec un nouveau selfie',
-                    style: TextStyle(color: Color(0xFF666666), fontSize: 13),
+                  child: Text(
+                    l.retryNewSelfie,
+                    style: const TextStyle(color: Color(0xFF666666), fontSize: 13),
                   ),
                 ),
               ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../../core/theme/app_theme.dart';
@@ -33,6 +34,7 @@ class _PaiementFacturesScreenState extends State<PaiementFacturesScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -42,9 +44,9 @@ class _PaiementFacturesScreenState extends State<PaiementFacturesScreen> {
           icon: const Icon(Icons.arrow_back),
           onPressed: () => context.canPop() ? context.pop() : context.go('/home'),
         ),
-        title: const Text(
-          'Paiement de factures',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: AppTheme.textPrimary),
+        title: Text(
+          l.billPaymentScreenTitle,
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: AppTheme.textPrimary),
         ),
       ),
       body: ListView.separated(
@@ -86,6 +88,7 @@ class _PaiementFacturesScreenState extends State<PaiementFacturesScreen> {
   }
 
   void _showFactureDialog(BuildContext context, String billerName) {
+    final l = AppLocalizations.of(context)!;
     final refCtrl = TextEditingController();
     final amountCtrl = TextEditingController();
     showModalBottomSheet(
@@ -106,13 +109,13 @@ class _PaiementFacturesScreenState extends State<PaiementFacturesScreen> {
               ),
             ),
             const SizedBox(height: 16),
-            Text('Payer $billerName',
+            Text(l.payBillerTitle(billerName),
                 style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: AppTheme.textPrimary)),
             const SizedBox(height: 20),
             TextField(
               controller: refCtrl,
               decoration: InputDecoration(
-                labelText: 'Numéro de contrat / référence',
+                labelText: l.contractRefLabel,
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
@@ -125,7 +128,7 @@ class _PaiementFacturesScreenState extends State<PaiementFacturesScreen> {
               controller: amountCtrl,
               keyboardType: const TextInputType.numberWithOptions(decimal: true),
               decoration: InputDecoration(
-                labelText: 'Montant à payer',
+                labelText: l.amountToPayLabel,
                 suffixText: 'MRU',
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
                 enabledBorder: OutlineInputBorder(
@@ -175,13 +178,13 @@ class _PaiementFacturesScreenState extends State<PaiementFacturesScreen> {
                                   child: const Icon(Icons.check_circle_rounded, color: AppTheme.successColor, size: 44),
                                 ),
                                 const SizedBox(height: 16),
-                                Text('Facture $billerName payée !',
+                                Text(l.billPaidTitle(billerName),
                                   style: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
                                   textAlign: TextAlign.center,
                                 ),
                                 const SizedBox(height: 8),
                                 Text(
-                                  'Le paiement de ${amount.toStringAsFixed(0)} MRU a été effectué et enregistré dans votre historique.',
+                                  l.billPaidMsg(amount.toStringAsFixed(0)),
                                   textAlign: TextAlign.center,
                                   style: const TextStyle(color: AppTheme.textSecondary, fontSize: 13, height: 1.4),
                                 ),
@@ -190,7 +193,7 @@ class _PaiementFacturesScreenState extends State<PaiementFacturesScreen> {
                                   width: double.infinity,
                                   child: ElevatedButton(
                                     onPressed: () => Navigator.pop(dCtx),
-                                    child: const Text('Parfait !'),
+                                    child: Text(l.perfectExclaim),
                                   ),
                                 ),
                               ],
@@ -200,7 +203,7 @@ class _PaiementFacturesScreenState extends State<PaiementFacturesScreen> {
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
-                            content: Text(tp.errorMessage ?? 'Erreur lors du paiement'),
+                            content: Text(tp.errorMessage ?? l.paymentError),
                             backgroundColor: AppTheme.errorColor,
                           ),
                         );
@@ -209,7 +212,7 @@ class _PaiementFacturesScreenState extends State<PaiementFacturesScreen> {
                   },
                   child: tp.isLoading
                       ? const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2))
-                      : const Text('Payer la facture', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+                      : Text(l.payBillButton, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
                 ),
               ),
             ),

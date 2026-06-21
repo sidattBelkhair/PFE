@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
@@ -15,6 +16,7 @@ class KycIntroScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final kyc  = context.read<KycProvider>();
     final auth = context.read<AuthProvider>();
+    final l    = AppLocalizations.of(context)!;
 
     return Scaffold(
       backgroundColor: const Color(0xFFF4F6F8),
@@ -41,16 +43,16 @@ class KycIntroScreen extends StatelessWidget {
               ),
               const SizedBox(height: 24),
 
-              const Text(
-                'Vérification rapide et sécurisée',
+              Text(
+                l.kycIntroTitle,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 12),
-              const Text(
-                'Complétez quelques étapes simples pour vérifier votre identité et débloquer toutes les fonctionnalités.',
+              Text(
+                l.kycIntroSubtitle,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 14, color: Color(0xFF666666), height: 1.4),
+                style: const TextStyle(fontSize: 14, color: Color(0xFF666666), height: 1.4),
               ),
               const SizedBox(height: 24),
 
@@ -76,12 +78,12 @@ class KycIntroScreen extends StatelessWidget {
                     const SizedBox(width: 12),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text('Temps estimé',
-                            style: TextStyle(fontWeight: FontWeight.w600)),
-                        SizedBox(height: 2),
-                        Text('2-5 minutes',
-                            style: TextStyle(
+                      children: [
+                        Text(l.kycEstimatedTime,
+                            style: const TextStyle(fontWeight: FontWeight.w600)),
+                        const SizedBox(height: 2),
+                        Text(l.kycEstimatedTimeValue,
+                            style: const TextStyle(
                                 color: Color(0xFF666666), fontSize: 13)),
                       ],
                     ),
@@ -92,29 +94,27 @@ class KycIntroScreen extends StatelessWidget {
 
               Align(
                 alignment: Alignment.centerLeft,
-                child: const Text(
-                  'Étapes de vérification',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                child: Text(
+                  l.kycStepsTitle,
+                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
               ),
               const SizedBox(height: 16),
 
-              const _StepRow(
+              _StepRow(
                 icon: Icons.description_outlined,
-                title: 'Scannez votre document',
-                subtitle:
-                    'Prenez des photos de votre carte d\'identité ou passeport',
+                title: l.kycStep1Title,
+                subtitle: l.kycStep1Subtitle,
               ),
-              const _StepRow(
+              _StepRow(
                 icon: Icons.person_outline,
-                title: 'Confirmez vos informations',
-                subtitle:
-                    'Vérifiez et confirmez vos informations personnelles',
+                title: l.kycStep2Title,
+                subtitle: l.kycStep2Subtitle,
               ),
-              const _StepRow(
+              _StepRow(
                 icon: Icons.camera_alt_outlined,
-                title: 'Vérifiez que c\'est vous',
-                subtitle: 'Scan facial rapide pour la sécurité',
+                title: l.kycStep3Title,
+                subtitle: l.kycStep3Subtitle,
                 isLast: true,
               ),
 
@@ -128,14 +128,14 @@ class KycIntroScreen extends StatelessWidget {
                 ),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Icon(Icons.info_outline,
+                  children: [
+                    const Icon(Icons.info_outline,
                         size: 18, color: Color(0xFF666666)),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Expanded(
                       child: Text(
-                        'Vos documents sont traités de manière sécurisée et ne seront pas partagés sans votre consentement, sauf si la loi l\'exige.',
-                        style: TextStyle(
+                        l.kycPrivacyNote,
+                        style: const TextStyle(
                             color: Color(0xFF555555),
                             fontSize: 12.5,
                             height: 1.4),
@@ -162,10 +162,10 @@ class KycIntroScreen extends StatelessWidget {
                     ),
                     elevation: 0,
                   ),
-                  child: const Text(
-                    'Démarrer la vérification',
+                  child: Text(
+                    l.kycStartVerification,
                     style:
-                        TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                        const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                   ),
                 ),
               ),
@@ -184,9 +184,9 @@ class KycIntroScreen extends StatelessWidget {
                     }
                   }
                 },
-                child: const Text(
-                  'Passer pour l\'instant',
-                  style: TextStyle(color: Color(0xFF666666)),
+                child: Text(
+                  l.kycSkipForNow,
+                  style: const TextStyle(color: Color(0xFF666666)),
                 ),
               ),
               const SizedBox(height: 16),
@@ -198,24 +198,22 @@ class KycIntroScreen extends StatelessWidget {
   }
 
   Future<bool?> _showSkipDialog(BuildContext context) {
+    final l = AppLocalizations.of(context)!;
     return showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        title: const Text('Passer la vérification ?'),
-        content: const Text(
-          'Vous pourrez compléter la vérification plus tard depuis votre profil. '
-          'Certaines fonctionnalités resteront limitées tant que votre identité n\'est pas vérifiée.',
-        ),
+        title: Text(l.kycSkipDialogTitle),
+        content: Text(l.kycSkipDialogContent),
         actions: [
           TextButton(
             onPressed: () => Navigator.of(ctx).pop(false),
-            child: const Text('Annuler'),
+            child: Text(l.cancel),
           ),
           TextButton(
             onPressed: () => Navigator.of(ctx).pop(true),
-            child: const Text('Passer'),
+            child: Text(l.kycSkipConfirm),
           ),
         ],
       ),

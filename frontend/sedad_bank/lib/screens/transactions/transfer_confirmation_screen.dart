@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
@@ -21,6 +22,7 @@ class TransferConfirmationScreen extends StatelessWidget {
           child: Consumer<TransactionProvider>(
             builder: (context, tp, _) {
               final tx = tp.lastTransaction;
+              final l = AppLocalizations.of(context)!;
 
               if (tx == null) {
                 return Center(
@@ -29,11 +31,11 @@ class TransferConfirmationScreen extends StatelessWidget {
                     children: [
                       const Icon(Icons.error_outline, size: 64, color: AppTheme.errorColor),
                       const SizedBox(height: 16),
-                      const Text('Transaction non trouvée'),
+                      Text(l.transactionNotFound),
                       const SizedBox(height: 24),
                       ElevatedButton(
                         onPressed: () => context.go('/home'),
-                        child: const Text('Retour à l\'accueil'),
+                        child: Text(l.backToHome),
                       ),
                     ],
                   ),
@@ -60,18 +62,18 @@ class TransferConfirmationScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
 
-                  const Text(
-                    'Virement envoyé !',
-                    style: TextStyle(
+                  Text(
+                    l.transferSentTitle,
+                    style: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                       color: AppTheme.textPrimary,
                     ),
                   ),
                   const SizedBox(height: 6),
-                  const Text(
-                    'Votre opération a été traitée avec succès',
-                    style: TextStyle(color: AppTheme.textSecondary, fontSize: 14),
+                  Text(
+                    l.transferSentSubtitle,
+                    style: const TextStyle(color: AppTheme.textSecondary, fontSize: 14),
                   ),
 
                   const SizedBox(height: 32),
@@ -105,23 +107,23 @@ class TransferConfirmationScreen extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
-                        _DetailRow(label: 'Référence', value: tx.referenceNumber ?? tx.id.substring(0, 8).toUpperCase()),
+                        _DetailRow(label: l.referenceLabel, value: tx.referenceNumber ?? tx.id.substring(0, 8).toUpperCase()),
                         const Divider(height: 20),
-                        _DetailRow(label: 'Bénéficiaire', value: tx.counterpartLabel.replaceFirst('Vers : ', '')),
+                        _DetailRow(label: l.beneficiaryLabel, value: tx.counterpartLabel.replaceFirst('Vers : ', '')),
                         const Divider(height: 20),
                         _DetailRow(
-                          label: 'Date',
+                          label: l.date,
                           value: DateFormat('dd/MM/yyyy HH:mm').format(tx.createdAt),
                         ),
                         const Divider(height: 20),
                         _DetailRow(
-                          label: 'Statut',
-                          value: tx.status == 'completed' ? 'Complété' : tx.status,
+                          label: l.status,
+                          value: tx.status == 'completed' ? l.statusCompleted : tx.status,
                           valueColor: AppTheme.successColor,
                         ),
                         if (tx.description != null && tx.description!.isNotEmpty) ...[
                           const Divider(height: 20),
-                          _DetailRow(label: 'Motif', value: tx.description!),
+                          _DetailRow(label: l.reason, value: tx.description!),
                         ],
                       ],
                     ),
@@ -137,7 +139,7 @@ class TransferConfirmationScreen extends StatelessWidget {
                           width: double.infinity,
                           child: ElevatedButton.icon(
                             icon: const Icon(Icons.home_rounded),
-                            label: const Text('Retour à l\'accueil'),
+                            label: Text(l.backToHome),
                             style: ElevatedButton.styleFrom(
                               padding: const EdgeInsets.symmetric(vertical: 14),
                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -150,7 +152,7 @@ class TransferConfirmationScreen extends StatelessWidget {
                           width: double.infinity,
                           child: OutlinedButton.icon(
                             icon: const Icon(Icons.history_rounded),
-                            label: const Text('Voir l\'historique'),
+                            label: Text(l.viewHistory),
                             style: OutlinedButton.styleFrom(
                               padding: const EdgeInsets.symmetric(vertical: 14),
                               foregroundColor: AppTheme.primaryGold,

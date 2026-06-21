@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../../core/theme/app_theme.dart';
@@ -13,16 +14,36 @@ class PaiementsScreen extends StatefulWidget {
 }
 
 class _PaiementsScreenState extends State<PaiementsScreen> {
-  static const _categories = [
-    {'label': 'Eau',              'icon': Icons.water_drop_outlined,        'color': Color(0xFF2196F3)},
-    {'label': 'Électricité',      'icon': Icons.bolt_outlined,              'color': Color(0xFFFFC107)},
-    {'label': 'Internet',         'icon': Icons.wifi_outlined,              'color': Color(0xFF9C27B0)},
-    {'label': 'Téléphone',        'icon': Icons.phone_android_outlined,     'color': Color(0xFF4CAF50)},
-    {'label': 'Loyer',            'icon': Icons.home_outlined,              'color': Color(0xFFFF5722)},
-    {'label': 'Assurance',        'icon': Icons.shield_outlined,            'color': Color(0xFF00BCD4)},
-    {'label': 'Transport',        'icon': Icons.directions_bus_outlined,    'color': Color(0xFF795548)},
-    {'label': 'Autres',           'icon': Icons.more_horiz_outlined,        'color': Color(0xFF607D8B)},
+  static const _categoryIcons = [
+    Icons.water_drop_outlined,
+    Icons.bolt_outlined,
+    Icons.wifi_outlined,
+    Icons.phone_android_outlined,
+    Icons.home_outlined,
+    Icons.shield_outlined,
+    Icons.directions_bus_outlined,
+    Icons.more_horiz_outlined,
   ];
+  static const _categoryColors = [
+    Color(0xFF2196F3),
+    Color(0xFFFFC107),
+    Color(0xFF9C27B0),
+    Color(0xFF4CAF50),
+    Color(0xFFFF5722),
+    Color(0xFF00BCD4),
+    Color(0xFF795548),
+    Color(0xFF607D8B),
+  ];
+  List<String> _categoryLabels(AppLocalizations l) => [
+        l.categoryWater,
+        l.categoryElectricity,
+        l.categoryInternet,
+        l.categoryPhone,
+        l.categoryRent,
+        l.categoryInsurance,
+        l.categoryTransport,
+        l.categoryOther,
+      ];
 
   @override
   void initState() {
@@ -34,6 +55,8 @@ class _PaiementsScreenState extends State<PaiementsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context)!;
+    final labels = _categoryLabels(l);
     return Scaffold(
       backgroundColor: const Color(0xFFF8F9FA),
       appBar: AppBar(
@@ -43,9 +66,9 @@ class _PaiementsScreenState extends State<PaiementsScreen> {
           icon: const Icon(Icons.arrow_back),
           onPressed: () => context.canPop() ? context.pop() : context.go('/home'),
         ),
-        title: const Text(
-          'Paiements',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22, color: AppTheme.textPrimary),
+        title: Text(
+          l.paymentsTitle,
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 22, color: AppTheme.textPrimary),
         ),
       ),
       body: GridView.builder(
@@ -56,11 +79,10 @@ class _PaiementsScreenState extends State<PaiementsScreen> {
           crossAxisSpacing: 14,
           childAspectRatio: 1.1,
         ),
-        itemCount: _categories.length,
+        itemCount: labels.length,
         itemBuilder: (context, i) {
-          final cat = _categories[i];
           return GestureDetector(
-            onTap: () => _showPaymentDialog(context, cat['label'] as String),
+            onTap: () => _showPaymentDialog(context, labels[i]),
             child: Container(
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -80,14 +102,14 @@ class _PaiementsScreenState extends State<PaiementsScreen> {
                     width: 56,
                     height: 56,
                     decoration: BoxDecoration(
-                      color: (cat['color'] as Color).withOpacity(0.1),
+                      color: _categoryColors[i].withOpacity(0.1),
                       shape: BoxShape.circle,
                     ),
-                    child: Icon(cat['icon'] as IconData, color: cat['color'] as Color, size: 28),
+                    child: Icon(_categoryIcons[i], color: _categoryColors[i], size: 28),
                   ),
                   const SizedBox(height: 10),
                   Text(
-                    cat['label'] as String,
+                    labels[i],
                     style: const TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: 14,
@@ -104,6 +126,7 @@ class _PaiementsScreenState extends State<PaiementsScreen> {
   }
 
   void _showPaymentDialog(BuildContext context, String category) {
+    final l = AppLocalizations.of(context)!;
     final refCtrl = TextEditingController();
     final amountCtrl = TextEditingController();
     showModalBottomSheet(
@@ -132,13 +155,13 @@ class _PaiementsScreenState extends State<PaiementsScreen> {
               ),
             ),
             const SizedBox(height: 16),
-            Text('Paiement — $category',
+            Text(l.paymentDialogTitle(category),
                 style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: AppTheme.textPrimary)),
             const SizedBox(height: 20),
             TextField(
               controller: refCtrl,
               decoration: InputDecoration(
-                labelText: 'Référence / Numéro de compte',
+                labelText: l.refAccountLabel,
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
@@ -151,7 +174,7 @@ class _PaiementsScreenState extends State<PaiementsScreen> {
               controller: amountCtrl,
               keyboardType: const TextInputType.numberWithOptions(decimal: true),
               decoration: InputDecoration(
-                labelText: 'Montant',
+                labelText: l.amount,
                 suffixText: 'MRU',
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
                 enabledBorder: OutlineInputBorder(
@@ -169,7 +192,7 @@ class _PaiementsScreenState extends State<PaiementsScreen> {
                   onPressed: tp.isLoading ? null : () => _submitPayment(ctx, ap, tp, category, refCtrl, amountCtrl),
                   child: tp.isLoading
                       ? const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2))
-                      : const Text('Payer', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+                      : Text(l.payButton, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
                 ),
               ),
             ),
@@ -187,6 +210,7 @@ class _PaiementsScreenState extends State<PaiementsScreen> {
     TextEditingController refCtrl,
     TextEditingController amountCtrl,
   ) async {
+    final l = AppLocalizations.of(ctx)!;
     final ref = refCtrl.text.trim();
     final amountStr = amountCtrl.text.trim();
     if (ref.isEmpty || amountStr.isEmpty) return;
@@ -224,10 +248,10 @@ class _PaiementsScreenState extends State<PaiementsScreen> {
                   child: const Icon(Icons.check_circle_rounded, color: AppTheme.successColor, size: 44),
                 ),
                 const SizedBox(height: 16),
-                const Text('Paiement effectué !', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                Text(l.paymentDoneTitle, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 const SizedBox(height: 8),
                 Text(
-                  'Votre paiement de ${amount.toStringAsFixed(0)} MRU a été traité et enregistré dans votre historique.',
+                  l.paymentDoneMsg(amount.toStringAsFixed(0)),
                   textAlign: TextAlign.center,
                   style: const TextStyle(color: AppTheme.textSecondary, fontSize: 13, height: 1.4),
                 ),
@@ -236,7 +260,7 @@ class _PaiementsScreenState extends State<PaiementsScreen> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () => Navigator.pop(dCtx),
-                    child: const Text('Parfait !'),
+                    child: Text(l.perfectExclaim),
                   ),
                 ),
               ],
@@ -246,7 +270,7 @@ class _PaiementsScreenState extends State<PaiementsScreen> {
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(tp.errorMessage ?? 'Erreur lors du paiement'),
+            content: Text(tp.errorMessage ?? l.paymentError),
             backgroundColor: AppTheme.errorColor,
           ),
         );

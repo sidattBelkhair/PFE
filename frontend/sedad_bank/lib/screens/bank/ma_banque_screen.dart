@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../../core/theme/app_theme.dart';
@@ -21,6 +22,7 @@ class _MaBanqueScreenState extends State<MaBanqueScreen> {
   }
 
   void _showDepositDialog(BuildContext context, String accountId, String currency) {
+    final l = AppLocalizations.of(context)!;
     final amountCtrl = TextEditingController();
     showModalBottomSheet(
       context: context,
@@ -40,18 +42,18 @@ class _MaBanqueScreenState extends State<MaBanqueScreen> {
               ),
             ),
             const SizedBox(height: 16),
-            const Text('Recharger le compte',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: AppTheme.textPrimary)),
+            Text(l.rechargeAccountTitle,
+                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: AppTheme.textPrimary)),
             const SizedBox(height: 6),
-            const Text('Entrez le montant à créditer sur votre compte.',
-                style: TextStyle(color: AppTheme.textSecondary, fontSize: 13)),
+            Text(l.rechargeAccountHint,
+                style: const TextStyle(color: AppTheme.textSecondary, fontSize: 13)),
             const SizedBox(height: 20),
             TextField(
               controller: amountCtrl,
               keyboardType: const TextInputType.numberWithOptions(decimal: true),
               autofocus: true,
               decoration: InputDecoration(
-                labelText: 'Montant',
+                labelText: l.amount,
                 suffixText: currency,
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
                 enabledBorder: OutlineInputBorder(
@@ -95,11 +97,11 @@ class _MaBanqueScreenState extends State<MaBanqueScreen> {
                                       color: AppTheme.successColor, size: 44),
                                 ),
                                 const SizedBox(height: 16),
-                                const Text('Compte rechargé !',
-                                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                                Text(l.accountRechargedTitle,
+                                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                                 const SizedBox(height: 8),
                                 Text(
-                                  '${amount.toStringAsFixed(0)} $currency ont été crédités sur votre compte.',
+                                  l.accountRechargedMsg(amount.toStringAsFixed(0), currency),
                                   textAlign: TextAlign.center,
                                   style: const TextStyle(color: AppTheme.textSecondary, fontSize: 13, height: 1.4),
                                 ),
@@ -108,7 +110,7 @@ class _MaBanqueScreenState extends State<MaBanqueScreen> {
                                   width: double.infinity,
                                   child: ElevatedButton(
                                     onPressed: () => Navigator.pop(dCtx),
-                                    child: const Text('Parfait !'),
+                                    child: Text(l.perfectExclaim),
                                   ),
                                 ),
                               ],
@@ -118,7 +120,7 @@ class _MaBanqueScreenState extends State<MaBanqueScreen> {
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
-                            content: Text(ap.errorMessage ?? 'Erreur'),
+                            content: Text(ap.errorMessage ?? l.error),
                             backgroundColor: AppTheme.errorColor,
                           ),
                         );
@@ -128,8 +130,8 @@ class _MaBanqueScreenState extends State<MaBanqueScreen> {
                   child: ap.isLoading
                       ? const SizedBox(height: 20, width: 20,
                           child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2))
-                      : const Text('Créditer le compte',
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+                      : Text(l.creditAccountButton,
+                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
                 ),
               ),
             ),
@@ -141,20 +143,21 @@ class _MaBanqueScreenState extends State<MaBanqueScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: const Color(0xFFF8F9FA),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
         automaticallyImplyLeading: false,
-        title: const Text(
-          'Ma banque',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: AppTheme.textPrimary),
+        title: Text(
+          l.myBank,
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: AppTheme.textPrimary),
         ),
         actions: [
           IconButton(
             icon: const Icon(Icons.add_card_rounded, color: AppTheme.primaryGold),
-            tooltip: 'Nouveau compte',
+            tooltip: l.newAccountTooltip,
             onPressed: () => context.push('/create-account'),
           ),
         ],
@@ -165,9 +168,9 @@ class _MaBanqueScreenState extends State<MaBanqueScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Mes comptes
-            const Text(
-              'Mes comptes',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: AppTheme.textPrimary),
+            Text(
+              l.accounts,
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: AppTheme.textPrimary),
             ),
             const SizedBox(height: 12),
             Consumer<AccountProvider>(
@@ -186,11 +189,11 @@ class _MaBanqueScreenState extends State<MaBanqueScreen> {
                       children: [
                         const Icon(Icons.account_balance_wallet_outlined, size: 48, color: AppTheme.primaryGold),
                         const SizedBox(height: 12),
-                        const Text('Aucun compte', style: TextStyle(fontWeight: FontWeight.w600)),
+                        Text(l.noAccountAvailableMsg, style: const TextStyle(fontWeight: FontWeight.w600)),
                         const SizedBox(height: 12),
                         ElevatedButton(
                           onPressed: () => context.push('/create-account'),
-                          child: const Text('Créer un compte'),
+                          child: Text(l.createAccount),
                         ),
                       ],
                     ),
@@ -293,7 +296,7 @@ class _MaBanqueScreenState extends State<MaBanqueScreen> {
                                     size: 16,
                                     color: isSelected ? Colors.white : AppTheme.primaryGold),
                                 label: Text(
-                                  'Recharger le compte',
+                                  l.rechargeAccountTitle,
                                   style: TextStyle(
                                     color: isSelected ? Colors.white : AppTheme.primaryGold,
                                     fontSize: 13,
@@ -329,27 +332,27 @@ class _MaBanqueScreenState extends State<MaBanqueScreen> {
             const SizedBox(height: 12),
             _InfoCard(
               children: [
-                _InfoRow(icon: Icons.location_on_outlined, text: 'Nouakchott, Mauritanie — Rue du Commerce'),
-                _InfoRow(icon: Icons.phone_outlined,       text: '+222 45 25 10 00'),
-                _InfoRow(icon: Icons.email_outlined,       text: 'contact@rssbank.mr'),
-                _InfoRow(icon: Icons.schedule_outlined,    text: 'Lun–Ven : 8h00–17h00'),
+                _InfoRow(icon: Icons.location_on_outlined, text: l.bankAddressText),
+                const _InfoRow(icon: Icons.phone_outlined,       text: '+222 45 25 10 00'),
+                const _InfoRow(icon: Icons.email_outlined,       text: 'contact@rssbank.mr'),
+                _InfoRow(icon: Icons.schedule_outlined,    text: l.bankHours),
               ],
             ),
 
             const SizedBox(height: 20),
 
             // Agences
-            const Text(
-              'Nos agences',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: AppTheme.textPrimary),
+            Text(
+              l.ourBranchesLabel,
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: AppTheme.textPrimary),
             ),
             const SizedBox(height: 12),
             _InfoCard(
               children: [
-                _InfoRow(icon: Icons.storefront_outlined, text: 'Agence Centrale — Tevragh Zeina'),
-                _InfoRow(icon: Icons.storefront_outlined, text: 'Agence Ksar — Centre ville'),
-                _InfoRow(icon: Icons.storefront_outlined, text: 'Agence Sebkha'),
-                _InfoRow(icon: Icons.storefront_outlined, text: 'Agence El Mina'),
+                _InfoRow(icon: Icons.storefront_outlined, text: l.branchCentrale),
+                _InfoRow(icon: Icons.storefront_outlined, text: l.branchKsar),
+                _InfoRow(icon: Icons.storefront_outlined, text: l.branchSebkha),
+                _InfoRow(icon: Icons.storefront_outlined, text: l.branchElMina),
               ],
             ),
 
@@ -361,7 +364,7 @@ class _MaBanqueScreenState extends State<MaBanqueScreen> {
                 Expanded(
                   child: _QuickTile(
                     icon: Icons.headset_mic_outlined,
-                    label: 'Support\nclient',
+                    label: l.customerSupportLabel,
                     onTap: () => ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(content: Text('+222 45 25 10 00')),
                     ),
@@ -371,7 +374,7 @@ class _MaBanqueScreenState extends State<MaBanqueScreen> {
                 Expanded(
                   child: _QuickTile(
                     icon: Icons.add_card_rounded,
-                    label: 'Nouveau\ncompte',
+                    label: l.newAccountLabel,
                     onTap: () => context.push('/create-account'),
                   ),
                 ),
@@ -379,7 +382,7 @@ class _MaBanqueScreenState extends State<MaBanqueScreen> {
                 Expanded(
                   child: _QuickTile(
                     icon: Icons.send_rounded,
-                    label: 'Virement',
+                    label: l.transfer,
                     onTap: () => context.push('/transfer'),
                   ),
                 ),

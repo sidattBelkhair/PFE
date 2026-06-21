@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
@@ -12,8 +13,8 @@ class KycSuccessScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final kyc    = context.watch<KycProvider>();
-    final enroll = kyc.enrollResult;
     final verify = kyc.verifyResult;
+    final l = AppLocalizations.of(context)!;
 
     return Scaffold(
       backgroundColor: const Color(0xFFF4F6F8),
@@ -58,15 +59,15 @@ class KycSuccessScreen extends StatelessWidget {
               ),
               const SizedBox(height: 28),
 
-              const Text(
-                'Vérification réussie !',
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              Text(
+                l.verificationSuccessTitle,
+                style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 10),
-              const Text(
-                'Votre identité a été vérifiée avec succès. Toutes les fonctionnalités de votre compte sont maintenant disponibles.',
+              Text(
+                l.verificationSuccessDesc,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                     color: Color(0xFF666666), fontSize: 14, height: 1.5),
               ),
 
@@ -88,53 +89,29 @@ class KycSuccessScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      'Résultats biométriques',
-                      style: TextStyle(
+                    Text(
+                      l.biometricResultsLabel,
+                      style: const TextStyle(
                           fontSize: 13,
                           fontWeight: FontWeight.w600,
                           color: Color(0xFF444444)),
                     ),
                     const SizedBox(height: 14),
 
-                    // ── Enroll scores ────────────────────────────────────
-                    if (enroll != null) ...[
-                      _ScoreRow(
-                        label: enroll.alreadyEnrolled
-                            ? 'Enrôlement'
-                            : 'Liveness (anti-spoofing)',
-                        value: enroll.alreadyEnrolled
-                            ? null
-                            : enroll.livenessScore,
-                        badge: enroll.alreadyEnrolled
-                            ? 'Déjà enrôlé'
-                            : null,
-                        badgeColor: rssGreen,
-                        threshold: 0.3,
-                      ),
-                      if (!enroll.alreadyEnrolled)
-                        _ScoreRow(
-                          label: 'Qualité photo',
-                          value: enroll.qualityScore,
-                          threshold: 0.5,
-                        ),
-                    ],
-
                     // ── Verify scores ────────────────────────────────────
                     if (verify != null) ...[
-                      const Divider(height: 20, color: Color(0xFFF0F0F0)),
                       _ScoreRow(
-                        label: 'Similarité visage',
+                        label: l.faceSimilarityLabel,
                         value: verify.similarityScore,
                         threshold: 0.75,
                       ),
                       _ScoreRow(
-                        label: 'Liveness (vérif.)',
+                        label: l.livenessVerifyLabel,
                         value: verify.livenessScore,
                         threshold: 0.2,
                       ),
                       _ScoreRow(
-                        label: 'Décision',
+                        label: l.decisionLabel,
                         value: null,
                         badge: verify.decision ?? '—',
                         badgeColor: verify.match
@@ -161,9 +138,9 @@ class KycSuccessScreen extends StatelessWidget {
                     ),
                     elevation: 0,
                   ),
-                  child: const Text(
-                    'Accéder à mon compte',
-                    style: TextStyle(
+                  child: Text(
+                    l.accessAccountButton,
+                    style: const TextStyle(
                         fontSize: 16, fontWeight: FontWeight.w600),
                   ),
                 ),
@@ -173,9 +150,9 @@ class KycSuccessScreen extends StatelessWidget {
                 onPressed: () => context.push('/kyc/debug'),
                 icon: const Icon(Icons.bug_report_outlined,
                     size: 16, color: Color(0xFF999999)),
-                label: const Text(
-                  'Voir les détails techniques (debug)',
-                  style: TextStyle(fontSize: 12, color: Color(0xFF999999)),
+                label: Text(
+                  l.viewDebugDetails,
+                  style: const TextStyle(fontSize: 12, color: Color(0xFF999999)),
                 ),
               ),
               const SizedBox(height: 8),

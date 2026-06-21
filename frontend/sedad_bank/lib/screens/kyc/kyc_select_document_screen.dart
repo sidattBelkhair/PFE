@@ -4,6 +4,7 @@
 // ============================================================
 
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
@@ -23,6 +24,7 @@ class _KycSelectDocumentScreenState extends State<KycSelectDocumentScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: const Color(0xFFF4F6F8),
       body: SafeArea(
@@ -36,55 +38,55 @@ class _KycSelectDocumentScreenState extends State<KycSelectDocumentScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   _BackButton(onTap: () => Navigator.of(context).pop()),
-                  const Text(
-                    'Sélectionner le document',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  Text(
+                    l.kycSelectDocTitle,
+                    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   _ProgressDots(activeIndex: 1, total: 4),
                 ],
               ),
               const SizedBox(height: 28),
 
-              const Text(
-                'Choisissez votre type de document',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              Text(
+                l.kycSelectDocHeading,
+                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 8),
-              const Text(
-                'Sélectionnez le document que vous souhaitez utiliser pour la vérification.',
-                style: TextStyle(color: Color(0xFF666666), fontSize: 13, height: 1.4),
+              Text(
+                l.kycSelectDocSubtitle,
+                style: const TextStyle(color: Color(0xFF666666), fontSize: 13, height: 1.4),
               ),
               const SizedBox(height: 28),
 
               _DocumentCard(
                 icon: Icons.flight_outlined,
-                title: 'Passeport',
-                description: 'Document de voyage international',
+                title: l.docPassport,
+                description: l.docPassportDesc,
                 selected: _selected == DocumentType.passport,
                 onTap: () => setState(() => _selected = DocumentType.passport),
               ),
               const SizedBox(height: 12),
               _DocumentCard(
                 icon: Icons.credit_card_outlined,
-                title: 'Carte d\'identité nationale',
-                description: 'Pièce d\'identité officielle',
+                title: l.docNationalId,
+                description: l.docNationalIdDesc,
                 selected: _selected == DocumentType.nationalId,
                 onTap: () => setState(() => _selected = DocumentType.nationalId),
               ),
               const SizedBox(height: 12),
               _DocumentCard(
                 icon: Icons.home_outlined,
-                title: 'Carte de séjour',
-                description: 'Pour les résidents étrangers',
+                title: l.docResidenceCard,
+                description: l.docResidenceCardDesc,
                 selected: _selected == DocumentType.residenceCard,
                 onTap: () => setState(() => _selected = DocumentType.residenceCard),
               ),
 
               const SizedBox(height: 24),
-              const Text(
-                'Assurez-vous que votre document est valide et non expiré.',
+              Text(
+                l.kycDocValidNote,
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Color(0xFF666666), fontSize: 12),
+                style: const TextStyle(color: Color(0xFF666666), fontSize: 12),
               ),
 
               const Spacer(),
@@ -108,9 +110,9 @@ class _KycSelectDocumentScreenState extends State<KycSelectDocumentScreen> {
                     ),
                     elevation: 0,
                   ),
-                  child: const Text(
-                    'Suivant',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                  child: Text(
+                    l.next,
+                    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                   ),
                 ),
               ),

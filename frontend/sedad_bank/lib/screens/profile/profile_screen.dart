@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import '../../providers/auth_provider.dart';
 import '../../providers/language_provider.dart';
 import '../../core/theme/app_theme.dart';
+import '../../models/user_model.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -243,7 +244,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
-  Widget _buildInfoCard(user, AppLocalizations l) {
+  /// Le statut affiché dépend de la vérification KYC, pas du champ brut
+  /// `status` du compte (qui reste "active" même si le KYC n'est pas passé).
+  (String, Color) _kycStatusDisplay(UserModel user) {
+    switch (user.kycStatus) {
+      case 'verified':
+      case 'approved':
+      case 'completed':
+        return ('active', AppTheme.successColor);
+      case 'rejected':
+      case 'failed':
+        return ('rejeté', AppTheme.errorColor);
+      default:
+        return ('non active', AppTheme.errorColor);
+    }
+  }
+
+  Widget _buildInfoCard(UserModel user, AppLocalizations l) {
+    final (statusLabel, statusColor) = _kycStatusDisplay(user);
+    final isVerified = statusLabel == 'active';
+
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -272,9 +292,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
           const Divider(indent: 56, height: 1),
           _InfoRow(
             label: 'Statut',
-            value: user.status,
+            value: statusLabel,
             icon: Icons.verified_user_outlined,
-            valueColor: user.status == 'active' ? AppTheme.successColor : AppTheme.errorColor,
+            valueColor: statusColor,
+            trailing: isVerified ? const _FaceLoginButton() : null,
           ),
         ],
       ),
@@ -426,12 +447,14 @@ class _InfoRow extends StatelessWidget {
   final String value;
   final IconData icon;
   final Color? valueColor;
+  final Widget? trailing;
 
   const _InfoRow({
     required this.label,
     required this.value,
     required this.icon,
     this.valueColor,
+    this.trailing,
   });
 
   @override
@@ -461,7 +484,83 @@ class _InfoRow extends StatelessWidget {
               ],
             ),
           ),
+          if (trailing != null) trailing!,
         ],
+      ),
+    );
+  }
+}
+
+/// Bouton "Connect avec Face" affiché à côté du statut quand le KYC est validé.
+/// Enrôle le visage extrait pendant le KYC auprès du service biométrique
+/// afin d'activer la connexion par reconnaissance faciale.
+class _FaceLoginButton extends StatefulWidget {
+  const _FaceLoginButton();
+
+  @override
+  State<_FaceLoginButton> createState() => _FaceLoginButtonState();
+}
+
+class _FaceLoginButtonState extends State<_FaceLoginButton> {
+  bool? _enabled;
+  bool _busy = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _load();
+  }
+
+  Future<void> _load() async {
+    final enabled = await context.read<AuthProvider>().isFaceLoginEnabled();
+    if (mounted) setState(() => _enabled = enabled);
+  }
+
+  Future<void> _onTap() async {
+    if (_busy || _enabled == true) return;
+    setState(() => _busy = true);
+
+    final auth = context.read<AuthProvider>();
+    final ok = await auth.enrollFaceLogin();
+
+    if (!mounted) return;
+    setState(() {
+      _busy = false;
+      if (ok) _enabled = true;
+    });
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(ok
+            ? 'Connexion par visage activée.'
+            : (auth.errorMessage ?? 'Erreur lors de l\'activation')),
+        backgroundColor: ok ? AppTheme.successColor : AppTheme.errorColor,
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_enabled == null) return const SizedBox.shrink();
+
+    return OutlinedButton.icon(
+      onPressed: _enabled! || _busy ? null : _onTap,
+      icon: _busy
+          ? const SizedBox(
+              width: 14,
+              height: 14,
+              child: CircularProgressIndicator(strokeWidth: 2),
+            )
+          : Icon(_enabled! ? Icons.face_retouching_natural : Icons.face_outlined, size: 18),
+      label: Text(
+        _enabled! ? 'Face ID activé' : 'Connect avec Face',
+        style: const TextStyle(fontSize: 12),
+      ),
+      style: OutlinedButton.styleFrom(
+        foregroundColor: AppTheme.primaryGold,
+        side: const BorderSide(color: AppTheme.primaryGold),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       ),
     );
   }

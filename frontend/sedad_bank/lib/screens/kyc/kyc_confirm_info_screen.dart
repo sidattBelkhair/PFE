@@ -19,30 +19,19 @@ class _KycConfirmInfoScreenState extends State<KycConfirmInfoScreen> {
     final kyc = context.read<KycProvider>();
     if (!mounted) return;
 
-    // Loader pendant enroll silencieux
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (_) => const Center(
-        child: CircularProgressIndicator(color: Color(0xFF0F6E4E)),
-      ),
-    );
-
-    final ok = await kyc.enrollCniFace();
+    final ok = await kyc.prepareFaceVerification();
     if (!mounted) return;
-    Navigator.of(context).pop(); // ferme loader
 
     if (!ok) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(kyc.errorMessage ?? 'Échec enrôlement CNI'),
+          content: Text(kyc.errorMessage ?? 'Échec de la préparation de la vérification'),
           backgroundColor: Colors.red.shade700,
         ),
       );
       return;
     }
 
-    kyc.confirmExtractedInfo();
     context.push('/kyc/face-verify');
   }
 

@@ -1,10 +1,10 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 
 import '../../providers/kyc_provider.dart';
+import '../../widgets/camera_capture_screen.dart';
 
 class KycFaceVerifyScreen extends StatefulWidget {
   const KycFaceVerifyScreen({super.key});
@@ -15,23 +15,22 @@ class KycFaceVerifyScreen extends StatefulWidget {
 
 class _KycFaceVerifyScreenState extends State<KycFaceVerifyScreen> {
   static const Color rssGreen = Color(0xFF0F6E4E);
-  final ImagePicker _picker = ImagePicker();
 
   Future<void> _takeSelfie() async {
+    final l = AppLocalizations.of(context)!;
     try {
-      final image = await _picker.pickImage(
-        source: ImageSource.camera,
-        preferredCameraDevice: CameraDevice.front,
-        maxWidth: 1500,
-        imageQuality: 85,
+      final file = await openCameraCapture(
+        context,
+        title: l.selfieVerificationTitle,
+        preferFrontCamera: true,
       );
-      if (image != null && mounted) {
-        context.read<KycProvider>().setFaceImage(File(image.path));
+      if (file != null && mounted) {
+        context.read<KycProvider>().setFaceImage(file);
       }
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Erreur caméra : $e')),
+          SnackBar(content: Text(l.cameraError(e.toString()))),
         );
       }
     }
@@ -39,6 +38,7 @@ class _KycFaceVerifyScreenState extends State<KycFaceVerifyScreen> {
 
   Future<void> _submit() async {
     final kyc = context.read<KycProvider>();
+    final l = AppLocalizations.of(context)!;
 
     final gotResponse = await kyc.submitFaceVerification();
     if (!mounted) return;
@@ -47,7 +47,7 @@ class _KycFaceVerifyScreenState extends State<KycFaceVerifyScreen> {
       // Erreur réseau pure (pas de réponse du serveur)
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(kyc.errorMessage ?? 'Erreur réseau'),
+          content: Text(kyc.errorMessage ?? l.networkError),
           backgroundColor: Colors.red.shade700,
         ),
       );
@@ -66,6 +66,7 @@ class _KycFaceVerifyScreenState extends State<KycFaceVerifyScreen> {
   Widget build(BuildContext context) {
     final kyc   = context.watch<KycProvider>();
     final image = kyc.faceImage;
+    final l = AppLocalizations.of(context)!;
 
     return Scaffold(
       backgroundColor: const Color(0xFFF4F6F8),
@@ -80,21 +81,21 @@ class _KycFaceVerifyScreenState extends State<KycFaceVerifyScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   _BackButton(onTap: () => context.pop()),
-                  const Text('Vérification faciale',
-                      style: TextStyle(
+                  Text(l.faceVerifyHeaderTitle,
+                      style: const TextStyle(
                           fontSize: 16, fontWeight: FontWeight.bold)),
                   const _ProgressDots(activeIndex: 4, total: 4),
                 ],
               ),
               const SizedBox(height: 28),
 
-              const Text('Vérifiez que c\'est vous',
-                  style: TextStyle(
+              Text(l.faceVerifyHeading,
+                  style: const TextStyle(
                       fontSize: 18, fontWeight: FontWeight.bold)),
               const SizedBox(height: 8),
-              const Text(
-                'Prenez un selfie en regardant la caméra. Assurez-vous que votre visage est bien éclairé et entièrement visible.',
-                style: TextStyle(
+              Text(
+                l.faceVerifySubtitle,
+                style: const TextStyle(
                     color: Color(0xFF666666), fontSize: 13, height: 1.4),
               ),
               const SizedBox(height: 24),
@@ -144,10 +145,10 @@ class _KycFaceVerifyScreenState extends State<KycFaceVerifyScreen> {
                                   ),
                                 ),
                                 const SizedBox(height: 12),
-                                const Text(
-                                  'Appuyez pour\nprendre un selfie',
+                                Text(
+                                  l.tapToTakeSelfie,
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontWeight: FontWeight.w600,
                                     fontSize: 13,
                                   ),
@@ -171,11 +172,11 @@ class _KycFaceVerifyScreenState extends State<KycFaceVerifyScreen> {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  child: const Column(
+                  child: Column(
                     children: [
-                      _Check('Visage bien centré'),
-                      _Check('Bonne luminosité'),
-                      _Check('Pas de lunettes ni masque'),
+                      _Check(l.checkFaceCentered),
+                      _Check(l.checkGoodLighting),
+                      _Check(l.checkNoGlassesMask),
                     ],
                   ),
                 ),
@@ -209,8 +210,8 @@ class _KycFaceVerifyScreenState extends State<KycFaceVerifyScreen> {
                         )
                       : Text(
                           image == null
-                              ? 'Prendre un selfie'
-                              : 'Valider mon identité',
+                              ? l.takeSelfieButton
+                              : l.validateIdentityButton,
                           style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w600),
@@ -220,9 +221,9 @@ class _KycFaceVerifyScreenState extends State<KycFaceVerifyScreen> {
               if (image != null)
                 TextButton(
                   onPressed: kyc.isLoading ? null : _takeSelfie,
-                  child: const Text(
-                    'Reprendre',
-                    style: TextStyle(color: Color(0xFF666666)),
+                  child: Text(
+                    l.retake,
+                    style: const TextStyle(color: Color(0xFF666666)),
                   ),
                 ),
             ],

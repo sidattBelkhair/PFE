@@ -47,6 +47,16 @@ class ApiService {
       throw e;
     }
   }
+
+  /// POST multipart/form-data (ex: envoi de fichiers).
+  Future<Response> postForm(String endpoint, FormData data) async {
+    try {
+      final response = await _dio.post(endpoint, data: data);
+      return response;
+    } on DioException catch (e) {
+      throw e;
+    }
+  }
   
   Future<Response> get(String endpoint, {Map<String, dynamic>? queryParameters}) async {
     try {

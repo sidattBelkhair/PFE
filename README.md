@@ -1,6 +1,7 @@
-# RSS BANK — Application Bancaire Mobile + SOC Multi-App
+# RSS BANK — Application Bancaire Mobile
 
-> Projet de Fin d'Études (PFE) — Application bancaire mobile complète avec système SOC centralisé multi-applications
+> **Projet de Fin d'Études (PFE) 2025-2026**
+> Application bancaire mobile complète avec SSO centralisé, SOC multi-applications et détection d'anomalies par ML.
 
 ---
 
@@ -8,81 +9,190 @@
 
 1. [Présentation](#1-présentation)
 2. [Architecture Globale](#2-architecture-globale)
-3. [SOC Multi-Applications](#3-soc-multi-applications)
-4. [Modèles de données (ERD)](#4-modèles-de-données-erd)
-5. [Diagrammes de conception](#5-diagrammes-de-conception)
-6. [Prérequis](#6-prérequis)
-7. [Lancement local avec Docker](#7-lancement-local-avec-docker)
-8. [Déploiement Production](#8-déploiement-production)
-9. [Configuration Email Gmail](#9-configuration-email-gmail)
-10. [API Reference complète](#10-api-reference-complète)
-11. [Application Flutter](#11-application-flutter)
-12. [Multi-langue FR / AR](#12-multi-langue-fr--ar)
-13. [Tests de sécurité](#13-tests-de-sécurité)
-14. [Structure du projet](#14-structure-du-projet)
+3. [Stack Technique](#3-stack-technique)
+4. [SSO — Authentification Centralisée](#4-sso--authentification-centralisée)
+5. [SOC Multi-Applications](#5-soc-multi-applications)
+6. [ML Anomaly Detector](#6-ml-anomaly-detector)
+7. [Modèles de données (ERD)](#7-modèles-de-données-erd)
+8. [Diagrammes de conception](#8-diagrammes-de-conception)
+9. [Prérequis](#9-prérequis)
+10. [Lancement local avec Docker](#10-lancement-local-avec-docker)
+11. [Déploiement Production](#11-déploiement-production)
+12. [Configuration Email Gmail](#12-configuration-email-gmail)
+13. [API Reference complète](#13-api-reference-complète)
+14. [Application Flutter](#14-application-flutter)
+15. [Multi-langue FR / AR](#15-multi-langue-fr--ar)
+16. [Tests de sécurité](#16-tests-de-sécurité)
+17. [Structure du projet](#17-structure-du-projet)
 
 ---
 
 ## 1. Présentation
 
-**RSS BANK** est une plateforme bancaire mobile développée dans le cadre d'un Projet de Fin d'Études. Elle est couplée à un **SOC (Security Operations Center) centralisé** capable de surveiller plusieurs applications bancaires simultanément.
+**RSS BANK** est une plateforme bancaire mobile développée en Flutter, connectée à un backend Django REST, un serveur SSO OAuth2 centralisé, et un SOC (Security Operations Center) alimenté par Loki, Grafana et un détecteur ML d'anomalies.
 
 ### Fonctionnalités principales
 
-- **Inscription** avec vérification email par code OTP (6 chiffres, expire en 10 min)
-- **Mot de passe oublié** → OTP par email → réinitialisation
-- Gestion de comptes bancaires (courant / épargne) en **MRU** (Ouguiya Mauritanien)
-- Virements via numéro de téléphone ou **QR Code**
-- Services : recharge, retraits, paiements, factures
-- Authentification **JWT** avec protection anti brute-force
-- **Multi-langue Français / Arabe** (RTL automatique)
-- **SOC** : Loki + Promtail + Grafana + Fail2ban
-- Détection automatique : SQL Injection, XSS, Path Traversal, Brute Force
-- Dashboard administrateur (gestion des statuts utilisateurs)
+| Catégorie | Fonctionnalité |
+|-----------|---------------|
+| Auth | Inscription avec vérification OTP email (6 chiffres, expire 10 min) |
+| Auth | Connexion JWT (access 60 min / refresh 7 jours) |
+| Auth | **SSO OAuth2 PKCE** via serveur centralisé (Render) |
+| Auth | Mot de passe oublié → OTP → réinitialisation |
+| Bancaire | Gestion comptes courant / épargne en **MRU** (Ouguiya Mauritanien) |
+| Bancaire | Virements via numéro de téléphone ou **QR Code** |
+| Bancaire | Recharge, retraits, paiements, factures |
+| Sécurité | Anti brute-force (5 tentatives → blocage) |
+| Sécurité | Détection SQL Injection, XSS, Path Traversal en temps réel |
+| Sécurité | **ML Anomaly Detector** — détection comportementale |
+| SOC | Dashboard Grafana + alertes email |
+| UX | Multi-langue **Français / Arabe** (RTL automatique) |
+| Admin | Dashboard gestion des statuts utilisateurs |
 
 ---
 
 ## 2. Architecture Globale
 
 ```
-┌─────────────────────────────────────────────────────────────────────┐
-│                        RSS BANK — PFE                             │
-├─────────────────────┬──────────────────────┬────────────────────────┤
-│   Frontend Flutter  │   Backend Django     │   SOC / Monitoring     │
-│   Android / iOS     │   REST API + JWT     │   Loki + Grafana       │
-│   Port 80           │   Port 8000          │   Port 3000 / 3100     │
-├─────────────────────┴──────────────────────┤                        │
-│           PostgreSQL / SQLite              │   Fail2ban             │
-│           Port 5432                        │   iptables             │
-└────────────────────────────────────────────┴────────────────────────┘
+                        ┌─────────────────────┐
+                        │   APP FLUTTER        │
+                        │   Android (APK)      │
+                        └──────┬───────────────┘
+                               │ HTTPS API
+              ┌────────────────┼────────────────┐
+              │                │                │
+              ▼                ▼                ▼
+ ┌────────────────┐  ┌──────────────────┐  ┌───────────────────┐
+ │ BACKEND DJANGO │  │  SSO BACKEND     │  │  SOC CENTRALISÉ   │
+ │ 104.248.61.147 │  │  (Render)        │  │  Grafana Cloud    │
+ │ :8000          │  │  OAuth2 + OpenID │  │  Loki + Grafana   │
+ │ REST API + JWT │  │  sso-backend-    │  │  ML Detector      │
+ │ PostgreSQL     │  │  6b1e.onrender   │  │  Alertes Email    │
+ └────────────────┘  └──────────────────┘  └───────────────────┘
 ```
-
-### Stack technique
-
-| Composant | Technologie | Version |
-|-----------|-------------|---------|
-| Frontend | Flutter + Provider + GoRouter | 3.x |
-| Backend | Django REST Framework | 4.2.7 |
-| Base de données | PostgreSQL (prod) / SQLite (dev) | 15 / builtin |
-| Auth | JWT (SimpleJWT) | 60min access / 1j refresh |
-| Email OTP | Gmail SMTP | — |
-| Collecte logs | Promtail | 2.9.0 |
-| Stockage logs | Loki | 2.9.0 |
-| Dashboard SOC | Grafana | 10.2.0 |
-| Blocage IP | Fail2ban | latest |
-| Serveur | Gunicorn | 21.2.0 |
 
 ---
 
-## 3. SOC Multi-Applications
+## 3. Stack Technique
+
+| Composant | Technologie | Version | URL |
+|-----------|-------------|---------|-----|
+| Frontend | Flutter + Provider + GoRouter | 3.x | — |
+| Backend principal | Django REST Framework + SimpleJWT | 4.2.7 | `104.248.61.147:8000` |
+| SSO | Django OAuth Toolkit (OpenID Connect) | — | `sso-backend-6b1e.onrender.com` |
+| Base de données | PostgreSQL (prod) / SQLite (dev) | 15 | — |
+| Collecte logs | Loki / Grafana Cloud | — | Grafana Cloud |
+| ML Detector | Python (Isolation Forest / règles) | — | intégré au backend |
+| Email OTP | Gmail SMTP | — | — |
+| Serveur | Gunicorn | 21.2.0 | — |
+
+---
+
+## 4. SSO — Authentification Centralisée
 
 ### Concept
 
-Le SOC est conçu comme une **plateforme centralisée** indépendante des applications qu'il surveille. Il peut recevoir les logs de **plusieurs applications bancaires** différentes simultanément.
+Le SSO permet à un utilisateur de se connecter à RSS BANK via un compte OAuth2 centralisé, sans créer de mot de passe local. Le flow utilise **PKCE** (Proof Key for Code Exchange) pour les applications mobiles publiques.
+
+```
+  Flutter App                SSO Backend               RSS Bank Backend
+      │                   (sso-backend.onrender.com)   (104.248.61.147)
+      │                           │                          │
+      │── GET /o/authorize/ ─────►│                          │
+      │   ?client_id=...          │                          │
+      │   &redirect_uri=          │                          │
+      │   com.example.sedad_bank  │                          │
+      │   ://oauth/callback       │                          │
+      │                           │                          │
+      │◄── page login SSO ────────│                          │
+      │                           │                          │
+      │── submit credentials ────►│                          │
+      │◄── code d'autorisation ───│                          │
+      │   (redirect URI reçu)     │                          │
+      │                           │                          │
+      │── POST /o/token/ ────────►│                          │
+      │◄── access_token SSO ──────│                          │
+      │                           │                          │
+      │── POST /api/auth/sso-login/ (access_token) ─────────►│
+      │◄────────── JWT RSS Bank (access + refresh) ──────────│
+```
+
+### Configuration Flutter
+
+**[lib/core/services/sso_service.dart](frontend/sedad_bank/lib/core/services/sso_service.dart)**
+
+```dart
+static const String clientId    = 'FaACVS7Ds3qjR5i6ynVmhGtzlZ44wan45hgDJwVF';
+static const String redirectUrl = 'com.example.sedad_bank://oauth/callback';
+static const String issuer      = 'https://sso-backend-6b1e.onrender.com';
+```
+
+### Configuration Android
+
+**[android/app/src/main/AndroidManifest.xml](frontend/sedad_bank/android/app/src/main/AndroidManifest.xml)**
+
+```xml
+<activity android:name="net.openid.appauth.RedirectUriReceiverActivity" android:exported="true">
+    <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+        <data android:scheme="com.example.sedad_bank" android:host="oauth" />
+    </intent-filter>
+</activity>
+```
+
+### Configuration SSO Backend (Render)
+
+L'application OAuth est enregistrée sur le SSO backend :
+
+| Champ | Valeur |
+|-------|--------|
+| `client_id` | `FaACVS7Ds3qjR5i6ynVmhGtzlZ44wan45hgDJwVF` |
+| `redirect_uris` | `com.example.sedad_bank://oauth/callback` |
+| `client_type` | `public` |
+| `grant_type` | `authorization-code` |
+| `app_id` | 10 (client 12) |
+
+Pour mettre à jour la config via l'API SSO :
+
+```bash
+# 1. Login
+TOKEN=$(curl -s -X POST https://sso-backend-6b1e.onrender.com/api/login/ \
+  -H "Content-Type: application/json" \
+  -d '{"identifier":"rssbank700@gmail.com","password":"RssBankSSO2024!"}' \
+  | python3 -c "import sys,json; print(json.load(sys.stdin)['access'])")
+
+# 2. Voir la config actuelle
+curl https://sso-backend-6b1e.onrender.com/api/clients/12/apps/10/ \
+  -H "Authorization: Bearer $TOKEN"
+
+# 3. Mettre à jour
+curl -X PUT https://sso-backend-6b1e.onrender.com/api/clients/12/apps/10/ \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"name":"RSS Bank Mobile","redirect_uris":"com.example.sedad_bank://oauth/callback","client_type":"public","grant_type":"authorization-code"}'
+```
+
+### Endpoint backend principal
+
+```
+POST /api/auth/sso-login/
+Body: { "sso_access_token": "<token_obtenu_du_SSO>" }
+Response: { "access": "...", "refresh": "...", "user": {...}, "sso": true }
+```
+
+---
+
+## 5. SOC Multi-Applications
+
+### Concept
+
+Le SOC est une plateforme centralisée indépendante pouvant surveiller **plusieurs applications bancaires** simultanément.
 
 ```
 ┌──────────────────┐     logs JSON      ┌─────────────────────────────┐
-│  RSS BANK      │ ────────────────►  │                             │
+│  RSS BANK        │ ────────────────►  │                             │
 │  (App 1)         │                    │     SOC CENTRALISÉ          │
 └──────────────────┘                    │                             │
                                         │  ┌─────────┐  ┌─────────┐  │
@@ -94,23 +204,21 @@ Le SOC est conçu comme une **plateforme centralisée** indépendante des applic
 ┌──────────────────┐     logs JSON      │  │  Fail2ban            │  │
 │  BANK APP 3      │ ────────────────►  │  │  Blocage IP global   │  │
 │  (Express/Rails) │                    │  └──────────────────────┘  │
-└──────────────────┘                    │                             │
-                                        │  Alertes → Email SOC Team  │
+└──────────────────┘                    │  Alertes → Email SOC Team  │
                                         └─────────────────────────────┘
 ```
 
-### Comment ajouter une nouvelle application au SOC
+### Intégrer une nouvelle application
 
-Chaque application doit simplement envoyer ses logs au format JSON vers le endpoint Loki :
+Toute application peut rejoindre le SOC en envoyant ses logs au format JSON vers Loki :
 
 ```
 POST http://SOC_SERVER:3100/loki/api/v1/push
 ```
 
-**Format du log requis :**
 ```json
 {
-  "ts": "2026-04-02T10:30:00Z",
+  "ts": "2026-05-07T10:30:00Z",
   "event": "BRUTE_FORCE",
   "ip": "192.168.1.1",
   "app": "nom_de_lapplication",
@@ -120,11 +228,10 @@ POST http://SOC_SERVER:3100/loki/api/v1/push
 }
 ```
 
-**En Python (Django) :**
+**Python / Django :**
 ```python
 pip install python-logging-loki
 
-# Dans settings.py
 LOGGING['handlers']['loki'] = {
     'class': 'logging_loki.LokiHandler',
     'url': 'http://SOC_SERVER:3100/loki/api/v1/push',
@@ -133,17 +240,15 @@ LOGGING['handlers']['loki'] = {
 }
 ```
 
-**En Node.js (Express) :**
+**Node.js / Express :**
 ```javascript
-const { createLogger } = require('winston');
 const LokiTransport = require('winston-loki');
-
 const logger = createLogger({
   transports: [new LokiTransport({ host: 'http://SOC_SERVER:3100' })]
 });
 ```
 
-### Événements détectés (tous types d'apps)
+### Événements détectés
 
 | Événement | Condition | Seuil Fail2ban |
 |-----------|-----------|----------------|
@@ -156,20 +261,70 @@ const logger = createLogger({
 | `UNAUTHORIZED` | HTTP 401 | — |
 | `FORBIDDEN` | HTTP 403 | — |
 | `SERVER_ERROR` | HTTP 5xx | — |
+| `ML_ANOMALY` | Score Isolation Forest > seuil | Alerte Grafana |
 
-### Alertes email (Grafana)
+### Alertes email Grafana
 
 | Alerte | Déclencheur | Délai |
 |--------|-------------|-------|
 | Brute Force | > 1 événement / 5 min | Immédiat |
 | SQL Injection | > 0 événement | Immédiat |
 | XSS | > 0 événement | Immédiat |
+| ML Anomalie | Score > 0.8 | Immédiat |
 | Pic 401 | > 5 en 5 min | 5 min |
 | Pic 500 | > 3 en 5 min | 5 min |
 
 ---
 
-## 4. Modèles de données (ERD)
+## 6. ML Anomaly Detector
+
+Le détecteur ML analyse le comportement des requêtes en temps réel pour identifier des anomalies qui ne correspondent pas à des patterns d'attaque connus (zero-day, comportements suspects).
+
+### Fonctionnement
+
+```
+Requête HTTP
+     │
+     ▼
+┌──────────────────────────────┐
+│  Feature extraction           │
+│  - Fréquence requêtes / IP   │
+│  - Heure de la requête       │
+│  - Distribution des endpoints│
+│  - Taille des payloads       │
+│  - User-Agent                │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│  Isolation Forest / Règles   │
+│  Score anomalie [0.0 → 1.0]  │
+└──────────────┬───────────────┘
+               │
+       ┌───────┴────────┐
+       │ score > 0.8    │ score ≤ 0.8
+       ▼                ▼
+  Log ML_ANOMALY    Normal flow
+  → Loki → Grafana
+  → Alerte Email
+```
+
+### Événement généré
+
+```json
+{
+  "ts": "2026-05-07T14:23:01Z",
+  "event": "ML_ANOMALY",
+  "ip": "41.222.x.x",
+  "app": "rss_bank",
+  "score": 0.92,
+  "features": {"req_rate": 48, "hour": 3, "endpoint_entropy": 0.12}
+}
+```
+
+---
+
+## 7. Modèles de données (ERD)
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
@@ -194,10 +349,7 @@ const logger = createLogger({
 ┌──────────────────────────────────────────────────────────────────────┐
 │                         USER PROFILE                                 │
 ├──────────────────────────────────────────────────────────────────────┤
-│ PK  id              : AutoField                                      │
-│ FK  user            : User                                           │
 │     verified_email  : BooleanField                                   │
-│     verified_phone  : BooleanField                                   │
 │     otp_code        : CharField(6)   ← OTP vérification/reset       │
 │     otp_expires_at  : DateTimeField  ← Expire dans 10 min           │
 │     otp_type        : ENUM [verify_email, reset_password]            │
@@ -206,198 +358,139 @@ const logger = createLogger({
 ┌─────────────────────────────────────────────────────────────────────┐
 │                         ACCOUNT                                     │
 ├─────────────────────────────────────────────────────────────────────┤
-│ PK  id              : UUID                                          │
-│ FK  user            : User (CASCADE)                                │
 │     account_number  : CharField (unique) ← Format: RSSxxxxxxxx     │
-│     account_name    : CharField                                     │
 │     account_type    : ENUM [checking, savings]                      │
 │     currency        : ENUM [MRU, DZD, USD, EUR]                    │
 │     balance         : DecimalField(15,2)                            │
-│     available_balance : DecimalField(15,2)                          │
 │     status          : ENUM [active, frozen, closed]                 │
-│     daily_withdrawal_limit  : DecimalField  (défaut: 5 000)        │
-│     daily_transfer_limit    : DecimalField  (défaut: 10 000)       │
+│     daily_transfer_limit  : DecimalField  (défaut: 10 000 MRU)     │
 └──────────────┬──────────────────────────────┬───────────────────────┘
                │ FK from_account              │ FK to_account
                ▼                              ▼
 ┌─────────────────────────────────────────────────────────────────────┐
 │                        TRANSACTION                                  │
 ├─────────────────────────────────────────────────────────────────────┤
-│ PK  id              : UUID                                          │
-│ FK  from_account    : Account (PROTECT)                             │
-│ FK  to_account      : Account (PROTECT, nullable)                   │
-│ FK  to_beneficiary  : Beneficiary (SET_NULL, nullable)              │
 │     transaction_type: ENUM [transfer, payment, withdrawal,          │
 │                              deposit, salary]                       │
 │     amount          : DecimalField(15,2)                            │
-│     transaction_fee : DecimalField(10,2)                            │
-│     total_amount    : DecimalField(15,2)                            │
 │     reference_number: CharField (unique) ← Format: TXNxxxxxxxx     │
 │     status          : ENUM [pending, processing, completed,         │
 │                              failed, reversed]                      │
 │     is_flagged      : BooleanField   ← Fraude détectée             │
-│     fraud_score     : IntegerField                                  │
-│     ip_address      : GenericIPAddressField  ← Pour SOC             │
-│     created_at      : DateTimeField                                 │
+│     fraud_score     : IntegerField   ← Score ML                    │
+│     ip_address      : GenericIPAddressField                         │
 └─────────────────────────────────────────────────────────────────────┘
 
-┌─────────────────────────────────────────────────────────────────────┐
-│                        TRANSACTION HISTORY                          │
-├─────────────────────────────────────────────────────────────────────┤
-│ PK  id              : AutoField                                     │
-│ FK  transaction     : Transaction (CASCADE)                         │
-│ FK  changed_by      : User (SET_NULL)                               │
-│     status_before   : CharField                                     │
-│     status_after    : CharField                                     │
-│     reason          : TextField                                     │
-│     changed_at      : DateTimeField                                 │
-└─────────────────────────────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────────────────────────────┐
-│                          CARD                                       │
-├─────────────────────────────────────────────────────────────────────┤
-│ PK  id              : UUID                                          │
-│ FK  account         : Account (CASCADE)                             │
-│     card_type       : ENUM [debit, credit, virtual]                 │
-│     card_brand      : ENUM [VISA, MASTERCARD, AMEX]                 │
-│     last_four_digits: CharField(4)                                  │
-│     card_number_hash: CharField (sécurisé)                          │
-│     status          : ENUM [active, suspended, expired, blocked]    │
-│     daily_spending_limit   : DecimalField                           │
-│     monthly_spending_limit : DecimalField                           │
-└─────────────────────────────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────────────────────────────┐
-│                        BENEFICIARY                                  │
-├─────────────────────────────────────────────────────────────────────┤
-│ PK  id              : UUID                                          │
-│ FK  user            : User (CASCADE)                                │
-│     beneficiary_name: CharField                                     │
-│     beneficiary_type: ENUM [internal, external]                     │
-│     account_number  : CharField                                     │
-│     phone_number    : CharField                                     │
-│     bank_name       : CharField                                     │
-│     is_verified     : BooleanField                                  │
-└─────────────────────────────────────────────────────────────────────┘
-```
-
-### Relations entre modèles
-
-```
-User ──────────── UserProfile     (1:1)
-User ──────────── Account         (1:N)  un user → plusieurs comptes
-User ──────────── Beneficiary     (1:N)  un user → plusieurs bénéficiaires
-Account ────────── Card            (1:N)  un compte → plusieurs cartes
-Account ────────── Transaction     (1:N)  via from_account et to_account
-Transaction ────── TransactionHistory (1:N)  historique des changements de statut
+Relations :
+  User ──── UserProfile     (1:1)
+  User ──── Account         (1:N)
+  User ──── Beneficiary     (1:N)
+  Account ── Card            (1:N)
+  Account ── Transaction     (1:N) via from_account / to_account
+  Transaction ── TransactionHistory (1:N)
 ```
 
 ---
 
-## 5. Diagrammes de conception
+## 8. Diagrammes de conception
 
-### 5.1 Diagramme de cas d'utilisation
+### 8.1 Cas d'utilisation
 
 ```
                     ┌──────────────────────────────────────────┐
-                    │              RSS BANK                  │
+                    │              RSS BANK                    │
                     │                                          │
-  ┌──────────┐      │  ○ S'inscrire (+ vérif OTP email)       │
-  │          │      │  ○ Se connecter (JWT)                    │
-  │  CLIENT  │─────►│  ○ Voir solde / carte bancaire           │
-  │          │      │  ○ Effectuer un virement                 │
-  └──────────┘      │  ○ Scanner / Générer QR Code             │
+  ┌──────────┐      │  ○ S'inscrire (OTP email)               │
+  │  CLIENT  │─────►│  ○ Se connecter (JWT ou SSO OAuth2)     │
+  └──────────┘      │  ○ Voir solde / carte bancaire           │
+                    │  ○ Effectuer un virement                 │
+                    │  ○ Scanner / Générer QR Code             │
                     │  ○ Recharger / Retrait / Paiement        │
                     │  ○ Voir historique transactions          │
                     │  ○ Changer mot de passe                  │
-                    │  ○ Basculer langue (FR/AR)               │
+  ┌──────────┐      │  ○ Basculer langue (FR/AR)               │
+  │  ADMIN   │─────►│  ○ Gérer statuts utilisateurs            │
+  └──────────┘      │  ○ Voir dashboard admin                  │
                     │                                          │
-  ┌──────────┐      │  ○ Gérer statuts utilisateurs            │
-  │  ADMIN   │─────►│  ○ Voir dashboard admin                  │
-  │          │      │  ○ Voir tous les logs SOC                │
-  └──────────┘      │                                          │
-                    │  ○ Voir alertes sécurité (Grafana)       │
-  ┌──────────┐      │  ○ Bloquer IPs malveillantes             │
-  │ SOC TEAM │─────►│  ○ Recevoir emails d'alerte              │
-  │          │      │  ○ Analyser logs d'attaque               │
-  └──────────┘      │                                          │
+  ┌──────────┐      │  ○ Voir alertes sécurité (Grafana)       │
+  │ SOC TEAM │─────►│  ○ Analyser logs + anomalies ML          │
+  └──────────┘      │  ○ Bloquer IPs malveillantes             │
                     └──────────────────────────────────────────┘
 ```
 
-### 5.2 Diagramme de séquence — Inscription avec OTP
+### 8.2 Séquence — Inscription avec OTP
 
 ```
   Client Flutter          Backend Django              Gmail SMTP
        │                        │                          │
        │── POST /register/ ────►│                          │
        │                        │ génère OTP (6 chiffres)  │
-       │                        │── send_mail() ──────────►│
-       │                        │                          │── email → Client
+       │                        │── send_mail() ──────────►│── email → Client
        │◄── 201 pending_verif ──│                          │
-       │                        │                          │
-       │ (Client reçoit email)  │                          │
-       │                        │                          │
-       │── POST /verify-email/ ─►│                          │
-       │   {email, code: "XXXX"} │                          │
-       │                        │ vérifie OTP + expiry     │
-       │◄── 200 "Email vérifié" ─│                          │
-       │                        │                          │
-       │── POST /login/ ────────►│                          │
+       │── POST /verify-email/ ─►│                         │
+       │◄── 200 "Email vérifié" ─│                         │
+       │── POST /login/ ────────►│                         │
        │◄── {access, refresh} ──│                          │
 ```
 
-### 5.3 Diagramme de séquence — Détection d'attaque SOC
+### 8.3 Séquence — Connexion SSO
+
+```
+  Flutter (AppAuth)      SSO Backend (Render)      RSS Bank Backend
+       │                        │                          │
+       │── GET /o/authorize/ ──►│                          │
+       │◄── Chrome Custom Tab ──│                          │
+       │   (page login SSO)     │                          │
+       │── credentials ────────►│                          │
+       │◄── redirect + code ────│                          │
+       │── POST /o/token/ ─────►│                          │
+       │◄── access_token ───────│                          │
+       │── POST /auth/sso-login/ ─────────────────────────►│
+       │◄── JWT RSS Bank ─────────────────────────────────│
+```
+
+### 8.4 Séquence — Détection d'attaque SOC
 
 ```
   Attaquant          Django Backend         Loki          Grafana       Email
       │                    │                 │               │             │
       │── 6x POST /login/ ─►│                │               │             │
-      │   (mauvais mdp)     │                │               │             │
-      │                    │ détecte BF     │               │             │
+      │                    │ détecte BF      │               │             │
       │                    │─ log JSON ─────►│               │             │
-      │◄── 401 ────────────│                │               │             │
-      │                    │                │◄── query ─────│             │
-      │                    │                │─── données ───►│             │
-      │                    │                │               │─ alerte ───►│
-      │                    │                │               │             │
-      │                    │ Fail2ban lit security.log      │             │
-      │                    │ iptables block IP              │             │
+      │◄── 401 ────────────│                │◄── query ─────│             │
+      │                    │                │─── données ───►│─ alerte ───►│
+      │                    │ Fail2ban → iptables block IP    │             │
       │ (connexion refusée)│                │               │             │
 ```
 
-### 5.4 Architecture de déploiement production
+### 8.5 Architecture de déploiement production
 
 ```
-┌─────────────────────────────────────────────────────────────────────┐
-│                    INTERNET                                         │
-└──────────┬───────────────────────────────────┬──────────────────────┘
-           │ HTTPS                             │ HTTPS
-           ▼                                   ▼
-┌────────────────────┐               ┌──────────────────────┐
-│  PythonAnywhere    │               │   Grafana Cloud       │
-│                    │  logs JSON    │   (SOC)               │
-│  rssbank.          │──────────────►│                       │
-│  pythonanywhere.com│               │  Loki (10GB gratuit)  │
-│                    │               │  Grafana Dashboard    │
-│  Django REST API   │               │  Alertes Email        │
-│  SQLite DB         │               └──────────────────────┘
-│  Gunicorn          │
-└────────────────────┘
+┌──────────────────────────────────────────────────────────────────┐
+│                         INTERNET                                  │
+└──────────┬────────────────────┬─────────────────┬────────────────┘
+           │ HTTPS              │ HTTPS           │ HTTPS
+           ▼                    ▼                 ▼
+┌──────────────────┐  ┌──────────────────┐  ┌────────────────────┐
+│ DigitalOcean     │  │  Render          │  │  Grafana Cloud     │
+│ Droplet          │  │  SSO Backend     │  │  (SOC)             │
+│ 104.248.61.147   │  │  OAuth2+OpenID   │  │  Loki + Dashboard  │
+│ Django + Gunicorn│  │  sso-backend-    │  │  Alertes Email     │
+│ PostgreSQL       │  │  6b1e.onrender   │  └────────────────────┘
+└──────────────────┘  └──────────────────┘
            ▲
-           │ requêtes API
+           │ requêtes API + auth SSO
            │
-┌────────────────────┐
-│  APK Flutter       │
-│  (téléphones amis) │
-│                    │
-│  baseUrl =         │
-│  pythonanywhere.com│
-└────────────────────┘
+┌──────────────────┐
+│   APK Flutter    │
+│   Android        │
+│   (téléphones)   │
+└──────────────────┘
 ```
 
 ---
 
-## 6. Prérequis
+## 9. Prérequis
 
 **Option Docker (local) :**
 - Docker >= 24
@@ -407,22 +500,22 @@ Transaction ────── TransactionHistory (1:N)  historique des changeme
 **Option locale (dev) :**
 - Python >= 3.11
 - PostgreSQL >= 14
-- Flutter SDK >= 3.0
-- Android Studio + émulateur (API 30+)
+- Flutter SDK >= 3.10
+- Android Studio (API 30+)
 - Compte Gmail avec mot de passe d'application
 
 ---
 
-## 7. Lancement local avec Docker
+## 10. Lancement local avec Docker
 
 ```bash
 # 1. Cloner le projet
 git clone https://github.com/sidattBelkhair/PFE.git && cd PFE
 
-# 2. Option A — Tout en un (app + SOC)
+# 2. Tout en un (app + SOC)
 docker compose up --build
 
-# 2. Option B — Séparé
+# Ou séparé
 docker network create soc-bridge
 docker compose -f docker-compose.app.yml up --build -d
 docker compose -f docker-compose.soc.yml up -d
@@ -431,114 +524,104 @@ docker compose -f docker-compose.soc.yml up -d
 docker compose exec backend python manage.py createsuperuser
 ```
 
-### Services disponibles
-
 | Service | URL | Identifiants |
 |---------|-----|-------------|
 | API REST | http://localhost:8000/api/ | — |
-| Documentation Swagger | http://localhost:8000/api/docs/ | — |
+| Swagger | http://localhost:8000/api/docs/ | — |
 | Admin Django | http://localhost:8000/admin/ | superuser |
-| App Web Flutter | http://localhost:80 | — |
 | Grafana SOC | http://localhost:3000 | admin / SedadSOC2024! |
 | Loki | http://localhost:3100 | — |
 
 ---
 
-## 8. Déploiement Production
+## 11. Déploiement Production
 
-### Backend — PythonAnywhere (gratuit)
+### Backend — DigitalOcean
 
 ```bash
-# Sur PythonAnywhere Bash Console
-git clone https://github.com/sidattBelkhair/PFE.git
-cd PFE/backend
-python3.11 -m venv venv && source venv/bin/activate
-pip install -r requirements.txt
-
-# Créer .env
-cat > .env << 'EOF'
+# Variables d'environnement sur le serveur
 SECRET_KEY=votre-cle-secrete-production
 DEBUG=False
-ALLOWED_HOSTS=rssbank.pythonanywhere.com
-DB_ENGINE=django.db.backends.sqlite3
+ALLOWED_HOSTS=104.248.61.147
+DATABASE_URL=postgres://user:pass@localhost:5432/rssbank
 EMAIL_HOST_USER=rssbank700@gmail.com
 EMAIL_HOST_PASSWORD=VOTRE_APP_PASSWORD
-LOKI_URL=
-EOF
+LOKI_URL=https://USER:KEY@logs-prod-XXX.grafana.net
 
 python manage.py migrate
 python manage.py collectstatic --noinput
-python manage.py createsuperuser
+gunicorn fintech_bank.wsgi:application --bind 0.0.0.0:8000
 ```
 
-WSGI file (`/var/www/rssbank_pythonanywhere_com_wsgi.py`) :
-```python
-import os, sys
-path = '/home/rssbank/PFE/backend'
-if path not in sys.path:
-    sys.path.insert(0, path)
-os.environ['DJANGO_SETTINGS_MODULE'] = 'fintech_bank.settings'
-from django.core.wsgi import get_wsgi_application
-application = get_wsgi_application()
+### SSO Backend — Render
+
+Le SSO tourne comme service séparé sur Render.
+Pour accéder au shell Render et vérifier la configuration OAuth :
+
+```bash
+python manage.py shell -c "
+from oauth2_provider.models import Application
+for a in Application.objects.all():
+    print(a.client_id, '|', a.redirect_uris)
+"
 ```
 
-URL : `https://rssbank.pythonanywhere.com/api/`
+### SOC — Grafana Cloud
 
-### SOC — Grafana Cloud (gratuit)
-
-1. Créer un compte sur **grafana.com** → plan Free (10GB logs/mois)
+1. Créer un compte sur **grafana.com** → plan Free (10 GB logs/mois)
 2. Récupérer les credentials Loki (URL + User ID + API Key)
-3. Ajouter dans `backend/.env` : `LOKI_URL=https://USER:KEY@logs-prod-XXX.grafana.net`
-4. Dashboard accessible depuis n'importe où
+3. Ajouter dans `.env` : `LOKI_URL=https://USER:KEY@logs-prod-XXX.grafana.net`
 
-### APK Flutter
+### APK Flutter (release)
 
 ```bash
 cd frontend/sedad_bank
-# baseUrl déjà configuré sur rssbank.pythonanywhere.com
 flutter build apk --release
-# → build/app/outputs/flutter-apk/app-release.apk
+# APK : build/app/outputs/flutter-apk/app-release.apk (~22 MB)
+
+# Installer directement sur téléphone Android (WiFi)
+flutter run -d "adb-XXXX._adb-tls-connect._tcp" --release
 ```
 
 ---
 
-## 9. Configuration Email Gmail
+## 12. Configuration Email Gmail
 
-1. Aller sur **myaccount.google.com**
-2. Sécurité → activer **Validation en deux étapes**
-3. Sécurité → **Mots de passe des applications** → `RSS BANK`
-4. Google génère **16 caractères** → copier dans `.env` :
+1. **myaccount.google.com** → Sécurité → Validation en deux étapes
+2. Sécurité → **Mots de passe des applications** → `RSS BANK`
+3. Copier les 16 caractères dans `.env` :
 
 ```env
 EMAIL_HOST_USER=rssbank700@gmail.com
 EMAIL_HOST_PASSWORD=abcd efgh ijkl mnop
 ```
 
-> Sans credentials valides : Django affiche le code OTP dans le terminal (mode console).
+> Sans credentials valides : le code OTP s'affiche dans le terminal Django.
 
 ---
 
-## 10. API Reference complète
+## 13. API Reference complète
 
-**Base URL :** `https://rssbank.pythonanywhere.com/api/`
+**Base URL production :** `http://104.248.61.147:8000/api/`
 
 > Toutes les routes sauf `/auth/` nécessitent : `Authorization: Bearer <access_token>`
 
-### 10.1 Authentification & OTP
+### 13.1 Authentification & OTP
 
 | Méthode | Endpoint | Description |
 |---------|----------|-------------|
-| POST | `/api/auth/register/` | Inscription → envoie OTP email |
-| POST | `/api/auth/verify-email/` | Vérifier OTP inscription |
-| POST | `/api/auth/resend-otp/` | Renvoyer OTP |
-| POST | `/api/auth/login/` | Connexion → retourne JWT |
-| POST | `/api/auth/token/refresh/` | Rafraîchir access token |
-| POST | `/api/auth/forgot-password/` | Envoie OTP reset |
-| POST | `/api/auth/reset-password/` | Réinitialiser mot de passe |
+| POST | `/auth/register/` | Inscription → envoie OTP email |
+| POST | `/auth/verify-email/` | Vérifier OTP inscription |
+| POST | `/auth/resend-otp/` | Renvoyer OTP |
+| POST | `/auth/login/` | Connexion → retourne JWT |
+| POST | `/auth/token/refresh/` | Rafraîchir access token |
+| POST | `/auth/forgot-password/` | Envoie OTP reset |
+| POST | `/auth/reset-password/` | Réinitialiser mot de passe |
+| POST | `/auth/sso-login/` | **Connexion via SSO** → retourne JWT RSS Bank |
 
 #### Inscription
 ```bash
-curl -X POST https://rssbank.pythonanywhere.com/api/auth/register/ \
+curl -X POST http://104.248.61.147:8000/api/auth/register/ \
   -H "Content-Type: application/json" \
   -d '{
     "email": "test@rss.mr",
@@ -550,60 +633,68 @@ curl -X POST https://rssbank.pythonanywhere.com/api/auth/register/ \
   }'
 ```
 
-#### Connexion
+#### Connexion classique
 ```bash
-curl -X POST https://rssbank.pythonanywhere.com/api/auth/login/ \
+curl -X POST http://104.248.61.147:8000/api/auth/login/ \
   -H "Content-Type: application/json" \
   -d '{"email": "test@rss.mr", "password": "MotDePasse123!"}'
 ```
 
-### 10.2 Utilisateurs
+#### Connexion SSO
+```bash
+curl -X POST http://104.248.61.147:8000/api/auth/sso-login/ \
+  -H "Content-Type: application/json" \
+  -d '{"sso_access_token": "<token_obtenu_du_SSO_backend>"}'
+```
+
+### 13.2 Utilisateurs
 
 | Méthode | Endpoint | Description |
 |---------|----------|-------------|
-| GET | `/api/users/me/` | Profil courant |
-| PATCH | `/api/users/{id}/` | Modifier profil |
-| POST | `/api/users/change_password/` | Changer mot de passe |
-| PATCH | `/api/users/{id}/update-status/` | Modifier statut (admin) |
+| GET | `/users/me/` | Profil courant |
+| PATCH | `/users/{id}/` | Modifier profil |
+| POST | `/users/change_password/` | Changer mot de passe |
+| PATCH | `/users/{id}/update-status/` | Modifier statut (admin) |
 
-### 10.3 Comptes bancaires
-
-| Méthode | Endpoint | Description |
-|---------|----------|-------------|
-| GET | `/api/accounts/` | Lister mes comptes |
-| POST | `/api/accounts/` | Créer un compte |
-| POST | `/api/accounts/{id}/deposit/` | Recharger un compte |
-
-### 10.4 Transactions
+### 13.3 Comptes bancaires
 
 | Méthode | Endpoint | Description |
 |---------|----------|-------------|
-| GET | `/api/transactions/` | Transactions envoyées |
-| POST | `/api/transactions/` | Créer une transaction |
-| GET | `/api/transactions/received/` | Transactions reçues |
+| GET | `/accounts/` | Lister mes comptes |
+| POST | `/accounts/` | Créer un compte |
+| POST | `/accounts/{id}/deposit/` | Recharger un compte |
 
-Types de transaction : `transfer` · `payment` · `withdrawal` · `deposit` · `salary`
+### 13.4 Transactions
+
+| Méthode | Endpoint | Description |
+|---------|----------|-------------|
+| GET | `/transactions/` | Transactions envoyées |
+| POST | `/transactions/` | Créer une transaction |
+| GET | `/transactions/received/` | Transactions reçues |
+
+Types : `transfer` · `payment` · `withdrawal` · `deposit` · `salary`
 
 ---
 
-## 11. Application Flutter
+## 14. Application Flutter
 
 ### Navigation (5 onglets)
 
 | Onglet | Route | Description |
 |--------|-------|-------------|
-| Accueil | `/home` | Carte bancaire + 6 services |
+| Accueil | `/home` | Carte bancaire + 6 services rapides |
 | Historique | `/history` | Transactions filtrées par date |
-| QR | `/qr-transactions` | Générer / Partager / Scanner |
-| Ma Banque | `/ma-banque` | Comptes + création |
+| QR | `/qr-transactions` | Générer / Partager / Scanner QR |
+| Ma Banque | `/ma-banque` | Mes comptes + création |
 | Profil | `/profile` | Infos + MDP + langue |
 
 ### Écrans d'authentification
 
 | Route | Écran |
 |-------|-------|
-| `/login` | Connexion |
-| `/register` | Inscription |
+| `/login` | Connexion (JWT ou SSO) |
+| `/register` | Inscription étape 1 |
+| `/register-step2` | Inscription étape 2 |
 | `/verify-email` | Code OTP 6 chiffres + timer |
 | `/forgot-password` | Email pour reset |
 | `/reset-password` | OTP + nouveau mot de passe |
@@ -612,23 +703,41 @@ Types de transaction : `transfer` · `payment` · `withdrawal` · `deposit` · `
 
 | Provider | Rôle |
 |----------|------|
-| `AuthProvider` | Session JWT, login, register, OTP, changePassword |
-| `AccountProvider` | Liste comptes, création, sélection |
+| `AuthProvider` | Session JWT, login, register, OTP, SSO, changePassword |
+| `AccountProvider` | Liste comptes, création, sélection active |
 | `TransactionProvider` | Transactions envoyées + reçues, création |
 | `UserProvider` | Liste utilisateurs (admin) |
 | `LanguageProvider` | Locale FR/AR, persistance SharedPreferences |
 
+### Services
+
+| Service | Rôle |
+|---------|------|
+| `ApiService` | Client HTTP Dio — `104.248.61.147:8000` |
+| `SSOService` | Flow OAuth2 PKCE via `flutter_appauth` |
+
+### Dépendances principales
+
+```yaml
+dio: ^5.4.0                # Client HTTP
+provider: ^6.1.1           # State management
+go_router: ^13.0.0         # Navigation
+flutter_appauth: ^6.0.0    # SSO OAuth2 PKCE
+flutter_secure_storage: ^9.0.0  # Stockage tokens SSO
+qr_flutter: ^4.1.0         # Génération QR Code
+mobile_scanner: ^3.5.6     # Scan QR Code
+flutter_localizations       # FR + AR (RTL)
+```
+
 ---
 
-## 12. Multi-langue FR / AR
+## 15. Multi-langue FR / AR
 
 L'app supporte le **Français** et l'**Arabe** avec direction **RTL automatique**.
 
-### Changer la langue
 - Onglet **Profil** → carte Langue → boutons FR / AR
 - Le choix est **sauvegardé** et restauré au prochain lancement
 
-### Fichiers de traduction
 ```
 frontend/sedad_bank/lib/l10n/
 ├── app_fr.arb    ← Français (80+ clés)
@@ -637,17 +746,18 @@ frontend/sedad_bank/lib/l10n/
 
 ---
 
-## 13. Tests de sécurité
+## 16. Tests de sécurité
 
-### Lancer le script d'attaque complet
+### Script d'attaque complet
+
 ```bash
 chmod +x hack.sh
 
 # En local
 ./hack.sh
 
-# Contre PythonAnywhere
-./hack.sh https://rssbank.pythonanywhere.com
+# Contre le backend production
+./hack.sh http://104.248.61.147:8000
 ```
 
 Le script teste : Reconnaissance, Brute Force (25 mots), SQL Injection (12 payloads), XSS (6 payloads), Path Traversal, Bypass Auth.
@@ -655,9 +765,9 @@ Le script teste : Reconnaissance, Brute Force (25 mots), SQL Injection (12 paylo
 ### Tests manuels rapides
 
 ```bash
-BASE=https://rssbank.pythonanywhere.com
+BASE=http://104.248.61.147:8000
 
-# Brute force (déclenche alerte après 5)
+# Brute force (déclenche alerte après 5 tentatives)
 for i in {1..6}; do
   curl -s -X POST $BASE/api/auth/login/ \
     -H "Content-Type: application/json" \
@@ -677,6 +787,7 @@ curl "$BASE/api/../../../etc/passwd"
 ```
 
 ### Observer les logs SOC en direct
+
 ```bash
 # Local
 tail -f backend/logs/security.log | python -m json.tool
@@ -687,50 +798,59 @@ docker logs -f pfe-backend-1
 
 ---
 
-## 14. Structure du projet
+## 17. Structure du projet
 
 ```
 PFE/
 ├── docker-compose.yml              # Orchestration complète (7 services)
 ├── docker-compose.app.yml          # App seule (DB + Backend + Frontend + Promtail)
 ├── docker-compose.soc.yml          # SOC seul (Loki + Grafana + Fail2ban)
-├── .env                            # SMTP Grafana
-├── hack.sh                         # Script de test sécurité
-├── README.md                       # Ce fichier
+├── hack.sh                         # Script de test sécurité complet
+├── README.md
 │
 ├── backend/                        # API Django REST Framework
 │   ├── Dockerfile
-│   ├── run.sh                      # Migrations auto + gunicorn
 │   ├── requirements.txt
 │   ├── .env                        # DB + Email + Loki
 │   ├── logs/
 │   │   ├── security.log            # Événements SOC (JSON)
 │   │   ├── access.log              # Requêtes HTTP (JSON)
-│   │   └── django.log              # Logs applicatifs
+│   │   └── django.log
 │   ├── fintech_bank/
-│   │   ├── settings.py             # Config Django complète
+│   │   ├── settings.py
 │   │   └── urls.py
 │   └── apps/core/
 │       ├── models.py               # User, Account, Transaction, Card, Beneficiary
-│       ├── views.py                # ViewSets + OTP + Auth
+│       ├── views.py                # ViewSets + OTP + Auth + SSO Login
 │       ├── serializers.py
 │       ├── urls.py
-│       └── security_middleware.py  # Détection SQL/XSS/BruteForce → JSON
+│       └── security_middleware.py  # Détection SQL/XSS/BruteForce + ML → JSON
 │
 ├── frontend/sedad_bank/            # Application Flutter
+│   ├── android/
+│   │   └── app/src/main/
+│   │       └── AndroidManifest.xml # Redirect URI SSO OAuth2
 │   └── lib/
-│       ├── main.dart               # Point d'entrée, session JWT
+│       ├── main.dart
 │       ├── l10n/                   # Traductions FR + AR
-│       ├── core/services/api_service.dart
+│       ├── core/services/
+│       │   ├── api_service.dart    # Client HTTP Dio
+│       │   └── sso_service.dart    # Flow OAuth2 PKCE
 │       ├── providers/              # Auth, Account, Transaction, User, Language
 │       ├── routes/app_routes.dart  # GoRouter + garde auth
 │       ├── widgets/                # BankCard, MainShell, AppDrawer
-│       └── screens/               # auth/, home/, transactions/, qr/, profile/...
+│       └── screens/
+│           ├── auth/               # Login, Register, OTP, Reset, SSO
+│           ├── home/
+│           ├── transactions/
+│           ├── qr/
+│           ├── profile/
+│           ├── bank/
+│           └── admin/
 │
 └── soc/                            # Security Operations Center
-    ├── loki.yml                    # Config stockage logs
-    ├── promtail.yml                # Collecte logs → Loki
-    ├── promtail-local.yml
+    ├── loki.yml
+    ├── promtail.yml
     ├── fail2ban/
     │   ├── jail.local              # 4 règles de bannissement
     │   └── filter.d/               # Filtres regex par type d'attaque
@@ -738,7 +858,7 @@ PFE/
         ├── grafana.ini             # Config SMTP alertes
         └── provisioning/
             ├── datasources/        # Connexion Loki
-            ├── alerting/           # 5 règles d'alertes + policies email
+            ├── alerting/           # Règles alertes + policies email
             └── dashboards/         # Dashboard RSS BANK SOC (JSON)
 ```
 
@@ -746,4 +866,4 @@ PFE/
 
 *RSS BANK — Projet de Fin d'Études | 2025-2026*
 *Application bancaire digitale mobile pour la Mauritanie — Devise : MRU (Ouguiya Mauritanien)*
-*SOC centralisé multi-applications — Loki + Grafana + Fail2ban*
+*Stack : Flutter · Django · OAuth2/SSO · Grafana · ML Anomaly Detection*

@@ -520,20 +520,18 @@ class OcrResult {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// OCR  →  Railway  :  https://ocr-id-verifier-production.up.railway.app
-// Auth :  X-API-Key  (header)
-// Endpoint : POST /api/v1/extract
-// Field multipart : "file"
+// OCR  →  Face Recognition Secure Service  :  http://51.20.136.48:8000
+// Auth :  Secure-Nova-Key  (header — même service que FaceService)
+// Endpoint : POST /api/ocr
+// Field multipart : "id_card" (+ fallback file/image/document)
 // ─────────────────────────────────────────────────────────────────────────────
 class OcrService {
-  static const String baseUrl =
-      'https://ocr-id-verifier-production.up.railway.app';
+  static const String baseUrl = 'http://51.20.136.48:8000';
 
-  static const String extractEndpoint = '/api/v1/extract';
+  static const String extractEndpoint = '/api/ocr';
 
-  // ← remplace cette clé si elle expire
   static const String apiKey =
-      'wwlktweksjnfwkjekljsdjgkhkjfhgoierojnerosoreirnnkjfwopiwerutyubvawjoienejfn';
+      'nova_key_3aa656e2bac2ea102ec2c56c196bcf6d';
 
   late final Dio _dio;
 
@@ -544,7 +542,7 @@ class OcrService {
         connectTimeout: const Duration(seconds: 30),
         receiveTimeout: const Duration(seconds: 60),
         headers: {
-          'X-API-Key': apiKey,
+          'Secure-Nova-Key': apiKey,
         },
       ),
     );
@@ -554,25 +552,33 @@ class OcrService {
     required File imageFile,
     String? documentType,
   }) async {
-    try {
-      final formData = FormData.fromMap({
-        'file': await MultipartFile.fromFile(
-          imageFile.path,
-          filename: 'document.jpg',
-        ),
-      });
+    for (final fieldName in ['id_card', 'file', 'image', 'document']) {
+      try {
+        final formData = FormData.fromMap({
+          fieldName: await MultipartFile.fromFile(
+            imageFile.path,
+            filename: 'document.jpg',
+          ),
+        });
 
-      final response = await _dio.post(extractEndpoint, data: formData);
+        final response = await _dio.post(extractEndpoint, data: formData);
 
-      print('[OCR] Railway => ${response.statusCode}');
-      print(response.data);
+        print('[OCR] => ${response.statusCode} (field="$fieldName")');
+        print(response.data);
 
-      if (response.statusCode == 200 &&
-          response.data is Map<String, dynamic>) {
-        return OcrResult.fromJson(response.data);
+        if (response.statusCode == 200 &&
+            response.data is Map<String, dynamic>) {
+          return OcrResult.fromJson(response.data);
+        }
+      } on DioException catch (e) {
+        final code = e.response?.statusCode;
+        if (code == 422 || code == 400) {
+          print('[OCR] Champ "$fieldName" rejeté ($code), essai suivant...');
+          continue;
+        }
+        print('[OCR] ERROR => $code ${e.response?.data}');
+        return null;
       }
-    } on DioException catch (e) {
-      print('[OCR] ERROR => ${e.response?.statusCode} ${e.response?.data}');
     }
 
     return null;

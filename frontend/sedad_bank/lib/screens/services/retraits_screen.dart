@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../../core/theme/app_theme.dart';
@@ -40,6 +41,7 @@ class _RetraitsScreenState extends State<RetraitsScreen>
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -49,9 +51,9 @@ class _RetraitsScreenState extends State<RetraitsScreen>
           icon: const Icon(Icons.arrow_back),
           onPressed: () => context.canPop() ? context.pop() : context.go('/home'),
         ),
-        title: const Text(
-          'Retraits',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22, color: AppTheme.textPrimary),
+        title: Text(
+          l.withdrawalsTitle,
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 22, color: AppTheme.textPrimary),
         ),
       ),
       body: Column(
@@ -84,8 +86,8 @@ class _RetraitsScreenState extends State<RetraitsScreen>
             child: TabBarView(
               controller: _tabController,
               children: [
-                _buildForm(isGimtel: false),
-                _buildForm(isGimtel: true),
+                _buildForm(l, isGimtel: false),
+                _buildForm(l, isGimtel: true),
               ],
             ),
           ),
@@ -94,7 +96,7 @@ class _RetraitsScreenState extends State<RetraitsScreen>
     );
   }
 
-  Widget _buildForm({required bool isGimtel}) {
+  Widget _buildForm(AppLocalizations l, {required bool isGimtel}) {
     return SingleChildScrollView(
       padding: const EdgeInsets.all(20),
       child: Column(
@@ -102,9 +104,7 @@ class _RetraitsScreenState extends State<RetraitsScreen>
         children: [
           const SizedBox(height: 8),
           Text(
-            isGimtel
-                ? 'Choisissez la banque, entrez le numéro de téléphone du client et le montant'
-                : 'Entrez le numéro de téléphone du bénéficiaire et le montant à retirer',
+            isGimtel ? l.gimtelHint : l.rssbankHint,
             style: const TextStyle(color: AppTheme.textSecondary, fontSize: 13, height: 1.5),
           ),
           const SizedBox(height: 20),
@@ -112,7 +112,7 @@ class _RetraitsScreenState extends State<RetraitsScreen>
           if (isGimtel) ...[
             DropdownButtonFormField<String>(
               value: _selectedBank,
-              hint: const Text('Choisissez une banque'),
+              hint: Text(l.chooseBankHint),
               decoration: InputDecoration(
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
                 enabledBorder: OutlineInputBorder(
@@ -130,7 +130,7 @@ class _RetraitsScreenState extends State<RetraitsScreen>
             controller: _phoneCtrl,
             keyboardType: TextInputType.phone,
             decoration: InputDecoration(
-              labelText: 'Numéro de téléphone',
+              labelText: l.phone,
               suffixIcon: const Icon(Icons.contacts_outlined),
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
               enabledBorder: OutlineInputBorder(
@@ -149,7 +149,7 @@ class _RetraitsScreenState extends State<RetraitsScreen>
             controller: _amountCtrl,
             keyboardType: const TextInputType.numberWithOptions(decimal: true),
             decoration: InputDecoration(
-              labelText: 'Montant',
+              labelText: l.amount,
               suffixText: 'MRU',
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
               enabledBorder: OutlineInputBorder(
@@ -178,7 +178,7 @@ class _RetraitsScreenState extends State<RetraitsScreen>
                     ),
                     child: tp.isLoading
                         ? const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(strokeWidth: 2))
-                        : const Text('Demander', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15)),
+                        : Text(l.requestButton, style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 15)),
                   ),
                 ),
               ),
@@ -186,7 +186,7 @@ class _RetraitsScreenState extends State<RetraitsScreen>
               Expanded(
                 child: ElevatedButton.icon(
                   onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Scanner QR — bientôt disponible')),
+                    SnackBar(content: Text(l.scanQrComingSoon)),
                   ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppTheme.textPrimary,
@@ -195,7 +195,7 @@ class _RetraitsScreenState extends State<RetraitsScreen>
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                   ),
                   icon: const Icon(Icons.qr_code_scanner, size: 18),
-                  label: const Text('Scanner', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15)),
+                  label: Text(l.scanButton, style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 15)),
                 ),
               ),
             ],
@@ -206,24 +206,25 @@ class _RetraitsScreenState extends State<RetraitsScreen>
   }
 
   Future<void> _handleRetrait(BuildContext context, bool isGimtel) async {
+    final l = AppLocalizations.of(context)!;
     final phone = _phoneCtrl.text.trim();
     final amountStr = _amountCtrl.text.trim();
     if (phone.isEmpty || amountStr.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Remplissez tous les champs')),
+        SnackBar(content: Text(l.fillAllFields)),
       );
       return;
     }
     if (isGimtel && _selectedBank == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Choisissez une banque')),
+        SnackBar(content: Text(l.chooseBankHint)),
       );
       return;
     }
     final amount = double.tryParse(amountStr);
     if (amount == null || amount <= 0) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Montant invalide')),
+        SnackBar(content: Text(l.amountInvalid)),
       );
       return;
     }
@@ -234,7 +235,7 @@ class _RetraitsScreenState extends State<RetraitsScreen>
 
     if (account == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Aucun compte disponible')),
+        SnackBar(content: Text(l.noAccountAvailableMsg)),
       );
       return;
     }
@@ -275,13 +276,13 @@ class _RetraitsScreenState extends State<RetraitsScreen>
                   child: const Icon(Icons.check_circle_rounded, color: AppTheme.successColor, size: 44),
                 ),
                 const SizedBox(height: 16),
-                const Text(
-                  'Retrait effectué !',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                Text(
+                  l.withdrawalSuccessTitle,
+                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'Votre retrait de ${amount.toStringAsFixed(0)} MRU a été traité avec succès et enregistré dans votre historique.',
+                  l.withdrawalSuccessMsg(amount.toStringAsFixed(0)),
                   textAlign: TextAlign.center,
                   style: const TextStyle(color: AppTheme.textSecondary, fontSize: 13, height: 1.4),
                 ),
@@ -290,7 +291,7 @@ class _RetraitsScreenState extends State<RetraitsScreen>
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () => Navigator.pop(ctx),
-                    child: const Text('Parfait !'),
+                    child: Text(l.perfectExclaim),
                   ),
                 ),
               ],
@@ -300,7 +301,7 @@ class _RetraitsScreenState extends State<RetraitsScreen>
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(tp.errorMessage ?? 'Erreur lors du retrait'),
+            content: Text(tp.errorMessage ?? l.withdrawalError),
             backgroundColor: AppTheme.errorColor,
           ),
         );
