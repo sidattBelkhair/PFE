@@ -1,5 +1,7 @@
 import random
+import secrets
 import string
+import uuid
 from decimal import Decimal
 from datetime import timedelta
 
@@ -14,6 +16,7 @@ from rest_framework.exceptions import PermissionDenied, ValidationError
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.views import APIView
+from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework_simplejwt.tokens import RefreshToken
 import requests as http_requests
 from django.conf import settings
@@ -243,6 +246,148 @@ class LoginView(APIView):
             'refresh': str(refresh),
             'access': str(refresh.access_token),
             'user': UserSerializer(user).data
+        }, status=status.HTTP_200_OK)
+
+
+class FaceLoginEnrollView(APIView):
+    """
+    POST /api/auth/face-login/enroll/
+    multipart/form-data : { file: <photo_reference.jpg> }
+
+    Auth requise. Appelé une fois (bouton "Connecter mon visage" du
+    profil), juste après un KYC validé. Stocke la photo de référence
+    côté backend — aucun appel au service tiers ici, c'est seulement
+    un enrôlement local utilisé plus tard par FaceLoginView.
+    """
+    permission_classes = [IsAuthenticated]
+    parser_classes = [MultiPartParser, FormParser]
+
+    def post(self, request):
+        user = request.user
+        ip = get_client_ip(request)
+
+        if user.kyc_status != 'approved':
+            raise ValidationError({'detail': 'KYC non validé : impossible d\'activer la connexion par visage.'})
+
+        reference_photo = request.FILES.get('file')
+        if not reference_photo:
+            raise ValidationError({'detail': 'file est requis.'})
+
+        user.face_reference_photo = reference_photo
+        user.save(update_fields=['face_reference_photo'])
+
+        log_security_event('FACE_ENROLL_SUCCESS', ip, request, {'user': user.email})
+        return Response({'detail': 'Visage enregistré'}, status=status.HTTP_200_OK)
+
+
+class FaceLoginView(APIView):
+    """
+    POST /api/auth/face-login/
+    multipart/form-data : { national_id: <NNI>, file: <selfie.jpg> }
+
+    Récupère la photo de référence enrôlée via FaceLoginEnrollView et la
+    compare, côté serveur, à la nouvelle selfie via le service tiers
+    (NovaGard) /kyc/verify, puis émet des tokens JWT si le visage matche.
+    """
+    permission_classes = [AllowAny]
+    parser_classes = [MultiPartParser, FormParser]
+
+    def post(self, request):
+        ip = get_client_ip(request)
+        national_id = (request.data.get('national_id') or '').strip()
+        selfie = request.FILES.get('file')
+
+        if not national_id or not selfie:
+            raise ValidationError({'detail': 'national_id et file sont requis.'})
+
+        # Anti brute-force par IP
+        cache_key = f'face_login_fail_{ip}'
+        attempts = cache.get(cache_key, 0)
+        if attempts >= 5:
+            log_security_event('BRUTE_FORCE', ip, request, {
+                'national_id': national_id,
+                'attempts': attempts,
+                'context': 'face_login',
+            })
+            raise ValidationError({'detail': 'Trop de tentatives, réessayez plus tard.'})
+
+        try:
+            user = User.objects.get(national_id=national_id)
+        except User.DoesNotExist:
+            attempts += 1
+            cache.set(cache_key, attempts, timeout=300)
+            log_security_event('FACE_LOGIN_FAILED', ip, request, {
+                'national_id': national_id,
+                'reason': 'unknown_national_id',
+            })
+            raise ValidationError({'detail': 'Connexion par visage impossible.'})
+
+        if user.kyc_status != 'approved' or user.status in ('suspended', 'blocked', 'closed'):
+            log_security_event('FACE_LOGIN_FAILED', ip, request, {
+                'user': user.email,
+                'reason': 'kyc_or_status',
+            })
+            raise ValidationError({'detail': 'Connexion par visage non disponible pour ce compte.'})
+
+        if not user.face_reference_photo:
+            log_security_event('FACE_LOGIN_FAILED', ip, request, {
+                'user': user.email,
+                'reason': 'no_reference_photo',
+            })
+            raise ValidationError({'detail': 'Aucune photo de référence enregistrée. Activez d\'abord la connexion par visage depuis le profil.'})
+
+        # Vérification biométrique côté serveur (clé API jamais exposée au client)
+        try:
+            with user.face_reference_photo.open('rb') as reference_file:
+                face_response = http_requests.post(
+                    f'{settings.FACE_API_BASE_URL}/kyc/verify',
+                    headers={'Secure-Nova-Key': settings.FACE_API_KEY},
+                    files={
+                        'image1': ('reference.jpg', reference_file.read(), 'image/jpeg'),
+                        'image2': (selfie.name, selfie.read(), selfie.content_type),
+                    },
+                    timeout=30,
+                )
+        except http_requests.RequestException:
+            log_security_event('FACE_LOGIN_FAILED', ip, request, {
+                'user': user.email,
+                'reason': 'face_api_unreachable',
+            })
+            raise ValidationError({'detail': 'Service de reconnaissance faciale indisponible.'})
+
+        if face_response.status_code != 200:
+            attempts += 1
+            cache.set(cache_key, attempts, timeout=300)
+            log_security_event('FACE_LOGIN_FAILED', ip, request, {
+                'user': user.email,
+                'reason': 'face_api_error',
+                'status_code': face_response.status_code,
+            })
+            return Response({'detail': 'Échec de la vérification faciale.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        face_data = face_response.json() if face_response.content else {}
+        decision = str(face_data.get('decision', '')).lower()
+        matched = decision == 'allow'
+
+        if not matched:
+            attempts += 1
+            cache.set(cache_key, attempts, timeout=300)
+            log_security_event('FACE_LOGIN_FAILED', ip, request, {
+                'user': user.email,
+                'reason': 'no_match',
+                'decision': face_data.get('decision'),
+            })
+            return Response({'detail': 'Visage non reconnu.'}, status=status.HTTP_401_UNAUTHORIZED)
+
+        # Succès
+        cache.delete(cache_key)
+        log_security_event('FACE_LOGIN_SUCCESS', ip, request, {'user': user.email})
+
+        refresh = RefreshToken.for_user(user)
+        return Response({
+            'refresh': str(refresh),
+            'access': str(refresh.access_token),
+            'user': UserSerializer(user).data,
         }, status=status.HTTP_200_OK)
 
 
@@ -541,16 +686,93 @@ class TransactionHistoryViewSet(viewsets.ReadOnlyModelViewSet):
             transaction__from_account__user=self.request.user
         )
 
+SSO_STATE_CACHE_PREFIX = "sso_state_"
+SSO_STATE_TTL = 300  # 5 minutes
+SSO_FAIL_WINDOW = 300  # 5 minutes
+SSO_FAIL_THRESHOLD = 10
+
+
+def _sso_rate_limited(ip):
+    """Retourne True si l'IP a dépassé le seuil de tentatives SSO échouées."""
+    return cache.get(f"sso_fail_{ip}", 0) >= SSO_FAIL_THRESHOLD
+
+
+def _register_sso_failure(ip, request, reason, extra=None):
+    cache_key = f"sso_fail_{ip}"
+    attempts = cache.get(cache_key, 0) + 1
+    cache.set(cache_key, attempts, timeout=SSO_FAIL_WINDOW)
+
+    payload = {"reason": reason, "attempts": attempts}
+    if extra:
+        payload.update(extra)
+    log_security_event("SSO_LOGIN_FAILED", ip, request, payload)
+
+    if attempts >= SSO_FAIL_THRESHOLD:
+        log_security_event("SSO_BRUTE_FORCE", ip, request, payload)
+
+
+def _provision_sso_user(userinfo, ip, request):
+    """
+    Crée ou récupère l'utilisateur RSS Bank correspondant au profil SSO.
+    Retourne (user, error_response) — error_response est None en cas de succès.
+    """
+    email = userinfo.get("email")
+    if not email:
+        _register_sso_failure(ip, request, "missing_email")
+        return None, Response({"error": "Profil SSO invalide"}, status=status.HTTP_400_BAD_REQUEST)
+
+    # Si le provider expose la claim OIDC standard email_verified, on l'exige.
+    if userinfo.get("email_verified") is False:
+        _register_sso_failure(ip, request, "email_not_verified", {"email": email})
+        return None, Response({"error": "Email SSO non vérifié"}, status=status.HTTP_403_FORBIDDEN)
+
+    existing = User.objects.filter(email=email).first()
+    if existing is not None:
+        # Empêche un compte SSO de prendre le contrôle d'un compte local
+        # protégé par mot de passe (anti account-takeover).
+        if existing.has_usable_password():
+            _register_sso_failure(ip, request, "account_conflict", {"email": email})
+            return None, Response(
+                {"error": "Un compte existe déjà avec cet email. Connectez-vous avec votre mot de passe."},
+                status=status.HTTP_409_CONFLICT,
+            )
+        if existing.status != "active" or not existing.is_active:
+            _register_sso_failure(ip, request, "account_inactive", {"email": email})
+            return None, Response({"error": "Compte désactivé"}, status=status.HTTP_403_FORBIDDEN)
+        return existing, None
+
+    unique_username = email[:140] + "_" + uuid.uuid4().hex[:8]
+    user = User.objects.create(
+        email=email,
+        username=unique_username,
+        first_name=userinfo.get("given_name", "")[:150],
+        last_name=userinfo.get("family_name", "")[:150],
+        is_active=True,
+    )
+    user.set_unusable_password()
+    user.save()
+    return user, None
+
+
 class SSOStartView(APIView):
     permission_classes = [AllowAny]
 
     def get(self, request):
+        ip = get_client_ip(request)
+        if _sso_rate_limited(ip):
+            return Response({"error": "Trop de tentatives, réessayez plus tard"}, status=status.HTTP_429_TOO_MANY_REQUESTS)
+
+        # Protection CSRF du flow OAuth (paramètre state à usage unique)
+        state = secrets.token_urlsafe(32)
+        cache.set(f"{SSO_STATE_CACHE_PREFIX}{state}", True, timeout=SSO_STATE_TTL)
+
         auth_url = (
             f"{settings.SSO_AUTHORIZE_URL}"
             f"?client_id={settings.SSO_CLIENT_ID}"
             f"&response_type=code"
             f"&redirect_uri={settings.SSO_REDIRECT_URI}"
             f"&scope=openid profile email"
+            f"&state={state}"
         )
         return redirect(auth_url)
 
@@ -559,9 +781,23 @@ class SSOCallbackView(APIView):
     permission_classes = [AllowAny]
 
     def get(self, request):
+        ip = get_client_ip(request)
+        if _sso_rate_limited(ip):
+            return Response({"error": "Trop de tentatives, réessayez plus tard"}, status=status.HTTP_429_TOO_MANY_REQUESTS)
+
         code = request.GET.get("code")
+        state = request.GET.get("state")
+
         if not code:
+            _register_sso_failure(ip, request, "missing_code")
             return Response({"error": "Code OAuth manquant"}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Vérifie et consomme le state (protection CSRF, usage unique)
+        state_key = f"{SSO_STATE_CACHE_PREFIX}{state}" if state else None
+        if not state or not cache.get(state_key):
+            _register_sso_failure(ip, request, "invalid_state")
+            return Response({"error": "Requête SSO invalide ou expirée"}, status=status.HTTP_400_BAD_REQUEST)
+        cache.delete(state_key)
 
         try:
             # 1. Échanger le code contre un token
@@ -578,10 +814,8 @@ class SSOCallbackView(APIView):
             )
 
             if token_resp.status_code != 200:
-                return Response(
-                    {"error": "Impossible de récupérer le token SSO", "detail": token_resp.text},
-                    status=status.HTTP_400_BAD_REQUEST,
-                )
+                _register_sso_failure(ip, request, "token_exchange_failed")
+                return Response({"error": "Impossible de récupérer le token SSO"}, status=status.HTTP_400_BAD_REQUEST)
 
             access_token = token_resp.json().get("access_token")
 
@@ -593,27 +827,19 @@ class SSOCallbackView(APIView):
             )
 
             if userinfo_resp.status_code != 200:
+                _register_sso_failure(ip, request, "userinfo_failed")
                 return Response({"error": "Impossible de récupérer le profil SSO"}, status=status.HTTP_400_BAD_REQUEST)
 
             userinfo = userinfo_resp.json()
-            email = userinfo.get("email")
-            if not email:
-                return Response({"error": "Email manquant dans le profil SSO"}, status=status.HTTP_400_BAD_REQUEST)
 
             # 3. Créer ou récupérer l'utilisateur RSS Bank
-            user, created = User.objects.get_or_create(
-                email=email,
-                defaults={
-                    "first_name": userinfo.get("given_name", ""),
-                    "last_name": userinfo.get("family_name", ""),
-                    "is_active": True,
-                }
-            )
-            if created:
-                user.set_unusable_password()
-                user.save()
+            user, error_response = _provision_sso_user(userinfo, ip, request)
+            if error_response:
+                return error_response
 
             # 4. Générer JWT RSS Bank
+            cache.delete(f"sso_fail_{ip}")
+            log_security_event("SSO_LOGIN_SUCCESS", ip, request, {"user": user.email})
             refresh = RefreshToken.for_user(user)
             return Response({
                 "message": "Connexion SSO réussie",
@@ -622,5 +848,60 @@ class SSOCallbackView(APIView):
                 "user": UserSerializer(user).data,
             })
 
-        except Exception as e:
-            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        except http_requests.RequestException:
+            _register_sso_failure(ip, request, "sso_provider_unreachable")
+            return Response({"error": "Service SSO indisponible"}, status=status.HTTP_502_BAD_GATEWAY)
+        except Exception:
+            log_security_event("SSO_LOGIN_ERROR", ip, request, {})
+            return Response({"error": "Erreur lors de la connexion SSO"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+class SSOLoginView(APIView):
+    """
+    Échange un access_token SSO (obtenu côté mobile via PKCE) contre un JWT RSS Bank.
+    """
+    permission_classes = [AllowAny]
+
+    def post(self, request):
+        ip = get_client_ip(request)
+        if _sso_rate_limited(ip):
+            return Response({"error": "Trop de tentatives, réessayez plus tard"}, status=status.HTTP_429_TOO_MANY_REQUESTS)
+
+        sso_access_token = request.data.get("sso_access_token")
+        if not sso_access_token or not isinstance(sso_access_token, str):
+            _register_sso_failure(ip, request, "missing_token")
+            return Response({"error": "sso_access_token manquant"}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            userinfo_resp = http_requests.get(
+                settings.SSO_USERINFO_URL,
+                headers={"Authorization": f"Bearer {sso_access_token}"},
+                timeout=10,
+            )
+
+            if userinfo_resp.status_code != 200:
+                _register_sso_failure(ip, request, "invalid_token")
+                return Response({"error": "Token SSO invalide ou expiré"}, status=status.HTTP_401_UNAUTHORIZED)
+
+            userinfo = userinfo_resp.json()
+
+            user, error_response = _provision_sso_user(userinfo, ip, request)
+            if error_response:
+                return error_response
+
+            cache.delete(f"sso_fail_{ip}")
+            log_security_event("SSO_LOGIN_SUCCESS", ip, request, {"user": user.email})
+            refresh = RefreshToken.for_user(user)
+            return Response({
+                "message": "Connexion SSO réussie",
+                "access": str(refresh.access_token),
+                "refresh": str(refresh),
+                "user": UserSerializer(user).data,
+            })
+
+        except http_requests.RequestException:
+            _register_sso_failure(ip, request, "sso_provider_unreachable")
+            return Response({"error": "Service SSO indisponible"}, status=status.HTTP_502_BAD_GATEWAY)
+        except Exception:
+            log_security_event("SSO_LOGIN_ERROR", ip, request, {})
+            return Response({"error": "Erreur lors de la connexion SSO"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

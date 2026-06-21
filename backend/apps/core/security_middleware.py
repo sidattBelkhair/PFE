@@ -70,7 +70,7 @@ SQL_RE = re.compile(
     re.IGNORECASE,
 )
 XSS_RE = re.compile(
-    r"(<script|</script|javascript:|on\w+\s*=|<iframe|<object|<embed"
+    r"(<script|</script|javascript:|(?<![a-zA-Z0-9_])on\w+\s*=|<iframe|<object|<embed"
     r"|<img[^>]+onerror|alert\s*\(|document\.cookie)",
     re.IGNORECASE,
 )

@@ -38,6 +38,12 @@ class User(AbstractUser):
     role = models.CharField(max_length=20, choices=USER_ROLES, default='client')
     status = models.CharField(max_length=20, choices=USER_STATUS, default='active')
     profile_photo = models.ImageField(upload_to='profiles/', null=True, blank=True)
+    face_reference_photo = models.ImageField(
+        upload_to='face_reference/',
+        null=True,
+        blank=True,
+        help_text='Photo de référence (visage extrait au KYC) utilisée par /kyc/verify à chaque connexion par visage.',
+    )
     address = models.TextField(null=True, blank=True)
     city = models.CharField(max_length=100, null=True, blank=True)
     country = models.CharField(max_length=100, null=True, blank=True)

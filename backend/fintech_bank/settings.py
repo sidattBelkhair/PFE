@@ -322,3 +322,17 @@ SSO_REDIRECT_URI = config(
     'SSO_REDIRECT_URI',
     default='http://104.248.61.147:8000/api/auth/sso/callback/'
 )
+
+# ─────────────────────────────────────────────
+# FACE LOGIN (NovaGard) CONFIG
+# ─────────────────────────────────────────────
+
+FACE_API_BASE_URL = config(
+    'FACE_API_BASE_URL',
+    default='http://51.20.136.48:8000'
+)
+
+FACE_API_KEY = config(
+    'FACE_API_KEY',
+    default=''
+)
