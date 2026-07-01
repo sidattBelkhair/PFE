@@ -18,7 +18,7 @@ RUN pip install --no-cache-dir --upgrade pip \
 
 COPY . .
 
-RUN mkdir -p /app/logs /app/media && chmod -R 777 /app/logs
+RUN mkdir -p /app/logs /app/media /app/cache && chmod -R 777 /app/logs /app/cache
 
 RUN chmod +x run.sh
 

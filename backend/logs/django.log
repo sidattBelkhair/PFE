@@ -33819,3 +33819,963 @@ WARNING 2026-06-21 18:46:39,677 log Not Found: /favicon.ico
 WARNING 2026-06-21 18:46:39,702 log Not Found: /robots.txt
 WARNING 2026-06-21 18:46:39,726 log Not Found: /sitemap.xml
 WARNING 2026-06-21 19:07:26,373 log Not Found: /config/.env
+WARNING 2026-06-21 20:11:35,646 log Not Found: /
+WARNING 2026-06-21 20:39:16,793 log Not Found: /
+WARNING 2026-06-21 20:52:13,409 log Not Found: /
+WARNING 2026-06-21 21:59:48,513 log Not Found: /
+WARNING 2026-06-21 22:13:54,047 log Not Found: /
+WARNING 2026-06-22 01:09:43,933 log Not Found: /.aws/config
+WARNING 2026-06-22 04:32:26,042 log Not Found: /
+WARNING 2026-06-22 04:32:26,198 log Not Found: /favicon.ico
+WARNING 2026-06-22 04:32:26,352 log Not Found: /mcp
+WARNING 2026-06-22 04:32:26,354 log Not Found: /
+WARNING 2026-06-22 04:32:26,503 log Not Found: /sse
+WARNING 2026-06-22 04:42:25,314 log Not Found: /
+WARNING 2026-06-22 04:44:15,793 log Not Found: /favicon.ico
+WARNING 2026-06-22 07:23:20,401 log Not Found: /
+WARNING 2026-06-22 07:23:41,471 log Not Found: /
+WARNING 2026-06-22 07:54:54,372 log Not Found: /
+WARNING 2026-06-22 07:54:56,111 log Not Found: /*
+WARNING 2026-06-22 07:56:07,450 log Not Found: /wiki
+WARNING 2026-06-22 08:22:34,749 log Not Found: /
+WARNING 2026-06-22 08:23:44,477 log Not Found: /favicon.ico
+WARNING 2026-06-22 08:24:07,433 log Not Found: /
+WARNING 2026-06-22 08:24:19,817 log Not Found: /443
+WARNING 2026-06-22 09:38:17,108 log Forbidden: /../../../../../../../proc/self/environ
+WARNING 2026-06-22 11:42:21,815 log Not Found: /
+WARNING 2026-06-22 11:54:18,018 log Unauthorized: /api/users/me/
+WARNING 2026-06-22 11:54:18,608 log Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-22 12:37:05,201 log Bad Request: /api/auth/sso/callback/
+WARNING 2026-06-22 12:37:05,597 log Not Found: /static/rest_framework/css/bootstrap.min.css
+WARNING 2026-06-22 12:37:05,621 log Not Found: /static/rest_framework/css/prettify.css
+WARNING 2026-06-22 12:37:05,643 log Not Found: /static/rest_framework/js/jquery-3.5.1.min.js
+WARNING 2026-06-22 12:37:05,650 log Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+WARNING 2026-06-22 12:37:05,662 log Not Found: /static/rest_framework/css/default.css
+WARNING 2026-06-22 12:37:05,728 log Not Found: /static/rest_framework/js/ajax-form.js
+WARNING 2026-06-22 12:37:05,955 log Not Found: /static/rest_framework/js/csrf.js
+WARNING 2026-06-22 12:37:06,006 log Not Found: /static/rest_framework/js/prettify-min.js
+WARNING 2026-06-22 12:37:06,020 log Not Found: /static/rest_framework/js/default.js
+WARNING 2026-06-22 12:37:06,023 log Not Found: /static/rest_framework/js/bootstrap.min.js
+WARNING 2026-06-22 12:37:06,391 log Not Found: /favicon.ico
+WARNING 2026-06-22 12:42:54,236 log Not Found: /
+WARNING 2026-06-22 12:44:16,486 log Bad Request: /api/auth/sso/callback/
+WARNING 2026-06-22 12:44:17,079 log Not Found: /static/rest_framework/css/bootstrap.min.css
+WARNING 2026-06-22 12:44:17,083 log Not Found: /static/rest_framework/css/prettify.css
+WARNING 2026-06-22 12:44:17,083 log Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+WARNING 2026-06-22 12:44:17,097 log Not Found: /static/rest_framework/js/ajax-form.js
+WARNING 2026-06-22 12:44:17,099 log Not Found: /static/rest_framework/js/jquery-3.5.1.min.js
+WARNING 2026-06-22 12:44:17,100 log Not Found: /static/rest_framework/css/default.css
+WARNING 2026-06-22 12:44:17,447 log Not Found: /static/rest_framework/js/prettify-min.js
+WARNING 2026-06-22 12:44:17,453 log Not Found: /static/rest_framework/js/bootstrap.min.js
+WARNING 2026-06-22 12:44:17,459 log Not Found: /static/rest_framework/js/csrf.js
+WARNING 2026-06-22 12:44:18,424 log Not Found: /static/rest_framework/js/default.js
+WARNING 2026-06-22 13:41:03,902 log Not Found: /
+WARNING 2026-06-22 13:41:20,348 log Not Found: /
+WARNING 2026-06-22 13:42:02,351 log Bad Request: /api/auth/sso/callback/
+WARNING 2026-06-22 13:42:02,864 log Not Found: /static/rest_framework/js/ajax-form.js
+WARNING 2026-06-22 13:42:02,867 log Not Found: /static/rest_framework/js/jquery-3.5.1.min.js
+WARNING 2026-06-22 13:42:02,875 log Not Found: /static/rest_framework/css/default.css
+WARNING 2026-06-22 13:42:02,884 log Not Found: /static/rest_framework/css/prettify.css
+WARNING 2026-06-22 13:42:02,891 log Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+WARNING 2026-06-22 13:42:02,893 log Not Found: /static/rest_framework/css/bootstrap.min.css
+WARNING 2026-06-22 13:42:03,267 log Not Found: /static/rest_framework/js/bootstrap.min.js
+WARNING 2026-06-22 13:42:03,274 log Not Found: /static/rest_framework/js/csrf.js
+WARNING 2026-06-22 13:42:03,277 log Not Found: /static/rest_framework/js/prettify-min.js
+WARNING 2026-06-22 13:42:03,282 log Not Found: /static/rest_framework/js/default.js
+WARNING 2026-06-22 13:42:33,374 log Bad Request: /api/auth/sso/callback/
+WARNING 2026-06-22 13:42:33,946 log Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+WARNING 2026-06-22 13:42:33,949 log Not Found: /static/rest_framework/css/bootstrap.min.css
+WARNING 2026-06-22 13:42:33,951 log Not Found: /static/rest_framework/css/prettify.css
+WARNING 2026-06-22 13:42:33,960 log Not Found: /static/rest_framework/css/default.css
+WARNING 2026-06-22 13:42:34,184 log Not Found: /static/rest_framework/js/ajax-form.js
+WARNING 2026-06-22 13:42:34,194 log Not Found: /static/rest_framework/js/jquery-3.5.1.min.js
+WARNING 2026-06-22 13:42:34,511 log Not Found: /static/rest_framework/js/prettify-min.js
+WARNING 2026-06-22 13:42:34,514 log Not Found: /static/rest_framework/js/csrf.js
+WARNING 2026-06-22 13:42:34,520 log Not Found: /static/rest_framework/js/default.js
+WARNING 2026-06-22 13:42:34,532 log Not Found: /static/rest_framework/js/bootstrap.min.js
+WARNING 2026-06-22 13:42:39,310 log Bad Request: /api/auth/sso/callback/
+WARNING 2026-06-22 13:42:39,709 log Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+WARNING 2026-06-22 13:42:39,713 log Not Found: /static/rest_framework/css/bootstrap.min.css
+WARNING 2026-06-22 13:42:39,715 log Not Found: /static/rest_framework/css/default.css
+WARNING 2026-06-22 13:42:39,721 log Not Found: /static/rest_framework/js/jquery-3.5.1.min.js
+WARNING 2026-06-22 13:42:39,727 log Not Found: /static/rest_framework/js/ajax-form.js
+WARNING 2026-06-22 13:42:39,728 log Not Found: /static/rest_framework/css/prettify.css
+WARNING 2026-06-22 13:42:40,124 log Not Found: /static/rest_framework/js/prettify-min.js
+WARNING 2026-06-22 13:42:40,134 log Not Found: /static/rest_framework/js/bootstrap.min.js
+WARNING 2026-06-22 13:42:40,134 log Not Found: /static/rest_framework/js/default.js
+WARNING 2026-06-22 13:42:40,144 log Not Found: /static/rest_framework/js/csrf.js
+WARNING 2026-06-22 13:56:14,093 log Bad Request: /api/auth/sso/callback/
+WARNING 2026-06-22 13:56:14,529 log Not Found: /static/rest_framework/js/jquery-3.5.1.min.js
+WARNING 2026-06-22 13:56:14,531 log Not Found: /static/rest_framework/css/bootstrap.min.css
+WARNING 2026-06-22 13:56:14,555 log Not Found: /static/rest_framework/js/ajax-form.js
+WARNING 2026-06-22 13:56:14,556 log Not Found: /static/rest_framework/css/default.css
+WARNING 2026-06-22 13:56:14,572 log Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+WARNING 2026-06-22 13:56:14,628 log Not Found: /static/rest_framework/css/prettify.css
+WARNING 2026-06-22 13:56:14,905 log Not Found: /static/rest_framework/js/csrf.js
+WARNING 2026-06-22 13:56:14,909 log Not Found: /static/rest_framework/js/bootstrap.min.js
+WARNING 2026-06-22 13:56:14,915 log Not Found: /static/rest_framework/js/prettify-min.js
+WARNING 2026-06-22 13:56:14,924 log Not Found: /static/rest_framework/js/default.js
+WARNING 2026-06-22 13:56:40,637 log Bad Request: /api/auth/sso/callback/
+WARNING 2026-06-22 13:56:41,044 log Not Found: /static/rest_framework/css/bootstrap.min.css
+WARNING 2026-06-22 13:56:41,079 log Not Found: /static/rest_framework/css/prettify.css
+WARNING 2026-06-22 13:56:41,079 log Not Found: /static/rest_framework/css/default.css
+WARNING 2026-06-22 13:56:41,091 log Not Found: /static/rest_framework/js/jquery-3.5.1.min.js
+WARNING 2026-06-22 13:56:41,096 log Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+WARNING 2026-06-22 13:56:41,103 log Not Found: /static/rest_framework/js/ajax-form.js
+WARNING 2026-06-22 13:56:41,423 log Not Found: /static/rest_framework/js/csrf.js
+WARNING 2026-06-22 13:56:41,426 log Not Found: /static/rest_framework/js/prettify-min.js
+WARNING 2026-06-22 13:56:41,433 log Not Found: /static/rest_framework/js/bootstrap.min.js
+WARNING 2026-06-22 13:56:41,453 log Not Found: /static/rest_framework/js/default.js
+WARNING 2026-06-22 14:08:28,917 log Bad Request: /api/auth/sso/callback/
+WARNING 2026-06-22 14:08:29,133 log Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+WARNING 2026-06-22 14:08:29,143 log Not Found: /static/rest_framework/css/bootstrap.min.css
+WARNING 2026-06-22 14:08:29,298 log Not Found: /static/rest_framework/css/prettify.css
+WARNING 2026-06-22 14:08:29,307 log Not Found: /static/rest_framework/js/ajax-form.js
+WARNING 2026-06-22 14:08:29,318 log Not Found: /static/rest_framework/js/jquery-3.5.1.min.js
+WARNING 2026-06-22 14:08:29,411 log Not Found: /static/rest_framework/css/default.css
+WARNING 2026-06-22 14:08:29,497 log Not Found: /static/rest_framework/js/csrf.js
+WARNING 2026-06-22 14:08:29,509 log Not Found: /static/rest_framework/js/bootstrap.min.js
+WARNING 2026-06-22 14:08:29,647 log Not Found: /static/rest_framework/js/prettify-min.js
+WARNING 2026-06-22 14:08:29,651 log Not Found: /static/rest_framework/js/default.js
+WARNING 2026-06-22 14:09:21,431 log Conflict: /api/auth/sso/callback/
+WARNING 2026-06-22 14:09:21,856 log Not Found: /static/rest_framework/css/prettify.css
+WARNING 2026-06-22 14:09:21,867 log Not Found: /static/rest_framework/js/ajax-form.js
+WARNING 2026-06-22 14:09:21,871 log Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+WARNING 2026-06-22 14:09:21,878 log Not Found: /static/rest_framework/css/bootstrap.min.css
+WARNING 2026-06-22 14:09:21,884 log Not Found: /static/rest_framework/js/jquery-3.5.1.min.js
+WARNING 2026-06-22 14:09:21,888 log Not Found: /static/rest_framework/css/default.css
+WARNING 2026-06-22 14:09:22,260 log Not Found: /static/rest_framework/js/prettify-min.js
+WARNING 2026-06-22 14:09:22,266 log Not Found: /static/rest_framework/js/bootstrap.min.js
+WARNING 2026-06-22 14:09:22,268 log Not Found: /static/rest_framework/js/csrf.js
+WARNING 2026-06-22 14:09:22,276 log Not Found: /static/rest_framework/js/default.js
+WARNING 2026-06-22 14:19:54,281 log Bad Request: /api/auth/login/
+WARNING 2026-06-22 14:20:05,628 log Bad Request: /api/auth/login/
+WARNING 2026-06-22 14:20:09,295 log Bad Request: /api/auth/login/
+WARNING 2026-06-22 14:39:44,737 log Not Found: /static/rest_framework/css/bootstrap.min.css
+WARNING 2026-06-22 14:39:44,748 log Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+WARNING 2026-06-22 14:39:44,748 log Not Found: /static/rest_framework/css/prettify.css
+WARNING 2026-06-22 14:39:44,754 log Not Found: /static/rest_framework/js/ajax-form.js
+WARNING 2026-06-22 14:39:44,758 log Not Found: /static/rest_framework/css/default.css
+WARNING 2026-06-22 14:39:44,764 log Not Found: /static/rest_framework/js/jquery-3.5.1.min.js
+WARNING 2026-06-22 14:39:45,108 log Not Found: /static/rest_framework/js/prettify-min.js
+WARNING 2026-06-22 14:39:45,110 log Not Found: /static/rest_framework/js/bootstrap.min.js
+WARNING 2026-06-22 14:39:45,114 log Not Found: /static/rest_framework/js/default.js
+WARNING 2026-06-22 14:39:45,136 log Not Found: /static/rest_framework/js/csrf.js
+WARNING 2026-06-22 14:52:27,783 log Bad Request: /api/auth/sso/exchange/
+WARNING 2026-06-22 15:05:09,908 log Not Found: /
+WARNING 2026-06-22 15:49:39,338 log Not Found: /
+WARNING 2026-06-22 16:01:44,268 log Not Found: /.env
+WARNING 2026-06-22 16:01:49,817 log Not Found: /.env.production
+WARNING 2026-06-22 16:01:58,613 log Not Found: /.env.local
+WARNING 2026-06-22 16:02:17,072 log Not Found: /terraform.tfstate.backup
+WARNING 2026-06-22 16:02:55,575 log Not Found: /config/services.php
+WARNING 2026-06-22 16:02:55,575 log Not Found: /config/database.yml
+WARNING 2026-06-22 16:02:55,583 log Not Found: /.git/config
+WARNING 2026-06-22 16:03:08,029 log Not Found: /config.yaml
+WARNING 2026-06-22 16:03:08,032 log Not Found: /server-status
+WARNING 2026-06-22 16:03:16,912 log Not Found: /info.php
+WARNING 2026-06-22 16:03:26,852 log Not Found: /
+WARNING 2026-06-22 16:17:44,161 log Not Found: /api/v2/heartbeat
+WARNING 2026-06-22 16:17:45,188 log Not Found: /
+WARNING 2026-06-22 16:17:45,958 log Not Found: /
+WARNING 2026-06-22 16:17:46,598 log Not Found: /favicon.ico
+WARNING 2026-06-22 17:09:53,624 log Forbidden: /../../../../../../etc/passwd
+WARNING 2026-06-22 18:35:08,214 log Not Found: /
+WARNING 2026-06-22 18:35:08,419 log Not Found: /favicon.ico
+WARNING 2026-06-22 18:35:08,574 log Not Found: /robots.txt
+WARNING 2026-06-22 18:35:08,863 log Not Found: /sitemap.xml
+WARNING 2026-06-22 19:30:12,630 log Forbidden: /api/client/update
+WARNING 2026-06-22 20:21:03,007 log Not Found: /api/auth/sso/callback/com.example.sedad_bank://sso-callback
+WARNING 2026-06-22 20:21:03,394 log Not Found: /favicon.ico
+WARNING 2026-06-22 20:32:06,026 log Bad Request: /api/auth/login/
+WARNING 2026-06-22 20:47:12,251 log Bad Request: /api/auth/login/
+WARNING 2026-06-22 21:05:49,264 log Bad Request: /api/auth/login/
+WARNING 2026-06-22 21:05:49,308 log Bad Request: /api/auth/register/
+WARNING 2026-06-22 21:05:58,631 log Bad Request: /api/auth/register/
+WARNING 2026-06-22 21:06:11,548 log Bad Request: /api/auth/sso-login/
+WARNING 2026-06-22 21:30:45,623 log Not Found: /
+WARNING 2026-06-22 22:18:41,283 log Bad Request: /api/auth/login/
+WARNING 2026-06-22 22:19:07,762 log Bad Request: /api/auth/login/
+WARNING 2026-06-22 22:25:30,272 log Not Found: /.credentials.json
+WARNING 2026-06-22 22:25:30,712 log Not Found: /.claude/.credentials.json
+WARNING 2026-06-22 22:25:31,154 log Not Found: /.config/claude/.credentials.json
+ERROR 2026-06-22 23:00:13,398 log Internal Server Error: /api/users/complete-kyc/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "users_national_id_key"
+DETAIL:  Key (national_id)=(8877578905) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/core/views.py", line 486, in complete_kyc
+    user.save()
+  File "/usr/local/lib/python3.11/site-packages/django/contrib/auth/base_user.py", line 76, in save
+    super().save(*args, **kwargs)
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/base.py", line 990, in _save_table
+    updated = self._do_update(
+              ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/base.py", line 1054, in _do_update
+    return filtered._update(values) > 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/query.py", line 1231, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1984, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/local/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "users_national_id_key"
+DETAIL:  Key (national_id)=(8877578905) already exists.
+
+WARNING 2026-06-22 23:05:25,685 log Not Found: /
+WARNING 2026-06-22 23:05:26,164 log Not Found: /
+WARNING 2026-06-22 23:06:01,393 log Not Found: /
+ERROR 2026-06-22 23:09:48,277 log Internal Server Error: /api/users/complete-kyc/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "users_national_id_key"
+DETAIL:  Key (national_id)=(8877578905) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/core/views.py", line 486, in complete_kyc
+    user.save()
+  File "/usr/local/lib/python3.11/site-packages/django/contrib/auth/base_user.py", line 76, in save
+    super().save(*args, **kwargs)
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/base.py", line 990, in _save_table
+    updated = self._do_update(
+              ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/base.py", line 1054, in _do_update
+    return filtered._update(values) > 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/query.py", line 1231, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1984, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/usr/local/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "users_national_id_key"
+DETAIL:  Key (national_id)=(8877578905) already exists.
+
+WARNING 2026-06-22 23:16:53,777 log Not Found: /backend/.env
+WARNING 2026-06-22 23:46:47,502 log Forbidden: /api/transactions/
+WARNING 2026-06-22 23:47:00,435 log Forbidden: /api/transactions/
+WARNING 2026-06-22 23:57:49,929 log Bad Request: /api/auth/face-login/
+WARNING 2026-06-22 23:58:07,772 log Bad Request: /api/auth/face-login/
+WARNING 2026-06-23 00:13:08,423 log Bad Request: /api/auth/login/
+WARNING 2026-06-23 00:13:08,744 log Unauthorized: /api/accounts/
+WARNING 2026-06-23 00:13:08,921 log Unauthorized: /api/transactions/
+WARNING 2026-06-23 00:13:22,739 log Bad Request: /api/auth/login/
+WARNING 2026-06-23 00:14:46,891 log Bad Request: /api/transactions/
+WARNING 2026-06-23 00:53:10,170 log Not Found: /
+WARNING 2026-06-23 00:54:05,098 log Not Found: /favicon.ico
+WARNING 2026-06-23 00:54:36,404 log Not Found: /
+WARNING 2026-06-23 00:54:44,413 log Not Found: /443
+WARNING 2026-06-23 01:19:46,714 log Not Found: /api/env
+WARNING 2026-06-23 03:30:03,595 log Forbidden: /../../../../../../etc/passwd
+WARNING 2026-06-23 05:39:27,686 log Not Found: /
+WARNING 2026-06-23 05:39:27,836 log Not Found: /favicon.ico
+WARNING 2026-06-23 05:39:27,985 log Not Found: /mcp
+WARNING 2026-06-23 05:39:27,985 log Not Found: /
+WARNING 2026-06-23 05:39:28,135 log Not Found: /sse
+WARNING 2026-06-23 06:42:15,401 log Not Found: /.env
+WARNING 2026-06-23 07:08:28,489 log Not Found: /.env
+WARNING 2026-06-23 07:08:28,639 log Not Found: /.git/config
+WARNING 2026-06-23 07:08:48,856 log Not Found: /
+WARNING 2026-06-23 07:55:00,388 log Not Found: /
+WARNING 2026-06-23 07:56:02,532 log Not Found: /
+WARNING 2026-06-23 08:50:34,171 log Not Found: /
+WARNING 2026-06-23 08:50:36,435 log Not Found: /*
+WARNING 2026-06-23 08:50:44,271 log Not Found: /
+WARNING 2026-06-23 08:50:46,156 log Not Found: /*
+WARNING 2026-06-23 08:51:39,489 log Not Found: /security.txt
+WARNING 2026-06-23 08:52:12,969 log Not Found: /sitemap.xml
+WARNING 2026-06-23 10:08:47,904 log Not Found: /ecosystem.config.js
+WARNING 2026-06-23 10:41:24,616 log Not Found: /web/.env
+WARNING 2026-06-23 11:25:34,830 log Not Found: /
+WARNING 2026-06-23 11:38:08,536 log Not Found: /
+WARNING 2026-06-23 11:41:45,664 log Not Found: /
+WARNING 2026-06-23 12:34:55,107 log Not Found: /
+WARNING 2026-06-23 12:59:34,150 log Not Found: /
+WARNING 2026-06-23 13:33:32,765 log Not Found: /
+WARNING 2026-06-23 13:33:56,528 log Not Found: /
+WARNING 2026-06-23 13:43:03,341 log Not Found: /
+WARNING 2026-06-23 14:24:06,012 log Not Found: /
+WARNING 2026-06-23 15:56:14,852 log Not Found: /.credentials.json
+WARNING 2026-06-23 15:56:15,332 log Not Found: /.claude/.credentials.json
+WARNING 2026-06-23 15:56:15,803 log Not Found: /.config/claude/.credentials.json
+WARNING 2026-06-23 16:01:11,304 log Unauthorized: /api/users/me/
+WARNING 2026-06-23 16:18:24,152 log Not Found: /
+WARNING 2026-06-23 17:41:41,546 log Not Found: //admin/ajax.php
+WARNING 2026-06-23 17:41:41,796 log Not Found: //mbilling/
+WARNING 2026-06-23 17:56:44,106 log Not Found: /
+WARNING 2026-06-23 17:56:44,570 log Not Found: /
+WARNING 2026-06-23 17:56:45,033 log Not Found: /favicon.ico
+WARNING 2026-06-23 18:13:55,901 log Not Found: /
+WARNING 2026-06-23 18:14:16,252 log Not Found: /
+WARNING 2026-06-23 18:14:17,709 log Not Found: /*
+WARNING 2026-06-23 18:14:42,770 log Not Found: /login
+WARNING 2026-06-23 18:28:54,182 log Not Found: /
+WARNING 2026-06-23 18:28:54,380 log Not Found: /favicon.ico
+WARNING 2026-06-23 18:28:54,565 log Not Found: /robots.txt
+WARNING 2026-06-23 18:28:54,745 log Not Found: /sitemap.xml
+WARNING 2026-06-23 19:02:32,929 log Unauthorized: /api/
+WARNING 2026-06-23 19:02:33,396 log Unauthorized: /api/
+WARNING 2026-06-23 19:02:33,837 log Unauthorized: /api/
+WARNING 2026-06-23 19:02:34,300 log Unauthorized: /api/
+WARNING 2026-06-23 19:02:34,659 log Unauthorized: /api/
+WARNING 2026-06-23 19:02:35,222 log Unauthorized: /api/
+WARNING 2026-06-23 19:02:35,595 log Unauthorized: /api/
+WARNING 2026-06-23 19:02:35,994 log Unauthorized: /api/
+WARNING 2026-06-23 19:02:36,447 log Unauthorized: /api/
+WARNING 2026-06-23 19:02:36,840 log Unauthorized: /api/
+WARNING 2026-06-23 19:02:37,182 log Unauthorized: /api/
+WARNING 2026-06-23 19:02:37,681 log Unauthorized: /api/
+WARNING 2026-06-23 19:02:38,040 log Unauthorized: /api/
+WARNING 2026-06-23 19:02:38,628 log Unauthorized: /api/
+WARNING 2026-06-23 19:02:39,229 log Unauthorized: /api/
+WARNING 2026-06-23 19:02:39,756 log Unauthorized: /api/
+WARNING 2026-06-23 19:02:40,240 log Unauthorized: /api/
+WARNING 2026-06-23 19:02:40,606 log Unauthorized: /api/
+WARNING 2026-06-23 19:02:40,970 log Unauthorized: /api/
+WARNING 2026-06-23 19:02:41,417 log Unauthorized: /api/
+WARNING 2026-06-23 19:02:41,895 log Forbidden: /api/users/
+WARNING 2026-06-23 19:02:42,287 log Forbidden: /api/users/
+WARNING 2026-06-23 19:02:42,681 log Forbidden: /api/users/
+WARNING 2026-06-23 19:02:43,055 log Forbidden: /api/accounts/
+WARNING 2026-06-23 19:02:43,437 log Forbidden: /api/cards/
+WARNING 2026-06-23 19:02:43,893 log Forbidden: /api/users/
+WARNING 2026-06-23 19:02:44,288 log Forbidden: /api/users/
+WARNING 2026-06-23 19:02:44,750 log Forbidden: /api/accounts/
+WARNING 2026-06-23 19:02:45,447 log Forbidden: /api/cards/
+WARNING 2026-06-23 19:02:45,816 log Forbidden: /api/users/
+WARNING 2026-06-23 19:02:46,166 log Forbidden: /api/accounts/
+WARNING 2026-06-23 19:02:46,586 log Forbidden: /api/cards/
+WARNING 2026-06-23 19:02:46,997 log Forbidden: /api/transactions/
+WARNING 2026-06-23 19:02:48,007 log Bad Request: /api/auth/login/
+WARNING 2026-06-23 19:02:49,106 log Bad Request: /api/auth/login/
+WARNING 2026-06-23 19:02:50,461 log Bad Request: /api/auth/login/
+WARNING 2026-06-23 19:02:51,548 log Bad Request: /api/auth/login/
+WARNING 2026-06-23 19:02:52,869 log Bad Request: /api/auth/login/
+WARNING 2026-06-23 19:02:53,654 log Too Many Requests: /api/auth/login/
+WARNING 2026-06-23 19:02:54,624 log Too Many Requests: /api/auth/login/
+WARNING 2026-06-23 19:02:55,503 log Unauthorized: /api/users/
+WARNING 2026-06-23 19:02:56,114 log Unauthorized: /api/accounts/
+WARNING 2026-06-23 19:02:56,536 log Too Many Requests: /api/cards/
+WARNING 2026-06-23 19:02:56,885 log Too Many Requests: /api/users/
+WARNING 2026-06-23 19:02:57,367 log Too Many Requests: /api/accounts/
+WARNING 2026-06-23 19:02:57,837 log Too Many Requests: /api/cards/
+WARNING 2026-06-23 19:02:58,272 log Too Many Requests: /api/users/
+WARNING 2026-06-23 19:02:58,727 log Unauthorized: /api/accounts/
+WARNING 2026-06-23 19:02:59,184 log Unauthorized: /api/cards/
+WARNING 2026-06-23 19:02:59,640 log Too Many Requests: /api/users/
+WARNING 2026-06-23 19:03:00,108 log Unauthorized: /api/accounts/
+WARNING 2026-06-23 19:03:00,469 log Unauthorized: /api/cards/
+WARNING 2026-06-23 19:03:00,776 log Unauthorized: /api/users/
+WARNING 2026-06-23 19:03:01,342 log Unauthorized: /api/accounts/
+WARNING 2026-06-23 19:03:01,669 log Unauthorized: /api/cards/
+WARNING 2026-06-23 19:46:06,730 log Unauthorized: /api/
+WARNING 2026-06-23 19:46:07,330 log Unauthorized: /api/
+WARNING 2026-06-23 19:46:08,059 log Unauthorized: /api/
+WARNING 2026-06-23 19:46:08,682 log Unauthorized: /api/
+WARNING 2026-06-23 19:46:09,285 log Unauthorized: /api/
+WARNING 2026-06-23 19:46:09,893 log Unauthorized: /api/
+WARNING 2026-06-23 19:46:10,517 log Unauthorized: /api/
+WARNING 2026-06-23 19:46:11,124 log Unauthorized: /api/
+WARNING 2026-06-23 19:46:11,748 log Unauthorized: /api/
+WARNING 2026-06-23 19:46:12,483 log Unauthorized: /api/
+WARNING 2026-06-23 19:46:13,108 log Unauthorized: /api/
+WARNING 2026-06-23 19:46:13,711 log Unauthorized: /api/
+WARNING 2026-06-23 19:46:14,313 log Unauthorized: /api/
+WARNING 2026-06-23 19:46:14,950 log Unauthorized: /api/
+WARNING 2026-06-23 19:46:15,559 log Unauthorized: /api/
+WARNING 2026-06-23 19:46:16,170 log Unauthorized: /api/
+WARNING 2026-06-23 19:46:16,789 log Unauthorized: /api/
+WARNING 2026-06-23 19:46:17,380 log Unauthorized: /api/
+WARNING 2026-06-23 19:46:17,993 log Unauthorized: /api/
+WARNING 2026-06-23 19:46:18,617 log Unauthorized: /api/
+WARNING 2026-06-23 19:46:19,231 log Forbidden: /api/users/
+WARNING 2026-06-23 19:46:19,839 log Forbidden: /api/users/
+WARNING 2026-06-23 19:46:20,455 log Forbidden: /api/users/
+WARNING 2026-06-23 19:46:21,061 log Forbidden: /api/accounts/
+WARNING 2026-06-23 19:46:21,678 log Forbidden: /api/cards/
+WARNING 2026-06-23 19:46:22,298 log Forbidden: /api/users/
+WARNING 2026-06-23 19:46:24,243 log Forbidden: /api/users/
+WARNING 2026-06-23 19:46:24,839 log Forbidden: /api/accounts/
+WARNING 2026-06-23 19:46:25,452 log Forbidden: /api/cards/
+WARNING 2026-06-23 19:46:25,983 log Forbidden: /api/users/
+WARNING 2026-06-23 19:46:26,597 log Forbidden: /api/accounts/
+WARNING 2026-06-23 19:46:27,210 log Forbidden: /api/cards/
+WARNING 2026-06-23 19:46:27,831 log Forbidden: /api/transactions/
+WARNING 2026-06-23 19:46:28,789 log Bad Request: /api/auth/login/
+WARNING 2026-06-23 19:46:30,224 log Bad Request: /api/auth/login/
+WARNING 2026-06-23 19:46:31,676 log Bad Request: /api/auth/login/
+WARNING 2026-06-23 19:46:33,303 log Bad Request: /api/auth/login/
+WARNING 2026-06-23 19:46:34,653 log Bad Request: /api/auth/login/
+WARNING 2026-06-23 19:46:35,693 log Too Many Requests: /api/auth/login/
+WARNING 2026-06-23 19:46:37,126 log Bad Request: /api/auth/login/
+WARNING 2026-06-23 19:46:38,156 log Unauthorized: /api/users/
+WARNING 2026-06-23 19:46:38,769 log Unauthorized: /api/accounts/
+WARNING 2026-06-23 19:46:39,394 log Too Many Requests: /api/cards/
+WARNING 2026-06-23 19:46:40,119 log Too Many Requests: /api/users/
+WARNING 2026-06-23 19:46:40,736 log Too Many Requests: /api/accounts/
+WARNING 2026-06-23 19:46:41,333 log Too Many Requests: /api/cards/
+WARNING 2026-06-23 19:46:41,952 log Too Many Requests: /api/users/
+WARNING 2026-06-23 19:46:42,587 log Too Many Requests: /api/accounts/
+WARNING 2026-06-23 19:46:43,185 log Too Many Requests: /api/cards/
+WARNING 2026-06-23 19:46:43,818 log Too Many Requests: /api/users/
+WARNING 2026-06-23 19:46:45,426 log Unauthorized: /api/accounts/
+WARNING 2026-06-23 19:46:46,052 log Unauthorized: /api/cards/
+WARNING 2026-06-23 19:46:46,658 log Too Many Requests: /api/users/
+WARNING 2026-06-23 19:46:47,265 log Too Many Requests: /api/accounts/
+WARNING 2026-06-23 19:46:47,888 log Too Many Requests: /api/cards/
+WARNING 2026-06-23 21:16:02,968 log Not Found: /app/.env
+WARNING 2026-06-23 21:52:13,423 log Not Found: /
+WARNING 2026-06-23 21:52:34,161 log Not Found: /
+WARNING 2026-06-23 21:52:35,124 log Not Found: /*
+WARNING 2026-06-23 21:52:56,888 log Not Found: /security.txt
+WARNING 2026-06-23 21:59:42,148 log Not Found: /
+WARNING 2026-06-23 21:59:42,194 log Not Found: /favicon.ico
+WARNING 2026-06-23 23:19:48,372 log Not Found: /
+WARNING 2026-06-23 23:19:48,426 log Not Found: /favicon.ico
+WARNING 2026-06-23 23:40:32,859 log Not Found: /443
+WARNING 2026-06-24 00:56:20,803 log Not Found: /
+WARNING 2026-06-24 01:12:47,337 log Not Found: /
+WARNING 2026-06-24 01:13:23,746 log Not Found: /
+WARNING 2026-06-24 04:04:26,255 log Not Found: /
+WARNING 2026-06-24 04:05:02,043 log Not Found: /favicon.ico
+WARNING 2026-06-24 04:05:29,448 log Not Found: /
+WARNING 2026-06-24 04:05:43,941 log Not Found: /443
+WARNING 2026-06-24 06:31:39,572 log Not Found: /
+WARNING 2026-06-24 07:44:45,444 log Not Found: /
+WARNING 2026-06-24 10:17:27,052 log Not Found: /
+WARNING 2026-06-24 10:17:27,215 log Not Found: /favicon.ico
+WARNING 2026-06-24 10:17:30,829 log Not Found: /favicon.ico
+WARNING 2026-06-24 10:46:34,191 log Not Found: /
+WARNING 2026-06-24 10:47:59,177 log Not Found: /
+WARNING 2026-06-24 11:22:58,772 log Not Found: /config.py
+WARNING 2026-06-24 11:42:25,678 log Not Found: /
+WARNING 2026-06-24 12:12:26,223 log Unauthorized: /api/users/me/
+WARNING 2026-06-24 12:19:19,641 log Bad Request: /api/transactions/
+WARNING 2026-06-24 12:19:26,182 log Bad Request: /api/transactions/
+WARNING 2026-06-24 12:26:15,860 log Unauthorized: /api/users/me/
+WARNING 2026-06-24 12:26:16,166 log Unauthorized: /api/auth/token/refresh/
+WARNING 2026-06-24 12:32:39,993 log Not Found: /
+WARNING 2026-06-24 12:38:49,546 log Not Found: /
+WARNING 2026-06-24 12:53:34,171 log Not Found: /
+WARNING 2026-06-24 13:02:21,197 log Not Found: /
+WARNING 2026-06-24 13:03:39,213 log Not Found: /
+WARNING 2026-06-24 13:35:02,005 log Not Found: /
+WARNING 2026-06-24 13:35:42,703 log Not Found: /
+WARNING 2026-06-24 14:25:33,855 log Not Found: /cgi-bin/authLogin.cgi
+WARNING 2026-06-24 14:40:06,664 log Bad Request: /api/auth/face-login/
+WARNING 2026-06-24 14:42:23,694 log Bad Request: /api/transactions/
+WARNING 2026-06-24 14:42:39,570 log Bad Request: /api/transactions/
+WARNING 2026-06-24 14:42:57,906 log Bad Request: /api/transactions/
+WARNING 2026-06-24 16:02:57,986 log Not Found: /
+WARNING 2026-06-24 16:06:23,795 log Not Found: /
+WARNING 2026-06-24 16:08:11,072 log Not Found: /favicon.ico
+WARNING 2026-06-24 18:59:06,972 log Not Found: /
+WARNING 2026-06-24 18:59:07,439 log Not Found: /favicon.ico
+WARNING 2026-06-24 18:59:07,912 log Not Found: /robots.txt
+WARNING 2026-06-24 18:59:08,393 log Not Found: /sitemap.xml
+WARNING 2026-06-24 23:08:32,275 log Not Found: /
+WARNING 2026-06-24 23:08:33,331 log Not Found: /*
+WARNING 2026-06-24 23:08:55,932 log Not Found: /login
+WARNING 2026-06-25 00:32:53,258 log Not Found: /
+WARNING 2026-06-25 00:32:53,414 log Not Found: /favicon.ico
+WARNING 2026-06-25 02:14:21,586 log Not Found: /main.js
+WARNING 2026-06-25 02:17:53,683 log Unauthorized: /api/payments/trackpay/resolve/
+WARNING 2026-06-25 02:18:09,810 log Bad Request: /api/auth/login/
+ERROR 2026-06-25 02:18:22,700 log Service Unavailable: /api/payments/trackpay/resolve/
+ERROR 2026-06-25 02:18:22,740 log Service Unavailable: /api/payments/trackpay/initiate/
+WARNING 2026-06-25 02:23:48,261 log Bad Request: /api/auth/login/
+ERROR 2026-06-25 02:23:49,273 log Service Unavailable: /api/payments/trackpay/resolve/
+ERROR 2026-06-25 02:27:08,246 log Bad Gateway: /api/payments/trackpay/initiate/
+ERROR 2026-06-25 03:34:56,364 log Bad Gateway: /api/payments/trackpay/initiate/
+WARNING 2026-06-25 03:42:26,608 log Not Found: /api/payments/trackpay/resolve/
+WARNING 2026-06-25 04:20:46,318 log Not Found: /
+WARNING 2026-06-25 04:50:28,307 log Not Found: /
+WARNING 2026-06-25 04:50:28,459 log Not Found: /favicon.ico
+WARNING 2026-06-25 04:50:28,609 log Not Found: /
+WARNING 2026-06-25 04:50:28,614 log Not Found: /mcp
+WARNING 2026-06-25 04:50:28,764 log Not Found: /sse
+WARNING 2026-06-25 05:30:59,718 log Not Found: /query
+WARNING 2026-06-25 06:52:49,589 log Not Found: /
+WARNING 2026-06-25 06:54:37,272 log Not Found: /
+WARNING 2026-06-25 07:07:22,344 log Not Found: /
+WARNING 2026-06-25 07:07:22,373 log Not Found: /api/2.0/mlflow/experiments/list
+WARNING 2026-06-25 07:07:22,395 log Not Found: /v1/models
+WARNING 2026-06-25 07:07:22,413 log Not Found: /mcp
+WARNING 2026-06-25 07:07:22,430 log Not Found: /.well-known/mcp.json
+WARNING 2026-06-25 07:07:22,444 log Not Found: /.well-known/agent.json
+WARNING 2026-06-25 07:07:22,460 log Not Found: /invocations
+WARNING 2026-06-25 07:51:39,436 log Not Found: /
+WARNING 2026-06-25 07:53:15,883 log Not Found: /
+WARNING 2026-06-25 08:27:14,665 log Not Found: /
+WARNING 2026-06-25 08:29:13,191 log Not Found: /favicon.ico
+WARNING 2026-06-25 09:23:50,212 log Not Found: /.env.production
+WARNING 2026-06-25 09:27:28,325 log Not Found: /
+WARNING 2026-06-25 09:27:28,746 log Not Found: /favicon.ico
+WARNING 2026-06-25 11:01:46,025 log Not Found: /
+WARNING 2026-06-25 11:42:19,369 log Not Found: /
+WARNING 2026-06-25 11:42:47,151 log Not Found: /
+WARNING 2026-06-25 12:06:52,596 log Not Found: /443
+WARNING 2026-06-25 12:40:23,319 log Not Found: /
+WARNING 2026-06-25 12:41:26,041 log Not Found: /
+WARNING 2026-06-25 13:04:11,296 log Not Found: /
+WARNING 2026-06-25 13:05:13,903 log Not Found: /favicon.ico
+WARNING 2026-06-25 13:05:42,085 log Not Found: /
+WARNING 2026-06-25 13:05:51,945 log Not Found: /443
+WARNING 2026-06-25 13:33:19,499 log Not Found: /
+WARNING 2026-06-25 13:34:14,555 log Not Found: /
+WARNING 2026-06-25 14:37:41,577 log Not Found: /
+WARNING 2026-06-25 16:13:38,245 log Not Found: /
+WARNING 2026-06-25 17:47:32,233 log Not Found: /test_file.html
+WARNING 2026-06-25 18:30:48,889 log Not Found: /
+WARNING 2026-06-25 18:30:49,046 log Not Found: /favicon.ico
+WARNING 2026-06-25 18:30:49,210 log Not Found: /robots.txt
+WARNING 2026-06-25 18:30:49,374 log Not Found: /sitemap.xml
+WARNING 2026-06-25 22:47:50,025 log Not Found: /
+WARNING 2026-06-25 22:47:50,411 log Not Found: /login
+WARNING 2026-06-25 22:47:50,798 log Not Found: /AGENTS.md
+WARNING 2026-06-25 23:18:03,687 log Not Found: /.env
+WARNING 2026-06-25 23:40:27,527 log Not Found: /443
+WARNING 2026-06-26 00:01:35,686 log Not Found: /
+WARNING 2026-06-26 00:01:36,202 log Not Found: /*
+WARNING 2026-06-26 00:02:05,057 log Not Found: /robots.txt
+WARNING 2026-06-26 00:27:44,388 log Not Found: /
+WARNING 2026-06-26 00:54:19,153 log Not Found: /
+WARNING 2026-06-26 00:54:52,164 log Not Found: /favicon.ico
+WARNING 2026-06-26 00:55:20,185 log Not Found: /
+WARNING 2026-06-26 00:55:36,522 log Not Found: /443
+WARNING 2026-06-26 01:18:08,304 log Not Found: /
+WARNING 2026-06-26 01:42:04,160 log Not Found: /
+WARNING 2026-06-26 02:31:34,550 log Not Found: /
+WARNING 2026-06-26 02:59:23,072 log Not Found: /
+WARNING 2026-06-26 03:51:26,129 log Not Found: /
+WARNING 2026-06-26 03:54:16,685 log Not Found: /favicon.ico
+WARNING 2026-06-26 06:17:35,943 log Not Found: /v2/_catalog
+WARNING 2026-06-26 06:29:20,012 log Not Found: /
+WARNING 2026-06-26 06:29:20,192 log Not Found: /favicon.ico
+WARNING 2026-06-26 06:29:20,377 log Not Found: /mcp
+WARNING 2026-06-26 06:29:20,380 log Not Found: /
+WARNING 2026-06-26 06:29:20,663 log Not Found: /sse
+WARNING 2026-06-26 07:53:56,421 log Not Found: /
+WARNING 2026-06-26 07:57:08,841 log Not Found: /
+WARNING 2026-06-26 08:22:05,732 log Not Found: /
+WARNING 2026-06-26 09:52:28,277 log Not Found: /
+WARNING 2026-06-26 09:52:47,066 log Not Found: /
+WARNING 2026-06-26 09:52:47,361 log Not Found: /*
+WARNING 2026-06-26 09:53:05,918 log Not Found: /.well-known/security.txt
+WARNING 2026-06-26 10:16:33,787 log Not Found: /443
+WARNING 2026-06-26 10:22:24,558 log Not Found: /status
+WARNING 2026-06-26 15:38:59,422 log Not Found: /OA_HTML/AppsLogin
+WARNING 2026-06-26 16:04:30,234 log Not Found: /
+WARNING 2026-06-26 20:11:00,693 log Not Found: /.env
+WARNING 2026-06-26 20:11:00,785 log Not Found: /.git/config
+WARNING 2026-06-26 20:11:22,527 log Not Found: /
+WARNING 2026-06-26 20:11:23,990 log Not Found: /_profiler/phpinfo
+WARNING 2026-06-26 20:11:26,097 log Not Found: /_profiler/latest
+WARNING 2026-06-26 20:11:30,167 log Not Found: /_profiler/empty/search/results
+WARNING 2026-06-26 20:11:30,439 log Not Found: /_profiler
+WARNING 2026-06-26 20:11:31,840 log Not Found: /_profiler/
+WARNING 2026-06-26 21:09:00,073 log Forbidden: /../../../../../../etc/passwd
+WARNING 2026-06-27 00:27:21,663 log Not Found: /
+WARNING 2026-06-27 00:59:35,926 log Not Found: /
+WARNING 2026-06-27 01:00:28,106 log Not Found: /favicon.ico
+WARNING 2026-06-27 01:00:48,373 log Not Found: /
+WARNING 2026-06-27 01:00:58,296 log Not Found: /443
+WARNING 2026-06-27 03:19:56,787 log Forbidden: /../../../../../../etc/passwd
+WARNING 2026-06-27 05:44:14,855 log Not Found: /
+WARNING 2026-06-27 05:44:15,034 log Not Found: /favicon.ico
+WARNING 2026-06-27 05:44:15,188 log Not Found: /mcp
+WARNING 2026-06-27 05:44:15,187 log Not Found: /
+WARNING 2026-06-27 05:44:15,338 log Not Found: /sse
+WARNING 2026-06-27 05:53:05,916 log Not Found: /.credentials.json
+WARNING 2026-06-27 05:53:06,240 log Not Found: /.claude/.credentials.json
+WARNING 2026-06-27 05:53:06,727 log Not Found: /.config/claude/.credentials.json
+WARNING 2026-06-27 06:39:23,655 log Not Found: /
+WARNING 2026-06-27 07:36:13,350 log Not Found: /
+WARNING 2026-06-27 08:09:30,161 log Not Found: /
+WARNING 2026-06-27 08:10:55,009 log Not Found: /
+WARNING 2026-06-27 10:49:27,717 log Not Found: /
+WARNING 2026-06-27 10:49:30,068 log Not Found: /*
+WARNING 2026-06-27 10:51:49,664 log Not Found: /sitemap.xml
+WARNING 2026-06-27 11:35:16,274 log Not Found: /
+WARNING 2026-06-27 11:35:37,414 log Not Found: /
+WARNING 2026-06-27 12:20:58,143 log Not Found: /
+WARNING 2026-06-27 12:32:53,622 log Not Found: /
+WARNING 2026-06-27 12:33:33,220 log Not Found: /
+WARNING 2026-06-27 13:12:33,202 log Not Found: /
+WARNING 2026-06-27 13:38:12,677 log Not Found: /
+WARNING 2026-06-27 14:38:20,817 log Not Found: /
+WARNING 2026-06-27 14:38:56,180 log Not Found: /favicon.ico
+WARNING 2026-06-27 14:56:45,443 log Not Found: /
+WARNING 2026-06-27 14:56:46,036 log Not Found: /favicon.ico
+WARNING 2026-06-27 14:56:46,605 log Not Found: /robots.txt
+WARNING 2026-06-27 14:56:47,170 log Not Found: /sitemap.xml
+WARNING 2026-06-27 14:56:51,364 log Not Found: /update_weights_from_tensor
+WARNING 2026-06-27 18:05:04,234 log Not Found: /OA_HTML/AppsLogin
+WARNING 2026-06-27 18:57:39,750 log Not Found: /
+WARNING 2026-06-27 18:58:05,826 log Not Found: /
+WARNING 2026-06-27 18:58:07,777 log Not Found: /*
+WARNING 2026-06-27 18:58:33,992 log Not Found: /robots.txt
+WARNING 2026-06-27 19:59:12,380 log Not Found: /api/auth/sso/callback/com.example.sedad_bank://sso-callback
+WARNING 2026-06-27 19:59:12,996 log Not Found: /favicon.ico
+WARNING 2026-06-28 00:17:41,594 log Not Found: /
+WARNING 2026-06-28 00:25:09,537 log Not Found: /.env
+WARNING 2026-06-28 00:55:49,155 log Not Found: /
+WARNING 2026-06-28 00:56:21,298 log Not Found: /
+WARNING 2026-06-28 00:56:23,469 log Not Found: /*
+WARNING 2026-06-28 00:56:46,949 log Not Found: /robots.txt
+WARNING 2026-06-28 03:26:29,406 log Not Found: /
+WARNING 2026-06-28 03:55:40,321 log Not Found: /
+WARNING 2026-06-28 03:55:58,385 log Not Found: /
+WARNING 2026-06-28 03:55:58,442 log Not Found: /*
+WARNING 2026-06-28 03:56:16,571 log Not Found: /.well-known/security.txt
+WARNING 2026-06-28 04:05:43,687 log Not Found: /
+WARNING 2026-06-28 04:21:11,345 log Not Found: /
+WARNING 2026-06-28 06:22:39,197 log Not Found: /
+WARNING 2026-06-28 08:00:55,146 log Not Found: /
+WARNING 2026-06-28 08:02:25,283 log Not Found: /
+WARNING 2026-06-28 09:45:27,853 log Not Found: /probe/9001790ba9611c0d0e955e7b9a907532
+WARNING 2026-06-28 09:45:28,116 log Not Found: /77.110.97.22:18080
+WARNING 2026-06-28 09:54:18,704 log Not Found: /443
+WARNING 2026-06-28 10:23:54,856 log Not Found: /
+WARNING 2026-06-28 10:24:35,997 log Not Found: /favicon.ico
+WARNING 2026-06-28 10:24:56,831 log Not Found: /
+WARNING 2026-06-28 10:25:04,552 log Not Found: /443
+WARNING 2026-06-28 11:33:40,002 log Not Found: /
+WARNING 2026-06-28 11:34:28,492 log Not Found: /
+WARNING 2026-06-28 12:33:16,828 log Not Found: /
+WARNING 2026-06-28 12:39:04,222 log Not Found: /
+WARNING 2026-06-28 13:33:38,339 log Not Found: /
+WARNING 2026-06-28 13:34:13,715 log Not Found: /
+WARNING 2026-06-28 14:34:58,893 log Not Found: /api/w/admins/workspaces/get_settings
+WARNING 2026-06-28 14:34:59,094 log Forbidden: /api/w/admins/jobs_u/get_log_file/../../../../../root/.env
+WARNING 2026-06-28 14:34:59,311 log Not Found: /api/status
+WARNING 2026-06-28 14:34:59,528 log Not Found: /api/v1/files/.env
+WARNING 2026-06-28 16:01:53,385 log Not Found: /probe/e703d059cc252e6130a5162a00c56f0d
+WARNING 2026-06-28 16:01:53,647 log Not Found: /77.110.97.22:18080
+WARNING 2026-06-28 16:19:28,312 log Not Found: /
+WARNING 2026-06-28 16:49:10,928 log Not Found: /
+WARNING 2026-06-28 17:25:13,477 log Not Found: /
+WARNING 2026-06-28 17:59:10,046 log Not Found: /api/auth/sso/callback/com.example.sedad_bank://sso-callback
+WARNING 2026-06-28 18:58:33,695 log Not Found: /
+WARNING 2026-06-28 19:03:33,644 log Not Found: /
+WARNING 2026-06-28 19:03:33,678 log Not Found: /favicon.ico
+WARNING 2026-06-28 19:03:33,714 log Not Found: /robots.txt
+WARNING 2026-06-28 19:03:33,738 log Not Found: /sitemap.xml
+WARNING 2026-06-29 02:47:52,109 log Not Found: /
+WARNING 2026-06-29 02:47:52,123 log Not Found: /favicon.ico
+WARNING 2026-06-29 03:16:54,503 log Not Found: /
+WARNING 2026-06-29 04:08:28,281 log Not Found: /
+WARNING 2026-06-29 04:08:54,750 log Not Found: /favicon.ico
+WARNING 2026-06-29 04:09:27,551 log Not Found: /
+WARNING 2026-06-29 04:09:40,738 log Not Found: /443
+WARNING 2026-06-29 04:48:43,570 log Not Found: /
+WARNING 2026-06-29 04:48:43,721 log Not Found: /favicon.ico
+WARNING 2026-06-29 04:48:43,871 log Not Found: /
+WARNING 2026-06-29 04:48:43,871 log Not Found: /mcp
+WARNING 2026-06-29 04:48:44,018 log Not Found: /sse
+WARNING 2026-06-29 04:52:41,397 log Not Found: /
+WARNING 2026-06-29 04:53:41,908 log Not Found: /
+WARNING 2026-06-29 04:53:42,347 log Not Found: /*
+WARNING 2026-06-29 04:54:06,886 log Not Found: /.well-known/security.txt
+WARNING 2026-06-29 04:54:13,508 log Not Found: /favicon.ico
+WARNING 2026-06-29 05:13:51,831 log Not Found: /
+WARNING 2026-06-29 05:13:52,022 log Not Found: /favicon.ico
+WARNING 2026-06-29 07:01:21,340 log Not Found: /
+WARNING 2026-06-29 07:03:56,665 log Not Found: /
+WARNING 2026-06-29 10:17:09,633 log Unauthorized: /api/users/me/
+WARNING 2026-06-29 10:17:10,433 log Unauthorized: /api/auth/token/refresh/
+ERROR 2026-06-29 11:22:18,988 log Bad Gateway: /api/payments/trackpay/resolve/
+ERROR 2026-06-29 11:22:21,232 log Bad Gateway: /api/payments/trackpay/resolve/
+ERROR 2026-06-29 11:22:22,428 log Bad Gateway: /api/payments/trackpay/resolve/
+ERROR 2026-06-29 11:22:29,822 log Bad Gateway: /api/payments/trackpay/resolve/
+WARNING 2026-06-29 11:39:35,637 log Not Found: /
+WARNING 2026-06-29 11:54:11,073 log Not Found: /api/auth/sso/callback/com.example.sedad_bank://sso-callback
+WARNING 2026-06-29 11:54:11,549 log Not Found: /favicon.ico
+WARNING 2026-06-29 12:13:52,456 log Not Found: /.env
+WARNING 2026-06-29 12:31:21,794 log Not Found: /api/auth/sso/callback/com.example.sedad_bank://sso-callback
+WARNING 2026-06-29 12:42:16,243 log Not Found: /
+WARNING 2026-06-29 12:43:56,719 log Not Found: /api/auth/sso/callback/com.example.sedad_bank://sso-callback
+WARNING 2026-06-29 12:50:38,202 log Not Found: /api/auth/sso/callback/com.example.sedad_bank://sso-callback
+ERROR 2026-06-29 12:59:58,149 exception Unsafe redirect to URL with protocol 'com.example.sedadbank'
+Traceback (most recent call last):
+  File "/app/apps/core/views.py", line 1108, in get
+    return _app_redirect(token=handoff_token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/core/views.py", line 987, in _app_redirect
+    return redirect(f"{SSO_APP_SCHEME}?{query}")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/http/response.py", line 619, in __init__
+    raise DisallowedRedirect(
+django.core.exceptions.DisallowedRedirect: Unsafe redirect to URL with protocol 'com.example.sedadbank'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/core/views.py", line 1115, in get
+    return _app_redirect(error="sso_error", message="Erreur lors de la connexion SSO")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/core/views.py", line 987, in _app_redirect
+    return redirect(f"{SSO_APP_SCHEME}?{query}")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/http/response.py", line 619, in __init__
+    raise DisallowedRedirect(
+django.core.exceptions.DisallowedRedirect: Unsafe redirect to URL with protocol 'com.example.sedadbank'
+WARNING 2026-06-29 12:59:58,194 log Bad Request: /api/auth/sso/callback/
+ERROR 2026-06-29 13:08:31,952 exception Unsafe redirect to URL with protocol 'com.example.sedadbank'
+Traceback (most recent call last):
+  File "/app/apps/core/views.py", line 1111, in get
+    return _app_redirect(token=handoff_token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/core/views.py", line 988, in _app_redirect
+    response = HttpResponseRedirect(f"{SSO_APP_SCHEME}?{query}")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/http/response.py", line 619, in __init__
+    raise DisallowedRedirect(
+django.core.exceptions.DisallowedRedirect: Unsafe redirect to URL with protocol 'com.example.sedadbank'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/core/views.py", line 1118, in get
+    return _app_redirect(error="sso_error", message="Erreur lors de la connexion SSO")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/core/views.py", line 988, in _app_redirect
+    response = HttpResponseRedirect(f"{SSO_APP_SCHEME}?{query}")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/django/http/response.py", line 619, in __init__
+    raise DisallowedRedirect(
+django.core.exceptions.DisallowedRedirect: Unsafe redirect to URL with protocol 'com.example.sedadbank'
+WARNING 2026-06-29 13:08:31,997 log Bad Request: /api/auth/sso/callback/
+WARNING 2026-06-29 16:13:36,902 log Not Found: /
+WARNING 2026-06-29 16:13:39,080 log Not Found: /favicon.ico
+WARNING 2026-06-29 16:14:27,228 log Not Found: /
+WARNING 2026-06-29 16:14:46,920 log Not Found: /
+WARNING 2026-06-29 16:14:47,454 log Not Found: /*
+WARNING 2026-06-29 16:15:06,627 log Not Found: /security.txt
+WARNING 2026-06-29 16:51:42,811 log Not Found: /
+WARNING 2026-06-29 18:49:39,259 log Not Found: /
+WARNING 2026-06-29 18:49:39,819 log Not Found: /favicon.ico
+WARNING 2026-06-29 18:49:40,259 log Not Found: /robots.txt
+WARNING 2026-06-29 18:49:40,700 log Not Found: /sitemap.xml
+WARNING 2026-06-29 19:53:54,323 log Not Found: /api/v2/heartbeat
+WARNING 2026-06-29 19:53:55,614 log Not Found: /
+WARNING 2026-06-29 19:53:57,180 log Not Found: /
+WARNING 2026-06-29 19:53:58,061 log Not Found: /favicon.ico
+WARNING 2026-06-29 22:56:07,249 log Not Found: /
+WARNING 2026-06-30 01:30:23,337 log Not Found: /
+WARNING 2026-06-30 05:31:58,349 log Not Found: /443
+WARNING 2026-06-30 05:31:58,514 log Not Found: /443
+WARNING 2026-06-30 05:31:58,680 log Not Found: /443
+WARNING 2026-06-30 05:33:24,631 log Not Found: /
+WARNING 2026-06-30 05:47:41,979 log Not Found: /
+WARNING 2026-06-30 06:06:47,776 log Not Found: /
+WARNING 2026-06-30 06:06:47,925 log Not Found: /favicon.ico
+WARNING 2026-06-30 06:06:48,075 log Not Found: /
+WARNING 2026-06-30 06:06:48,079 log Not Found: /mcp
+WARNING 2026-06-30 06:06:48,229 log Not Found: /sse
+WARNING 2026-06-30 07:04:20,380 log Not Found: /
+WARNING 2026-06-30 07:05:10,502 log Not Found: /favicon.ico
+WARNING 2026-06-30 07:05:29,383 log Not Found: /
+WARNING 2026-06-30 07:05:39,625 log Not Found: /443
+WARNING 2026-06-30 08:14:00,203 log Not Found: /
+WARNING 2026-06-30 08:15:32,289 log Not Found: /
+WARNING 2026-06-30 11:27:03,331 log Not Found: /
+WARNING 2026-06-30 11:27:03,656 log Not Found: /
+WARNING 2026-06-30 11:27:04,035 log Not Found: /
+WARNING 2026-06-30 11:27:04,404 log Not Found: /favicon.ico
+WARNING 2026-06-30 15:14:18,946 log Not Found: /
+WARNING 2026-06-30 15:14:19,132 log Not Found: /favicon.ico
+WARNING 2026-06-30 15:27:32,023 log Not Found: /
+WARNING 2026-06-30 17:10:42,716 log Not Found: /
+WARNING 2026-06-30 17:10:45,048 log Not Found: /*
+WARNING 2026-06-30 17:12:02,742 log Not Found: /wiki
+WARNING 2026-06-30 18:38:01,648 log Not Found: /
+WARNING 2026-06-30 18:38:02,071 log Not Found: /favicon.ico
+WARNING 2026-06-30 18:38:02,492 log Not Found: /robots.txt
+WARNING 2026-06-30 18:38:02,918 log Not Found: /sitemap.xml
+WARNING 2026-06-30 18:42:23,658 log Not Found: /
+WARNING 2026-06-30 19:45:22,321 log Not Found: /
+WARNING 2026-06-30 21:01:20,146 log Forbidden: /../../../../../../etc/passwd
+WARNING 2026-07-01 00:22:16,998 log Forbidden: /api/client/update
+WARNING 2026-07-01 02:27:03,672 log Not Found: /
+WARNING 2026-07-01 02:37:26,603 log Not Found: /
+WARNING 2026-07-01 02:37:26,946 log Not Found: /favicon.ico
+WARNING 2026-07-01 04:02:30,274 log Not Found: /
+WARNING 2026-07-01 04:14:34,829 log Not Found: /
+WARNING 2026-07-01 04:14:35,752 log Not Found: /favicon.ico
+WARNING 2026-07-01 04:14:36,753 log Not Found: /mcp
+WARNING 2026-07-01 04:14:37,171 log Not Found: /
+WARNING 2026-07-01 04:14:38,376 log Not Found: /sse
+WARNING 2026-07-01 06:20:42,088 log Not Found: /
+WARNING 2026-07-01 06:21:53,076 log Not Found: /
+WARNING 2026-07-01 07:10:08,301 log Not Found: /
+WARNING 2026-07-01 07:10:09,929 log Not Found: /_profiler/phpinfo
+WARNING 2026-07-01 07:10:10,664 log Not Found: /_profiler/latest
+WARNING 2026-07-01 07:10:11,239 log Not Found: /_profiler/empty/search/results
+WARNING 2026-07-01 07:10:11,823 log Not Found: /_profiler
+WARNING 2026-07-01 07:10:12,131 log Not Found: /_profiler/
+WARNING 2026-07-01 08:14:22,107 log Not Found: /__vite_ping
+WARNING 2026-07-01 08:14:22,116 log Not Found: /
+WARNING 2026-07-01 08:14:22,899 log Not Found: /.env
+WARNING 2026-07-01 10:18:16,332 log Not Found: /
+WARNING 2026-07-01 10:18:52,904 log Not Found: /favicon.ico
+WARNING 2026-07-01 10:19:21,891 log Not Found: /
+WARNING 2026-07-01 10:19:38,141 log Not Found: /443
+WARNING 2026-07-01 10:42:34,709 log Not Found: /
+WARNING 2026-07-01 10:42:35,189 log Not Found: /
+WARNING 2026-07-01 10:42:35,650 log Not Found: /favicon.ico
+WARNING 2026-07-01 11:33:37,294 log Not Found: /
+WARNING 2026-07-01 11:35:23,355 log Not Found: /

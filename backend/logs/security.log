@@ -1408,3 +1408,300 @@
 {"ts": "2026-06-21T10:30:40Z", "event": "LOGIN_FAILURE", "ip": "197.231.0.117", "status": 400, "path": "/api/auth/login/", "app": "rss-bank"}
 {"ts": "2026-06-21T10:30:47Z", "event": "LOGIN_SUCCESS", "ip": "197.231.0.117", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "cheikhahmedtelmoud@gmail.com"}
 {"ts": "2026-06-21T10:30:47Z", "event": "LOGIN_SUCCESS", "ip": "197.231.0.117", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-22T09:38:17Z", "event": "PATH_TRAVERSAL", "ip": "3.87.27.156", "method": "GET", "path": "/../../../../../../../proc/self/environ", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-22T11:54:18Z", "event": "UNAUTHORIZED", "ip": "41.188.85.16", "path": "/api/users/me/", "app": "rss-bank"}
+{"ts": "2026-06-22T11:54:18Z", "event": "LOGIN_FAILURE", "ip": "41.188.85.16", "status": 401, "path": "/api/auth/token/refresh/", "app": "rss-bank"}
+{"ts": "2026-06-22T12:37:05Z", "event": "SSO_LOGIN_FAILED", "ip": "82.151.76.137", "app": "rss-bank", "method": "GET", "path": "/api/auth/sso/callback/", "reason": "missing_code", "attempts": 1}
+{"ts": "2026-06-22T12:44:16Z", "event": "SSO_LOGIN_FAILED", "ip": "82.151.76.137", "app": "rss-bank", "method": "GET", "path": "/api/auth/sso/callback/", "reason": "missing_code", "attempts": 1}
+{"ts": "2026-06-22T13:42:02Z", "event": "SSO_LOGIN_FAILED", "ip": "82.151.76.137", "app": "rss-bank", "method": "GET", "path": "/api/auth/sso/callback/", "reason": "missing_code", "attempts": 1}
+{"ts": "2026-06-22T13:42:33Z", "event": "SSO_LOGIN_FAILED", "ip": "82.151.76.137", "app": "rss-bank", "method": "GET", "path": "/api/auth/sso/callback/", "reason": "missing_code", "attempts": 2}
+{"ts": "2026-06-22T13:42:39Z", "event": "SSO_LOGIN_FAILED", "ip": "82.151.76.137", "app": "rss-bank", "method": "GET", "path": "/api/auth/sso/callback/", "reason": "missing_code", "attempts": 3}
+{"ts": "2026-06-22T13:56:14Z", "event": "SSO_LOGIN_FAILED", "ip": "82.151.76.137", "app": "rss-bank", "method": "GET", "path": "/api/auth/sso/callback/", "reason": "invalid_state", "attempts": 1}
+{"ts": "2026-06-22T13:56:40Z", "event": "SSO_LOGIN_FAILED", "ip": "82.151.76.137", "app": "rss-bank", "method": "GET", "path": "/api/auth/sso/callback/", "reason": "invalid_state", "attempts": 1}
+{"ts": "2026-06-22T14:08:28Z", "event": "SSO_LOGIN_FAILED", "ip": "82.151.76.137", "app": "rss-bank", "method": "GET", "path": "/api/auth/sso/callback/", "reason": "invalid_state", "attempts": 1}
+{"ts": "2026-06-22T14:09:21Z", "event": "SSO_LOGIN_FAILED", "ip": "82.151.76.137", "app": "rss-bank", "method": "GET", "path": "/api/auth/sso/callback/", "reason": "account_conflict", "attempts": 2, "email": "23017@supnum.mr"}
+{"ts": "2026-06-22T14:19:54Z", "event": "LOGIN_FAILED", "ip": "82.151.76.137", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "rssbank700@gmail.com", "attempts": 1}
+{"ts": "2026-06-22T14:19:54Z", "event": "LOGIN_FAILURE", "ip": "82.151.76.137", "status": 400, "path": "/api/auth/login/", "app": "rss-bank"}
+{"ts": "2026-06-22T14:20:05Z", "event": "LOGIN_FAILED", "ip": "82.151.76.137", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "rssbank700@gmail.com", "attempts": 2}
+{"ts": "2026-06-22T14:20:05Z", "event": "LOGIN_FAILURE", "ip": "82.151.76.137", "status": 400, "path": "/api/auth/login/", "app": "rss-bank"}
+{"ts": "2026-06-22T14:20:09Z", "event": "LOGIN_FAILED", "ip": "82.151.76.137", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "rssbank700@gmail.com", "attempts": 3}
+{"ts": "2026-06-22T14:20:09Z", "event": "LOGIN_FAILURE", "ip": "82.151.76.137", "status": 400, "path": "/api/auth/login/", "app": "rss-bank"}
+{"ts": "2026-06-22T14:20:44Z", "event": "LOGIN_SUCCESS", "ip": "82.151.76.137", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-22T14:26:02Z", "event": "LOGIN_SUCCESS", "ip": "82.151.76.137", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-22T14:39:44Z", "event": "SSO_LOGIN_SUCCESS", "ip": "82.151.76.137", "app": "rss-bank", "method": "GET", "path": "/api/auth/sso/callback/", "user": "23017@supnum.mr"}
+{"ts": "2026-06-22T14:52:27Z", "event": "LOGIN_FAILURE", "ip": "172.18.0.1", "status": 400, "path": "/api/auth/sso/exchange/", "app": "rss-bank"}
+{"ts": "2026-06-22T17:09:53Z", "event": "PATH_TRAVERSAL", "ip": "5.187.35.142", "method": "GET", "path": "/../../../../../../etc/passwd", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-22T19:30:12Z", "event": "SQL_INJECTION", "ip": "142.93.224.178", "method": "POST", "path": "/api/client/update", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-22T20:21:02Z", "event": "SSO_LOGIN_SUCCESS", "ip": "102.206.224.194", "app": "rss-bank", "method": "GET", "path": "/api/auth/sso/callback/", "user": "23017@supnum.mr"}
+{"ts": "2026-06-22T20:24:13Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-22T20:32:06Z", "event": "LOGIN_FAILED", "ip": "102.206.224.194", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr", "attempts": 1}
+{"ts": "2026-06-22T20:32:06Z", "event": "LOGIN_FAILURE", "ip": "102.206.224.194", "status": 400, "path": "/api/auth/login/", "app": "rss-bank"}
+{"ts": "2026-06-22T20:32:33Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-22T20:47:12Z", "event": "LOGIN_FAILED", "ip": "102.206.224.194", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr", "attempts": 1}
+{"ts": "2026-06-22T20:47:12Z", "event": "LOGIN_FAILURE", "ip": "102.206.224.194", "status": 400, "path": "/api/auth/login/", "app": "rss-bank"}
+{"ts": "2026-06-22T20:52:05Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-22T21:05:48Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr"}
+{"ts": "2026-06-22T21:05:48Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-22T21:05:49Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr", "attempts": 1}
+{"ts": "2026-06-22T21:05:49Z", "event": "LOGIN_FAILURE", "ip": "172.18.0.1", "status": 400, "path": "/api/auth/login/", "app": "rss-bank"}
+{"ts": "2026-06-22T21:05:49Z", "event": "LOGIN_FAILURE", "ip": "172.18.0.1", "status": 400, "path": "/api/auth/register/", "app": "rss-bank"}
+{"ts": "2026-06-22T21:05:49Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-22T21:05:58Z", "event": "LOGIN_FAILURE", "ip": "172.18.0.1", "status": 400, "path": "/api/auth/register/", "app": "rss-bank"}
+{"ts": "2026-06-22T21:05:59Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-22T21:06:11Z", "event": "SSO_LOGIN_FAILED", "ip": "172.18.0.1", "app": "rss-bank", "method": "POST", "path": "/api/auth/sso-login/", "reason": "missing_token", "attempts": 1}
+{"ts": "2026-06-22T21:06:11Z", "event": "LOGIN_FAILURE", "ip": "172.18.0.1", "status": 400, "path": "/api/auth/sso-login/", "app": "rss-bank"}
+{"ts": "2026-06-22T21:06:12Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr"}
+{"ts": "2026-06-22T21:06:12Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-22T22:14:44Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-22T22:17:45Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-22T22:18:41Z", "event": "LOGIN_FAILED", "ip": "102.206.224.194", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr", "attempts": 1}
+{"ts": "2026-06-22T22:18:41Z", "event": "LOGIN_FAILURE", "ip": "102.206.224.194", "status": 400, "path": "/api/auth/login/", "app": "rss-bank"}
+{"ts": "2026-06-22T22:19:07Z", "event": "LOGIN_FAILED", "ip": "102.206.224.194", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "belkhairtaleb@gmail.com", "attempts": 2}
+{"ts": "2026-06-22T22:19:07Z", "event": "LOGIN_FAILURE", "ip": "102.206.224.194", "status": 400, "path": "/api/auth/login/", "app": "rss-bank"}
+{"ts": "2026-06-22T22:25:56Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-22T22:56:12Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-22T22:58:04Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-22T22:58:29Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "belkhairtaleb@gmail.com"}
+{"ts": "2026-06-22T22:58:29Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-22T23:01:25Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "belkhairtaleb@gmail.com"}
+{"ts": "2026-06-22T23:01:25Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-22T23:06:40Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "belkhairtaleb@gmail.com"}
+{"ts": "2026-06-22T23:06:40Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-22T23:12:53Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "belkhairtaleb@gmail.com"}
+{"ts": "2026-06-22T23:12:53Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-22T23:22:47Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-22T23:25:05Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-22T23:25:37Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr"}
+{"ts": "2026-06-22T23:25:37Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-22T23:43:03Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr"}
+{"ts": "2026-06-22T23:43:03Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-22T23:45:44Z", "event": "FACE_ENROLL_SUCCESS", "ip": "102.206.224.194", "app": "rss-bank", "method": "POST", "path": "/api/auth/face-login/enroll/", "user": "23017@supnum.mr"}
+{"ts": "2026-06-22T23:45:44Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "user": "23017@supnum.mr", "app": "rss-bank"}
+{"ts": "2026-06-22T23:57:49Z", "event": "FACE_LOGIN_FAILED", "ip": "102.206.224.194", "app": "rss-bank", "method": "POST", "path": "/api/auth/face-login/", "national_id": "8877578905", "reason": "unknown_national_id"}
+{"ts": "2026-06-22T23:57:49Z", "event": "LOGIN_FAILURE", "ip": "102.206.224.194", "status": 400, "path": "/api/auth/face-login/", "app": "rss-bank"}
+{"ts": "2026-06-22T23:58:07Z", "event": "FACE_LOGIN_FAILED", "ip": "102.206.224.194", "app": "rss-bank", "method": "POST", "path": "/api/auth/face-login/", "national_id": "8877578905", "reason": "unknown_national_id"}
+{"ts": "2026-06-22T23:58:07Z", "event": "LOGIN_FAILURE", "ip": "102.206.224.194", "status": 400, "path": "/api/auth/face-login/", "app": "rss-bank"}
+{"ts": "2026-06-23T00:13:08Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr", "attempts": 1}
+{"ts": "2026-06-23T00:13:08Z", "event": "LOGIN_FAILURE", "ip": "172.18.0.1", "status": 400, "path": "/api/auth/login/", "app": "rss-bank"}
+{"ts": "2026-06-23T00:13:08Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "path": "/api/accounts/", "app": "rss-bank"}
+{"ts": "2026-06-23T00:13:08Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "path": "/api/transactions/", "app": "rss-bank"}
+{"ts": "2026-06-23T00:13:22Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr", "attempts": 2}
+{"ts": "2026-06-23T00:13:22Z", "event": "LOGIN_FAILURE", "ip": "172.18.0.1", "status": 400, "path": "/api/auth/login/", "app": "rss-bank"}
+{"ts": "2026-06-23T00:13:39Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-23T00:13:52Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "test_sender@example.com"}
+{"ts": "2026-06-23T00:13:52Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-23T00:14:46Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "test_sender@example.com"}
+{"ts": "2026-06-23T00:14:46Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-23T00:15:01Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-23T00:15:18Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "test_sender@example.com"}
+{"ts": "2026-06-23T00:15:18Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-23T03:30:03Z", "event": "PATH_TRAVERSAL", "ip": "204.76.203.51", "method": "GET", "path": "/../../../../../../etc/passwd", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T11:07:47Z", "event": "LOGIN_SUCCESS", "ip": "41.188.85.81", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr"}
+{"ts": "2026-06-23T11:07:47Z", "event": "LOGIN_SUCCESS", "ip": "41.188.85.81", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-23T16:01:11Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/users/me/", "app": "rss-bank"}
+{"ts": "2026-06-23T16:01:11Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-23T16:13:29Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr"}
+{"ts": "2026-06-23T16:13:29Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "user": "23017@supnum.mr", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:32Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:33Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:33Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:34Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:34Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:35Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:35Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:35Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:36Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:36Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:37Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:37Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:38Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:38Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:39Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:39Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:40Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:40Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:40Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:41Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:41Z", "event": "SQL_INJECTION", "ip": "102.206.224.194", "method": "GET", "path": "/api/users/", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T19:02:42Z", "event": "SQL_INJECTION", "ip": "102.206.224.194", "method": "GET", "path": "/api/users/", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T19:02:42Z", "event": "SQL_INJECTION", "ip": "102.206.224.194", "method": "GET", "path": "/api/users/", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T19:02:43Z", "event": "SQL_INJECTION", "ip": "102.206.224.194", "method": "GET", "path": "/api/accounts/", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T19:02:43Z", "event": "SQL_INJECTION", "ip": "102.206.224.194", "method": "GET", "path": "/api/cards/", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T19:02:43Z", "event": "XSS", "ip": "102.206.224.194", "method": "GET", "path": "/api/users/", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T19:02:44Z", "event": "XSS", "ip": "102.206.224.194", "method": "GET", "path": "/api/users/", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T19:02:44Z", "event": "XSS", "ip": "102.206.224.194", "method": "GET", "path": "/api/accounts/", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T19:02:45Z", "event": "XSS", "ip": "102.206.224.194", "method": "GET", "path": "/api/cards/", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T19:02:45Z", "event": "PATH_TRAVERSAL", "ip": "102.206.224.194", "method": "GET", "path": "/api/users/", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T19:02:46Z", "event": "PATH_TRAVERSAL", "ip": "102.206.224.194", "method": "GET", "path": "/api/accounts/", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T19:02:46Z", "event": "PATH_TRAVERSAL", "ip": "102.206.224.194", "method": "GET", "path": "/api/cards/", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T19:02:46Z", "event": "PATH_TRAVERSAL", "ip": "102.206.224.194", "method": "GET", "path": "/api/transactions/", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T19:02:47Z", "event": "LOGIN_FAILED", "ip": "102.206.224.194", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.com", "attempts": 1}
+{"ts": "2026-06-23T19:02:47Z", "event": "LOGIN_FAILURE", "ip": "102.206.224.194", "status": 400, "path": "/api/auth/login/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:49Z", "event": "LOGIN_FAILED", "ip": "102.206.224.194", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.com", "attempts": 2}
+{"ts": "2026-06-23T19:02:49Z", "event": "LOGIN_FAILURE", "ip": "102.206.224.194", "status": 400, "path": "/api/auth/login/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:50Z", "event": "LOGIN_FAILED", "ip": "102.206.224.194", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.com", "attempts": 3}
+{"ts": "2026-06-23T19:02:50Z", "event": "LOGIN_FAILURE", "ip": "102.206.224.194", "status": 400, "path": "/api/auth/login/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:51Z", "event": "LOGIN_FAILED", "ip": "102.206.224.194", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.com", "attempts": 4}
+{"ts": "2026-06-23T19:02:51Z", "event": "LOGIN_FAILURE", "ip": "102.206.224.194", "status": 400, "path": "/api/auth/login/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:52Z", "event": "LOGIN_FAILED", "ip": "102.206.224.194", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.com", "attempts": 5}
+{"ts": "2026-06-23T19:02:52Z", "event": "BRUTE_FORCE", "ip": "102.206.224.194", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.com", "attempts": 5}
+{"ts": "2026-06-23T19:02:52Z", "event": "LOGIN_FAILURE", "ip": "102.206.224.194", "status": 400, "path": "/api/auth/login/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:52Z", "event": "BRUTE_FORCE", "ip": "102.206.224.194", "attempts": 5, "path": "/api/auth/login/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:53Z", "event": "BANNED_IP", "ip": "102.206.224.194", "path": "/api/auth/login/", "method": "POST", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:54Z", "event": "BANNED_IP", "ip": "102.206.224.194", "path": "/api/auth/login/", "method": "POST", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:55Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/users/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:56Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/accounts/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:56Z", "event": "BANNED_IP", "ip": "102.206.224.194", "path": "/api/cards/", "method": "GET", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:56Z", "event": "BANNED_IP", "ip": "102.206.224.194", "path": "/api/users/", "method": "GET", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:57Z", "event": "BANNED_IP", "ip": "102.206.224.194", "path": "/api/accounts/", "method": "GET", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:57Z", "event": "BANNED_IP", "ip": "102.206.224.194", "path": "/api/cards/", "method": "GET", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:58Z", "event": "BANNED_IP", "ip": "102.206.224.194", "path": "/api/users/", "method": "GET", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:58Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/accounts/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:59Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/cards/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:02:59Z", "event": "BANNED_IP", "ip": "102.206.224.194", "path": "/api/users/", "method": "GET", "app": "rss-bank"}
+{"ts": "2026-06-23T19:03:00Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/accounts/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:03:00Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/cards/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:03:00Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/users/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:03:01Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/accounts/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:03:01Z", "event": "UNAUTHORIZED", "ip": "102.206.224.194", "path": "/api/cards/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:06Z", "event": "UNAUTHORIZED", "ip": "146.70.230.132", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:07Z", "event": "UNAUTHORIZED", "ip": "146.70.230.132", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:08Z", "event": "UNAUTHORIZED", "ip": "146.70.230.132", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:08Z", "event": "UNAUTHORIZED", "ip": "146.70.230.132", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:09Z", "event": "UNAUTHORIZED", "ip": "146.70.230.132", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:09Z", "event": "UNAUTHORIZED", "ip": "146.70.230.132", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:10Z", "event": "UNAUTHORIZED", "ip": "146.70.230.132", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:11Z", "event": "UNAUTHORIZED", "ip": "146.70.230.132", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:11Z", "event": "UNAUTHORIZED", "ip": "146.70.230.132", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:12Z", "event": "UNAUTHORIZED", "ip": "146.70.230.132", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:13Z", "event": "UNAUTHORIZED", "ip": "146.70.230.132", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:13Z", "event": "UNAUTHORIZED", "ip": "146.70.230.132", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:14Z", "event": "UNAUTHORIZED", "ip": "146.70.230.132", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:14Z", "event": "UNAUTHORIZED", "ip": "146.70.230.132", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:15Z", "event": "UNAUTHORIZED", "ip": "146.70.230.132", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:16Z", "event": "UNAUTHORIZED", "ip": "146.70.230.132", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:16Z", "event": "UNAUTHORIZED", "ip": "146.70.230.132", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:17Z", "event": "UNAUTHORIZED", "ip": "146.70.230.132", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:17Z", "event": "UNAUTHORIZED", "ip": "146.70.230.132", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:18Z", "event": "UNAUTHORIZED", "ip": "146.70.230.132", "path": "/api/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:19Z", "event": "SQL_INJECTION", "ip": "146.70.230.132", "method": "GET", "path": "/api/users/", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T19:46:19Z", "event": "SQL_INJECTION", "ip": "146.70.230.132", "method": "GET", "path": "/api/users/", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T19:46:20Z", "event": "SQL_INJECTION", "ip": "146.70.230.132", "method": "GET", "path": "/api/users/", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T19:46:21Z", "event": "SQL_INJECTION", "ip": "146.70.230.132", "method": "GET", "path": "/api/accounts/", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T19:46:21Z", "event": "SQL_INJECTION", "ip": "146.70.230.132", "method": "GET", "path": "/api/cards/", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T19:46:22Z", "event": "XSS", "ip": "146.70.230.132", "method": "GET", "path": "/api/users/", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T19:46:24Z", "event": "XSS", "ip": "146.70.230.132", "method": "GET", "path": "/api/users/", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T19:46:24Z", "event": "XSS", "ip": "146.70.230.132", "method": "GET", "path": "/api/accounts/", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T19:46:25Z", "event": "XSS", "ip": "146.70.230.132", "method": "GET", "path": "/api/cards/", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T19:46:25Z", "event": "PATH_TRAVERSAL", "ip": "146.70.230.132", "method": "GET", "path": "/api/users/", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T19:46:26Z", "event": "PATH_TRAVERSAL", "ip": "146.70.230.132", "method": "GET", "path": "/api/accounts/", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T19:46:27Z", "event": "PATH_TRAVERSAL", "ip": "146.70.230.132", "method": "GET", "path": "/api/cards/", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T19:46:27Z", "event": "PATH_TRAVERSAL", "ip": "146.70.230.132", "method": "GET", "path": "/api/transactions/", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-23T19:46:28Z", "event": "LOGIN_FAILED", "ip": "146.70.230.132", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.com", "attempts": 1}
+{"ts": "2026-06-23T19:46:28Z", "event": "LOGIN_FAILURE", "ip": "146.70.230.132", "status": 400, "path": "/api/auth/login/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:30Z", "event": "LOGIN_FAILED", "ip": "146.70.230.132", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.com", "attempts": 2}
+{"ts": "2026-06-23T19:46:30Z", "event": "LOGIN_FAILURE", "ip": "146.70.230.132", "status": 400, "path": "/api/auth/login/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:31Z", "event": "LOGIN_FAILED", "ip": "146.70.230.132", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.com", "attempts": 3}
+{"ts": "2026-06-23T19:46:31Z", "event": "LOGIN_FAILURE", "ip": "146.70.230.132", "status": 400, "path": "/api/auth/login/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:33Z", "event": "LOGIN_FAILED", "ip": "146.70.230.132", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.com", "attempts": 4}
+{"ts": "2026-06-23T19:46:33Z", "event": "LOGIN_FAILURE", "ip": "146.70.230.132", "status": 400, "path": "/api/auth/login/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:34Z", "event": "LOGIN_FAILED", "ip": "146.70.230.132", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.com", "attempts": 5}
+{"ts": "2026-06-23T19:46:34Z", "event": "BRUTE_FORCE", "ip": "146.70.230.132", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.com", "attempts": 5}
+{"ts": "2026-06-23T19:46:34Z", "event": "LOGIN_FAILURE", "ip": "146.70.230.132", "status": 400, "path": "/api/auth/login/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:34Z", "event": "BRUTE_FORCE", "ip": "146.70.230.132", "attempts": 5, "path": "/api/auth/login/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:35Z", "event": "BANNED_IP", "ip": "146.70.230.132", "path": "/api/auth/login/", "method": "POST", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:37Z", "event": "LOGIN_FAILED", "ip": "146.70.230.132", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.com", "attempts": 6}
+{"ts": "2026-06-23T19:46:37Z", "event": "BRUTE_FORCE", "ip": "146.70.230.132", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "admin@rss.com", "attempts": 6}
+{"ts": "2026-06-23T19:46:37Z", "event": "LOGIN_FAILURE", "ip": "146.70.230.132", "status": 400, "path": "/api/auth/login/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:37Z", "event": "BRUTE_FORCE", "ip": "146.70.230.132", "attempts": 6, "path": "/api/auth/login/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:38Z", "event": "UNAUTHORIZED", "ip": "146.70.230.132", "path": "/api/users/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:38Z", "event": "UNAUTHORIZED", "ip": "146.70.230.132", "path": "/api/accounts/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:39Z", "event": "BANNED_IP", "ip": "146.70.230.132", "path": "/api/cards/", "method": "GET", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:40Z", "event": "BANNED_IP", "ip": "146.70.230.132", "path": "/api/users/", "method": "GET", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:40Z", "event": "BANNED_IP", "ip": "146.70.230.132", "path": "/api/accounts/", "method": "GET", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:41Z", "event": "BANNED_IP", "ip": "146.70.230.132", "path": "/api/cards/", "method": "GET", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:41Z", "event": "BANNED_IP", "ip": "146.70.230.132", "path": "/api/users/", "method": "GET", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:42Z", "event": "BANNED_IP", "ip": "146.70.230.132", "path": "/api/accounts/", "method": "GET", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:43Z", "event": "BANNED_IP", "ip": "146.70.230.132", "path": "/api/cards/", "method": "GET", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:43Z", "event": "BANNED_IP", "ip": "146.70.230.132", "path": "/api/users/", "method": "GET", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:45Z", "event": "UNAUTHORIZED", "ip": "146.70.230.132", "path": "/api/accounts/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:46Z", "event": "UNAUTHORIZED", "ip": "146.70.230.132", "path": "/api/cards/", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:46Z", "event": "BANNED_IP", "ip": "146.70.230.132", "path": "/api/users/", "method": "GET", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:47Z", "event": "BANNED_IP", "ip": "146.70.230.132", "path": "/api/accounts/", "method": "GET", "app": "rss-bank"}
+{"ts": "2026-06-23T19:46:47Z", "event": "BANNED_IP", "ip": "146.70.230.132", "path": "/api/cards/", "method": "GET", "app": "rss-bank"}
+{"ts": "2026-06-24T12:12:26Z", "event": "UNAUTHORIZED", "ip": "41.188.106.172", "path": "/api/users/me/", "app": "rss-bank"}
+{"ts": "2026-06-24T12:12:26Z", "event": "LOGIN_SUCCESS", "ip": "41.188.106.172", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-24T12:13:25Z", "event": "LOGIN_SUCCESS", "ip": "41.188.106.172", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr"}
+{"ts": "2026-06-24T12:13:25Z", "event": "LOGIN_SUCCESS", "ip": "41.188.106.172", "user": "23017@supnum.mr", "app": "rss-bank"}
+{"ts": "2026-06-24T12:26:15Z", "event": "UNAUTHORIZED", "ip": "41.188.106.172", "path": "/api/users/me/", "app": "rss-bank"}
+{"ts": "2026-06-24T12:26:16Z", "event": "LOGIN_FAILURE", "ip": "41.188.106.172", "status": 401, "path": "/api/auth/token/refresh/", "app": "rss-bank"}
+{"ts": "2026-06-24T12:32:56Z", "event": "LOGIN_SUCCESS", "ip": "41.188.106.172", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "cheikhahmedtelmoud@gmail.com"}
+{"ts": "2026-06-24T12:32:56Z", "event": "LOGIN_SUCCESS", "ip": "41.188.106.172", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-24T12:36:09Z", "event": "LOGIN_SUCCESS", "ip": "41.188.106.172", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "cheikhahmedtelmoud@gmail.com"}
+{"ts": "2026-06-24T12:36:09Z", "event": "LOGIN_SUCCESS", "ip": "41.188.106.172", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-24T12:40:34Z", "event": "LOGIN_SUCCESS", "ip": "41.188.106.172", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr"}
+{"ts": "2026-06-24T12:40:34Z", "event": "LOGIN_SUCCESS", "ip": "41.188.106.172", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-24T12:45:54Z", "event": "LOGIN_SUCCESS", "ip": "41.188.106.172", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr"}
+{"ts": "2026-06-24T12:45:54Z", "event": "LOGIN_SUCCESS", "ip": "41.188.106.172", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-24T14:05:46Z", "event": "LOGIN_SUCCESS", "ip": "41.188.106.172", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr"}
+{"ts": "2026-06-24T14:05:46Z", "event": "LOGIN_SUCCESS", "ip": "41.188.106.172", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-24T14:40:06Z", "event": "FACE_LOGIN_FAILED", "ip": "41.188.106.172", "app": "rss-bank", "method": "POST", "path": "/api/auth/face-login/", "national_id": "8877578905", "reason": "unknown_national_id"}
+{"ts": "2026-06-24T14:40:06Z", "event": "LOGIN_FAILURE", "ip": "41.188.106.172", "status": 400, "path": "/api/auth/face-login/", "app": "rss-bank"}
+{"ts": "2026-06-24T14:41:01Z", "event": "LOGIN_SUCCESS", "ip": "41.188.106.172", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "belkhairtaleb@gmail.com"}
+{"ts": "2026-06-24T14:41:01Z", "event": "LOGIN_SUCCESS", "ip": "41.188.106.172", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-24T15:37:10Z", "event": "LOGIN_SUCCESS", "ip": "41.188.106.172", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "belkhairtaleb@gmail.com"}
+{"ts": "2026-06-24T15:37:10Z", "event": "LOGIN_SUCCESS", "ip": "41.188.106.172", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-25T01:46:37Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr"}
+{"ts": "2026-06-25T01:46:37Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-25T02:09:24Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr"}
+{"ts": "2026-06-25T02:09:24Z", "event": "LOGIN_SUCCESS", "ip": "102.206.224.194", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-25T02:17:53Z", "event": "UNAUTHORIZED", "ip": "172.18.0.1", "path": "/api/payments/trackpay/resolve/", "app": "rss-bank"}
+{"ts": "2026-06-25T02:18:09Z", "event": "LOGIN_FAILED", "ip": "172.18.0.1", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "belkhairtaleb@gmail.com", "attempts": 1}
+{"ts": "2026-06-25T02:18:09Z", "event": "LOGIN_FAILURE", "ip": "172.18.0.1", "status": 400, "path": "/api/auth/login/", "app": "rss-bank"}
+{"ts": "2026-06-25T02:18:21Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-25T02:18:22Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "test_trackpay@example.com"}
+{"ts": "2026-06-25T02:18:22Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-25T02:23:48Z", "event": "LOGIN_FAILED", "ip": "104.248.61.147", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "test_curl_demo@example.com", "attempts": 1}
+{"ts": "2026-06-25T02:23:48Z", "event": "LOGIN_FAILURE", "ip": "104.248.61.147", "status": 400, "path": "/api/auth/login/", "app": "rss-bank"}
+{"ts": "2026-06-25T02:23:48Z", "event": "LOGIN_SUCCESS", "ip": "104.248.61.147", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-25T02:23:49Z", "event": "LOGIN_SUCCESS", "ip": "104.248.61.147", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "test_curl_demo@example.com"}
+{"ts": "2026-06-25T02:23:49Z", "event": "LOGIN_SUCCESS", "ip": "104.248.61.147", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-25T02:27:05Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-25T02:27:06Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "test_trackpay_e2e@example.com"}
+{"ts": "2026-06-25T02:27:06Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-25T03:34:54Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-25T03:34:54Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "test_tp_email@example.com"}
+{"ts": "2026-06-25T03:34:54Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-25T03:42:23Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-25T03:42:24Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "test_tp_real@example.com"}
+{"ts": "2026-06-25T03:42:24Z", "event": "LOGIN_SUCCESS", "ip": "172.18.0.1", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-26T21:09:00Z", "event": "PATH_TRAVERSAL", "ip": "204.76.203.51", "method": "GET", "path": "/../../../../../../etc/passwd", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-27T03:19:56Z", "event": "PATH_TRAVERSAL", "ip": "5.187.35.26", "method": "GET", "path": "/../../../../../../etc/passwd", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-27T19:59:12Z", "event": "SSO_LOGIN_FAILED", "ip": "41.188.102.183", "app": "rss-bank", "method": "GET", "path": "/api/auth/sso/callback/", "reason": "missing_code", "attempts": 1}
+{"ts": "2026-06-28T14:34:59Z", "event": "PATH_TRAVERSAL", "ip": "193.32.162.60", "method": "GET", "path": "/api/w/admins/jobs_u/get_log_file/../../../../../root/.env", "app": "rss-bank", "blocked": true}
+{"ts": "2026-06-28T17:59:09Z", "event": "SSO_LOGIN_FAILED", "ip": "41.188.103.207", "app": "rss-bank", "method": "GET", "path": "/api/auth/sso/callback/", "reason": "missing_code", "attempts": 1}
+{"ts": "2026-06-29T10:17:09Z", "event": "UNAUTHORIZED", "ip": "146.70.230.132", "path": "/api/users/me/", "app": "rss-bank"}
+{"ts": "2026-06-29T10:17:10Z", "event": "LOGIN_FAILURE", "ip": "146.70.230.132", "status": 401, "path": "/api/auth/token/refresh/", "app": "rss-bank"}
+{"ts": "2026-06-29T10:26:55Z", "event": "LOGIN_SUCCESS", "ip": "146.70.230.132", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr"}
+{"ts": "2026-06-29T10:26:55Z", "event": "LOGIN_SUCCESS", "ip": "146.70.230.132", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-29T10:31:10Z", "event": "LOGIN_SUCCESS", "ip": "146.70.230.132", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr"}
+{"ts": "2026-06-29T10:31:10Z", "event": "LOGIN_SUCCESS", "ip": "146.70.230.132", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-29T10:45:59Z", "event": "LOGIN_SUCCESS", "ip": "41.188.107.76", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-29T11:21:50Z", "event": "LOGIN_SUCCESS", "ip": "41.188.107.76", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr"}
+{"ts": "2026-06-29T11:21:50Z", "event": "LOGIN_SUCCESS", "ip": "41.188.107.76", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-29T11:45:53Z", "event": "LOGIN_SUCCESS", "ip": "41.188.107.76", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr"}
+{"ts": "2026-06-29T11:45:53Z", "event": "LOGIN_SUCCESS", "ip": "41.188.107.76", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-06-29T11:54:10Z", "event": "SSO_LOGIN_SUCCESS", "ip": "41.188.107.76", "app": "rss-bank", "method": "GET", "path": "/api/auth/sso/callback/", "user": "rssbank700@gmail.com"}
+{"ts": "2026-06-29T12:31:21Z", "event": "SSO_LOGIN_SUCCESS", "ip": "82.151.79.41", "app": "rss-bank", "method": "GET", "path": "/api/auth/sso/callback/", "user": "rssbank700@gmail.com"}
+{"ts": "2026-06-29T12:43:56Z", "event": "SSO_LOGIN_SUCCESS", "ip": "82.151.79.41", "app": "rss-bank", "method": "GET", "path": "/api/auth/sso/callback/", "user": "rssbank700@gmail.com"}
+{"ts": "2026-06-29T12:50:37Z", "event": "SSO_LOGIN_SUCCESS", "ip": "82.151.79.41", "app": "rss-bank", "method": "GET", "path": "/api/auth/sso/callback/", "user": "rssbank700@gmail.com"}
+{"ts": "2026-06-29T12:59:58Z", "event": "SSO_LOGIN_SUCCESS", "ip": "82.151.79.41", "app": "rss-bank", "method": "GET", "path": "/api/auth/sso/callback/", "user": "rssbank700@gmail.com"}
+{"ts": "2026-06-29T12:59:58Z", "event": "SSO_LOGIN_ERROR", "ip": "82.151.79.41", "app": "rss-bank", "method": "GET", "path": "/api/auth/sso/callback/"}
+{"ts": "2026-06-29T13:08:31Z", "event": "SSO_LOGIN_SUCCESS", "ip": "41.188.108.20", "app": "rss-bank", "method": "GET", "path": "/api/auth/sso/callback/", "user": "rssbank700@gmail.com"}
+{"ts": "2026-06-29T13:08:31Z", "event": "SSO_LOGIN_ERROR", "ip": "41.188.108.20", "app": "rss-bank", "method": "GET", "path": "/api/auth/sso/callback/"}
+{"ts": "2026-06-30T21:01:20Z", "event": "PATH_TRAVERSAL", "ip": "5.61.209.224", "method": "GET", "path": "/../../../../../../etc/passwd", "app": "rss-bank", "blocked": true}
+{"ts": "2026-07-01T00:22:16Z", "event": "SQL_INJECTION", "ip": "138.197.16.14", "method": "POST", "path": "/api/client/update", "app": "rss-bank", "blocked": true}
+{"ts": "2026-07-01T13:07:59Z", "event": "LOGIN_SUCCESS", "ip": "41.188.114.166", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr"}
+{"ts": "2026-07-01T13:07:59Z", "event": "LOGIN_SUCCESS", "ip": "41.188.114.166", "user": "anonymous", "app": "rss-bank"}
+{"ts": "2026-07-01T13:20:52Z", "event": "LOGIN_SUCCESS", "ip": "41.188.114.166", "app": "rss-bank", "method": "POST", "path": "/api/auth/login/", "user": "23017@supnum.mr"}
+{"ts": "2026-07-01T13:20:52Z", "event": "LOGIN_SUCCESS", "ip": "41.188.114.166", "user": "anonymous", "app": "rss-bank"}

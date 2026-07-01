@@ -11,6 +11,9 @@ from .views import (
     SSOLoginView,
     SSOStartView,
     SSOCallbackView,
+    SSOExchangeView,
+    TrackPayResolveView,
+    TrackPayInitiateView,
 )
 
 router = DefaultRouter()
@@ -41,6 +44,9 @@ urlpatterns = [
     path('auth/sso/start/', SSOStartView.as_view()),
     path('auth/sso/callback/', SSOCallbackView.as_view()),
     path('auth/sso-login/', SSOLoginView.as_view(), name='sso-login'),
+    path('auth/sso/exchange/', SSOExchangeView.as_view()),
+    path('payments/trackpay/resolve/', TrackPayResolveView.as_view()),
+    path('payments/trackpay/initiate/', TrackPayInitiateView.as_view()),
     path('', include(router.urls)),
    
 ]

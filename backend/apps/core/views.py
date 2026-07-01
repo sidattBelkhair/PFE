@@ -1,13 +1,17 @@
+import base64
+import hashlib
 import random
 import secrets
 import string
 import uuid
 from decimal import Decimal
 from datetime import timedelta
+from urllib.parse import urlencode
 
 from django.core.cache import cache
 from django.core.mail import send_mail
 from django.db import transaction as db_transaction
+from django.db import IntegrityError
 import threading
 from django.utils import timezone
 from rest_framework import viewsets, status
@@ -20,6 +24,7 @@ from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework_simplejwt.tokens import RefreshToken
 import requests as http_requests
 from django.conf import settings
+from django.http import HttpResponseRedirect
 from django.shortcuts import redirect
 
 from .security_middleware import log_security_event, get_client_ip
@@ -454,7 +459,7 @@ class UserViewSet(viewsets.ModelViewSet):
         except (TypeError, ValueError):
             face_confidence = 0.0
 
-        SEUIL_REJET = 0.3
+        SEUIL_REJET = 0.55  # ressemblance minimale requise pour valider le KYC
         if 0 < face_confidence < SEUIL_REJET:
             user.kyc_status = 'rejected'
             user.save(update_fields=['kyc_status'])
@@ -471,7 +476,7 @@ class UserViewSet(viewsets.ModelViewSet):
         extracted_first = request.data.get('extracted_first_name', '').strip()
         extracted_last = request.data.get('extracted_last_name', '').strip()
 
-        if national_id and not user.national_id:
+        if national_id and user.national_id != national_id:
             user.national_id = national_id
         if extracted_first and not user.first_name:
             user.first_name = extracted_first
@@ -480,7 +485,17 @@ class UserViewSet(viewsets.ModelViewSet):
 
         user.kyc_status = 'approved'
         user.kyc_submitted_at = timezone.now()
-        user.save()
+
+        try:
+            user.save()
+        except IntegrityError:
+            return Response(
+                {
+                    'detail': 'Ce numéro national est déjà associé à un autre compte.',
+                    'kyc_status': 'rejected',
+                },
+                status=status.HTTP_409_CONFLICT,
+            )
 
         return Response(
             {
@@ -630,17 +645,49 @@ class TransactionViewSet(viewsets.ModelViewSet):
 
         # Gérer le bénéficiaire par numéro de téléphone (to_phone)
         to_phone = validated_data.pop('to_phone', None)
+        transaction_type = validated_data.get('transaction_type')
         beneficiary = None
+        to_account = None
 
-        if to_phone:
-            # Chercher ou créer un bénéficiaire avec ce numéro
+        if to_phone and transaction_type == 'transfer':
+            # Virement RSS Bank → RSS Bank : le numéro doit correspondre à un
+            # compte RSS Bank actif, sinon le virement est refusé (pas de
+            # transfert "dans le vide"). Ne s'applique pas aux paiements
+            # GIMTEL/partenaires (TrackPay, BCM, ...), qui visent des comptes
+            # externes — voir _handle_partner_payment.
+            recipient = User.objects.filter(phone_number=to_phone, status='active').first()
+            recipient_account = None
+            if recipient:
+                recipient_account = (
+                    Account.objects.filter(user=recipient, status='active', is_default=True).first()
+                    or Account.objects.filter(user=recipient, status='active').first()
+                )
+
+            if not recipient_account:
+                raise ValidationError(
+                    f"Le numéro {to_phone} n'est pas associé à un compte RSS Bank."
+                )
+
+            to_account = recipient_account
+            beneficiary, _ = Beneficiary.objects.get_or_create(
+                user=user,
+                phone_number=to_phone,
+                defaults={
+                    'beneficiary_name': recipient.get_full_name() or to_phone,
+                    'beneficiary_type': 'internal',
+                    'bank_name': 'RSS Bank',
+                }
+            )
+        elif to_phone and transaction_type == 'payment':
+            # Paiement vers un service partenaire (TrackPay, GIMTEL...).
+            # Pas de compte RSS Bank à créditer ici — voir intégration partenaire.
             beneficiary, _ = Beneficiary.objects.get_or_create(
                 user=user,
                 phone_number=to_phone,
                 defaults={
                     'beneficiary_name': to_phone,
                     'beneficiary_type': 'external',
-                    'bank_name': 'Externe',
+                    'bank_name': 'Partenaire',
                 }
             )
 
@@ -658,11 +705,18 @@ class TransactionViewSet(viewsets.ModelViewSet):
         from_account.available_balance -= total_amount
         from_account.save()
 
+        # Créditer le compte destinataire RSS Bank (virement interne par téléphone)
+        if to_account:
+            to_account.balance += amount
+            to_account.available_balance += amount
+            to_account.save()
+
         # Enregistrer la transaction
         serializer.save(
             reference_number=ref_number,
             transaction_fee=transaction_fee,
             total_amount=total_amount,
+            to_account=to_account,
             to_beneficiary=beneficiary,
             status='completed',
             ip_address=self.request.META.get('REMOTE_ADDR'),
@@ -674,6 +728,175 @@ class TransactionViewSet(viewsets.ModelViewSet):
         qs = Transaction.objects.filter(to_account__user=request.user)
         serializer = self.get_serializer(qs, many=True)
         return Response(serializer.data)
+
+
+# ─────────────────────────────────────────────
+#  PARTNER PAYMENTS — TrackPay (onglet GIMTEL)
+# ─────────────────────────────────────────────
+#
+# RSS Bank est le débiteur (source d'argent) ; TrackPay est le service qui
+# reçoit le paiement. Contrat réel fourni par TrackPay (interop API) :
+#   GET  {TRACKPAY_BASE_URL}/api/interop/verify-user/?email=...
+#   POST {TRACKPAY_BASE_URL}/api/interop/receive/
+# Identification par EMAIL (pas par téléphone) côté TrackPay.
+# Tant que TRACKPAY_BASE_URL/TRACKPAY_API_KEY ne sont pas configurés, ces
+# vues répondent 503 au lieu de planter — pas d'appel réseau vers une URL vide.
+
+def _trackpay_headers():
+    return {
+        'X-Partner-Key': settings.TRACKPAY_API_KEY,
+        'Content-Type': 'application/json',
+    }
+
+
+class TrackPayResolveView(APIView):
+    """
+    POST /api/payments/trackpay/resolve
+    Body : { "email": "user@example.com" }
+    Vérifie auprès de TrackPay si cet email correspond à un compte,
+    avant d'afficher le montant/la confirmation côté app.
+    """
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        if not settings.TRACKPAY_BASE_URL:
+            return Response({'error': 'Service TrackPay non configuré'}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
+
+        email = (request.data.get('email') or '').strip()
+        if not email:
+            return Response({'error': 'email manquant'}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            resp = http_requests.get(
+                f"{settings.TRACKPAY_BASE_URL}/api/interop/verify-user/",
+                params={'email': email},
+                headers=_trackpay_headers(),
+                timeout=10,
+            )
+        except http_requests.RequestException:
+            return Response({'error': 'Service TrackPay indisponible'}, status=status.HTTP_502_BAD_GATEWAY)
+
+        data = resp.json() if resp.content else {}
+        if resp.status_code != 200 or not data.get('exists'):
+            return Response(
+                {'exists': False, 'error': data.get('error', 'Aucun compte TrackPay trouvé avec cet email.')},
+                status=status.HTTP_404_NOT_FOUND,
+            )
+
+        return Response(data)
+
+
+class TrackPayInitiateView(APIView):
+    """
+    POST /api/payments/trackpay/initiate
+    Body : { "from_account": "<uuid>", "email": "user@example.com", "amount": 1000 }
+
+    Débite le compte RSS Bank, appelle TrackPay pour créditer le wallet du
+    destinataire (par email), puis enregistre la transaction (completed si
+    TrackPay confirme, failed sinon — avec remboursement automatique du débit).
+    """
+    permission_classes = [IsAuthenticated]
+
+    @db_transaction.atomic
+    def post(self, request):
+        if not settings.TRACKPAY_BASE_URL:
+            return Response({'error': 'Service TrackPay non configuré'}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
+
+        user = request.user
+        email = (request.data.get('email') or '').strip()
+        account_id = request.data.get('from_account')
+
+        try:
+            amount = Decimal(str(request.data.get('amount', 0)))
+        except Exception:
+            return Response({'error': 'Montant invalide'}, status=status.HTTP_400_BAD_REQUEST)
+
+        if not email or amount <= 0:
+            return Response({'error': 'email et amount (>0) sont requis'}, status=status.HTTP_400_BAD_REQUEST)
+
+        from_account = Account.objects.filter(id=account_id, user=user, status='active').first()
+        if not from_account:
+            return Response({'error': 'Compte source invalide'}, status=status.HTTP_400_BAD_REQUEST)
+
+        if from_account.available_balance < amount:
+            return Response(
+                {'error': f"Solde insuffisant. Disponible : {from_account.available_balance} {from_account.currency}"},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        ref_number = generate_reference_number()
+        while Transaction.objects.filter(reference_number=ref_number).exists():
+            ref_number = generate_reference_number()
+
+        beneficiary, _ = Beneficiary.objects.get_or_create(
+            user=user,
+            account_number=email,
+            beneficiary_type='external',
+            defaults={'beneficiary_name': email, 'bank_name': 'TrackPay'},
+        )
+
+        # Débit immédiat (annulé si TrackPay refuse)
+        from_account.balance -= amount
+        from_account.available_balance -= amount
+        from_account.save()
+
+        transaction = Transaction.objects.create(
+            from_account=from_account,
+            to_beneficiary=beneficiary,
+            transaction_type='payment',
+            amount=amount,
+            currency=from_account.currency,
+            description=f'Paiement TrackPay vers {email}',
+            reference_number=ref_number,
+            transaction_fee=Decimal('0.00'),
+            total_amount=amount,
+            status='processing',
+            ip_address=get_client_ip(request),
+        )
+
+        try:
+            resp = http_requests.post(
+                f"{settings.TRACKPAY_BASE_URL}/api/interop/receive/",
+                json={
+                    'email': email,
+                    'amount': float(amount),
+                    'sender': user.get_full_name() or user.email,
+                    'reference': ref_number,
+                },
+                headers=_trackpay_headers(),
+                timeout=15,
+            )
+            trackpay_data = resp.json() if resp.content else {}
+            trackpay_ok = resp.status_code == 200 and trackpay_data.get('status') == 'SUCCESS'
+        except http_requests.RequestException:
+            trackpay_ok = False
+            trackpay_data = {}
+
+        if not trackpay_ok:
+            # Remboursement : TrackPay n'a pas confirmé la réception
+            from_account.balance += amount
+            from_account.available_balance += amount
+            from_account.save()
+            transaction.status = 'failed'
+            transaction.save(update_fields=['status'])
+            return Response(
+                {
+                    'error': trackpay_data.get('error', 'Paiement TrackPay refusé'),
+                    'reference': ref_number,
+                    'status': 'failed',
+                },
+                status=status.HTTP_502_BAD_GATEWAY,
+            )
+
+        transaction.status = 'completed'
+        transaction.save(update_fields=['status'])
+
+        return Response({
+            'reference': ref_number,
+            'receiver': trackpay_data.get('receiver'),
+            'status': 'completed',
+            'message': 'Paiement TrackPay effectué avec succès',
+        })
 
 
 class TransactionHistoryViewSet(viewsets.ReadOnlyModelViewSet):
@@ -754,6 +977,19 @@ def _provision_sso_user(userinfo, ip, request):
     return user, None
 
 
+SSO_APP_SCHEME = "com.example.sedadbank://sso-callback"
+SSO_HANDOFF_CACHE_PREFIX = "sso_handoff_"
+SSO_HANDOFF_TTL = 60  # secondes : juste le temps que l'app fasse l'échange
+
+
+def _app_redirect(**params):
+    """Redirige vers l'app mobile (deep link) avec les paramètres donnés en query string."""
+    query = urlencode(params)
+    response = HttpResponseRedirect(f"{SSO_APP_SCHEME}?{query}")
+    response.allowed_schemes = ["http", "https", "com.example.sedadbank"]
+    return response
+
+
 class SSOStartView(APIView):
     permission_classes = [AllowAny]
 
@@ -764,7 +1000,19 @@ class SSOStartView(APIView):
 
         # Protection CSRF du flow OAuth (paramètre state à usage unique)
         state = secrets.token_urlsafe(32)
-        cache.set(f"{SSO_STATE_CACHE_PREFIX}{state}", True, timeout=SSO_STATE_TTL)
+
+        # PKCE (exigé par ce provider) : code_verifier gardé côté serveur,
+        # seul le code_challenge (son hash) part dans l'URL d'autorisation.
+        code_verifier = secrets.token_urlsafe(64)
+        code_challenge = base64.urlsafe_b64encode(
+            hashlib.sha256(code_verifier.encode()).digest()
+        ).decode().rstrip("=")
+
+        cache.set(
+            f"{SSO_STATE_CACHE_PREFIX}{state}",
+            {"code_verifier": code_verifier},
+            timeout=SSO_STATE_TTL,
+        )
 
         auth_url = (
             f"{settings.SSO_AUTHORIZE_URL}"
@@ -773,6 +1021,8 @@ class SSOStartView(APIView):
             f"&redirect_uri={settings.SSO_REDIRECT_URI}"
             f"&scope=openid profile email"
             f"&state={state}"
+            f"&code_challenge={code_challenge}"
+            f"&code_challenge_method=S256"
         )
         return redirect(auth_url)
 
@@ -783,24 +1033,26 @@ class SSOCallbackView(APIView):
     def get(self, request):
         ip = get_client_ip(request)
         if _sso_rate_limited(ip):
-            return Response({"error": "Trop de tentatives, réessayez plus tard"}, status=status.HTTP_429_TOO_MANY_REQUESTS)
+            return _app_redirect(error="rate_limited", message="Trop de tentatives, réessayez plus tard")
 
         code = request.GET.get("code")
         state = request.GET.get("state")
 
         if not code:
             _register_sso_failure(ip, request, "missing_code")
-            return Response({"error": "Code OAuth manquant"}, status=status.HTTP_400_BAD_REQUEST)
+            return _app_redirect(error="missing_code", message="Code OAuth manquant")
 
         # Vérifie et consomme le state (protection CSRF, usage unique)
         state_key = f"{SSO_STATE_CACHE_PREFIX}{state}" if state else None
-        if not state or not cache.get(state_key):
+        state_data = cache.get(state_key) if state_key else None
+        if not state or not state_data:
             _register_sso_failure(ip, request, "invalid_state")
-            return Response({"error": "Requête SSO invalide ou expirée"}, status=status.HTTP_400_BAD_REQUEST)
+            return _app_redirect(error="invalid_state", message="Requête SSO invalide ou expirée")
         cache.delete(state_key)
+        code_verifier = state_data.get("code_verifier")
 
         try:
-            # 1. Échanger le code contre un token
+            # 1. Échanger le code contre un token (PKCE : code_verifier requis)
             token_resp = http_requests.post(
                 settings.SSO_TOKEN_URL,
                 data={
@@ -809,17 +1061,18 @@ class SSOCallbackView(APIView):
                     "client_id": settings.SSO_CLIENT_ID,
                     "client_secret": settings.SSO_CLIENT_SECRET,
                     "redirect_uri": settings.SSO_REDIRECT_URI,
+                    "code_verifier": code_verifier,
                 },
                 timeout=10,
             )
 
             if token_resp.status_code != 200:
                 _register_sso_failure(ip, request, "token_exchange_failed")
-                return Response({"error": "Impossible de récupérer le token SSO"}, status=status.HTTP_400_BAD_REQUEST)
+                return _app_redirect(error="token_exchange_failed", message="Impossible de récupérer le token SSO")
 
             access_token = token_resp.json().get("access_token")
 
-            # 2. Récupérer les infos utilisateur
+            # 2. Récupérer les "infos utilisateur
             userinfo_resp = http_requests.get(
                 settings.SSO_USERINFO_URL,
                 headers={"Authorization": f"Bearer {access_token}"},
@@ -828,32 +1081,71 @@ class SSOCallbackView(APIView):
 
             if userinfo_resp.status_code != 200:
                 _register_sso_failure(ip, request, "userinfo_failed")
-                return Response({"error": "Impossible de récupérer le profil SSO"}, status=status.HTTP_400_BAD_REQUEST)
+                return _app_redirect(error="userinfo_failed", message="Impossible de récupérer le profil SSO")
 
             userinfo = userinfo_resp.json()
 
             # 3. Créer ou récupérer l'utilisateur RSS Bank
             user, error_response = _provision_sso_user(userinfo, ip, request)
             if error_response:
-                return error_response
+                detail = error_response.data.get("error", "Compte SSO invalide")
+                return _app_redirect(error="provisioning_failed", message=detail)
 
-            # 4. Générer JWT RSS Bank
+            # 4. Générer un jeton d'échange à usage unique (les JWT eux-mêmes
+            # ne transitent jamais par l'URL du deep link, pour éviter qu'ils
+            # se retrouvent dans des logs système/historique de navigation).
             cache.delete(f"sso_fail_{ip}")
             log_security_event("SSO_LOGIN_SUCCESS", ip, request, {"user": user.email})
+
             refresh = RefreshToken.for_user(user)
-            return Response({
-                "message": "Connexion SSO réussie",
-                "access": str(refresh.access_token),
-                "refresh": str(refresh),
-                "user": UserSerializer(user).data,
-            })
+            handoff_token = secrets.token_urlsafe(32)
+            cache.set(
+                f"{SSO_HANDOFF_CACHE_PREFIX}{handoff_token}",
+                {
+                    "access": str(refresh.access_token),
+                    "refresh": str(refresh),
+                    "user": UserSerializer(user).data,
+                },
+                timeout=SSO_HANDOFF_TTL,
+            )
+            return _app_redirect(token=handoff_token)
 
         except http_requests.RequestException:
             _register_sso_failure(ip, request, "sso_provider_unreachable")
-            return Response({"error": "Service SSO indisponible"}, status=status.HTTP_502_BAD_GATEWAY)
+            return _app_redirect(error="sso_provider_unreachable", message="Service SSO indisponible")
         except Exception:
             log_security_event("SSO_LOGIN_ERROR", ip, request, {})
-            return Response({"error": "Erreur lors de la connexion SSO"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return _app_redirect(error="sso_error", message="Erreur lors de la connexion SSO")
+
+
+class SSOExchangeView(APIView):
+    """
+    POST /api/auth/sso/exchange/
+    Body : { "token": "<handoff_token reçu dans le deep link>" }
+
+    Échange le jeton à usage unique (reçu via le deep link sso-callback)
+    contre les vrais JWT RSS Bank. Le jeton n'est valable que SSO_HANDOFF_TTL
+    secondes et est consommé dès cette lecture (anti-replay).
+    """
+    permission_classes = [AllowAny]
+
+    def post(self, request):
+        token = request.data.get("token")
+        if not token or not isinstance(token, str):
+            return Response({"error": "token manquant"}, status=status.HTTP_400_BAD_REQUEST)
+
+        cache_key = f"{SSO_HANDOFF_CACHE_PREFIX}{token}"
+        payload = cache.get(cache_key)
+        if not payload:
+            return Response({"error": "Jeton invalide ou expiré"}, status=status.HTTP_400_BAD_REQUEST)
+        cache.delete(cache_key)
+
+        return Response({
+            "message": "Connexion SSO réussie",
+            "access": payload["access"],
+            "refresh": payload["refresh"],
+            "user": payload["user"],
+        })
 
 
 class SSOLoginView(APIView):

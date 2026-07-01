@@ -252,8 +252,11 @@ else:
 
 CACHES = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-        'LOCATION': 'rss-security-cache',
+        # FileBasedCache (pas LocMemCache) : partagé entre tous les workers
+        # Gunicorn, indispensable pour le state/PKCE du SSO et les compteurs
+        # anti brute-force qui doivent être vus par n'importe quel worker.
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': '/app/cache',
     }
 }
 
@@ -306,12 +309,12 @@ if LOKI_URL:
 
 SSO_CLIENT_ID = config(
     'SSO_CLIENT_ID',
-    default='FaACVS7Ds3qjR5i6ynVmhGtzlZ44wan45hgDJwVF'
+    default='qfyuNkRTShvRwrP37SapVzOeZVkjO9TpgEjan7l'
 )
 
 SSO_CLIENT_SECRET = config(
     'SSO_CLIENT_SECRET',
-    default=''
+    default='GdepGeklzfam0NbJDrxLA09LsdEkfBsc2IkG5WPVVgJv66XEwxnBGFpX7nKxZBI1XN2Vri2Tl3X1nkLqMVlreQB0J6ZLER4hAXYqX6VFLzToaZc8sd62pZRlSjRQWlgI'
 )
 
 SSO_AUTHORIZE_URL = 'https://sso-backend-6b1e.onrender.com/o/authorize/'
@@ -336,3 +339,10 @@ FACE_API_KEY = config(
     'FACE_API_KEY',
     default=''
 )
+
+# ─────────────────────────────────────────────
+# PARTNER PAYMENTS — TrackPay (GIMTEL)
+# ─────────────────────────────────────────────
+
+TRACKPAY_BASE_URL = config('TRACKPAY_BASE_URL', default='')
+TRACKPAY_API_KEY = config('TRACKPAY_API_KEY', default='')
