@@ -1,19 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../core/services/api_service.dart';
 import '../models/transaction_model.dart';
 
 class TransactionProvider extends ChangeNotifier {
+  static const _lastSeenKey = 'notifications_last_seen_at';
+
   final ApiService _apiService = ApiService();
   List<TransactionModel> _transactions = [];
   TransactionModel? _lastTransaction;
   bool _isLoading = false;
   String? _errorMessage;
+  DateTime? _lastSeenAt;
 
   List<TransactionModel> get transactions => _transactions;
   TransactionModel? get lastTransaction => _lastTransaction;
   bool get isLoading => _isLoading;
   String? get errorMessage => _errorMessage;
+
+  /// Vrai s'il existe une transaction reçue (crédit) plus récente que la
+  /// dernière consultation des notifications (cloche dans le header).
+  bool get hasUnreadIncoming {
+    if (_transactions.isEmpty) return false;
+    final lastSeen = _lastSeenAt ?? DateTime.fromMillisecondsSinceEpoch(0);
+    return _transactions.any((t) => t.isCredit && t.createdAt.isAfter(lastSeen));
+  }
+
+  /// Marque les notifications comme lues (tap sur la cloche).
+  Future<void> markNotificationsSeen() async {
+    _lastSeenAt = DateTime.now();
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_lastSeenKey, _lastSeenAt!.toIso8601String());
+    notifyListeners();
+  }
+
+  Future<void> _loadLastSeen() async {
+    final prefs = await SharedPreferences.getInstance();
+    final stored = prefs.getString(_lastSeenKey);
+    if (stored != null) _lastSeenAt = DateTime.tryParse(stored);
+  }
 
   /// Extrait le message d'erreur lisible depuis une réponse backend DRF
   String _parseError(DioException e, String fallback) {
@@ -39,6 +65,7 @@ class TransactionProvider extends ChangeNotifier {
     _isLoading = true;
     _errorMessage = null;
     notifyListeners();
+    if (_lastSeenAt == null) await _loadLastSeen();
 
     try {
       // Fetch sent transactions
@@ -157,6 +184,59 @@ class TransactionProvider extends ChangeNotifier {
       }
     } on DioException catch (e) {
       _errorMessage = _parseError(e, 'Erreur lors de la transaction');
+    } catch (e) {
+      _errorMessage = 'Erreur inattendue: $e';
+    } finally {
+      _isLoading = false;
+      notifyListeners();
+    }
+    return false;
+  }
+
+  /// Vérifie qu'un email correspond bien à un compte TrackPay avant de payer.
+  /// Retourne le nom du destinataire si trouvé, ou null sinon (voir [errorMessage]).
+  Future<String?> resolveTrackPayAccount(String email) async {
+    _errorMessage = null;
+    try {
+      final response = await _apiService.post('payments/trackpay/resolve/', data: {'email': email});
+      final data = response.data;
+      if (response.statusCode == 200 && data is Map && data['exists'] == true) {
+        return data['name'] as String?;
+      }
+      _errorMessage = (data is Map ? data['error'] as String? : null) ?? 'Compte TrackPay introuvable';
+    } on DioException catch (e) {
+      _errorMessage = _parseError(e, 'Erreur lors de la vérification TrackPay');
+    } catch (e) {
+      _errorMessage = 'Erreur inattendue: $e';
+    }
+    return null;
+  }
+
+  /// Débite le compte RSS Bank et déclenche le paiement TrackPay (par email).
+  Future<bool> payTrackPay({
+    required String fromAccountId,
+    required String email,
+    required double amount,
+  }) async {
+    _isLoading = true;
+    _errorMessage = null;
+    notifyListeners();
+
+    try {
+      final response = await _apiService.post('payments/trackpay/initiate/', data: {
+        'from_account': fromAccountId,
+        'email': email,
+        'amount': amount,
+      });
+      final data = response.data;
+      if ((response.statusCode == 200 || response.statusCode == 201) &&
+          data is Map &&
+          data['status'] == 'completed') {
+        return true;
+      }
+      _errorMessage = (data is Map ? data['error'] as String? : null) ?? 'Paiement TrackPay refusé';
+    } on DioException catch (e) {
+      _errorMessage = _parseError(e, 'Erreur lors du paiement TrackPay');
     } catch (e) {
       _errorMessage = 'Erreur inattendue: $e';
     } finally {

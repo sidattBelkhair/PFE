@@ -32,6 +32,7 @@ dependencies:
   camera: ^0.10.5+9
   crypto: ^3.0.3
   url_launcher: ^6.3.0
+  app_links: ^3.5.0
 
 dev_dependencies:
   flutter_test:

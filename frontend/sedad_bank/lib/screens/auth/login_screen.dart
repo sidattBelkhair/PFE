@@ -58,12 +58,15 @@ class _LoginScreenState extends State<LoginScreen> {
     if (ok) {
       await _navigateAfterLogin(auth);
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(auth.errorMessage ?? 'Erreur SSO'),
-          backgroundColor: Colors.red,
-        ),
-      );
+      final msg = auth.errorMessage ?? '';
+      if (msg.isNotEmpty && !msg.contains('annulée')) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(msg),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
     }
   }
 
@@ -310,22 +313,35 @@ class _LoginScreenState extends State<LoginScreen> {
                           // Bouton SSO
                           SizedBox(
                             width: double.infinity,
-                            child: OutlinedButton.icon(
-                              onPressed: auth.isLoading ? null : () => _loginWithSSO(auth),
-                              icon: const Icon(Icons.vpn_key_outlined,
-                                  color: AppTheme.primaryGold),
-                              label: Text(
-                                auth.isLoading
-                                    ? 'Connexion SSO en cours...'
-                                    : 'Se connecter avec SSO',
-                                style: const TextStyle(color: AppTheme.primaryGold),
-                              ),
-                              style: OutlinedButton.styleFrom(
-                                side: const BorderSide(color: AppTheme.primaryGold),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(12)),
-                              ),
-                            ),
+                            child: auth.isSsoLoading
+                                ? OutlinedButton.icon(
+                                    onPressed: () => auth.cancelSSO(),
+                                    icon: const Icon(Icons.cancel_outlined,
+                                        color: Colors.red),
+                                    label: const Text(
+                                      'Annuler la connexion SSO',
+                                      style: TextStyle(color: Colors.red),
+                                    ),
+                                    style: OutlinedButton.styleFrom(
+                                      side: const BorderSide(color: Colors.red),
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(12)),
+                                    ),
+                                  )
+                                : OutlinedButton.icon(
+                                    onPressed: auth.isLoading ? null : () => _loginWithSSO(auth),
+                                    icon: const Icon(Icons.vpn_key_outlined,
+                                        color: AppTheme.primaryGold),
+                                    label: const Text(
+                                      'Se connecter avec SSO',
+                                      style: TextStyle(color: AppTheme.primaryGold),
+                                    ),
+                                    style: OutlinedButton.styleFrom(
+                                      side: const BorderSide(color: AppTheme.primaryGold),
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(12)),
+                                    ),
+                                  ),
                           ),
 
                           if (_faceLoginAvailable) ...[

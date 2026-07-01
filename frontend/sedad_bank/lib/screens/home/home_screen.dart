@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import '../../providers/auth_provider.dart';
 import '../../providers/account_provider.dart';
+import '../../providers/transaction_provider.dart';
 import '../../core/theme/app_theme.dart';
 import '../../widgets/bank_card_widget.dart';
 import '../../widgets/app_drawer.dart';
@@ -32,6 +33,7 @@ class _HomeContentState extends State<HomeContent> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       Provider.of<AccountProvider>(context, listen: false).fetchAccounts();
+      Provider.of<TransactionProvider>(context, listen: false).fetchTransactions();
     });
   }
 
@@ -77,20 +79,26 @@ class _HomeContentState extends State<HomeContent> {
                       ],
                     ),
                   ),
-                  Stack(
-                    children: [
-                      const _HeaderBtn(child: Icon(Icons.notifications_outlined, size: 22)),
-                      Positioned(
-                        right: 8, top: 8,
-                        child: Container(
-                          width: 8, height: 8,
-                          decoration: const BoxDecoration(
-                            color: AppTheme.errorColor,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
+                  Consumer<TransactionProvider>(
+                    builder: (context, tp, _) => GestureDetector(
+                      onTap: () => tp.markNotificationsSeen(),
+                      child: Stack(
+                        children: [
+                          const _HeaderBtn(child: Icon(Icons.notifications_outlined, size: 22)),
+                          if (tp.hasUnreadIncoming)
+                            Positioned(
+                              right: 8, top: 8,
+                              child: Container(
+                                width: 8, height: 8,
+                                decoration: const BoxDecoration(
+                                  color: AppTheme.errorColor,
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
+                            ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ],
               ),

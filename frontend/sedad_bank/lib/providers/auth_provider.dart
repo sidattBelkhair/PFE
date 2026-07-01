@@ -14,12 +14,14 @@ class AuthProvider extends ChangeNotifier {
   String? _accessToken;
   String? _refreshToken;
   bool _isLoading = false;
+  bool _isSsoLoading = false;
   bool _sessionLoaded = false;
   String? _errorMessage;
 
   UserModel? get currentUser => _currentUser;
   String? get accessToken => _accessToken;
   bool get isLoading => _isLoading;
+  bool get isSsoLoading => _isSsoLoading;
   bool get sessionLoaded => _sessionLoaded;
   String? get errorMessage => _errorMessage;
   bool get isAuthenticated => _accessToken != null && _currentUser != null;
@@ -197,78 +199,41 @@ class AuthProvider extends ChangeNotifier {
   }
 
   /// ─── CONNEXION VIA SSO ──────────────────────────────────────────
-  // Future<bool> loginWithSSO() async {
-  //   _isLoading = true;
-  //   _errorMessage = null;
-  //   notifyListeners();
-
-  //   try {
-  //     // 1. Lancer le flow SSO PKCE
-  //     await _ssoService.login();
-  //     if (ssoResult == null) {
-  //       _errorMessage = 'Connexion SSO annulée ou échouée';
-  //       _isLoading = false;
-  //       notifyListeners();
-  //       return false;
-  //     }
-
-  //     final ssoAccessToken = ssoResult['access_token'] as String?;
-  //     if (ssoAccessToken == null) {
-  //       _errorMessage = 'Token SSO manquant';
-  //       _isLoading = false;
-  //       notifyListeners();
-  //       return false;
-  //     }
-
-      // 2. Envoyer le token au backend RSS Bank
-  //     final response = await _apiService.post(
-  //       'auth/sso-login/',
-  //       data: {'sso_access_token': ssoAccessToken},
-  //     );
-
-  //     if (response.statusCode == 200) {
-  //       final data = response.data;
-  //       _accessToken = data['access'];
-  //       _refreshToken = data['refresh'];
-  //       _currentUser = UserModel.fromJson(data['user']);
-
-  //       final prefs = await SharedPreferences.getInstance();
-  //       await prefs.setString('access_token', _accessToken!);
-  //       await prefs.setString('refresh_token', _refreshToken!);
-  //       await prefs.setString('user_id', _currentUser!.id);
-  //       await prefs.setBool('logged_via_sso', true);
-
-  //       _isLoading = false;
-  //       notifyListeners();
-  //       return true;
-  //     }
-  //   } catch (e) {
-  //     _errorMessage = e.toString();
-  //   } on DioException catch (e) {
-  //     _errorMessage = _extractError(e, 'Erreur connexion SSO');
-  //   } catch (e) {
-  //     _errorMessage = 'Erreur SSO: $e';
-  //   }
-
-  //   _isLoading = false;
-  //   notifyListeners();
-  //   return false;
-  // }
   Future<bool> loginWithSSO() async {
-  _isLoading = true;
-  _errorMessage = null;
-  notifyListeners();
+    _isSsoLoading = true;
+    _errorMessage = null;
+    notifyListeners();
 
-  try {
-    await _ssoService.login();
-  } catch (e) {
-    _errorMessage = e.toString();
+    try {
+      final data = await _ssoService.login();
+      _accessToken = data['access'];
+      _refreshToken = data['refresh'];
+      _currentUser = UserModel.fromJson(data['user']);
+
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString('access_token', _accessToken!);
+      await prefs.setString('refresh_token', _refreshToken!);
+      await prefs.setString('user_id', _currentUser!.id);
+      await prefs.setBool('logged_via_sso', true);
+
+      _isSsoLoading = false;
+      notifyListeners();
+      return true;
+    } catch (e) {
+      _errorMessage = e.toString();
+    }
+
+    _isSsoLoading = false;
+    notifyListeners();
+    return false;
   }
 
-  _isLoading = false;
-  notifyListeners();
-  return false;
-}
+  void cancelSSO() {
+    _ssoService.cancel();
+    _isSsoLoading = false;
+    _errorMessage = null;
+    notifyListeners();
+  }
 
   Future<void> logout() async {
     final prefs = await SharedPreferences.getInstance();
